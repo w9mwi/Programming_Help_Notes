@@ -1,0 +1,162 @@
+
+
+SETTINGS
+========
+From the menu, select: File / Settings
+
+* To change background color of ONLY the editor to black, select:
+  Editor / Colors & Fonts
+  Then select "Darcula" from the dropdown and press "Apply"
+
+* To change foreground or background colors of the editor, select:
+  Editor / Colors & Fonts / General
+  Then check the "Foreground" or "Background" check boxes on the left.
+
+* To change foreground or background colors of ALL Android Studio panes,
+  select: Editor / Colors & Fonts
+  Then select "Darcula" (or TJB) from the "Scheme name" dropdown and press "Apply"
+
+* To show line numbers, select: Editor / Appearance, and check
+  the "Show line numbers" checkbox
+
+* To change text size (font size), text color (font color), 
+
+
+
+Android Studio Helpful Hints
+============================
+
+http://www.developerphil.com/android-studio-tips-tricks-moving-around
+http://www.developerphil.com/android-studio-tips-tricks-moving-around
+http://www.developerphil.com/android-studio-tips-tricks-moving-around
+
+
+Popup list of recently-viewed files: Ctrl-E
+Search text in an opened file:       Ctrl-F (Press F3 to repeat the search.)
+Search text globally: Put focus on project/directory, then: Ctrl-Shift-F
+                      Then, in the 'Find' pane at the bottom of Android Studio,
+                      press the UP/DOWN arrows to navigate to the file(s)
+                      containing the text.
+
+Quick Fix:                                 After changing the package name, put focus on the
+                                           package name, press Alt+Enter  (A dialog will prompt
+                                           you for choices.
+To open a method's declaration:            Place focus on the method call, press Ctrl+Left Mouse Click
+View class/method definition:              Place focus on class or method, press Ctrl+Space, wait for window to pop up.
+Show list of all method's in opened file:  Ctrl+F12
+Go to a method declaration:                Highlight the method call, then Ctrl-B
+
+Go to last place you made code change:   Ctrl-Shift-Backspace
+
+Go to a class declaration:               Put cursor on class name, then Ctrl-Shift-B
+To open any file:                        Ctrl-Shift-N
+To open a Java class file:               Ctrl-N
+Show a list of recently-opened files:    Ctrl-E
+Analagous to Next/Previous web page:     Ctrl-Alt-Left/Right Arrow
+Go to next Error in the editor:          F2
+Go to previous Error in the editor:      Shift-F2
+View a method's document header:         Ctrl-Q (After placing focus on the method call.)
+
+List a .java file's methods (like Outline View in Eclipse):
+In far left frame, select "Structure"
+
+To view the Gradle Version used by Android Studio:
+Click on the "Project Structure" icon on the top tool bar (or, Ctrl-Alt-Shift-S),
+then select "Project" in the upper-left corner of the popup window.
+You'll see the "Gradle version", "Android Plugin Version", etc.
+Questions is, why can you edit these values???
+
+To see what code references a Java method, highlight the method name,
+right-click, then select from the menu: 'Find Usages' (Alt-F7)
+
+
+
+
+To view/delete Android projects, highlight an Android project,
+right click on it, and select: Show in Explorer
+
+Android File Explorer - Click on green robot icon (Android Device Manager),
+                        then click on the 'File Explorer' tab.
+
+                        Press the following icons in the upper-right corner
+                        to do the following:
+
+                        + Add a new folder
+                        - Delete the selected file/folder
+                        X Pull a file from the device
+                        X Push a file onto the device
+
+
+SELECT HARDWARE/EMULATOR TO RUN YOUR APP
+========================================
+To configure which emulator, or hardware device, is launched
+when an app launches from Android Studio, select the
+"Main Activity" dropdown control (just below the Tools menu
+item), and select: "Edit Configurations"  Then, on the
+"General" tab, near the bottom of the dialog screen, in the
+"Target Device" section, select radio button: Show chooser dialog
+
+To SELECT an existing virtual device to run via the emulator,
+launch the Android Virtual Device Manager.  Do this by 
+selecting from the menu Tools > Android > AVD Manager,
+OR click the AVD Manager robot icon in the toolbar.
+
+
+
+To CREATE a new virtual device to run via the emulator,
+launch the Android Virtual Device Manager.  Do this by
+selecting from the menu Tools > Android > AVD Manager,
+or click the AVD Manager robot icon in the toolbar.
+
+Then, on the window that pops up, click on the "Android
+Virtual Device Manager" icon near the upper-right corner.
+Then click on the 'Android Virtual Devices' tab, and press
+the 'Create' button.  On the screen that pops up, select
+the device you want from the 'Device' dropdown, fill out
+the remaining fields, and press the OK button.
+
+
+
+
+SCREEN SHOT
+===========
+To obtain a screen shot of the device your app is running on,
+select the "Screen Capture" (camera icon) in the upper right
+corner of the "Android DDMS" pane at the bottom.
+
+
+
+TO IMPORT A JAVA CLASS VIA THE import STATEMENT
+===============================================
+Highlight the class that needs to be imported,
+then press Alt-Enter, and select the correct
+option from the dropdown that appears.
+
+
+
+
+HOW TO USE ANDROID STUDIO DEBEUGGER
+===================================
+https://developer.android.com/tools/debugging/debugging-studio.html
+https://developer.android.com/tools/debugging/debugging-studio.html
+
+To view all breakpoints, click on the "Debug" tab at the bottom of
+Android Studio, Ctrl+Shift+F8, and the Breakpoints window pops up.
+
+1) To examine the object tree for a variable, expand it in the Variables view.
+   If the Variables view is not visible, click Restore Variables View.
+
+2) To evaluate an expression at the current execution point,
+   click Evaluate Expression (Alt-F8).
+3) To advance to the next line in the code (without entering a method),
+   click Step Over (F8).
+4) To advance to the first line inside a method call,
+   click Step Into (F7).
+5) To resume the program, press F9.
+5) To advance to the next line outside the current method,
+   click Step Out (Shift-F8).
+6) To continue running the app normally, click Resume Program (F9).
+
+Go to Android Studio > Preferences > Debugger > Stepping,
+then in the bottom click the plus arrow with the question
+mark that says Add Pattern. Type android.* and hit OK and then Apply.
