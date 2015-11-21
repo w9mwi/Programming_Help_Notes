@@ -1,0 +1,889 @@
+RUBY NOTES - WEEK 2
+===================
+
+STRINGS
+
+Single-quoted strings in Ruby are very literal.
+They show almost everything as is.  They allow
+escaping ith the single-quote char (') with
+the backslash char.
+
+Double-quoted strings int Ruby interpret special
+chars like \n and \t.  And allow string interpolation.
+
+single_quoted = 'ice cream \n followed by it\'s a party!'  # prints the apostrophe char without the \ char.
+double_quoted = "ice cream \n followed by it\'s a party!"  # prints a newline char in place of the \n, and also prints the apostrophe as above.
+
+The following is an example of STRING INTERPOLATION.
+
+def multuiply(one, two)
+  "#{one} multiplied by #{two} equals #{one * two}"
+end
+
+# Calling the above method...
+puts multiply(5, 3)
+PRINTS:  5 multiplied by 3 equals 15
+
+String methods ending with the ! char. modify the existing string.
+Most others just return a new string.
+
+You can also use %Q{long multiline string}
+Has nearly same behavior as double-quoted string,
+but allows you to span multiple lines.
+
+my_name = " tim"
+puts my_name.lstrip.capitalize # lstrip (Left strip) removes leading space char. capitalize changes 't' to 'T'. prints  Tim
+p my_name  # prints: " tim"
+my_name.lstrip! # The '!' means the string is modified.  lstrip removes the leading space char.
+my_name[0] = 'K'  # Replaces first char 'T' with 'K'
+puts my_name # prints: Kim
+
+cur_weather = %Q{It's a hot day outside
+                 Grab your umbrellas..."
+cur_weather.lines do |line|
+  line.sub! 'hot, rainy'  # substitute 'hot' with 'rainy'  The '!' means the string is modified.
+  puts "#{line.strip}"
+end
+
+The above puts prints:
+It'a a raoiny day outside
+Grab your umbrellas...
+
+SEE RUBY ON-LINE DOCS: http://ruby-doc.org/core-2.2.2/
+                       http://ruby-doc.org/core-2.2.2/
+
+SYMBOLS
+
+:foo-  # A symbol begins with the : char.
+Symbols are a "stands for something" string type.
+Symbols are highly-optimized strings
+They are constant names that you don't have to pre-declare
+Symbols are guaranteed to be unique and immutable.
+Symbols can be converted to a String with: to_s
+Or, a string can be converted to symbol with: to_sym
+
+To list all methods that a String object supports, you
+can run the following from irb:
+
+irb> "string".methods
+
+To list all methods that a String object supports that
+contains "case", run the following from irb:
+irb> "string".methods.grep /case/
+
+A method name is a symbol.  A method name is a symbol.  A method name is a symbol.
+Symbols capture information.  Symbols and strings are similar.
+
+Interpolation lets you finish your thought.
+Strings have many useful API methods.
+
+
+ARRAYS
+
+Arrays are a collection of object references (auto-expandable).
+Arrays are indexed using the [] operator (method)
+Arrays can be indexed with negative numbers or ranges.
+Hetrogeneous types are allowed in the same array.
+Arrays can use %w{str1  str2} for string array collection.
+Array indicies begin at ZERO (0).
+
+het_arr = [1, "two", :three]  # hetrogeneous types.  :three is a SYMBOL
+puts het_arr[0]  # prints: 1
+puts het_arr[1]  # prints: two
+
+arr_words = %w{ what a great day today! }
+puts arr_words[-2] # -1 is the "today!" element.  -2 is the "day" element.  So this prints: day
+puts "#{arr_words.first} - #{arr_words.last}" # prints: what - today!
+p arr_words[-3, 2] # -3 is the "great" element.  2 means take the next two elements.  So this prints: great, day
+
+p arr_words[2..4] # Get all elements from index 2 to index 4.
+# make a String out of array elements separated by commas (,):
+puts arr_words.join(',') # prints: what,a,great,day,today
+
+HOW TO MODIF ARRAYS
+
+Append an element:  use operators "push" or "<<"
+Remove an element:  use operators "pop" or "shift"
+Modify (set) an element:  Use the "[]=" method.
+
+Randomly pull elelemnts from an array, use the "sample" method.
+To sort or reverse and array's contents, use:  sort!, sort,  reverse!, reverse
+Without the !, it returns a copy of the array.  The ! modifies the array.
+
+stack = []; stack << "one"; stack.push("two")
+puts stack.pop # prints: two
+
+# Need a FIFO queue, use this:
+queue = []; queue.push "one"; queue.push "two";
+puts queue.shift # Shift "pops" an element from the top of stack.  This prints: one
+
+a = [5,3,4,2].sort!.reverse!
+p a  # prints: [5, 4, 3, 2]
+p a.sample(2) # Prints 2 random elements from the array.
+a[6] = 33 # This inserts 33 into the array's 6th element.  But elements 4 and 5 were never initialized, so they'll be nil.
+p a # prints: [5, 4, 3, 2, nil, nil, 33]
+
+
+Arrays also have these methods (and many more):
+each   - loop through the array.  An iterator over an array, that takes a block.
+select - filter array by selecting.  Takes a block where you specify condition how you want to filter.
+reject - filter array by rejecting.  Opposite of select.
+map    - modify each element in the array.  Modifies all elements based on the block.
+
+The array API is located here:
+http://ruby-doc.org/core-2.2.0/Array.html
+http://ruby-doc.org/core-2.2.0/Array.html
+
+a = [1, 3, 4, 7, 8, 10]
+a.each { |num| print num } # prints: 1347819  "num" can be any name, the element name.  NOTE: print doesn't print a newline.
+puts
+
+new_arr = a.select { |num| num > 4 }  # prints all elements > 4, like this:  [7, 8, 10]
+p new_arr
+
+new_arr = a.select { |num| num < 10 }.reject{|num| num.even? } # prints: [1, 3, 7]
+p new_arr
+
+new_arr = a.map{|x| x*3} # prints: [3, 9, 12, 21, 24, 30]
+p new_arr
+
+Array API is very flexible and powerful.
+Lots of ways to process elements inside the array.
+
+RANGES
+
+Ranges are used to express natural consecutive sequences, like...
+
+1..20    'a'..'z'
+
+There are 2 rules to remember for ranges:
+
+1) Two dots (..) mean all-inclusive, so 1..20 includes 1 AND 20, and all integers between.
+2) Three dots (...) means end-EXclusive, so 1...20 is equivalent to 1..19
+
+Ranges are efficient.   Only the start and end are stored (So only 1 and 10 are stored for [1..10])
+Ranges can be converted to an array with to_a
+Ranges are used for conditions and intervals.
+Ranges are useful for consecutive sequences
+You can convert a range to an array (via the to_a() method for more functionality.
+
+range = 1..10
+puts range # prints: 1..10
+print range.to_a()  # prints: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+some_range = 1..3
+puts some_range.max # prints: 3
+puts some_range.include?(2) # prints: true
+
+puts (1...10) === 5.96873273  # prints: true
+puts (1...10) # prints: 1...10
+puts ('a'...'r') === "q" # prints: true
+puts ('a'...'r') === "r" # prints: false
+
+p ('k'..'z').to_a().sample(2)  # prints: ["u", "l"]  NOTE: sample(2) returns 2 random elements.
+
+
+age = 55
+case age # NOTE:  A case statement uses a triple-equals (===) by default.
+	  when 0..12  then puts "Still a baby"
+	  when 13..99 then puts "Teenager at heart!"
+	  else puts "You're too old"
+end # PRINTS:  Teenager at heart!
+
+
+
+HASHES
+
+Hashes are indexed collections of objects.
+Hasjes are created with either {} or Hash.new
+Hashes are also known as associative arrays.
+Index(key) can be anything--not just an integer as in the case of arrays.
+Hashes are accessed using the [] operator, like arrays.
+Hash values are set using these operators:  => (creation)  [] (post creation)
+
+
+
+
+# The following line is a HASH, not a block.
+editor_props = {"font" => "Arial", "size" => 12, "color" => "red"}
+puts editor_props.length # prints: 3
+puts editor_props["font"] # prints: Arial
+
+editor_props["background"] = "Blue"
+editor_props.each_pair do |key, value|
+	puts "Key: #{key} value: #{value}"
+end
+
+The above code prints the following 6 lines:
+3
+Arial
+Key: font value: Arial
+Key: size value: 12
+Key: color value: red
+Key: background value: Blue
+
+What if you try to access a value in the Hash for which an entry doesn't exist?
+The value nill will be returned.
+
+If a Hash is created with Hash.new(0), 0 is returned instead.
+
+See Ruby Hash API here:
+http://ruby-doc.org/core-2.2.0/Hash.html
+
+
+word_freq = Hash.new(0)
+p word_freq # prints:  {}   Empty curly braces will print regardless of the integer number passed to Hash.new() above.
+sentence = "Chicka chicka boom boom"
+sentence.split.each do |word|  # split makes sentence an array of 4 elements, and each loops through each of the 4 words.
+  word_freq[word.downcase] += 1  # word.downcase converts each word to lower case.
+  p word_freq
+end
+
+As of Ruby 1.9...
+1) The order that you put data into a Hash is maintained.
+2) If using symbols as keys, you can use "symbol:" syntax.
+
+If a Hash is passed to a method as the last argument,
+you can drop the {} (curly braces) altogether.
+
+
+# NOTE:  The below text followed by a colon (:) are SYMBOLS.
+family_tree_19 = {oldest: "Jim", older: "Joe", younger: "Jack"}
+family_tree_19[:youngest] = "Jeremy"
+p family_tree_19
+
+def adjust_colors(props = {foreground: "red", background: "white"})
+  puts "Foreground: #{props[:foreground]}" if props[:foreground]
+  puts "Background: #{props[:background]}" if props[:background]
+end
+
+# Below are 4 calls to the above adjust_colors() method.
+adjust_colors()
+adjust_colors ({ :foreground => "green"})
+adjust_colors ({ background: "yellow"})     # background: is the typical SYMBOL (appended colon)
+adjust_colors ({ :background => "magenta"}) # :background is the flip SYMBOL (prepended colon)
+
+
+
+CONFUSION BETWEEN HASH AND BLOCKS
+
+a_hash = { :one => "one" }
+puts a_hash # prints:  {:one=>"one"}
+
+# But if you do this, Ruby throws an error cuz it thinks this is a block:
+puts {:one=>"one"}
+
+# To fix the above problem, put parenthesis around it, like this:
+puts ({:one=>"one"})
+# Or, you can completely drop the curly braces:
+puts :one=>"one"
+
+Summary
+* Hashes are indexed collections
+* Usage is very similar to regular arrays
+* Although uncommon, hashes can somethimes be confused (even by the Ruby interpreter) for blocks.
+
+For the upcoming assignment:
+Instructions:    https://github.com/jhu-ep-coursera/fullstack-course1-module2/blob/master/Assignments/Lesson02-Assignment01-Collections/README.pdf
+Bootstrap files: https://github.com/jhu-ep-coursera/fullstack-course1-module2/tree/master/Assignments/Lesson02-Assignment01-Collections
+
+
+CLASSES
+
+Classes are things (blueprints)
+Classes are containers of methods (behavior)
+Objects are instances of classes.
+Objects contain instance variables (state)
+
+Instance variables begin with @  (Example: @name)
+Instance variables aren't declared, they just spring into existence when first used.
+Instance variables are available to all instance methods of the class.
+
+Classes are factories.
+Calling new method creates an instance of class.  (new causes initialize)
+Object's state can be (should be) initialized inside the initialize() method, aka the constructor.
+
+
+class Person
+	def initialize(name, age) # The initialize() method is the constructor.
+		@name = name
+		@age = age
+	end
+
+	def get_info()
+		@additional_info = "Interesting"
+		"Name: #{@name}, age: #{@age}"
+	end
+end
+person1 = Person.new("Joe", 14)
+p person1.instance_variables # Prints: [:@name, :@age]
+puts person1.get_info()      # Prints: Name: Joe, age: 14
+p person1.instance_variables # Prints: [:@name, :@age, :@additional_info]
+
+Accessing Data...
+Instance variables are private--they can't be accessed outside the class.
+To access instance variables outside the class getter/setter methods must be defined.
+Class methods have public accesss by default.
+
+
+class Person
+    def initialize(name, age) # CONSTRUCTOR
+        @name = name
+        @age  = age
+    end
+
+    def name # This is a setter method.
+        @name
+    end
+
+    def name= (new_name) # This a getter method.  NOTE: The = char. must be appended to the method name!!!
+        @name = new_name
+    end
+
+    def age # This is the setter method.
+        @age
+    end
+end
+person1 = Person.new("Joe", 14)
+puts person1.name # prints: Joe
+person1.name = "Mike"
+puts person1.name # prints: Mike
+puts person1.age
+
+Person1 = Person.new("Joe, 14)
+puts person1.name # prints: Joe
+person.name = "Mike"
+puts.person1.name # prints: Mike
+puts person1.age
+
+
+
+There is an easier syntax of getting/setting so
+you don't need to define getter/setter methods...
+
+1) Use atr_accessor - getter and setter
+2) Use attr_reader - getter only
+3) Use attr_writer - setter only
+
+class Person
+  attr_accessor :name, :age  # getters and setters for name and age
+end
+person1 = Person.new  # Upon creation, person1 name + age is NOT initialized
+p person1.name
+person1.name = "Mike"
+person1.age = 15
+puts person1.name
+puts person1.age
+person1.age = "fifteen"
+puts person1.age
+
+THE self KEYWORD...
+
+The keyword "self" in Ruby is analogous to the keyword "this" in Java.
+Inside the instance method, self refers to the object itself.
+Using self for calling methods of the same instance is redundant--there's
+no need for it.
+
+Sometimes using "self" is required; i.e., when it could mean
+a local variable assignment.  Outside the instance method definition,
+self refers to the class itself.
+
+class Person
+  attr_reader :age
+  attr_accessor :name
+
+  def initialize(name, ageVar) # CONSTRUCTOR
+    @name = name
+    self.age = ageVar # Calls the age= method.  This line is equivalent to: @age = ageVar  But NOT equivalent to: age = ageVar
+    puts @age
+  end
+
+  def age= (new_age)
+    @age = new_age unless new_age > 120
+  end
+end
+person1 = Person.new("Kim", 13)
+puts "My age is #{person1.age}" # prints: My age is 13
+person1.age = 121
+puts person1.age  #prints: 13  (Because age was assigned to > 120)
+
+
+
+CLASS INHERITANCE AND CLASS METHODS
+
+The || (double-pipe) operator.  Similar to the Java conditional operator.
+If @x is true, the following will assign @x to @x; otherwise, @x will be assigned 5.
+@x = @x || 5  # EQUIVALENT TO: @x ||= 5
+
+
+class Person
+  attr_reader :age
+  attr_accessor :name
+
+  def initialize(name, age) # CONSTRUCTOR
+    self.age = age
+  end
+
+  def age= (new_age)
+    @age ||= 5  # this initializes age to 5 only the first time this method gets called.  Because the first time this is called, age = nil, and nil is considered false.
+    @age = new_age unless new_age > 120
+  end
+end
+person1 = Person.new("Kim", 130)
+puts person1.age # prints: 5
+person1.age = 10
+puts person1.age # prints: 10
+person1.age = 200
+puts person1.age # prints: 10
+
+
+
+Class methods and class variables are invoked on the class
+(as opposed to instance of a class).  Class methods and class
+variables are similar to static methods and variables in Java.
+
+The "self" keyword outside of the method definition refers to
+the Class object.
+
+There are 3 ways to define class methods in Ruby.
+Class variables begin with @@  (Recall that method
+variables begin with just one @)
+
+
+class MathFunctions
+    def self.double(var)   # The "self." means it's a class method.  The "self." is required for this line to compile.
+      times_called;  var * 2;
+    end
+
+    class << self  # Using "class << self" makes this times_called method a class method.  But we could've defined this as a class method like the one above by using: def self.times_called
+      def self.times_called
+        @@times_called ||= 0  #  Equivalent to: @@times_called = @times_called || 0   The first time this line is called, times_called = Nil, which evaluates to false so 0 will be assigned.
+        @@times_called +=1
+      end
+    end
+end
+
+def
+  MathFunctions.triple(var)
+  times_called;  var * 3;
+end
+
+# Notice, no class instances are created below, we're just calling the class methods directly...
+puts MathFunctions.double(5)    # prints: 10
+puts MathFunctions.triple(3)    # prints:  9
+puts MathFunctions.times_called # The number of times the MathFunctions class is called.  prints: 3
+
+
+
+Class Inheritance
+Every class implicity inherits from the Object class (like Java).
+An Object class inherits from the BasicObject class.
+In Ruby, there is no multiple inheritance.  Instead, "Mixins" are used.
+
+class Dog
+  def to_s
+    "Dog"
+  end
+
+  def bark
+    "barks loudly"
+  end
+end
+
+class SmallDog < Dog  # SmallDog class inherits (denoted by <) from Dog class
+  def bark # Overrides the Dog.bark() method.
+    "barks quietly"
+  end
+end
+
+dog = Dog.new  # Creats an instance of Dog class.
+small_dog = SmallDog.new # Creats an instance of SmallDog class.
+puts "#{dog}1 #{dog.bark}" # prints: Dog1 barks loudly
+puts "#{small_dog}2 #{dog.bark}" # prints: Dog2 barks quietly
+
+Summary
+Class inheritance lets you override the parent class's behavior
+Class methods do not need an instance of an object to be called (like Java static methods).
+Class variables begin with @@
+Method variables begin with @
+
+
+
+MODULES
+
+A module is just a container for classes, methods, constants, or other modules.
+
+Modules are similar to a Class, but can't be instantiated.
+NOTE: Class inherits from Module and adds "new".  So you can't
+have an object of a specific module, like you could have an
+object of a class.
+
+Modules serve two main purposes:
+1) Namespace - A way to keep identical-named objects from colliding.  In Java, you'd put identical-named objects in separate packages.
+2) Mix-in
+
+In the below code, modules are used distinguish between the two classes named Match.
+
+module Sports
+  class Match
+    attr_accessor :score
+  end
+end
+
+module Patterns
+  class Match
+    attr_accessor :complete
+  end
+end
+
+match1 = Sports::Match.new  # Sports::Match calls the class in the Sports module.
+match1.score = 45
+puts match1.score  # prints: 43
+
+match2 = Patterns::Match.new # Patterns::Match calls the class in the Patterns module.
+match2.complete = true
+puts match2.complete  # prints: true
+
+
+Modules as Mixins...
+
+In Java, Interfaces are a "contract" as to what a class "could" do.
+Mixins provide a way to share (mix-in) ready code among multiple classes.
+You can include built-in modules like Enumerable that can do the hard
+work for you.
+Here's an example of a Module used as a Mix-in...
+
+module SayMyName
+  attr_accessor :name
+  def print_name
+      puts "Name: #{@name}"
+  end
+end
+
+class Person
+  include SayMyName # NOTE: Here we include the SayMyName module inside the Person class.
+end
+
+class Company
+  include SayMyName # NOTE: Here we include the SayMyName module inside the Company class.
+end
+
+person = Person.new
+person.name = "Joe"
+person.print_name  # prints: Joe
+company = Company.new
+company.name = "Turds-R-Us Sewage Treatment, Inc"
+company.print_name  # prints: Turds-R-Us Sewage Treatment, Inc
+
+
+Enumerable Module
+
+The Inumerable module is included in map, select, reject, detect classes.
+Used by Array class and many others
+You can "include" the Enumerable module in your own class
+Provide an implementaton for each method
+All the other functionality of Enumerable is magically available to you.
+
+This example uses the following 3 files:
+
+============================================
+# This file is named: player.rb
+class Player
+  attr_reader :name, :age, :skill_level
+
+  def initialize(name, age, skill_level) # CONSTRUCTOR
+    @name        = name
+    @age         = age
+    @skill_level = skill_level
+  end
+
+  def to_s
+    "<#{name}: #{skill_level}(SL), #{age}(AGE)>"
+  end
+end
+============================================
+# This file is named: team.rb
+class Team
+  include Enumerable  # LOTS of functionality obtained by including Enumerable.
+                      # But to obtain this functionality you must define one method
+                      # in this class--the each() method below.
+
+  attr_accessor :name, :players
+
+  def initialize(name) # CONSTRUCTOR
+    @name = name
+    @players = [] # @players is defined here as an empty array.
+  end
+
+  def add_players(*players) # The splat operator designates a variable number of players arguments
+    @players += players # This adds the array of players passed into this method to the @players array defined
+  end
+
+  def to_s
+    "#{@name} team: #{@players.join(", ")}"
+  end
+
+  # For this class to include Enumerable (above), this class must define
+  # the each() method, as shown here...
+  def each
+    @players.each { |player| yield player }
+  end
+end
+============================================
+# This file is named: main.rb
+require_relative 'player' # includes the player.rb file
+require_relative 'team'   # includes the team.rb file
+
+player1 = Player.new("Bob", 13, 5);  player2 = Player.new("Jim", 15, 4.5);
+player3 = Player.new("Mike", 21, 5); player4 = Player.new("Joe", 14, 5);
+player5 = Player.new("Scott", 16, 3);
+
+red_team = Team.new("Red");
+red_team.add_players(player1, player2, player3, player4, player5)
+
+# select only players between 14 and 20, and reject any player below 4.5 skill level
+elig_players = red_team.select {|player| (14..20) === player.age}.reject {|player| player.skill_level < 4.5}
+puts elig_players
+============================================
+
+Summary
+1) Modules allow you to "mixin" useful code into other classes
+2) require_relative is useful for including other ruby files relative to the current Ruby code.
+
+
+SCOPE
+
+Methods and classes begin new scope for variables.
+Outer scope variables don't get carried over to inner scope.
+Use the local_variables method to see which variables are in
+(and not in) the current scope.
+===================================================
+v1 = "v1 outside"
+
+class MyClass
+  def my_method()
+  	v1 = "v1 inside"
+  	p v1
+  	p local_variables()
+   end
+ end
+
+ p v1  # prints: v1 outside
+ obj = MyClass.new()
+ obj.my_method # prints: v1 inside
+ p local_variables # prints: [:v1, :obj]
+ p self  # prints: main
+===================================================
+
+CONSTANTS
+
+A constant is any reference that begins with uppercase,
+including classes and modules.
+
+Constants' scope rules are different than variable
+scope rules.
+
+Inner scope can see constants defined in outer scope
+and can also override outer constants, but the value
+of the overridden outside constant remains unchanged.
+
+===================================================
+module Test
+  PI = 3.14
+
+  class Test
+    def what_is_pi
+  	  puts PI
+  	end
+  end
+end
+
+Test::Test.new.what_is_pi # prints: 3.14
+
+module MyModule
+  MyConstant = 'Outer Constant'
+
+  class MyClass
+  	puts MyConstant  # prints: Outer Constant
+  	MyConstant = 'Inner Constant'
+  	puts MyConstant  # prints: Outer Constant
+  end
+  puts MyConstant  # prints: Outer Constant
+end
+===================================================
+
+THE SCOPE OF BLOCKS
+
+Blocks inherit outer scope
+Block is a closure.  A block remebers the context in
+which it was defined and uses that context whenever
+it's called.
+
+===================================================
+class BankAccount
+  attr_accessor :id, :amount
+
+  def initialize(id, amount)  # CONSTRUCTOR
+	@id = id
+	@amount = amount
+  end
+end
+
+acct1 = BankAccount.new(123, 200)
+acct2 = BankAccount.new(321, 100)
+acct3 = BankAccount.new(421, -100)
+accts = [acct1, acct2, acct3]
+
+total_sum = 0
+accts.each do |eachAcct|
+	          total_sum += eachAcct.amount
+           end
+
+puts total_sum # prints: 200
+===================================================
+
+Even though blocks share the outer scope, a variable
+created inside a block is available only to the block.
+
+Parameters to the block are ALWAYS LOCAL to the block,
+even if they have the same name as variables in the
+outer scope.
+
+You can explicitly declare block-local variables after
+a semicolon in the block parameter list.
+
+
+SUMMARY
+Methods and classes start a new scope for variables.
+Constants maintain scope, so a constant is available
+inside classes/methods even if it's defined outside
+the class/method.  Blocks inherit outer scope, but can
+be overridden.
+
+ACCESS CONTROL METHODS
+
+There are 3 levels of access control in Ruby.
+
+When designing a class it's important to think about
+how much of it you will be exposing to the world.
+
+Encapsulation: try to hide the internal representation
+of the object so you can change it later.
+
+The 3 levels of access control are:
+* public
+* protected
+* private  (How private is private access in Ruby?)
+
+----------------------------------------
+class Car
+  def initialize(speed, comfort)  # CONSTRUCTOR
+  	@rating = speed * comfort
+  end
+
+  def rating
+    @rating
+  end
+ end
+
+ puts Car.new(4, 5).rating  # Prints: 20
+----------------------------------------
+
+There are 2 ways to specify access control in Ruby:
+
+1) Specify public, protected, or private
+   NOTE: By default, all Ruby methods are PUBLIC.
+
+2) Define the methods regularly and then specify
+   public, protected, private access levels and list
+   the comma-separated methods under those levels
+   using METHOD SYMBOLS.
+
+----------------------------------------
+class MyAlgorithm
+  private
+    def test1()
+      "Private"
+    end
+
+  protected
+    def test2()
+      "Protected"
+    end
+
+  public
+    def test3()
+      "Public"
+    end
+end
+
+class Another
+  def test4()
+  	"Private, as declared later"
+  end
+
+  private :test4 # This line is an alternative way of declaring the test1() method as private.
+end
+
+myAl = MyAlgorithm.new()
+# puts myAl.test1()  Calling this method here will produce an error--not allowed.
+# puts myAl.test2()  Calling this method here will produce an error--not allowed.
+puts myAl.test3()  # Prints: Public
+
+anot = Another.new()
+# puts anot.test4() Calling this method here will produce an error--not allowed.
+
+----------------------------------------
+
+public methods - No access control is enforced.  Anybody can access these methods.
+protected methods - Can be invoked by the objects of the defining class or
+                    its subclasses.
+private methods - Cannot be invoked with an explicit receiver.  However,
+                  the exception is that setting an attribute can be invoked
+                  with an explicit receiver.  (Even calling self.privateMethod()
+                  within the class is not allowed.)
+
+
+----------------------------------------
+class Person
+  def initialize(age)
+  	self.age = age # This calls the age() method below--is legal, it works.
+  	puts my_age()    # This calls the my_age() method below.
+  	# puts self.may_age  # This is ILLEGAL--can't use self or any other receiver
+  end
+
+  private
+    def my_age()
+      @age
+    end
+
+    def age=age  # This is a setter method, so the call to this method above works.
+      @age = age
+    end
+end
+
+person = Person.new(57) # Prints: 57
+----------------------------------------
+
+SUMMARY
+Public and private access controls are used most frequently.
+Private methods are not callable from outside or inside the
+class with an explicit receiver.
+
+
+UNIT TESTING
+
+Why write unit tests?  To test the code!
+Helps with refactoring code cuz if unit testing passed before
+refactoring, it should also pass after refactoring.
+Unit testing also serves as documentation for developers.
+
+
+
+
+STOPPED HERE AT 1:00
+============================================================
+https://www.coursera.org/learn/ruby-on-rails-intro/lecture/BAGak/introduction-to-unit-testing
+https://www.coursera.org/learn/ruby-on-rails-intro/lecture/BAGak/introduction-to-unit-testing
+https://www.coursera.org/learn/ruby-on-rails-intro/lecture/BAGak/introduction-to-unit-testing
+
