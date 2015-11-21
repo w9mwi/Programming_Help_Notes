@@ -1,0 +1,468 @@
+
+How to implement onClick() method and View.OnClickListene`r
+==========================================================
+http://www.survivingwithandroid.com/2012/09/how-to-handle-button-click-java-code-vs.html
+http://www.survivingwithandroid.com/2012/09/how-to-handle-button-click-java-code-vs.html
+
+
+
+When to use Log.v(), Log.d(), Log.i(), Log.w(), Log.e()
+=======================================================
+http://stackoverflow.com/questions/7959263/android-log-v-log-d-log-i-log-w-log-e-when-to-use-each-one
+http://stackoverflow.com/questions/7959263/android-log-v-log-d-log-i-log-w-log-e-when-to-use-each-one
+Log.v(); // Verbose
+Log.d(); // Debug
+Log.i(); // Info
+Log.w(); // Warning
+Log.e(); // Error
+
+
+
+
+METHODS USED IN MainActivity.java FILE
+======================================
+
+To implement the onClick(View v) method below, you must first
+implement View.OnClickListener, like this:
+
+public class MainActivity extends Activity implements View.OnClickListener
+
+private static final String TAG = "LIFECYCLES";
+
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onStart()
+    */
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        Log.i(TAG, "onStart() called.");
+    }
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onResume()
+    */
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        Log.i(TAG, "onResume() called.");
+    }
+
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onPause()
+    */
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        Log.i(TAG, "onPause() called.");
+    }
+
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onStop()
+    */
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        Log.i(TAG, "onStop() called.");
+    }
+
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy() called.");
+    }
+
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onRestart()
+    */
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
+        Log.i(TAG, "onRestart() called.");
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        Log.i(TAG, "onKeyDown() called.");
+        return(super.onKeyDown(keyCode, event));
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        Log.i(TAG, "onClick() called.");
+    }
+
+
+=====================================
+Contents of string.xml:
+
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <string name="app_name">Silent Mode Toggle</string>
+        <string name="toggle_silent_mode">Toggle Silent Mode</string>
+    <string name="action_settings">Settings</string>
+    </resources>
+
+
+=====================================
+Contents of activity_main.xml:
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="?android:attr/selectableItemBackground">
+    <!--  The above line of code makes the ringer_on.png and ringer_off.png images
+          selectable.  When you press the image, ripple waves emit from your point of touch. -->
+
+
+    <ImageView
+        android:id="@+id/phone_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ringer_on"
+        android:contentDescription="@string/toggle_silent_mode"/>
+
+</FrameLayout>
+
+=====================================
+Contents of MainActivity.java
+
+package com.dummies.silentmodetoggle;
+
+import android.app.Activity;
+import android.media.AudioManager;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+
+
+/*
+ Log.v(); // Verbose
+ Log.d(); // Debug
+ Log.i(); // Info
+ Log.w(); // Warning
+ Log.e(); // Error
+
+ Let's go in reverse order:
+ Log.e: This is for when bad stuff happens. Use this tag in places like inside
+        a catch statment. You know that an error has occurred and therefore
+        you're logging an error.
+
+ Log.w: Use this when you suspect something shady is going on. You may not be
+        completely in full on error mode, but maybe you recovered from some
+        unexpected behavior. Basically, use this to log stuff you didn't expect
+        to happen but isn't necessarily an error. Kind of like a "hey, this happened,
+        and it's weird, we should look into it."
+
+Log.i: Use this to post useful information to the log. For example: that you have
+       successfully connected to a server. Basically use it to report successes.
+
+Log.d: Use this for debugging purposes. If you want to print out a bunch of messages
+       so you can log the exact flow of your program, use this. If you want to keep a log of variable values, use this.
+
+Log.v: Use this when you want to go absolutely nuts with your logging. If for some
+       reason you've decided to log every little thing in a particular part of your
+       app, use the Log.v tag.
+
+ And as a bonus...
+ Log.wtf: Use this when stuff goes absolutely, horribly, holy-crap wrong. You know
+          those catch blocks where you're catching errors that you never should
+          get...yea, if you wanna log them use Log.wtf
+ */
+
+public class MainActivity extends Activity implements View.OnClickListener
+{
+    private static final String TAG = "LIFECYCLES";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // NOTE: FrameLayout is a subclass of ViewGroup, and ViewGroup a subclass of View class.
+        //       FrameLayout is the parent View defined in activity_main.xml
+        FrameLayout contentView = (FrameLayout) findViewById(R.id.content);
+        contentView.setOnClickListener(this);
+
+        AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+
+
+
+//        contentView.setOnClickListener(new View.OnClickListener()
+//        {
+//            public void onClick(View v)
+//            {
+//                // Toggle the ringer mode.  If it's currently normal,
+//                // make it silent.  If it's currently silent,
+//                // do the opposite.
+//                // RingerHelper.performToggle(audioManager);
+//
+//                // Update the UI to reflect the new state
+//                // updateUi();
+//
+//Log.d("SilentModeToggle", "onClick() called.");
+//            }
+//        });
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onStart()
+    */
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        Log.i(TAG, "onStart() called.");
+    }
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onResume()
+    */
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        Log.i(TAG, "onResume() called.");
+    }
+
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onPause()
+    */
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        Log.i(TAG, "onPause() called.");
+    }
+
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onStop()
+    */
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        Log.i(TAG, "onStop() called.");
+    }
+
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy() called.");
+    }
+
+
+    /* (non-Javadoc)
+    * @see android.app.Activity#onRestart()
+    */
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
+        Log.i(TAG, "onRestart() called.");
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        Log.i(TAG, "onKeyDown() called.");
+        return(super.onKeyDown(keyCode, event));
+    }
+
+    @Override
+    public void onClick(View v) {
+        Log.i(TAG, "onClick() called.");
+    }
+}
+
+=====================================
+=====================================
+=====================================
+=====================================
+
+INTENTS - P. 123
+================
+
+Do this...
+
+Intent turnLightOn = new Intent("TURN_LIGHT_ON");
+
+An intent will allow  messages to be sent in these 3 ways:
+
+1) Start another activity by calling the startActivity() method,
+   which accepts an Intent object as a parameter.
+
+2) Notify one or more BroadcastReceiver components by calling
+   the sendBroadcast() method, which also accepts an Intent
+   object as a parameter.
+
+3) Communicate with a background service by calling the
+   startService() or bindService() methods.  Both these
+   methods accept intents parameters.
+
+An intent is the glue that binds together the various components
+of the application.  It provides a mechanism that allows you to
+comunicate within your app, as well as comminicate with other apps.
+
+An intent's data consists of these 2 elements:
+
+1) Action - The general action to be performed.  A few common
+            actions include ACTION_VIEW, ACTION_EDIT, and
+            ACTION_MAIN.  You can also provide your own custom
+            action.
+
+2) Data - The data to operate on, such as a record in a database,
+          or a URI that should be opened, such as a URL.
+
+Intents can carry an array of other data that includes these 4 elements:
+
+1) category - Gives additional information about the action to execute.
+
+2) type - A particular type (a MIME type) of intent data.
+
+3) component - Specifies an explicit component name of the class
+               on which to execute the intent.
+
+4) extras - A bundle of additional, key-based information that's
+            used to provide extra information to the receiving
+            component.
+
+Intents are evaluated in the folowing 2 ways:
+
+1) Expicitly - The most common way to address intents.  There
+               exists an explicit component or an exact class
+               that wil execute the data in the intent.
+
+2) Implicit - See page 126
+
+
+PendingIntent - A PendingIntent is used for something different than
+                regular intents.  A PendingIntent is...
+
+                A) Created by your application.
+                B) Given to another application.
+
+                Do this to grant another application the right to
+                perform an operation that you've specified in
+                your own application.  When the other application
+                determines that the given work needs to occur, this
+                other application executes a PendingIntent, which
+                is sent back to your application to perform the
+                necessary work.
+
+A BroadcastReceiver is responsible for handling broadcast intents.
+
+AppWidgetProvider is a subclass of BroadcastReceiver.
+The AppWidget class extends the AppWidgetProviderProvider class.
+
+
+Application Not Responding (ANR) Error
+======================================
+When the activity running on the main thread must perform a
+computationaly intensive process (downloading/uploading files,
+running audio, etc.), that activity should not run the
+process.  The main activity should pass off the computationally
+intensive process to a background thread by using the
+IntentService class.  DOING THIS WILL PREVENT THE
+APPLICATION NOT RESPONDING MESSAGE FROM OCCURRING.
+
+The Intent object is wrapped inside a PendingIntent because
+a PendingIntent is used for inter-process communication.
+When the PendingIntent is fired of, the real work that
+needs to be done is wrapped up in the broadcast Intent object.
+
+
+The work that your app does to to update the widget is devided
+into two parts:
+
+1) The AppWidgetProvider - This part must finish processing quickly.
+                           It does the light work.
+
+2) The IntentService - This part has no time limit to finish processing.
+                       It does the heavy work, which takes longer.
+
+
+BUILDING AN APK (Android Package) FILE
+======================================
+
+1)
+From the menu, select:  Build / Generate Signed APK...
+Next, select the app you want from the dropdown control,
+and press Next.
+
+2)
+Press the "..." button to the right of the "Key store path"
+field, which pops up a dialog screen.  On the dialog screen
+that pops up, select a directory to store your keystore file.
+At the bottom of this dialog screen, enter the name of your
+keystore file ("release.jks"), and press OK.
+
+3)
+Back on the original dialog screen, enter data into these fields:
+
+Password and Confirm (for the Key store)
+Alias
+Password and Confirm (for the key)
+Validity (years)
+Enter data into the "Certificate" section fields as you wish.
+Press OK.
+
+4)
+On the dialog screen that reappears (containing the info you just
+entered), press Next.  Another dialog screen appears.  Press Finish
+on that screen.
+
+The release.jks file is now located in this directory:
+C:\Tom\Programming\AndroidStudioProject_HelloAndroid
+
+The .apk file (named silentmodetoggle-release.apk)
+is now located in this directory:
+C:\Tom\Programming\AndroidStudioProject_HelloAndroid\silentmodetoggle
+
+
