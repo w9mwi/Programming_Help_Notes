@@ -1,4 +1,10 @@
 
+LEARN WOLFRAM LANGUAGE
+======================
+http://www.wolfram.com/language/elementary-introduction/
+http://www.wolfram.com/language/elementary-introduction/
+
+
 EXCELLENT ANDROID TUTORIAL
 ==========================
 http://www.tutorialspoint.com/android/index.htm
@@ -53,7 +59,6 @@ http://www.i-programmer.info/programming/android/5887-android-adventures-getting
 http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
 http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
 
-
 1) http://developer.android.com/training/basics/firstapp/creating-project.html
 
 2) http://developer.android.com/training/basics/firstapp/running-app.html
@@ -63,55 +68,29 @@ http://www.i-programmer.info/programming/android/5887-android-adventures-getting
 4) http://developer.android.com/training/basics/firstapp/starting-activity.html
 
 http://developer.android.com/training/basics/actionbar/index.html
-
 http://developer.android.com/training/basics/actionbar/setting-up.html
-
 http://developer.android.com/training/basics/actionbar/adding-buttons.html
-
 http://developer.android.com/training/basics/actionbar/styling.html
-
 http://developer.android.com/training/basics/actionbar/overlaying.html
-
 http://developer.android.com/training/basics/supporting-devices/index.html
-
 http://developer.android.com/training/basics/supporting-devices/languages.html
-
 http://developer.android.com/training/basics/supporting-devices/screens.html
-
 http://developer.android.com/training/basics/supporting-devices/platforms.html
-
 http://developer.android.com/training/basics/activity-lifecycle/index.html
-
 http://developer.android.com/training/basics/activity-lifecycle/starting.html
-
 http://developer.android.com/training/basics/activity-lifecycle/pausing.html
-
 http://developer.android.com/training/basics/activity-lifecycle/stopping.html
-
 http://developer.android.com/training/basics/activity-lifecycle/recreating.html
-
 http://developer.android.com/training/basics/fragments/index.html
-
 http://developer.android.com/training/basics/fragments/creating.html
-
 http://developer.android.com/training/basics/fragments/fragment-ui.html
-
 http://developer.android.com/training/basics/fragments/communicating.html
-
 http://developer.android.com/training/basics/data-storage/index.html
-
 http://developer.android.com/training/basics/data-storage/shared-preferences.html
-
 http://developer.android.com/training/basics/data-storage/files.html
-
 http://developer.android.com/training/basics/data-storage/databases.html
-
 http://developer.android.com/training/basics/intents/index.html
-
 http://developer.android.com/training/basics/intents/sending.html
-
 http://developer.android.com/training/basics/intents/result.html
-
 http://developer.android.com/training/basics/intents/filters.html
-
 http://developer.android.com/training/building-content-sharing.html
