@@ -40,7 +40,7 @@ Search text globally: Put focus on project/directory, then: Ctrl-Shift-F
 
 Quick Fix:                                 After changing the package name, put focus on the
                                            package name, press Alt+Enter  (A dialog will prompt
-                                           you for choices.
+                                           you for choices.)
 To open a method's declaration:            Place focus on the method call, press Ctrl+Left Mouse Click
 View class/method definition:              Place focus on class or method, press Ctrl+Space, wait for window to pop up.
 Show list of all method's in opened file:  Ctrl+F12
