@@ -57,7 +57,16 @@ Go to next Error in the editor:          F2
 Go to previous Error in the editor:      Shift-F2
 View a method's document header:         Ctrl-Q (After placing focus on the method call.)
 Open a command-line Oper. Sys. console   View / Tool Windows / Terminal  (Alt+F12)
-
+Delete a Module from parent Project      File / Project Structure - A dialog appears.  Highlight the Module
+                                         (located in the 'Modules' section) that you want to delete.  Press
+                                         the Delete key--you'll get a message box confirming that you want
+                                         to delete the Module.  Answer Yes.  Even though you deleted it,
+                                         this Module still appears inside the AndroidStudio 'Project' view,
+                                         so you'l want to delete it here too.  Under AndroidStudio's 'Project'
+                                         view, highlight the Module you want to delete; then select from some
+                                         menu (not sure which), 'Delete' to delete the Module from the
+                                         AndroidStudio 'Project' view.
+                                         the 
 List a .java file's methods (like Outline View in Eclipse):
 In far left frame, select "Structure"
 
