@@ -56,6 +56,7 @@ Analagous to Next/Previous web page:     Ctrl-Alt-Left/Right Arrow
 Go to next Error in the editor:          F2
 Go to previous Error in the editor:      Shift-F2
 View a method's document header:         Ctrl-Q (After placing focus on the method call.)
+Open a command-line Oper. Sys. console   View / Tool Windows / Terminal  (Alt+F12)
 
 List a .java file's methods (like Outline View in Eclipse):
 In far left frame, select "Structure"
