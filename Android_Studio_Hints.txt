@@ -33,10 +33,10 @@ http://www.developerphil.com/android-studio-tips-tricks-moving-around
 
 Popup list of recently-viewed files: Ctrl-E
 Search text in an opened file:       Ctrl-F (Press F3 to repeat the search.)
-Search text globally: Put focus on project/directory, then: Ctrl-Shift-F
-                      Then, in the 'Find' pane at the bottom of Android Studio,
-                      press the UP/DOWN arrows to navigate to the file(s)
-                      containing the text.
+Search text string globally: Put focus on project/directory, then: Ctrl-Shift-F
+                             Then, in the 'Find' pane at the bottom of Android Studio,
+                             press the UP/DOWN arrows to navigate to the file(s)
+                             containing the text.
 
 Quick Fix:                                 After changing the package name, put focus on the
                                            package name, press Alt+Enter  (A dialog will prompt
