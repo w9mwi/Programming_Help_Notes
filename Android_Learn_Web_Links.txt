@@ -59,9 +59,9 @@ http://www.i-programmer.info/programming/android/5887-android-adventures-getting
 http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
 http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
 
-1)  http://developer.android.com/training/basics/firstapp/creating-project.html
-2)  http://developer.android.com/training/basics/firstapp/running-app.html
-3)  http://developer.android.com/training/basics/firstapp/building-ui.html
+* 1)  http://developer.android.com/training/basics/firstapp/creating-project.html
+* 2)  http://developer.android.com/training/basics/firstapp/running-app.html
+* 3)  http://developer.android.com/training/basics/firstapp/building-ui.html
 4)  http://developer.android.com/training/basics/firstapp/starting-activity.html
 5)  http://developer.android.com/training/basics/actionbar/index.html
 6)  http://developer.android.com/training/basics/actionbar/setting-up.html
