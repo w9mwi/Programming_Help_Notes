@@ -26,9 +26,8 @@ To implement the onClick(View v) method below, you must first
 implement View.OnClickListener, like this:
 
 public class MainActivity extends Activity implements View.OnClickListener
-
+{
 private static final String TAG = "LIFECYCLES";
-
 
     /* (non-Javadoc)
     * @see android.app.Activity#onStart()
@@ -102,7 +101,7 @@ private static final String TAG = "LIFECYCLES";
     {
         Log.i(TAG, "onClick() called.");
     }
-
+}
 
 =====================================
 Contents of string.xml:
