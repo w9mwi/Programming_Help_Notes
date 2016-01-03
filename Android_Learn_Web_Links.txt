@@ -59,6 +59,7 @@ http://d.android.com/reference/android/app/Activity.html
 
 ANDROID STUDIO TUTORIALS
 ========================
+API REFERENCE: http://developer.android.com/index.html
 
 FEB. 2015:
 http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
