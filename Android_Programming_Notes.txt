@@ -27,7 +27,7 @@ implement View.OnClickListener, like this:
 
 public class MainActivity extends Activity implements View.OnClickListener
 {
-private static final String TAG = "LIFECYCLES";
+    private static final String TAG = "LIFECYCLES";
 
     /* (non-Javadoc)
     * @see android.app.Activity#onStart()
