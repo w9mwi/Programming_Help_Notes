@@ -1,8 +1,8 @@
+
 HOW TO BACKUP Windows 10 Hard Disk to DVDs
 ==========================================
 http://www.tomshardware.com/faq/id-2569587/back-windows.html
 http://www.tomshardware.com/faq/id-2569587/back-windows.html
-
 
 
 LEARN WOLFRAM LANGUAGE
@@ -11,25 +11,23 @@ http://www.wolfram.com/language/elementary-introduction/
 http://www.wolfram.com/language/elementary-introduction/
 
 
+ANDROID STUDIO TUTORIALS
+========================
+ANDROID API REFERENCE:    http://developer.android.com/index.html
+ANDROID STUDIO TUTORIAL:  http://developer.android.com/training/index.html
+ANDROID STUDIO TUTORIAL:
+http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
+
+
 EXCELLENT ANDROID TUTORIAL
 ==========================
 http://www.tutorialspoint.com/android/index.htm
-http://www.tutorialspoint.com/android/index.htm
-http://www.tutorialspoint.com/android/index.htm
-
-https://www.youtube.com/playlist?list=PLB03EA9545DD188C3
 https://www.youtube.com/playlist?list=PLB03EA9545DD188C3
 
 
-
-
-THREADS TUTORIAL:
+JAVA THREADS TUTORIAL
+=====================
 http://www.javabeginner.com/learn-java/java-threads-tutorial
-http://www.javabeginner.com/learn-java/java-threads-tutorial
-http://www.javabeginner.com/learn-java/java-threads-tutorial
-
-http://www.tutorialspoint.com/java/java_multithreading.htm
-http://www.tutorialspoint.com/java/java_multithreading.htm
 http://www.tutorialspoint.com/java/java_multithreading.htm
 
 
@@ -37,67 +35,9 @@ ANDROID DUMMIES BOOK
 ====================
 http://www.dummies.com/
 http://www.dummies.com/cheatsheet/androidappdevelopment
-
-UPDATES TO THE ANDROID BOOK
-===========================
-http://www.dummies.com/extras/androidappdevelopment
+UPDATES TO THE ANDROID BOOK: http://www.dummies.com/extras/androidappdevelopment
 
 DOWNLOADS FOR THE ANDROID BOOK
 ==============================
 http://www.dummies.com/DummiesTitle/productCd-1119017920,descCd-DOWNLOAD.html
-http://www.dummies.com/DummiesTitle/productCd-1119017920,descCd-DOWNLOAD.html
 http://www.dummies.com/go/androidappdevfd3e
-http://www.dummies.com/go/androidappdevfd3e
-
-
-
-ANDROID ACTIVITY LIFECYCLE SAMPLE CODE
-======================================
-http://eagle.phys.utk.edu/guidry/android/lifecycleMethods.html
-http://eagle.phys.utk.edu/guidry/android/lifecycleMethods.html
-
-http://d.android.com/reference/android/app/Activity.html
-http://d.android.com/reference/android/app/Activity.html
-
-
-ANDROID STUDIO TUTORIALS
-========================
-API REFERENCE: http://developer.android.com/index.html
-
-FEB. 2015:
-http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
-http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
-http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
-
-* 1)  http://developer.android.com/training/basics/firstapp/creating-project.html
-* 2)  http://developer.android.com/training/basics/firstapp/running-app.html
-* 3)  http://developer.android.com/training/basics/firstapp/building-ui.html
-* 4)  http://developer.android.com/training/basics/firstapp/starting-activity.html
-5)  http://developer.android.com/training/basics/actionbar/index.html
-6)  http://developer.android.com/training/basics/actionbar/setting-up.html
-7)  http://developer.android.com/training/basics/actionbar/adding-buttons.html
-8)  http://developer.android.com/training/basics/actionbar/styling.html
-9)  http://developer.android.com/training/basics/actionbar/overlaying.html
-10) http://developer.android.com/training/basics/supporting-devices/index.html
-11) http://developer.android.com/training/basics/supporting-devices/languages.html
-12) http://developer.android.com/training/basics/supporting-devices/screens.html
-13) http://developer.android.com/training/basics/supporting-devices/platforms.html
-14) http://developer.android.com/training/basics/activity-lifecycle/index.html
-15) http://developer.android.com/training/basics/activity-lifecycle/starting.html
-16) http://developer.android.com/training/basics/activity-lifecycle/pausing.html
-17) http://developer.android.com/training/basics/activity-lifecycle/stopping.html
-18) http://developer.android.com/training/basics/activity-lifecycle/recreating.html
-19) http://developer.android.com/training/basics/fragments/index.html
-20) http://developer.android.com/training/basics/fragments/creating.html
-21) http://developer.android.com/training/basics/fragments/fragment-ui.html
-22) http://developer.android.com/training/basics/fragments/communicating.html
-23) http://developer.android.com/training/basics/data-storage/index.html
-24) http://developer.android.com/training/basics/data-storage/shared-preferences.html
-25) http://developer.android.com/training/basics/data-storage/files.html
-26) http://developer.android.com/training/basics/data-storage/databases.html
-27) http://developer.android.com/training/basics/intents/index.html
-28) http://developer.android.com/training/basics/intents/sending.html
-29) http://developer.android.com/training/basics/intents/result.html
-30) http://developer.android.com/training/basics/intents/filters.html
-31) http://developer.android.com/training/building-content-sharing.html
-
