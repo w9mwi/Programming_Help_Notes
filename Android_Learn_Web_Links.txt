@@ -13,12 +13,11 @@ http://www.wolfram.com/language/elementary-introduction/
 
 ANDROID STUDIO TUTORIALS
 ========================
-ANDROID API REFERENCE:    http://developer.android.com/index.html
-ANDROID STUDIO TUTORIAL:  http://developer.android.com/training/index.html
-SETUP ANDROID STUDIO:     http://developer.android.com/sdk/index.html
-BUILD YOUR FIRST APP:     http://developer.android.com/training/index.html
-LEARN ABOUT ANDROID:      http://developer.android.com/guide/index.html
-SAMPLE ANDROID PROJECTS:  http://developer.android.com/samples/index.html
+SETUP ANDROID STUDIO:      http://developer.android.com/sdk/index.html
+ANDROID API REFERENCE:     http://developer.android.com/index.html
+ANDROID FUNDAMENTALS:      http://developer.android.com/guide/index.html
+ANDROID STUDIO TUTORIALS:  http://developer.android.com/training/index.html
+DOWNLOAD ANDROID SAMPLES:  http://developer.android.com/samples/index.html
 3rd-PARTY TUTORIAL: http://www.i-programmer.info/programming/android/5887-android-adventures-getting-started-with-android-studio.html
 
 
