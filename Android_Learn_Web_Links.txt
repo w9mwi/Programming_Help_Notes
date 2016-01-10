@@ -14,6 +14,7 @@ http://www.wolfram.com/language/elementary-introduction/
 ANDROID STUDIO TUTORIALS
 ========================
 SETUP ANDROID STUDIO:      http://developer.android.com/sdk/index.html
+ANDROID STUDIO OVERVIEW:   http://developer.android.com/tools/studio/index.html
 ANDROID API REFERENCE:     http://developer.android.com/index.html
 ANDROID FUNDAMENTALS:      http://developer.android.com/guide/index.html
 ANDROID STUDIO TUTORIALS:  http://developer.android.com/training/index.html
