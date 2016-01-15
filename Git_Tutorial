@@ -2,6 +2,8 @@ CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         1) Create a new directory that will hold your new software project.
                         2) From the comand line, run the following:
                            > git init
+                           > dir .git   (You should now see a new .git folder that was created.)
+                           > git status (You should now see text that reveals the git status.)
 DETERMINE GIT STATUS  - From command line, run:
                            > git status
 DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
