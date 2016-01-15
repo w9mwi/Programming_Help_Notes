@@ -2,11 +2,12 @@ CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         1) Create a new directory that will hold your new software project.
                         2) From the comand line, run the following:
                            > git init
+DETERMINE GIT STATUS  - From command line, run:
+                           > git status
 DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         Go to the top-level directory/folder of your project (aka, the git repository),
                         then delete the .git folder, which may be invisible.  Doing this deletes the
                         git repository.  You can then delete all other files/folders from this folder
                         to make it completely empty.
-
 WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
                     that comprise your software project.
