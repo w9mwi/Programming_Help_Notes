@@ -27,5 +27,8 @@ COMMIT COMMAND    - To commit all files of your snapshot (files added with the g
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
-
-                    
+GIT LOG           - Run the following:
+                    > git log
+GIT CONFIG        - Run the following commands so git knows your name and e-mail address.  You need to
+                    do this ONLY ONCE.  Now when you commit files to your git repository, and you
+                    later run "git log", your name and e-mail address will show up in the log output.
