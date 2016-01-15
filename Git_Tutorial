@@ -4,8 +4,6 @@ CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                            > git init
                            > dir .git   (You should now see a new .git folder that was created.)
                            > git status (You should now see text that reveals the git status.)
-DETERMINE GIT STATUS  - From command line, run:
-                           > git status
 DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         Go to the top-level directory/folder of your project (aka, the git repository),
                         then delete the .git folder, which may be invisible.  Doing this deletes the
@@ -13,3 +11,21 @@ DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         to make it completely empty.
 WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
                     that comprise your software project.
+SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given point in time.
+                    Git’s term for creating a snapshot is called staging because we can add or remove
+                    multiple files before actually committing it to the project history.  Staging gives
+                    us the opportunity to group related changes into distinct snapshots—a practice that
+                    makes it possible to track the meaningful progression of a software project (instead
+                    of just arbitrary lines of code).  nly after executing git commit will our snapshot
+                    be recorded in the repository. Committed snapshots can be seen as “safe” versions of
+                    the project.  Git will never change them, which means you can do almost anything you
+                    want to your project without losing those “safe” revisions.
+ADD COMMAND       - After a new file (or set of files) is created, and these files contains the correct
+                    code, you can add them to your snapshot via the "add" command, like this:
+                    > git add index_1.html index_2.html index_3.html
+COMMIT COMMAND    - To commit all files of your snapshot (files added with the git "add" command, you can
+                    commit them to the repository via the git "commit" command:
+                    > git commit -m "Added index.html file."
+                    > git status
+
+                    
