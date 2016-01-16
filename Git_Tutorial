@@ -36,3 +36,23 @@ GIT CONFIG        - Run the following commands so git knows your name and e-mail
                     later run "git log", your name and e-mail address will show up in the log output.
                     > git config  --global user.name   "Joe Schmoe"
                     > git config  --global user.email  joeschmoe@yahoo.com
+GIT CHECKOUT        To ckeckout a previous snapshot, do the following:
+                    > git log  (Text similar to the following will display.)
+                      commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
+                      Author: TJB <w9mwi@yahoo.com>
+                      Date:   Thu Jan 14 20:22:41 2016 -0600
+                    > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d  (Checkout the snapshot shown above.)
+                    > git status
+                    > git log
+                    > git checkout master  (Returns to the master branch.)
+TAG A RELEASE       To tag a release, do the following:
+                    > git checkout master
+                    > git tag -a Version_1.0  -m "Tag Version 1.0"
+                    > You can now add/commit more files.  When you want to return to the "Version_1.0" tag, do this:
+                    > git checkout Version_1.0
+GIT REVERT          > git log
+                    > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
+                    > git revert b1b4e7a77fe1164952cad7699292024686c3357c
+
+
+                    
