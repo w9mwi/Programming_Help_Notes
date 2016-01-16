@@ -20,23 +20,23 @@ SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given p
                     be recorded in the repository. Committed snapshots can be seen as “safe” versions of
                     the project.  Git will never change them, which means you can do almost anything you
                     want to your project without losing those “safe” revisions.
-ADD COMMAND       - After a new file (or set of files) is created, and these files contains the correct
+ADD COMMAND       After a new file (or set of files) is created, and these files contains the correct
                     code, you can add them to your snapshot via the "add" command, like this:
                     > git add index_1.html index_2.html index_3.html
-COMMIT COMMAND    - To commit all files of your snapshot (files added with the git "add" command, you can
+COMMIT COMMAND    To commit all files of your snapshot (files added with the git "add" command, you can
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
-GIT LOG           - Run the following:
+GIT LOG           Run the following:
                     > git log  (Displays only git commits.)
                     > git log --oneline  (Displays each commit on only one line.)
                     > git log --oneline blue.html  (Displays each commit that contains "blue.html" on only one line.)
-GIT CONFIG        - Run the following commands so git knows your name and e-mail address.  You need to
+GIT CONFIG        Run the following commands so git knows your name and e-mail address.  You need to
                     do this ONLY ONCE.  Now when you commit files to your git repository, and you
                     later run "git log", your name and e-mail address will show up in the log output.
                     > git config  --global user.name   "Joe Schmoe"
                     > git config  --global user.email  joeschmoe@yahoo.com
-GIT CHECKOUT        To ckeckout a previous snapshot, do the following:
+GIT CHECKOUT      To checkout a previous snapshot, do the following:
                     > git log  (Text similar to the following will display.)
                       commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
                       Author: TJB <w9mwi@yahoo.com>
@@ -45,7 +45,7 @@ GIT CHECKOUT        To ckeckout a previous snapshot, do the following:
                     > git status
                     > git log
                     > git checkout master  (Returns to the master branch.)
-TAG A RELEASE       To tag a release, do the following:
+TAG A RELEASE     To tag a release, do the following:
                     > git checkout master
                     > git tag -a Version_1.0  -m "Tag Version 1.0"
                     > You can now add/commit more files.  When you want to return to the "Version_1.0" tag, do this:
@@ -53,6 +53,11 @@ TAG A RELEASE       To tag a release, do the following:
 GIT REVERT          > git log
                     > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
                     > git revert b1b4e7a77fe1164952cad7699292024686c3357c
-
-
+GIT RESET         Assume you made text changes to an already-committed file named: index.html
+                  To revert your changes made to index.html, do the following:
+                    > git reset --hard
+GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
+                  means dummy.html is NOT tracked.  To remove this index.html file AND ALL TRACKED FILES, run:
+                    > git clean -f
                     
+
