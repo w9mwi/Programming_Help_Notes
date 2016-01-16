@@ -74,6 +74,26 @@ BRANCHES         In Git, a branch is an independent line of development.  Branch
                  2) The Staged Snapshot
                  3) Committed Snapshots
                  4) Development Branches
-                 
-                    
+                 The following command displays our one and only branch: * master.  The master branch is Git’s default
+                 branch, and the asterisk next to it tells us that it’s currently checked out.  Notice that since
+                 there’s only one working directory for each project, only one branch can be checked out at a time.
+                 > git branch
+                 * master  (This gets displayed when "bit branch" is run.)
+                 Next, check out a previous snapshot (514fbe7 referes to the ID of the crazy.html commit.)
+                 > git checkout 514fbe7
+                 From this, let's now create a new branch called "crazy":
+                 > git branch crazy
+                 And now, let's checkout this new "crazy" branch so we'll no longer be on "master" branch.
+                 > git checkout crazy
+                 The new "crazy" branch is a completely isolated from the "master" branch, so we can
+                 mess with files in this same working directory without changing any files on the "master" branch.
 
+                 Rename crazy.html to rainbow.html, then use the following Git commands to update the repository.
+                 > git status
+                 > git rm crazy.html
+                 > git status
+                 > git add rainbow.html
+                 > git status
+                 The git rm command above tells Git to stop tracking crazy.html (and delete it if necessary),
+                 and git add command above starts tracking rainbow.html.  The renamed: crazy.html -> rainbow.html
+                 message in the final status output shows us that Git is smart enough to figure out when we’re renaming a file.
