@@ -50,14 +50,20 @@ TAG A RELEASE     To tag a release, do the following:
                     > git tag -a Version_1.0  -m "Tag Version 1.0"
                     > You can now add/commit more files.  When you want to return to the "Version_1.0" tag, do this:
                     > git checkout Version_1.0
-GIT REVERT          > git log
+GIT REVERT        Undo the specified commit by applying a new commit.  Undoes changes contained in committed snapshots.
+                    > git log
                     > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
                     > git revert b1b4e7a77fe1164952cad7699292024686c3357c
-GIT RESET         Assume you made text changes to an already-committed file named: index.html
+GIT RESET         Reset tracked files to match the most recent commit.  Undoes changes to the working directory and the
+                  staged snapshot.  Assume you made text changes to an already-committed file named: index.html
                   To revert your changes made to index.html, do the following:
                     > git reset --hard
+                    > git clean -f
+                    The above 2 (TWO) commands together permanently undoes uncommitted changes.
+Permanently undo uncommitted changes.
+Permanently undo uncommitted changes.
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this index.html file AND ALL TRACKED FILES, run:
-                    > git clean -f
+                    > git clean -f  (Remove untracked files.)
                     
 
