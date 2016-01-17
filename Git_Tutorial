@@ -73,7 +73,8 @@ BRANCHES         To create a new branch, do the following:
                  In Git, a branch is an independent line of development.  Branches present an error-proof method for
                  incorporating changes from an experiment.  Branches also let you store all of your experiments in a
                  single directory, which makes it much easier to keep track of them and to share them with others.
-                 There are four (4) core elements to work with throughout the rest of this tutorial:
+                 Creating a new branch is really just a way to request an independent working directory, staging
+                 snapshot, and history.  There are four (4) core elements to work with throughout the rest of this tutorial:
                  1) The Working Directory
                  2) The Staged Snapshot
                  3) Committed Snapshots
