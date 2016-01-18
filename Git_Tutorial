@@ -137,3 +137,13 @@ GIT MERGE       Git can merge changes into any branch (not just the master branc
                 > git checkout crazy
                 > git merge master
                 > git log --oneline
+
+
+================================================================================================
+HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
+
+Assume you have a parent directory that contains an entire working Android project.
+This parent directory contains numerous files and directories, that contain yet more
+files and directories.  How do you get all these files and directories into git
+repository?  Follow these instructions...
+
