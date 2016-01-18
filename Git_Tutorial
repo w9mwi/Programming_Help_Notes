@@ -29,6 +29,8 @@ COMMIT COMMAND    To commit all files of your snapshot (files added with the git
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
+                  To commit all staged files without having to first do a "git add", you can run the following command:
+                  > git commit -a -m "Add CSS stylesheet to rainbow.html" (The -a performs the "git add" command on all staged files.)
 GIT LOG           Run the following:
                     > git log  (Displays only git commits.)
                     > git log --oneline  (Displays each commit on only one line.)
@@ -105,7 +107,7 @@ BRANCHES         To create a new branch, do the following:
                  The git rm command above tells Git to stop tracking crazy.html (and delete it if necessary), and the
                  git add command above starts tracking rainbow.html.  The renamed: crazy.html -> rainbow.html message
                  in the "git status" output shows us that Git is smart enough to figure out when weâ€™re renaming a file.
-                Now, when we run "git branch", we see both branches (crazy and master) that exist:
+                 Now, when we run "git branch", we see both branches (crazy and master) that exist:
                  > git branch
                      crazy
                    * master
@@ -117,3 +119,9 @@ DELETE BRANCH   Delete the css branch created above.  Git will warn you if youâ€
                 > git branch -d css  (-d is the delete flag.)
                 > git branch
                 
+GIT MERGE       Git can merge changes into any branch (not just the master branch).  We can pull the updates in with
+                with the familiar git merge command.  Merging only affects the checked-out branch.  Now, merge the
+                master branch into the crazy branch...
+                > git checkout crazy
+                > git merge master
+                > git log --oneline
