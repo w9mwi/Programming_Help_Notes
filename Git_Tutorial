@@ -162,7 +162,12 @@ repository?  Follow these instructions...
    'Create repository' button at the bottom of the screen.
 
 3) If you need to create files named README, LICENSE, or .gitignore in this new Android_Sample_Code repository,
-   click on the  'README', 'LICENSE', or '.gitignore' link at the top of the page.
+   click on the  'README', 'LICENSE', or '.gitignore' link at the top of the page.  If you need to later delete
+   from GitHub any of these files (or some other file) you created, click on the file name so you can view its
+   contents.  Next, click on the trash can near the upper-rght corner.  On the web page that appears, enter
+   a comment, and press the 'Commit changes' button.  The file is now deleted.  FYI, to add a new file in this
+   GitHub repository, open the Android_Sample_Code repository, then 'New file' button near the top-center.
+
 4) 
    
    
