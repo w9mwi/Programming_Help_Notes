@@ -137,6 +137,19 @@ GIT MERGE       Git can merge changes into any branch (not just the master branc
                 > git checkout crazy
                 > git merge master
                 > git log --oneline
+GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing), search for the text: Publish News Hotfix
+               Under that text you'll see a diagram labeled with this text:  Fast-forwarding master to the news-hotfix
+               We'll call this the BEFORE DIAGRAM.
+               Below that diagram, you'll see another diagram labeled with this text:  Rebasing the about branch onto master
+               We'll call this the AFTER DIAGRAM.
+               Using the git rebase command, we want to change the 'about' branch represented in the BEFORE DIAGRAM,
+               to the 'about' branch represented in the AFTER DIAGRAM.  To do this, run the following 2 commands:
+               > git checkout about
+               > git rebase master
+               NOTE: Git rebase requires you must be on the branch that you want to move.  In this example,
+                     we must be on the 'about' branch.  Running the 'git rebase master' command will move
+                     the 'about' branch so its tail will now point to the head of the 'master' branch.
+                     Again, see the BEFORE DIAGRAM versus the AFTER DIAGRAM on the web page mentioned above.
 
 
 ================================================================================================
