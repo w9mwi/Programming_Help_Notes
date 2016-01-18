@@ -147,3 +147,23 @@ This parent directory contains numerous files and directories, that contain yet 
 files and directories.  How do you get all these files and directories into git
 repository?  Follow these instructions...
 
+1) This step is an aside.  You probably don't want/need to do this, but...  Assume you have an existing repository
+   on GitHub (named Android_Sample_Code) that is old, and full of junk you now longer want.  To delete this
+   existing GitHub repository (named Android_Sample_Code), go into that repository on GitHub.com, select the
+   'Settings' tab near the upper-right corner.  Then, under the 'Danger Zone' at the bottom of the page,
+   press the 'Delete this repository' button.  In the dialog popup that appears, enter the exact spelling
+   of the repository name you want to delete (Android_Sample_Code) in the entry field.  Finally, press the
+   "I understand the consequences, delete this repository" button.  The Android_Sample_Code repository
+   located in GitHub is now deleted!
+   
+2) To create a new repository on GitHub named 'Android_Sample_Code'. go to https://github.com and log into
+   your account.  Near the upper-right corner, press the button named '+ New repository'.  Enter Android_Sample_Code
+   in the 'Repository name' field, and enter a description in the 'Description' field.  Finally, press the
+   'Create repository' button at the bottom of the screen.
+
+3) If you need to create files named README, LICENSE, or .gitignore in this new Android_Sample_Code repository,
+   click on the  'README', 'LICENSE', or '.gitignore' link at the top of the page.
+4) 
+   
+   
+   Create a new git repository on GitHub.com
