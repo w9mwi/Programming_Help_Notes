@@ -11,10 +11,12 @@ DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         then delete the .git folder, which may be invisible.  Doing this deletes the
                         git repository.  You can then delete all other files/folders from this folder
                         to make it completely empty.
-                        To delete a specific git branch (in this example, named 'test' run the following command:
+                        To delete a specific git branch (in this example, named 'test'), run the following command(s):
                         > git branch -d test  (-d is the delete flag.)
                         ...OR...
                         > git branch -D test  (-D is the delete flag.)
+                        NOTE: You cannot delete the 'master' branch using this command.
+                              To accomplish that, just delete the .git directory as stated above.
 WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
                     that comprise your software project.
 SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given point in time.
