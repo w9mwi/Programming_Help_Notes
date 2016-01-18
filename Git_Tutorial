@@ -29,8 +29,10 @@ COMMIT COMMAND    To commit all files of your snapshot (files added with the git
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
-                  To commit all staged files without having to first do a "git add", you can run the following command:
-                  > git commit -a -m "Add CSS stylesheet to rainbow.html" (The -a performs the "git add" command on all staged files.)
+                  To commit all STAGED files without having to first do a "git add", you can run the following command:
+                  > git commit -a -m "Add CSS stylesheet to rainbow.html" (The -a performs the "git add" command on all previously
+                                                                           STAGED files.  Which means files that have been previously
+                                                                           added with "git add", but have been changed since then.)
 GIT LOG           Run the following:
                     > git log  (Displays only git commits.)
                     > git log --oneline  (Displays each commit on only one line.)
@@ -83,6 +85,10 @@ BRANCHES         To create a new branch, do the following:
                  2) The Staged Snapshot
                  3) Committed Snapshots
                  4) Development Branches
+                 When the "git branch" command creates a new branch, it uses the current HEAD as the starting point for the
+                 new branch.  This means that we begin with the same files currently used by the branch that we're curently
+                 on, located in the current working directory.
+
                  The following command displays our one and only branch: * master.  The master branch is Git’s default
                  branch, and the asterisk next to it tells us that it’s currently checked out.  Notice that since
                  there’s only one working directory for each project, only one branch can be checked out at a time.
