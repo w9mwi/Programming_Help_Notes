@@ -146,8 +146,8 @@ GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing),
                to the 'about' branch represented in the AFTER DIAGRAM.  To do this, run the following 2 commands:
                > git checkout about
                > git rebase master
-               NOTE: Git rebase requires you must be on the branch that you want to move.  In this example,
-                     we must be on the 'about' branch.  Running the 'git rebase master' command will move
+               NOTE: Git rebase requires you to be on the branch that you want to alter.  In this example,
+                     we must be on the 'about' branch.  Running the 'git rebase master' command will alter
                      the 'about' branch so its tail will now point to the head of the 'master' branch.
                      Again, see the BEFORE DIAGRAM versus the AFTER DIAGRAM on the web page mentioned above.
 
