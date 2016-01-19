@@ -91,7 +91,7 @@ BRANCHES         To create a new branch, do the following:
                  2) The Staged Snapshot
                  3) Committed Snapshots
                  4) Development Branches
-                 When the "git branch" command creates a new branch, it uses the current HEAD as the starting point for the
+                 When the "git branch" command creates a new branch, it uses the current HEAD NODE as the starting point for the
                  new branch.  This means that we begin with the same files currently used by the branch that we're curently
                  on, located in the current working directory.
 
@@ -148,7 +148,7 @@ GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing),
                > git rebase master
                NOTE: Git rebase requires you to be on the branch that you want to alter.  In this example,
                      we must be on the 'about' branch.  Running the 'git rebase master' command will alter
-                     the 'about' branch so its tail will now point to the head of the 'master' branch.
+                     the 'about' branch so its TAIL NODE will now connenct to the HEAD NODE of the 'master' branch.
                      Again, see the BEFORE DIAGRAM versus the AFTER DIAGRAM on the web page mentioned above.
 
 
