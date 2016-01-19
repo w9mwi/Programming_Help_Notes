@@ -124,12 +124,12 @@ BRANCHES         To create a new branch, do the following:
                      crazy
                    * master
 
+DELETE BRANCH   To delete a branch named poop, run the following commands.  Git will warn you if you’re deleting an unmerged branch.
+                > git branch -d poop  (-d is the delete flag.  Use -D flag if the poop branch hasn't been merged into another branch.)
+                > git branch  (Confirm the poop brancj is gone.)
+
 GIT MERGE       > git checkout master  (Go to the master branch.)
                 > git merge css  (Merge the css branch into the master branch.)
-                
-DELETE BRANCH   Delete the css branch created above.  Git will warn you if you’re deleting an unmerged branch.
-                > git branch -d css  (-d is the delete flag.)
-                > git branch
                 
 GIT MERGE       Git can merge changes into any branch (not just the master branch).  We can pull the updates in with
                 with the familiar git merge command.  Merging only affects the checked-out branch.  Now, merge the
@@ -151,6 +151,22 @@ GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing),
                      the 'about' branch so its TAIL NODE will now connenct to the HEAD NODE of the 'master' branch.
                      Again, see the BEFORE DIAGRAM versus the AFTER DIAGRAM on the web page mentioned above.
 
+              An INTERACTIVE REBASE prompts the user with an opened text file, which can be edited to alter how the
+              rebase performs.  If the user does NOT alter this text file, the rebase that occurs will be identical
+              to running the 'git rebase' command WITHOUT the -i flag shown below.  To run an interactive rebase on
+              the 'about' branch, do the following:
+              > git checkout about
+              > git rebase -i master  (The -i flag menas INTERACTIVE, so the user will be prompted to change behavior.)
+              
+              If you're in the middle of performing a rebase, and you get lost (not certain if what you're doing
+              is correct), you can abort rebase in midstream by running the following command:
+              > git rebase ‑‑abort
+
+              Rebasing enables fast-forward merges by moving a branch to the tip of another branch.  It effectively
+              eliminates the need for merge commits, resulting in a completely linear history.  To an outside observer,
+              it will seem as though you created every part of your project in a neatly planned sequence, even though
+              you may have explored various alternatives or developed unrelated features in parallel.  Rebasing gives
+              you the power to choose exactly what gets stored in your repositories.
 
 ================================================================================================
 HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
