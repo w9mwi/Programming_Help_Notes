@@ -98,8 +98,8 @@ BRANCHES         To create a new branch named poop, and then check it out, do th
                  3) Committed Snapshots
                  4) Development Branches
                  When the "git branch" command creates a new branch, it uses the current HEAD NODE as the starting point for the
-                 new branch.  This means that we begin with the same files currently used by the branch that we're curently
-                 on, located in the current working directory.
+                 new branch.  This means the new branch begins as a copy of the existing branch--so it will contain a copy
+                 of the existing branch's files located in the current working directory.
                  
                  Git uses the tip of a branch to represent the entire branch. That is to say, a branch is actually
                  a pointer to a single commit—not a container for a series of commits
