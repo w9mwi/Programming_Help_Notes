@@ -45,6 +45,7 @@ GIT LOG           Run the following:
                     > git log  (Displays only git commits.)
                     > git log --oneline  (Displays each commit on only one line.)
                     > git log --oneline blue.html  (Displays each commit that contains "blue.html" on only one line.)
+                    > git log -n 4  (Displays log for the 4 most-recent commits.)
 GIT CONFIG        Run the following commands so git knows your name and e-mail address.  You need to
                     do this ONLY ONCE.  Now when you commit files to your git repository, and you
                     later run "git log", your name and e-mail address will show up in the log output.
@@ -180,6 +181,21 @@ GIT REFLOG    Git uses something called the reflog to record every change you ma
               This lets us find dangling commits that would otherwise be lost from the project history.  Run the
               following command, which will display a list of history:
               > git reflog
+
+REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be another Git repository located
+                     on your company’s network, the internet, or even your local filesystem.  Remote branches
+                     act just like the local branches, except they represent a branch in someone else’s repository.
+
+CLONING REPOSITORY  To clone an existing repository located on your own disk drive, do the following:
+                    1) On the command line, navigate to the parent directory containing the repository
+                       you want to clone.  In this example, the "C:\Tom\Programming" parent directory
+                       contains the child directory "C:\Tom\Programming\my-git-repo".  So navigate to
+                       the "C:\Tom\Programming" directory, and run the following commands:
+                       > git clone my-git-repo marys-repo
+                       > cd marys-repo
+                       > git branch  (Verify that only the master branch exists.)
+                       > git config user.name "Mary"
+                       > git config user.email w9mwi@yahoo.com
 
 ================================================================================================
 HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
