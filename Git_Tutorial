@@ -28,10 +28,12 @@ SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given p
                     be recorded in the repository. Committed snapshots can be seen as “safe” versions of
                     the project.  Git will never change them, which means you can do almost anything you
                     want to your project without losing those “safe” revisions.
-ADD COMMAND       After a new file (or set of files) is created, and these files contains the correct
+GIT ADD             After a new file (or set of files) is created, and these files contains the correct
                     code, you can add them to your snapshot via the "add" command, like this:
                     > git add index_1.html index_2.html index_3.html
-COMMIT COMMAND    To commit all files of your snapshot (files added with the git "add" command, you can
+                    To add all files (staged that have changes, and unstaged files) in the current directory, run:
+                    > git add *
+GIT COMMIT C        To commit all files of your snapshot (files added with the git "add" command, you can
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
@@ -50,6 +52,8 @@ GIT CONFIG        Run the following commands so git knows your name and e-mail a
                     > git config  --global user.email  joeschmoe@yahoo.com
 GIT CHECKOUT      To checkout an existing branch, do:
                     > git checkout master  (master is name of branch.)
+                  To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
+                    > git checkout -b poop
                   To checkout a previous snapshot, do the following:
                     > git log  (Text similar to the following will display.)
                       commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
@@ -73,14 +77,15 @@ GIT RESET         Reset tracked files to match the most recent commit.  Undoes c
                   To revert your changes made to index.html, do the following:
                     > git reset --hard
                     > git clean -f
-                    The above 2 (TWO) commands together permanently undoes uncommitted changes.
+                  The above 2 (TWO) commands together permanently undoes uncommitted changes.
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this index.html file AND ALL TRACKED FILES, run:
                     > git clean -f  (Remove untracked files.)
-
-BRANCHES         To create a new branch, do the following:
-                 > git branch NewBranch
-                 > git checkout NewBranch
+BRANCHES         To create a new branch named poop, and then check it out, do the following:
+                 > git branch poop
+                 > git checkout poop
+                 To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
+                 > git checkout -b poop
 
                  In Git, a branch is an independent line of development.  Branches present an error-proof method for
                  incorporating changes from an experiment.  Branches also let you store all of your experiments in a
