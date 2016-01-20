@@ -210,16 +210,22 @@ CLONING REPOSITORY  To clone an existing repository located on your own disk dri
                        > git remote  (Confirm there now exists a 'mary' repository in "C:\Tom\Programming\my-git-repo")
                     In the "C:\Tom\Programming\my-git-repo" directory, we can now reference the 'mary' repository.
                     In the "C:\Tom\Programming\marys-repo" directory, we can now reference the 'origin' repository.
+
+MERGING FROM ONE REPOSITORY INTO ANOTHER:
+                    After you've completed all steps in the above CLONING REPOSITORY section, continue to do the following,
+                    in order to merge code from the 'mary' repository (located in the 'marys-repo' directory) into the
+                    'origin' repository (located in the 'my-git-repo' directory).
                     From the "C:\Tom\Programming\my-git-repo" directory, run these commands:
-                       > git fetch mary  (Goes to the “fetch” location shown above, and downloads all of the branches
+                       > git fetch mary  (Goes to the “fetch” location mentioned above, and downloads all of the branches
                                           found there into the my-git-repo directory.)
                        > git branch -r   (Displays all branches that exist in the 'mary' repository, as shown below.)
                        mary/bio-page
                        mary/master
                    Let's now checkout the mary/master branch into the my-git-repo directory.
-                       > git checkout mary/master  (Point to the master branch from the mary repository,
-                                                    so we can view changes made by Mary.)
-                       > git checkout master       (Checkout our own master branch.)
+                       > git checkout mary/master  (Checkout the master branch from the mary repository,
+                                                    so we can review code changes made by Mary.)
+                       > git checkout master       (Checkout our own master branch, which overwrites the mary/master
+                                                    branch that we just checked out in the previous command.)
                        > git merge mary/master     (Merge the mary/master branch into our master branch.)
 ================================================================================================
 HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
