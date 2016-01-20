@@ -187,7 +187,7 @@ REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be 
                      act just like the local branches, except they represent a branch in someone else’s repository.
 
 CLONING REPOSITORY  To clone an existing repository located on your own disk drive, do the following:
-                    1) On the command line, navigate to the parent directory containing the repository
+                       On the command line, navigate to the parent directory containing the repository
                        you want to clone.  In this example, the "C:\Tom\Programming" parent directory
                        contains the child directory "C:\Tom\Programming\my-git-repo".  So navigate to
                        the "C:\Tom\Programming" directory, and run the following commands:
@@ -196,7 +196,19 @@ CLONING REPOSITORY  To clone an existing repository located on your own disk dri
                        > git branch  (Verify that only the master branch exists.)
                        > git config user.name "Mary"
                        > git config user.email w9mwi@yahoo.com
-
+                    When you clone a repository, Git automatically adds an 'origin' remote that points to the
+                    repository you just cloned.  Because you’ll probably want to interact with this 'origin'
+                    repository (the repository you cloned) at some later time.  Tun the following command
+                    to confirm you have a remote repository named 'origin'.
+                       > git remote -v  (The -v flag means vervose.  The following 2 lines are output.)
+                       origin  C:/Tom/Programming/my-git-repo (fetch)
+                       origin  C:/Tom/Programming/my-git-repo (push)
+                    Next, navigate back to the "C:\Tom\Programming\my-git-repo" directory, and run the following commands:
+                       > git remote  (Notice that there exists no remote repository.)
+                       > git remote add mary ../marys-repo   (Create a remote repository named 'mary', pointing to the
+                                                              repository located in "C:\Tom\Programming\marys-repo")
+                      > git remote  (Confirm there now exists a 'mary' repository in "C:\Tom\Programming\my-git-repo")
+                      
 ================================================================================================
 HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
 
