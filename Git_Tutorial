@@ -101,19 +101,19 @@ BRANCHES         To create a new branch named poop, and then check it out, do th
                  new branch.  This means the new branch begins as a copy of the existing branch--so it will contain a copy
                  of the existing branch's files located in the current working directory.
                  
-                 Git uses the tip of a branch to represent the entire branch. That is to say, a branch is actually
-                 a pointer to a single commit—not a container for a series of commits
+                 Git uses the tip of a branch to represent the entire branch.  In other words, a branch is actually
+                 a pointer to a single commit—-not a container for a series of commits.
 
                  The following command displays our one and only branch: * master.  The master branch is Git’s default
                  branch, and the asterisk next to it tells us that it’s currently checked out.  Notice that since
                  there’s only one working directory for each project, only one branch can be checked out at a time.
                  > git branch
-                 * master  (This gets displayed when "bit branch" is run.)
+                 * master  (This gets displayed when "git branch" is run.)
                  Next, check out a previous snapshot (514fbe7 referes to the ID of the crazy.html commit.)
                  > git checkout 514fbe7
                  From this, let's now create a new branch called "crazy":
                  > git branch crazy
-                 And now, let's checkout this new "crazy" branch so we'll no longer be on "master" branch.
+                 And now, let's checkout this new "crazy" branch so we'll no longer be on the "master" branch.
                  > git checkout crazy
                  The new "crazy" branch is a completely isolated from the "master" branch, so we can
                  mess with files in this same working directory without changing any files on the "master" branch.
@@ -135,12 +135,12 @@ BRANCHES         To create a new branch named poop, and then check it out, do th
 
 DELETE BRANCH   To delete a branch named poop, run the following commands.  Git will warn you if you’re deleting an unmerged branch.
                 > git branch -d poop  (-d is the delete flag.  Use -D flag if the poop branch hasn't been merged into another branch.)
-                > git branch  (Confirm the poop brancj is gone.)
+                > git branch  (Confirm the poop branch is gone.)
 
 GIT MERGE       > git checkout master  (Go to the master branch.)
                 > git merge css  (Merge the css branch into the master branch.)
-                
-GIT MERGE       Git can merge changes into any branch (not just the master branch).  We can pull the updates in with
+
+                Git can merge changes into any branch (not just the master branch).  We can pull the updates in with
                 with the familiar git merge command.  Merging only affects the checked-out branch.  Now, merge the
                 master branch into the crazy branch...
                 > git checkout crazy
@@ -183,31 +183,33 @@ GIT REFLOG    Git uses something called the reflog to record every change you ma
               > git reflog
 
 REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be another Git repository located
-                     on your company’s network, the internet, or even your local filesystem.  Remote branches
-                     act just like the local branches, except they represent a branch in someone else’s repository.
+                     on your company’s network, the internet, or even on your hard disk.  Remote branches
+                     act just likelocal branches, except they represent a branch in someone else’s repository.
 
-CLONING REPOSITORY  To clone an existing repository located on your own disk drive, do the following:
-                       On the command line, navigate to the parent directory containing the repository
-                       you want to clone.  In this example, the "C:\Tom\Programming" parent directory
-                       contains the child directory "C:\Tom\Programming\my-git-repo".  So navigate to
-                       the "C:\Tom\Programming" directory, and run the following commands:
-                       > git clone my-git-repo marys-repo
-                       > cd marys-repo
+CLONING REPOSITORY  To clone an existing repository located on your hard disk, do the following...
+                    On the command line, navigate to the PARENT DIRECTORY containing the repository
+                    you want to clone.  In this example, the "C:\Tom\Programming" parent directory
+                    contains the child directory "C:\Tom\Programming\my-git-repo".  So navigate to
+                    the "C:\Tom\Programming" directory, then run the following commands:
+                       > git clone my-git-repo  marys-repo  (marys-repo is now a clone of my-git-repo).
+                       > cd marys-repo  (You are now in the marys-repo repository.)
                        > git branch  (Verify that only the master branch exists.)
                        > git config user.name "Mary"
                        > git config user.email w9mwi@yahoo.com
                     When you clone a repository, Git automatically adds an 'origin' remote that points to the
                     repository you just cloned.  Because you’ll probably want to interact with this 'origin'
-                    repository (the repository you cloned) at some later time.  Tun the following command
+                    repository (the repository you cloned) sometime later.  Run the following command
                     to confirm you have a remote repository named 'origin'.
-                       > git remote -v  (The -v flag means vervose.  The following 2 lines are output.)
+                       > git remote -v  (The -v flag means verbose.  The following 2 lines are output.)
                        origin  C:/Tom/Programming/my-git-repo (fetch)
                        origin  C:/Tom/Programming/my-git-repo (push)
                     Next, navigate back to the "C:\Tom\Programming\my-git-repo" directory, and run the following commands:
-                       > git remote  (Notice that there exists no remote repository.)
+                       > git remote -v (Notice that there exists no remote repository.)
                        > git remote add mary ../marys-repo   (Create a remote repository named 'mary', pointing to the
                                                               repository located in "C:\Tom\Programming\marys-repo")
-                       > git remote  (Confirm there now exists a 'mary' repository in "C:\Tom\Programming\my-git-repo")
+                       > git remote -v  (The following 2 lines are output.)
+                       mary    ../marys-repo (fetch)
+                       mary    ../marys-repo (push)
                     In the "C:\Tom\Programming\my-git-repo" directory, we can now reference the 'mary' repository.
                     In the "C:\Tom\Programming\marys-repo" directory, we can now reference the 'origin' repository.
 
