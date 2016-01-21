@@ -268,6 +268,16 @@ CENTRALIZED WORKFLOWS
                   user’s environment with git push.  A central repository should act only as a storage facility--not
                   as a development environment.
                   > git init --bare central-repo.git
+                  Add this new central repository (central-repo.git) as a REMOTE REPOSITORY to both the 'marys-repo' and
+                  the 'my-git-repo' repositories by running the following commands:
+                  > cd marys-repo  (Navigate to the C:\Tom\Programming\marys-repo directory).
+                  > git remote rm origin  (Delete the existing remote repository named 'origin'.)
+                  > git remote add origin ../central-repo.git  ('marys-repo' references central-repo.git as 'origin'.)
+                  > cd my-git-repo  (Navigate to the C:\Tom\Programming\my-git-repo directory).
+                  > git remote add origin ../central-repo.git  ('my-git-repo' references central-repo.git as 'origin'.)
+                  > git remote rm mary  (Remove the existing 'mary' remote epository from my-git-repo.)
+                  
+LEFT OFF HERE:  Add News Update (You)
 
 
 ================================================================================================
