@@ -257,6 +257,17 @@ FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPOR
                   > git branch -r  (List remote branches.)
                   > git push <remote-name> <branch-name>  (Push a local branch to another repository.)
                   > git push <remote-name> <tag-name>     (Push a tag to another repository.)
+CENTRALIZED WORKFLOWS
+                  Running the following "git init" command create a new repository directory named central-repo.git.  The
+                  --bare flag indicates there will NOT be a working directory created for this repository.  If you navigate
+                  to the C:\Tom\Programming\central-repo.git directory, you'll see it does NOT contain the standard
+                  .git directory.  As a matter of fact, the files contained in this C:\Tom\Programming\central-repo.git
+                  directory contain the same files that exist in the standard .git directory.  (That's why we named this
+                  repository's directory with the ".git" extension.  Not having a working directory prevents anyone
+                  from developing in the central repository, which eliminates the possibility of messing up another
+                  user’s environment with git push.  A central repository should act only as a storage facility--not
+                  as a development environment.
+                  > git init --bare central-repo.git
 
 
 ================================================================================================
