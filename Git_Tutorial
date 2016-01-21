@@ -229,7 +229,25 @@ MERGING FROM ONE REPOSITORY INTO ANOTHER:
                        > git checkout master       (Checkout our own master branch, which overwrites the mary/master
                                                     branch that we just checked out in the previous command.)
                        > git merge mary/master     (Merge the mary/master branch into our master branch.)
-
+FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPORTS A BRANCH from a remote repository.
+                  Push CREATES A NEW LOCAL BRANCH in a remote repository.  Navigate to the "C:\Tom\Programming\my-git-repo" directory,
+                  and run the following 2 commands, which will create a new 'dummy' branch in the my-git-repo directory,
+                  and will then export this 'dummy' branch to the 'mary' repository.
+                  > git branch dummy
+                  > git push mary dummy
+                  As a general rule, you should never push into another developer’s repository.  The reason "git push" exists
+                  is that it allows you to make changes to a PUBLIC repository, that must be maintained by multiple people.
+                  Next, navigate to the "C:\Tom\Programming\my-git-repo" directory, tag the master branch in this
+                  directory, and then push this tagged v2.0 version to the 'mary' repository.
+                  > git tag -a v2.0 -m "An even stabler version of the website"
+                  > git push mary v2.0
+                  Navigate to the "C:\Tom\Programming\marys-repo" directory, and run the following command.
+                  > git tag  (The 'v2.0' tag should display.)
+                  It’s very easy to forget to push new tags, so if it seems like your project has lost a tag or two,
+                  it’s most likely because you didn’t to push them to the remote repository.
+                  Note that "remotes" are for people.  "Branches" are for topics.  Do not create separate branches
+                  for each of your developers—-give them separate repositories and bookmark them with git remote add.
+                  Branches should always be for project development, not user management.
 
 
 ================================================================================================
