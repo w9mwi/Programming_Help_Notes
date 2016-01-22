@@ -259,12 +259,12 @@ FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPOR
                   > git push <remote-name> <branch-name>  (Push a local branch to another repository.)
                   > git push <remote-name> <tag-name>     (Push a tag to another repository.)
 CENTRALIZED WORKFLOWS
-                  Running the following "git init" command create a new repository directory named central-repo.git.  The
+                  Running the below "git init" command creates a new repository directory named central-repo.git.  The
                   --bare flag indicates there will NOT be a working directory created for this repository.  If you navigate
                   to the C:\Tom\Programming\central-repo.git directory, you'll see it does NOT contain the standard
                   .git directory.  As a matter of fact, the files contained in this C:\Tom\Programming\central-repo.git
-                  directory contain the same files that exist in the standard .git directory.  (That's why we named this
-                  repository's directory with the ".git" extension.  Not having a working directory prevents anyone
+                  directory contain the same files that exist in the standard .git directory.  (That's why we this
+                  directory name contains the ".git" extension.)  Not having a working directory prevents anyone
                   from developing in the central repository, which eliminates the possibility of messing up another
                   user’s environment with git push.  A central repository should act only as a storage facility--not
                   as a development environment.
@@ -273,13 +273,22 @@ CENTRALIZED WORKFLOWS
                   the 'my-git-repo' repositories by running the following commands:
                   > cd marys-repo  (Navigate to the C:\Tom\Programming\marys-repo directory).
                   > git remote rm origin  (Delete the existing remote repository named 'origin'.)
-                  > git remote add origin ../central-repo.git  ('marys-repo' references central-repo.git as 'origin'.)
+                  > git remote add origin ../central-repo.git  ('marys-repo' now references central-repo.git as 'origin'.)
                   > cd my-git-repo  (Navigate to the C:\Tom\Programming\my-git-repo directory).
-                  > git remote add origin ../central-repo.git  ('my-git-repo' references central-repo.git as 'origin'.)
+                  > git remote add origin ../central-repo.git  ('my-git-repo' now references central-repo.git as 'origin'.)
                   > git remote rm mary  (Remove the existing 'mary' remote epository from my-git-repo.)
-                  
-LEFT OFF HERE:  Add News Update (You)
-
+                  Now, push the master branch of the my-git-repo repository to the central-repo.git repository.
+                  > cd C:\Tom\Programming\my-git-repo
+                  > git push origin master  (The central-repo.git master branch gets a copy of the my-git-repo master branch.)
+                  > cd C:\Tom\Programming\central-repo.git
+                  > git log  (Confirm that the output of this log is identical to the log output on the my-git-repo repository.
+                  NOTE: The "git push" command creates a local branch in the destination repository.  It's dangerous to
+                        push to a friend’s repository, as she probably won’t appreciate other programmers creating new branches
+                        in her working directory without her consent.   However, it’s safe to create local branches in
+                        central-repo.git because it has no working directory, which means it’s impossible to disturb anyone’s
+                        development.
+                  WARNING:  Never, ever rebase commits that have been pushed to a shared repository.  If you need to change
+                            a public commit, use the "git revert" command discussed previously.
 
 ================================================================================================
 HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
