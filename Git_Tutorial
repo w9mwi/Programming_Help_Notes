@@ -289,6 +289,28 @@ CENTRALIZED WORKFLOWS
                         development.
                   WARNING:  Never, ever rebase commits that have been pushed to a shared repository.  If you need to change
                             a public commit, use the "git revert" command discussed previously.
+DISTRIBUTED WORKFLOWS
+                  Run the following commands:
+                  > cd C:\Tom\Programming\my-git-repo
+                  > git remote rm  origin  (Delete the existing remote 'origin' branch from the my-git-repo directory.)
+                  > git remote add origin https://github.com/w9mwi/my-git-repo.git  (Point the remote 'origin' repository to GitHub.)
+                  > git push origin master  (Push the local master branch to the remote 'origin' (GitHub) branch.
+                  Create a repository for co-worker John:
+                  > cd C:\Tom\Programming
+                  > git clone  https://github.com/w9mwi/my-git-repo.git  johns-repo  (johns-repo will contain our GitHub contents.)
+                  > cd johns-repo
+                  > git config user.name "John"
+                  > git config user.email junk@shit.com
+                  > git checkout -b pink-page  (Creates a new branch named pink-page, and then does a checkout on pink-page.)
+
+LEFT OFF HERE:  Publish the Pink Page (John)  ON:  http://rypress.com/tutorials/git/distributed-workflows
+
+
+
+
+
+
+
 
 ================================================================================================
 HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
