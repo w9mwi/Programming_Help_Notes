@@ -9,6 +9,8 @@ LEARN WOLFRAM LANGUAGE
 ======================
 http://www.wolfram.com/language/elementary-introduction/
 http://www.wolfram.com/language/elementary-introduction/
+http://www.wolfram.com/programming-lab/
+http://www.wolfram.com/programming-lab/
 
 
 ANDROID STUDIO TUTORIALS
