@@ -345,17 +345,26 @@ repository?  Follow these instructions...
    ??? Create a new git repository on GitHub.com  ???
 
 
-=========================================================================
+=======================================================================================
+GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS
 
-GIT COMMANDS:
-
-REMOVE FILE FROM STAGED FILE:
+REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git reset HEAD tom.java" below.)
 > git add tom.java
 > git rm --cached tom.java  (Removes tom.java from staged area, but doesn't delete the file.)
+> del tom.java  (If you want to permanently delete the file.)
+
+REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git rm --cached tom.java" above.)
+> git add tom.java
+> git reset HEAD tom.java  (Removes tom.java from staged area, but doesn't delete the file.)
 
 DELETE A STAGED FILE:
 > git add tom.java
 > git rm tom.java
+
+CHANGE MESSAGE OF MOST-RECENT COMMIT:
+> git add tom.java
+> git commit -m "Commited tom.java file."
+> git commit --amend  (Change message in the pop-up editor.)
 
 RENAME A COMMITTED FILE:
 > git add tom.java
@@ -369,7 +378,9 @@ LOG FILE COMMANDS:
 > git log --stat
 > git log --since=1.weeks  (Shows all changes made in the last 1 week.)
 > git log --since="2016-01-20"
+> git log --before="2016-01-20"
 > git log --author="TJB"
+
 LEFT OFF AT: 22:26 @ https://www.youtube.com/watch?v=r63f51ce84A
 > 
 > 
