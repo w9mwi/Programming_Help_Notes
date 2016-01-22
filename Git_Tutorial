@@ -342,6 +342,37 @@ repository?  Follow these instructions...
    GitHub repository, open the Android_Sample_Code repository, then 'New file' button near the top-center.
 
 4) 
-   
-   
-   Create a new git repository on GitHub.com
+   ??? Create a new git repository on GitHub.com  ???
+
+
+=========================================================================
+
+GIT COMMANDS:
+
+REMOVE FILE FROM STAGED FILE:
+> git add tom.java
+> git rm --cached tom.java  (Removes tom.java from staged area, but doesn't delete the file.)
+
+DELETE A STAGED FILE:
+> git add tom.java
+> git rm tom.java
+
+RENAME A COMMITTED FILE:
+> git add tom.java
+> git commit -m "Commited tom.java file."
+> git mv tom.java  rosemary.java  (Renames tom.java to rosemary.java)
+
+LOG FILE COMMANDS:
+> git log --pretty=online
+> git log --pretty=format:"%h : %an : %ar : %s"  (Colon chars optional.)
+> git log -p -2  (Show last 2 commits.)
+> git log --stat
+> git log --since=1.weeks  (Shows all changes made in the last 1 week.)
+> git log --since="2016-01-20"
+> git log --author="TJB"
+LEFT OFF AT: 22:26 @ https://www.youtube.com/watch?v=r63f51ce84A
+> 
+> 
+> 
+> 
+> 
