@@ -317,9 +317,19 @@ DISTRIBUTED WORKFLOWS
                   > git fetch john  (Copies contents of GitHub's 'johns-repo' repository to the new 'john' repository.)
                   > git branch -r  (Shows the new john/pink-page remote repository.)
                   > git checkout john/pink-page  (Checkout the 'pink-page' repository located in C:\Tom\Programming\johns-repo
-                  Finally, it you approve John's updates, merge them into your master branch (in the my-git-repo directory).
+                  If you approve John's updates, merge them into your master branch (in the my-git-repo directory).
                   > git checkout master
                   > git merge john/pink-page
+                  Finally, push your master branch to the 'origin' GitHub 'my-git-repo' repository, which corresponds
+                  to your 'my-git-repo' working directory.
+                  > git push origin master
+                  Do the following on the 'marys-repo' branch.
+                  > cd C:\Tom\Programming\marys-repo
+                  > git remote rm origin  (Delete the previous 'origin' branch, as we make a new one that points to GitHub.)
+                  > git remote add origin  https://github.com/w9mwi/my-git-repo.git  (Creates new 'origin' branch pointing to GitHub.)
+                  > git checkout master
+                  > git fetch origin  (Copies contents of GitHub's 'my-git-repo' repository to the new 'origin' repository.)
+                  > git rebase origin/master
                   
             
 LEFT OFF HERE:  Publish the Pink Page (John)  ON:  http://rypress.com/tutorials/git/distributed-workflows
@@ -389,6 +399,9 @@ RENAME A COMMITTED FILE:
 > git add tom.java
 > git commit -m "Commited tom.java file."
 > git mv tom.java  rosemary.java  (Renames tom.java to rosemary.java)
+
+REMOVE A BRANCH:
+> git branch -d poop  (Removes the brnch named 'poop')
 
 REMOVE A REMOTE REPOSITORY:
 > git remote rm john-public  (Remove the remote repository reference, but the remote repository remains.)
