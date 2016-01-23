@@ -330,9 +330,17 @@ DISTRIBUTED WORKFLOWS
                   > git checkout master
                   > git fetch origin  (Copies contents of GitHub's 'my-git-repo' repository to the new 'origin' repository.)
                   > git rebase origin/master
-                  
+                  Update johns-repo on your hard disk, similar to what we did with marys-repo above.
+                  > cd C:\Tom\Programming\johns-repo
+                  > git checkout master
+                  > git fetch origin
+                  > git rebase origin/master
+
+PATCH WORKFLOWS
+
+LEFT OFF HERE:   http://rypress.com/tutorials/git/patch-workflows
             
-LEFT OFF HERE:  Publish the Pink Page (John)  ON:  http://rypress.com/tutorials/git/distributed-workflows
+
 
 
 
