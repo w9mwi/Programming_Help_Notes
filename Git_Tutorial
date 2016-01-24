@@ -337,10 +337,33 @@ DISTRIBUTED WORKFLOWS
                   > git rebase origin/master
 
 PATCH WORKFLOWS
+                 > cd C:\Tom\Programming\my-git-repo
+                 > git remote add origin https://github.com/w9mwi/my-git-repo.git
+                 > cd C:\Tom\Programming\marys-repo
+                 > git remote add origin https://github.com/w9mwi/my-git-repo.git
 
-LEFT OFF HERE:   http://rypress.com/tutorials/git/patch-workflows
-            
-
+PLUMBING
+                  Running the following command will output the complete representation of a commit, which consists of:
+                  Tree + Parent + User Data + Commit Message
+                  > git cat-file commit HEAD
+                  A tree object is Git’s representation of the “snapshots”. A snapshot records the state of a directory
+                  at a given point, without any notion of time or author.  To tie trees together into a coherent project
+                  history, Git wraps each one in a commit object and specifies a parent, which is just another commit.
+                  By following the parent of each commit, you can walk through the entire history of a project.
+                  Run the below commands
+                  > git log --oneline  (Obtain an ID number used by the following comand.)
+                  > git cat-file tree 781e5cd  (Notice output contains ugly binary cruft.)
+                  > git ls-tree 781e5cd        (Output looks much cleaner than above command.)
+                  Regarding the output of the above 2 commands: a 'blob' represents a file, a 'tree' represent a folder.
+                  Since a blob represents a file, obtain an ID number from the following command that represents a blob.
+                  > git cat-file blob 3c13974  (Obtain a an ID from one of the blob files that display.)
+                  > git cat-file blob 30560188ea822a5c0fe050eccac16d8ffe47e470  (Prints file contents.)
+                  IMPORTANT: A detached HEAD state occurrs when HEAD doesn't coincide with the tip of any branch.
+                  Run the following to see this...
+                  > git checkout HEAD~1
+                  > git status  (You should see a message siminal to this:  HEAD detached at 1287d48)
+                  > git checkout master
+                  > git status  (The 'HEAD detached' message above should now be gone.)
 
 
 
