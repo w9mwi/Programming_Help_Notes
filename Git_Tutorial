@@ -387,10 +387,19 @@ PLUMBING
                   IMPORTANT: A detached HEAD state occurrs when HEAD doesn't coincide with the tip of any branch.
                   Run the following to see this...
                   > git checkout HEAD~1
-                  > git status  (You should see a message siminal to this:  HEAD detached at 1287d48)
+                  > git status  (You should see a message siminar to this:  HEAD detached at 1287d48)
                   > git checkout master
                   > git status  (The 'HEAD detached' message above should now be gone.)
-
+HOOKS             Read section titled 'Hook into Git’s Internals' on this web page: http://rypress.com/tutorials/git/tips-and-tricks
+                  Navigate to the ./git/hooks directory in your repository folder.  You will notice about 9 file names that
+                  end with the .sample extension.  These are shell script files.  When the '.sample' extension is removed from
+                  these file names, these files will execute the shell script contents of these files.
+VIEW DIFFS BETWEEN COMMITS
+                  The git diff command is incredibly useful for pinpointing contributions from other developers.  EXAMPLES:
+                  > git diff  (Generates a detailed view of all uncommitted changes.)
+                  > git diff --cached  (The --cached flag generates a diff between the staged snapshot and most-recent commit.)
+                  > git diff HEAD~2..HEAD~1
+                  > git diff master..john/pink-page
 
 
 
@@ -446,6 +455,14 @@ REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git rm --cached t
 DELETE A STAGED FILE:
 > git add tom.java
 > git rm tom.java
+
+CHANGE ALTERED FILE TO ITS COMMITTED STATE:
+Assume the working directory is clean and up to date with the most recent commit,
+and you mistakenly do one of the following:
+1) Change a file that's previously been committed (in this example blue.html).
+2) Change a file that's previously been committed (in this example blue.html), and then "git add" the blue.html file.
+To bring back the original blue.html file that's already committed, run the following command:
+> git checkout HEAD blue.html
 
 CHANGE MESSAGE OF MOST-RECENT COMMIT:
 > git add tom.java
