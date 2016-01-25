@@ -443,6 +443,14 @@ repository?  Follow these instructions...
 =======================================================================================
 GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS
 
+An UNTRACKED FILE is a file that has never had the "git add" command run on it.
+A TRACKED FILE is a file that has had the "git add" command run on it at least one time.
+A STAGED FILE is a file that has NOT been altered/changed since it last had the "git add" command run on it,
+AND has not yet been committed with the "git commit" command.
+Every time you make a change to a STAGED FILE, you must again run the "git add" command on it before it can
+be committed via the "git commit" command.
+
+
 REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git reset HEAD tom.java" below.)
 > git add tom.java
 > git rm --cached tom.java  (Removes tom.java from staged area, but doesn't delete the file.)
