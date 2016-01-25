@@ -342,6 +342,32 @@ PATCH WORKFLOWS
                  > cd C:\Tom\Programming\marys-repo
                  > git remote add origin https://github.com/w9mwi/my-git-repo.git
 
+TIPS AND TRICKS
+                 Archive the 'master' repository in the 'my-git-repo' directory (not including the .git directory).  Removing the
+                 .git directory removes all version control information, and you’re left with a single snapshot of your project.
+                 > cd C:\Tom\Programming\my-git-repo
+                 > git archive master --format=zip --output=../website-12-10-2012.zip  (On Windows)
+                 > git archive master --format=tar --output=../website-12-10-2012.tar  (On UNIX)
+                 You can also bundle a repository, which is similar to the above 'archive' command, except the resulting file
+                 does contain the .git directory (versioning information of the entire project).  In this example, we bundle
+                 the 'master' branch of the 'my-git-repo' directory.
+                 > git bundle create ../repo.bundle master  (Saves 'master' branch of the repository to the repo.bundle file.)
+                 Navigate to the directory containing the repo.bundle file created in the above command, and run the following:
+                 > git clone repo.bundle repo-copy -b master  (Creates a cloned repository in a child directory named  'repo-copy'.)
+                 Use the bundle command above to backup an entire Git repository.
+                 MAKE GIT IGNORE FILES
+                 To make Git ignore ertain files, you can do the following:
+                 > notepad junkfile.txt  (Create a new file called 'junkfile.txt' and save it in the 'my-git-repo' directory.)
+                 > git status  (Notice the junkfile.txt appears as an untracked file.)
+                 In the same 'my-git-repo' directory, create a new file called .gitignore and enter this text into it:
+                 junkfile.txt
+                 > git status (junkfile.txt no longer appears as an untracked file, but the .gitignore file does!  Fix that here...)
+                 > git add .gitignore
+                 > git commit -m "Add .gitignore file"
+                 > git status  (Notice there are no more untracked files.)
+                 
+                 
+
 PLUMBING
                   Running the following command will output the complete representation of a commit, which consists of:
                   Tree + Parent + User Data + Commit Message
