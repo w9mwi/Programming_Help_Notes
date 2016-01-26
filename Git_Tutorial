@@ -442,13 +442,31 @@ repository?  Follow these instructions...
 =======================================================================================
 GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS
 
-An UNTRACKED FILE is a file that has never had the "git add" command run on it.
+An UNTRACKED FILE is a file that's never had the "git add" command run on it.
 A TRACKED FILE is a file that has had the "git add" command run on it at least one time.
-A STAGED FILE is a file that has NOT been altered/changed since it last had the "git add" command run on it,
-AND has not yet been committed with the "git commit" command.
+A STAGED FILE is a file that has NOT been altered/changed since was last committed, via the "git commit" command.
 Every time you make a change to a STAGED FILE, you must again run the "git add" command on it before it can
 be committed via the "git commit" command.
 
+GIT CHECKOUT BRANCHES
+> git checkout master  (The repository points to the 'master' branch.)
+> git checkout poop    (The repository points to the 'poop' branch.)
+> git log --oneline  (Prints something similar to below text.)
+  6715fc5 Added whitespace to blue.html file.
+  430d978 Add .gitignore file
+  49f80f3 Changed index.html, added news4.html.
+  fe17adf Add pink page
+  1287d48 Add CSS styles for headings and links
+> git checkout 49f80f3  (This makes your working directory match the exact state of the 49f80f3 commit.  HEAD no longer points to a
+                         branch, but to a previous commit deignated by the 49f80f3 ID.  This is called a “detached HEAD” state.)
+> git checkout 6715fc5 blue.html  (Checks out the blue.html file that was in the 6715fc5 commit.  This can change the current state
+                                   of your project.  You can add + commit this olded blue.html file, or run the following command
+                                   to revert that file back to its current state.)
+> git checkout HEAD blue.html     (Returns contents of blue.html file to the one in the most-recent commit.)
+
+
+GIT CHECKOUT A FILE
+> git checkout fe17adf hello.py
 
 REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git reset HEAD tom.java" below.)
 > git add tom.java
