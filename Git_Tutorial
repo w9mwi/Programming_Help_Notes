@@ -194,18 +194,16 @@ CLONING REPOSITORY  To clone an existing repository located on your hard disk, d
                     you want to clone.  In this example, the "C:\Tom\Programming" parent directory
                     contains the child directory "C:\Tom\Programming\my-git-repo".  So navigate to
                     the "C:\Tom\Programming" directory, then run the following commands:
-                       > git clone my-git-repo  marys-repo  (marys-repo is now a clone of my-git-repo).
+                       > git clone my-git-repo  marys-repo  (The my-git-repo directory/repository gets cloned into the marys-repo
+                                                             directory/repository.  This command also creates the marys-repo directory.)
                        > cd marys-repo  (You are now in the newly-created repository directory named marys-repo.)
-                       > git branch  (Verify that only the master branch exists.)
+                       > git branch -rv (Verify that the only the LOCAL BRANCH existing in marys-repo is the 'master' branch.)
+                       > git remote -v  (Verify the marys-repo BRANCH does have a REMOTE REPOSITORY named 'origin'.  This
+                                        REMOTE REPOSITORY named 'origin' was created via the above "git clone" command.)
                        > git config user.name "Mary"
                        > git config user.email w9mwi@yahoo.com
-                    When you clone a repository, Git automatically adds an 'origin' remote repository to the newly-cloned
-                    repository.  This remote 'origin' repository points to the repository that you just cloned from, thus
-                    the name 'origin'.  You’ll probably want to interact with this 'origin' repository sometime later.
-                    Run the following command to confirm you have a remote repository named 'origin'.
-                       > git remote -v  (The -v flag means verbose.  The following 2 lines are output.)
-                       origin  C:/Tom/Programming/my-git-repo (fetch)
-                       origin  C:/Tom/Programming/my-git-repo (push)
+                    When you clone a repository, Git automatically adds an 'origin' REMOTE REPOSITORY to the newly-cloned repository.
+
                     Next, navigate back to the "C:\Tom\Programming\my-git-repo" directory, and run the following commands:
                        > git remote -v (Notice that there exists no remote repository.)
                        > git remote add mary ../marys-repo   (Create a remote repository named 'mary', pointing to the
@@ -213,8 +211,8 @@ CLONING REPOSITORY  To clone an existing repository located on your hard disk, d
                        > git remote -v  (The following 2 lines are output.)
                        mary    ../marys-repo (fetch)
                        mary    ../marys-repo (push)
-                    In the "C:\Tom\Programming\my-git-repo" directory, we can now reference the 'mary' repository.
-                    In the "C:\Tom\Programming\marys-repo" directory, we can now reference the 'origin' repository.
+                    IMPORTANT: From the "C:\Tom\Programming\marys-repo" directory, we can now reference the 'origin' repository.
+                    IMPORTANT: From the "C:\Tom\Programming\my-git-repo" directory, we can now reference the 'mary' repository.
 
 MERGING FROM ONE REPOSITORY INTO ANOTHER:
                     After you've completed all steps in the above CLONING REPOSITORY section, do the following
@@ -223,23 +221,22 @@ MERGING FROM ONE REPOSITORY INTO ANOTHER:
                     From the "C:\Tom\Programming\my-git-repo" directory, run these commands:
                        > git fetch mary  (Fetch all of the branches located in the marys-repo repository into
                                           the my-git-repo repository.)
-                       > git branch -r   (Displays all branches that exist in REMOTE REPOSITORIES, as shown below.)
-                       mary/bio-page
-                       mary/master
-                   Let's now checkout the mary/master branch into the my-git-repo directory.
+                       > git branch -rv  (Displays all branches that exist in REMOTE REPOSITORIES, like the following 2 lines.)
+                         mary/bio-page
+                         mary/master
+                   Let's now checkout the mary/master branch (displayed immediately above) into the my-git-repo directory.
                        > git checkout mary/master  (Checkout the master branch from the mary repository,
                                                     so we can review code changes made by Mary.)
                        > git checkout master       (Checkout our own master branch, which overwrites the mary/master
                                                     branch that we just checked out in the previous command.)
                        > git merge mary/master     (Merge the mary/master branch into our master branch.)
 FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPORTS A BRANCH from a remote repository.
-                  Push CREATES A NEW LOCAL BRANCH in a remote repository.  Navigate to the "C:\Tom\Programming\my-git-repo" directory,
-                  and run the following 2 commands, which will create a new 'dummy' branch in the my-git-repo directory,
-                  and will then export this 'dummy' branch to the 'mary' repository.
-                  > git branch dummy
-                  > git push mary dummy
+                  Push CREATES A NEW LOCAL BRANCH in a remote repository.  Navigate to the "C:\Tom\Programming\my-git-repo"
+                  directory, and run the following 2 commands.
+                  > git branch dummy     (Creates a new 'dummy' branch in the my-git-repo directory.)
+                  > git push mary dummy  (Export the 'dummy' branch to the 'mary' repository.)
                   As a general rule, you should never push into another developer’s repository.  The reason "git push" exists
-                  is that it allows you to make changes to a PUBLIC repository, that must be maintained by multiple people.
+                  is that it allows you to make changes to a PUBLIC repository, that should be maintained by multiple people.
                   Next, navigate to the "C:\Tom\Programming\my-git-repo" directory, tag the master branch in this
                   directory, and then push this tagged v2.0 version to the 'mary' repository.
                   > git tag -a v2.0 -m "An even stabler version of the website"
@@ -257,7 +254,7 @@ FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPOR
                   > git remote add <remote-name> <remote-path>  (Add a remote repository.)
                   > git fetch <remote-name>  (Download remote branch information, but do not merge anything.)
                   > git merge <remote-name>/<branch-name>  (Merge a remote branch into the checked-out branch.)
-                  > git branch -r  (List remote branches.)
+                  > git branch -rv  (List remote branches.)
                   > git push <remote-name> <branch-name>  (Push a local branch to another repository.)
                   > git push <remote-name> <tag-name>     (Push a tag to another repository.)
 CENTRALIZED WORKFLOWS
@@ -317,7 +314,7 @@ DISTRIBUTED WORKFLOWS
                   > cd C:\Tom\Programming\my-git-repo
                   > git remote add john  https://github.com/w9mwi/johns-repo.git
                   > git fetch john  (Copies contents of GitHub's 'johns-repo' repository to the new 'john' repository.)
-                  > git branch -r  (Shows the new john/pink-page remote repository.)
+                  > git branch -rv  (Shows the new john/pink-page remote repository.)
                   > git checkout john/pink-page  (Checkout the 'pink-page' repository located in C:\Tom\Programming\johns-repo
                   If you approve John's updates, merge them into your master branch (in the my-git-repo directory).
                   > git checkout master
@@ -473,6 +470,12 @@ and you mistakenly do one of the following:
 2) Change a file that's previously been committed (in this example blue.html), and then "git add" the blue.html file.
 To bring back the original blue.html file that's already committed, run the following command:
 > git checkout HEAD blue.html
+
+DISPLAY ALL REMOTE REPOSITORIES FROM YOUR CURRENT REPOSITORY.
+> git branch -rv   (Displays information similar to the following 3 lines.)
+  john-public/pink-page fe17adf Add pink page
+  origin/HEAD           -> origin/master
+  origin/master         fe17adf Add pink page
 
 
 RESET TRACKED FILES TO MOST-RECENT COMMIT - Undoes changes to the working directory and the staged snapshot.
