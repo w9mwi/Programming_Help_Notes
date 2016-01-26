@@ -25,27 +25,27 @@ SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given p
                     multiple files before actually committing it to the project history.  Staging gives
                     us the opportunity to group related changes into distinct snapshots—a practice that
                     makes it possible to track the meaningful progression of a software project (instead
-                    of just arbitrary lines of code).  nly after executing git commit will our snapshot
+                    of just arbitrary lines of code).  Only after executing git commit will our snapshot
                     be recorded in the repository. Committed snapshots can be seen as “safe” versions of
                     the project.  Git will never change them, which means you can do almost anything you
                     want to your project without losing those “safe” revisions.
 GIT ADD             After a new file (or set of files) is created, and these files contains the correct
                     code, you can add them to your snapshot via the "add" command, like this:
-                    > git add index_1.html index_2.html index_3.html
+                    > git add index_1.html  index_2.html  index_3.html
                     To add all files (staged that have changes, and unstaged files) in the current directory, run:
                     > git add *
-GIT COMMIT C        To commit all files of your snapshot (files added with the git "add" command, you can
+GIT COMMIT C        To commit all files of your snapshot (files added with the git "add" command), you can
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
-                  To commit all STAGED files without having to first do a "git add", you can run the following command:
-                  > git commit -a -m "Add CSS stylesheet to rainbow.html" (The -a performs the "git add" command on all previously
-                                                                           STAGED files.  Which means files that have been previously
-                                                                           added with "git add", but have been changed since then.)
+                    To commit all STAGED files without having to first do a "git add", you can run the following command:
+                    > git commit -a -m "Add CSS stylesheet to rainbow.html" (The -a performs the "git add" command on all previously
+                                                                             STAGED files.  Which means files that have been previously
+                                                                             added with "git add", but have been changed since then.)
 GIT LOG           Run the following:
                     > git log  (Displays only git commits.)
                     > git log --oneline  (Displays each commit on only one line.)
-                    > git log --oneline blue.html  (Displays each commit that contains "blue.html" on only one line.)
+                    > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
                     > git log -n 4  (Displays log for the 4 most-recent commits.)
 GIT CONFIG        Run the following commands so git knows your name and e-mail address.  You need to
                     do this ONLY ONCE.  Now when you commit files to your git repository, and you
@@ -70,7 +70,7 @@ TAG A RELEASE     To tag a release, do the following:
                     > git tag -a Version_1.0  -m "Tag Version 1.0"
                     > You can now add/commit more files.  When you want to return to the "Version_1.0" tag, do this:
                     > git checkout Version_1.0
-GIT REVERT        Undo the specified commit by applying a new commit.  Undoes changes contained in committed snapshots.
+GIT REVERT        Undo a specified commit by applying a new commit.  Undoes changes contained in committed snapshots.
                     > git log
                     > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
                     > git revert b1b4e7a77fe1164952cad7699292024686c3357c
@@ -81,9 +81,10 @@ GIT RESET         Reset tracked files to match the most recent commit.  Undoes c
                     > git clean -f
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
-                  means dummy.html is NOT tracked.  To remove this index.html file AND ALL TRACKED FILES, run:
-                    > git clean -f  (Remove untracked files.)
-BRANCHES         To create a new branch named poop, and then check it out, do the following:
+                  means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
+                    > git clean -f  (Remove all untracked files.)
+BRANCHES         To create a new branch named poop, and then check it out, do the following.  This new poop branch will
+                 initially be identical to the branch you currently have checked out.
                  > git branch poop
                  > git checkout poop
                  To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
@@ -147,7 +148,7 @@ GIT MERGE       > git checkout master  (Go to the master branch.)
                 > git checkout crazy
                 > git merge master
                 > git log --oneline
-GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing), search for the text: Publish News Hotfix
+GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing), search for this text: Publish News Hotfix
                Under that text you'll see a diagram labeled with this text:  Fast-forwarding master to the news-hotfix
                We'll call this the BEFORE DIAGRAM.
                Below that diagram, you'll see another diagram labeled with this text:  Rebasing the about branch onto master
@@ -177,6 +178,7 @@ GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing),
               it will seem as though you created every part of your project in a neatly planned sequence, even though
               you may have explored various alternatives or developed unrelated features in parallel.  Rebasing gives
               you the power to choose exactly what gets stored in your repositories.
+
 GIT REFLOG    Git uses something called the reflog to record every change you make to your repository.  The reflog is
               a chronological listing of repository history, without regard for the repository’s branch structure.
               This lets us find dangling commits that would otherwise be lost from the project history.  Run the
@@ -184,8 +186,8 @@ GIT REFLOG    Git uses something called the reflog to record every change you ma
               > git reflog
 
 REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be another Git repository located
-                     on your company’s network, the internet, or even on your hard disk.  Remote branches
-                     act just likelocal branches, except they represent a branch in someone else’s repository.
+                     on your company’s network, the internet, or even on your own hard disk.  Remote branches
+                     act just like local branches, except they represent a branch located in someone else’s repository.
 
 CLONING REPOSITORY  To clone an existing repository located on your hard disk, do the following...
                     On the command line, navigate to the PARENT DIRECTORY containing the repository
@@ -193,14 +195,14 @@ CLONING REPOSITORY  To clone an existing repository located on your hard disk, d
                     contains the child directory "C:\Tom\Programming\my-git-repo".  So navigate to
                     the "C:\Tom\Programming" directory, then run the following commands:
                        > git clone my-git-repo  marys-repo  (marys-repo is now a clone of my-git-repo).
-                       > cd marys-repo  (You are now in the marys-repo repository.)
+                       > cd marys-repo  (You are now in the newly-created repository directory named marys-repo.)
                        > git branch  (Verify that only the master branch exists.)
                        > git config user.name "Mary"
                        > git config user.email w9mwi@yahoo.com
-                    When you clone a repository, Git automatically adds an 'origin' remote that points to the
-                    repository you just cloned.  Because you’ll probably want to interact with this 'origin'
-                    repository (the repository you cloned) sometime later.  Run the following command
-                    to confirm you have a remote repository named 'origin'.
+                    When you clone a repository, Git automatically adds an 'origin' remote repository to the newly-cloned
+                    repository.  This remote 'origin' repository points to the repository that you just cloned from, thus
+                    the name 'origin'.  You’ll probably want to interact with this 'origin' repository sometime later.
+                    Run the following command to confirm you have a remote repository named 'origin'.
                        > git remote -v  (The -v flag means verbose.  The following 2 lines are output.)
                        origin  C:/Tom/Programming/my-git-repo (fetch)
                        origin  C:/Tom/Programming/my-git-repo (push)
@@ -472,6 +474,17 @@ and you mistakenly do one of the following:
 To bring back the original blue.html file that's already committed, run the following command:
 > git checkout HEAD blue.html
 
+
+RESET TRACKED FILES TO MOST-RECENT COMMIT - Undoes changes to the working directory and the staged snapshot.
+                                            Assume you made text changes to an already-committed file named: index.html
+                                            To revert your changes made to index.html, do the following:
+                                            > git reset --hard
+                                            > git clean -f
+
+DELETE ALL UNTRACKED FILES - Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
+                             means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
+                             > git clean -f  (Remove all untracked files.)
+
 CHANGE MESSAGE OF MOST-RECENT COMMIT:
 > git add tom.java
 > git commit -m "Commited tom.java file."
@@ -484,6 +497,10 @@ RENAME A COMMITTED FILE:
 
 REMOVE A BRANCH:
 > git branch -d poop  (Removes the brnch named 'poop')
+
+MERGE A BRANCH
+> git checkout master  (Go to the master branch.)
+> git merge css  (Merge the css branch into the master branch.)
 
 REMOVE A REMOTE REPOSITORY:
 > git remote rm john-public  (Remove the remote repository reference, but the remote repository remains.)
