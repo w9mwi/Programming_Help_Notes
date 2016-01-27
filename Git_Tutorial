@@ -476,7 +476,7 @@ GIT CHECKOUT BRANCHES
 GIT CHECKOUT A FILE
 > git checkout fe17adf hello.py
 
-GIT PUSH - Pushing is The most common use case for git push is to publish your local changes to a central repository.  After you’ve
+GIT PUSH - The most common use case for git push is to publish your local changes to a central repository.  After you’ve
            accumulated several local commits and are ready to share them with the rest of the team, you (optionally) clean them up
            with an interactive rebase, then push them to the central repository.
            'git push' is how you transfer commits from your local repository to a remote repo.  It's the counterpart to git fetch.
@@ -484,8 +484,8 @@ GIT PUSH - Pushing is The most common use case for git push is to publish your l
            HAS THE POTENTIAL TO OVERWRITE CHANGES, so you need to be careful how you use it.  To prevent you from overwriting commits,
            Git won’t let you push when it results in a non-fast-forward merge in the destination repository.   'git push' is
            essentially the same as running 'git merge master' from inside the remote repository.   You should only push to
-           repositories that have been created with the --bare flag. Since pushing messes with the remote branch structure,
-           it’s important to never push to another developer’s repository.  But because bare repos do NOT have a working
+           repositories that have been created with the --bare flag.  Since pushing messes with the remote branch structure,
+           it’s important to never push to another developer’s repository.  But because 'bare' repos do NOT have a working
            directory, it’s impossible to interrupt anybody’s developments.
 
 GIT PULL - Merging upstream changes into your local repository is a common task in Git-based collaboration workflows.  We know
