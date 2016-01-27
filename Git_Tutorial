@@ -70,19 +70,44 @@ TAG A RELEASE     To tag a release, do the following:
                     > git tag -a Version_1.0  -m "Tag Version 1.0"
                     > You can now add/commit more files.  When you want to return to the "Version_1.0" tag, do this:
                     > git checkout Version_1.0
-GIT REVERT        Undo a specified commit by applying a new commit.  Undoes changes contained in committed snapshots.
-                    > git log
-                    > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
-                    > git revert b1b4e7a77fe1164952cad7699292024686c3357c
-GIT RESET         Reset tracked files to match the most recent commit.  Undoes changes to the working directory and the
-                  staged snapshot.  Assume you made text changes to an already-committed file named: index.html
+GIT REVERT        Generates a new commit that UNDOES ALL CHANGES introduced in the commit specified by the ID parameter.
+                  Then, applies this new commit to the current branch.  EXAMPLE:
+                    > git checkout master
+                    > git log --oneline  (Produces list of commit IDs.)
+                    > git revert <commitID>
+                    IMPORTANT: The 'git revert' command UNDOES A SINGLE COMMIT.  It does NOT “revert” back to the state of
+                               the project specified by the <commitID> parameter--to do that you'd use the 'git reset' command.
+                    ANOTHER EXAMPLE: Use 'git revert' to undo the most recent commit...
+                                     1) Alter some tracked fles in your git workspace.
+                                     2) Commit (via 'git commit') the changes made in step #1 above.
+                                        > git commit -m "Make some changes that will be undone"
+                                     3) Undo all changes made by the above commit, so they are no longer in effect.  The project
+                                        is reverts back to the state before you made the changes mentioned above.
+                                        > git revert HEAD
+
+GIT RESET         DANGER: NEVER use git reset <commit> when any snapshots after <commit> have been pushed to a public repository.
+                          Use git reset <commit> ONLY ON A LOCAL EXPERIMENT THAT WENT WRONG--NEVER ON PUBLISHED CHANGES.
+                  'git reset' is a permanent delete.  Care must be taken when using 'git reset', as it’s one of the only Git commands
+                  that has the potential to delete your work.  Use 'git reset' when you want to cancel all changes made your
+                  current workspace, and bring back the workspace representing the most-recent commit.  In other words, reset
+                  all tracked files to match the most recent commit.  Assume you made text changes to an already-committed file
+                  named: index.html
                   To revert your changes made to index.html, do the following:
-                    > git reset --hard
+                    > git reset --hard  (The --hard flag tells Git to overwrite all changes in the working directory.)
                     > git clean -f
-                  The above 2 (TWO) commands together permanently undoes uncommitted changes.
+                  The above 2 (TWO) commands together permanently undoes uncommitted changes.  Here's another example...
+                    > git reset --hard HEAD~2  (The HEAD~2 parameter moves the current branch backward by two commits, effectively
+                                                the two snapshots we just created from the project history.  Remember, this kind
+                                                of reset should only be used on unpublished commits.  Never perform the above
+                                                operation if you’ve already pushed your commits to a shared repository.)
+
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
-                    > git clean -f  (Remove all untracked files.)
+                    > git clean -f  (Remove all untracked files from the current directory.)
+                    > git clean -df (Remove untracked files and untracked directories from the current directory.)
+                    > git clean -n  (Performs a “dry run” of git clean.  This shows you which files are going to be removed without
+                                     actually doing it.)
+
 BRANCHES         To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
                  > git branch poop
@@ -448,6 +473,14 @@ A STAGED FILE is a file that has NOT been altered/changed since was last committ
 Every time you make a change to a STAGED FILE, you must again run the "git add" command on it before it can
 be committed via the "git commit" command.
 
+GIT CHECKOUT COMMAND - The git checkout command serves three distinct functions:
+                       1) Checking out files    - Checking out a file lets you see an old version of that particular file,
+                                                  leaving the rest of your working directory untouched.
+                       2) Checking out commits  - Checking out a commit makes the entire working directory match that commit.
+                                                  This can be used to view an old state of your project without altering your
+                                                  current state in any way.
+                       3) Checking out branches - Checking out a branch makes the entire working directory match that branch.
+
 GIT CHECKOUT BRANCHES
 > git checkout master  (The repository points to the 'master' branch.)
 > git checkout poop    (The repository points to the 'poop' branch.)
@@ -460,13 +493,9 @@ GIT CHECKOUT BRANCHES
 > git checkout 49f80f3  (This makes your working directory match the exact state of the 49f80f3 commit.  HEAD no longer points to a
                          branch, but to a previous commit deignated by the 49f80f3 ID.  This is called a “detached HEAD” state.)
 > git checkout 6715fc5 blue.html  (Checks out the blue.html file that was in the 6715fc5 commit.  This can change the current state
-                                   of your project.  You can add + commit this olded blue.html file, or run the following command
-                                   to revert that file back to its current state.)
+                                   of your project.  You can run 'git add' + 'git commit'  on this older-version blue.html file,
+                                   or run the following command to revert blue.html back to its current state.)
 > git checkout HEAD blue.html     (Returns contents of blue.html file to the one in the most-recent commit.)
-
-
-GIT CHECKOUT A FILE
-> git checkout fe17adf hello.py
 
 REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git reset HEAD tom.java" below.)
 > git add tom.java
@@ -524,7 +553,7 @@ MERGE A BRANCH
 > git merge css  (Merge the css branch into the master branch.)
 
 REMOVE A REMOTE REPOSITORY:
-> git remote rm john-public  (Remove the remote repository reference, but the remote repository remains.)
+> git remote rm john-public  (Remove the remote repository reference names john-public, but the remote repository remains.)
 
 LOG FILE COMMANDS:
 > git log --pretty=online
