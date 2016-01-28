@@ -34,7 +34,7 @@ GIT ADD             After a new file (or set of files) is created, and these fil
                     > git add index_1.html  index_2.html  index_3.html
                     To add all files (staged that have changes, and unstaged files) in the current directory, run:
                     > git add *
-GIT COMMIT C        To commit all files of your snapshot (files added with the git "add" command), you can
+GIT COMMIT          To commit all files of your snapshot (files added with the git "add" command), you can
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
