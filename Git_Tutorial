@@ -429,6 +429,13 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
    > git remote -v   (Shows the 'origin' remote branch.)
 8) The GitHub URL (https://github.com/w9mwi/tomsJunkRepo.git) now holds the changes that
    you pushed to it from your local C:\Tom\Programming\tomsJunkRepo repository.
+
+NOTE - For this example, see: http://alvinalexander.com/git/git-cheat-sheet-git-reference-commands
+How to push an existing Git repository to Github:
+$ cd example
+$ git remote add origin git@github.com:alvinj/example.git
+$ git push origin master
+
 ================================================================================================
 
 
