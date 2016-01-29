@@ -415,20 +415,20 @@ VIEW DIFFS BETWEEN COMMITS
 HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
 
 1) Create a new repository on GitHub, and leave it empty.  In this example we'll name it: tomsJunkRepo
-2) Go to the directory on your local hard disk where you want to locate your new local repository.
-   > cd C:\Tom\Programming
-3) From this directory, run:
+2) Run the following:
+   > cd C:\Tom\Programming  (Your local hard disk directory that will contain your new local repository directory.)
    > git  clone  https://github.com/w9mwi/tomsJunkRepo.git  (Creates a new C:\Tom\Programming\tomsJunkRepo directory.)
-   > cd C:\Tom\Programming\tomsJunkRepo
-4) Create new files and folders (and a .gitignore file) that you want to store in the remote GitHub repository.
-5) > add *  (Add all files and folders to staged area.)
-7) > commit -m "Added new files and folders."  (Commit all files + folders to the local 'master' branch by default.)
-8) > git status
-9) > git push origin master  (Push your new local 'master' branch changes to the remote 'origin' GitHub repository.)
+   > cd C:\Tom\Programming\tomsJunkRepo  (Confirm your new local repository has been created.)
+3) Create new files and folders (and a .gitignore file) in your new local repository.
+4) > add *  (Add all files and folders to staged area.)
+5) > commit -m "Added new files and folders."  (Commit all files + folders to the local 'master' branch by default.)
+6) > git status
+7) > git push origin master  (Push your new local 'master' branch changes to the remote 'origin' GitHub repository.)
    > git branch      (Shows the new 'master' local branch you just created.)
    > git branch -rv  (Shows 'origin/master', which designates the remote 'origin' repository containing a  master branch.)
-   > git remote -v  (Shows the 'origin' remote branch.)
-10) The GitHub URL (https://github.com/w9mwi/tomsJunkRepo.git) now holds the changes that you pushed to it from your local disk.
+   > git remote -v   (Shows the 'origin' remote branch.)
+8) The GitHub URL (https://github.com/w9mwi/tomsJunkRepo.git) now holds the changes that
+   you pushed to it from your local C:\Tom\Programming\tomsJunkRepo repository.
 ================================================================================================
 
 
