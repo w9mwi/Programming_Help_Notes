@@ -420,6 +420,8 @@ VIEW DIFFS BETWEEN COMMITS
 ================================================================================================
 HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
 
+1) ??? git remote add origin git@github.com:username/reponame.git
+
 Assume you have a parent directory that contains an entire working Android project.
 This parent directory contains numerous files and directories, that contain yet more
 files and directories.  How do you get all these files and directories into git
