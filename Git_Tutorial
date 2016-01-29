@@ -411,45 +411,26 @@ VIEW DIFFS BETWEEN COMMITS
                   > git diff HEAD~2..HEAD~1
                   > git diff master..john/pink-page
 
-
-
-
-
-
-
 ================================================================================================
-HOW TO CREATE A NEW GIT REPOSITORY THAT'S ALREADY LOADED WITH PRE-EXISTING FILES AND DIRECTORIES
+HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
 
-1) ??? git remote add origin git@github.com:username/reponame.git
+1) Create a new repository on GitHub, and leave it empty.  In this example we'll name it: tomsJunkRepo
+2) Go to the directory on your local hard disk where you want to locate your new local repository.
+   > cd C:\Tom\Programming
+3) From this directory, run:
+   > git  clone  https://github.com/w9mwi/tomsJunkRepo.git  (Creates a new C:\Tom\Programming\tomsJunkRepo directory.)
+   > cd C:\Tom\Programming\tomsJunkRepo
+4) Create new files and folders (and a .gitignore file) that you want to store in the remote GitHub repository.
+5) > add *  (Add all files and folders to staged area.)
+7) > commit -m "Added new files and folders."  (Commit all files + folders to the local 'master' branch by default.)
+8) > git status
+9) > git push origin master  (Push your new local 'master' branch changes to the remote 'origin' GitHub repository.)
+   > git branch      (Shows the new 'master' local branch you just created.)
+   > git branch -rv  (Shows 'origin/master', which designates the remote 'origin' repository containing a  master branch.)
+   > git remote -v  (Shows the 'origin' remote branch.)
+10) The GitHub URL (https://github.com/w9mwi/tomsJunkRepo.git) now holds the changes that you pushed to it from your local disk.
+================================================================================================
 
-Assume you have a parent directory that contains an entire working Android project.
-This parent directory contains numerous files and directories, that contain yet more
-files and directories.  How do you get all these files and directories into git
-repository?  Follow these instructions...
-
-1) This step is an aside.  You probably don't want/need to do this, but...  Assume you have an existing repository
-   on GitHub (named Android_Sample_Code) that is old, and full of junk you now longer want.  To delete this
-   existing GitHub repository (named Android_Sample_Code), go into that repository on GitHub.com, select the
-   'Settings' tab near the upper-right corner.  Then, under the 'Danger Zone' at the bottom of the page,
-   press the 'Delete this repository' button.  In the dialog popup that appears, enter the exact spelling
-   of the repository name you want to delete (Android_Sample_Code) in the entry field.  Finally, press the
-   "I understand the consequences, delete this repository" button.  The Android_Sample_Code repository
-   located in GitHub is now deleted!
-   
-2) To create a new repository on GitHub named 'Android_Sample_Code'. go to https://github.com and log into
-   your account.  Near the upper-right corner, press the button named '+ New repository'.  Enter Android_Sample_Code
-   in the 'Repository name' field, and enter a description in the 'Description' field.  Finally, press the
-   'Create repository' button at the bottom of the screen.
-
-3) If you need to create files named README, LICENSE, or .gitignore in this new Android_Sample_Code repository,
-   click on the  'README', 'LICENSE', or '.gitignore' link at the top of the page.  If you need to later delete
-   from GitHub any of these files (or some other file) you created, click on the file name so you can view its
-   contents.  Next, click on the trash can near the upper-rght corner.  On the web page that appears, enter
-   a comment, and press the 'Commit changes' button.  The file is now deleted.  FYI, to add a new file in this
-   GitHub repository, open the Android_Sample_Code repository, then 'New file' button near the top-center.
-
-4) 
-   ??? Create a new git repository on GitHub.com  ???
 
 
 =======================================================================================
@@ -568,8 +549,3 @@ LOG FILE COMMANDS:
 > git log --author="TJB"
 
 LEFT OFF AT: 22:26 @ https://www.youtube.com/watch?v=r63f51ce84A
-> 
-> 
-> 
-> 
-> 
