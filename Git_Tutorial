@@ -421,10 +421,44 @@ VIEW DIFFS BETWEEN COMMITS
 ================================================================================================
 HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
 
-1) Create a new repository on GitHub, and leave it empty.  In this example we'll name it: tomsJunkRepo
+1) Create a new repository on GitHub named tomsJunkRepo, and leave it empty.
 2) Run the following:
-   > cd C:\Tom\Programming  (Your local hard disk directory that will contain your new local repository directory.)
+   > cd C:\Tom\Programming  (The local hard disk directory that will contain your new local repository.)
+   > mkdir tomsJunkRepo
+3) In the tomsJunkRepo directory, create the .gitignore file, create some other files, and create some files in a child directory.
+   Then create a new 'master' branch in your local repository by running the following commands:
+   > cd C:\Tom\Programming\tomsJunkRepo
+   > git init  (Creates your local Git repository.)
+   > git status (Confirm your local repository was created.)
+   > git add .  (Don't forget to type the period character.)
+   > git status (Confirm your files and child directories were added/staged.)
+   > git branch -v (Confirm there does NOT yet exist a local branch.)
+   > git commit -m "Initial commit."
+   > git status  (Confirm the above 'git commit' command has created a branch named 'master'.)
+   > git branch -v  (Confirm you're now on this 'master' branch.)
+4) Create a new remote repository named 'origin', which will point to your GitHub repository designated by the URL below.
+   > git remote -v  (Confirm that there does NOT yet exist any remote repositories.)
+   > git remote add origin  https://github.com/w9mwi/tomsJunkRepo.git (Adds a new remote repository named 'origin'.)
+   > git remote -v  (Confirm there now exists a remote repository named 'origin'.)
+5) Look at the contents of the 'tomsJunkRepo' repository on your github.com web page, and notice it does NOT contain
+   any of the files/directories contained in your local 'tomsJunkRepo' repository.
+6) Push the contents of your local 'tomsJunkRepo' repository to the GitHub web site by running the following commands:
+   > git branch -rv (Confirm there does NOT yet exist any remote branches--even though the 'origin' remote repository does exist.)
+   > git push origin master  (Push the contents of your local 'master' branch to the 'origin' remote repository.)
+   > git branch -rv  (Confirm that there now exists a REMOTE repository/branch named origin/master.)
+7) Look at the contents of the 'tomsJunkRepo' repository on your github.com web page, and notice it now DOES contain
+   the files/directories contained in your local 'tomsJunkRepo' repository.
+8) THE END - Your local 'master' branch has successfuly been pushed to the 'master' branch of the REMOTE repository named 'origin'.
+   
+
    > git  clone  https://github.com/w9mwi/tomsJunkRepo.git  (Creates a new C:\Tom\Programming\tomsJunkRepo directory.)
+   ...OR...
+   > cd C:\Tom\Programming\tomsJunkRepo  (A newly-created tomsJunkRepo directory, that you've 'git init' on, and committed files.)
+
+   > git remote add origin  https://github.com/w9mwi/tomsJunkRepo.git (Adds a new remote repository named 'origin'.)
+   > git push origin master  (Push the contents of the branch you're currently on to the origin/master remote repo/branch.)
+
+
    > cd C:\Tom\Programming\tomsJunkRepo  (Confirm your new local repository has been created.)
 3) Create new files and folders (and a .gitignore file) in your new local repository.
 4) > add *  (Add all files and folders to staged area.)
