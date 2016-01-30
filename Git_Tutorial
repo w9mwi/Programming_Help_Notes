@@ -2,6 +2,7 @@ $10.00 HTML5 + Css3 CLASS:  http://www.businessinsider.com/learn-to-code-html-cs
 
 
 GIT TUTORIALS:  http://rypress.com/tutorials/git/index
+                https://git-scm.com/book/en/v2/
                 https://www.atlassian.com/git/tutorials/
 
 CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
@@ -252,7 +253,11 @@ FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPOR
                   it’s most likely because you didn’t to push them to the remote repository.
                   Note that "remotes" are for people.  "Branches" are for topics.  Do not create separate branches
                   for each of your developers—-give them separate repositories and bookmark them with git remote add.
-                  Branches should always be for project development, not user management.
+                  Branches should always be for project development, not user management.  The 'git push' command works
+                  ONLY if you cloned from a server to which you have write access, AND IF nobody has pushed in th
+                  meantime.  If you and someone else clone at the same time, and they push upstream, and then later you
+                  push upstream, your push will rightly be rejected.  You’ll have to pull down their work first and
+                  incorporate it into yours before you’ll be allowed to push.
 
 GIT FETCH         Since fetched content is represented as a remote branch, it has absolutely no effect on your local
                   development work. This makes fetching a safe way to review commits before integrating them with your
@@ -261,8 +266,9 @@ GIT FETCH         Since fetched content is represented as a remote branch, it ha
 
                   SUMMARY...
                   > git clone <remote-path>  (Create a copy of a remote Git repository.)
-                  > git remote  (List remote repositories.)
+                  > git remote -v  (List remote repositories.)
                   > git remote add <remote-name> <remote-path>  (Add a remote repository.)
+                  > git remote show origin  (Show details about the remote branch named 'origin'.)
                   > git fetch <remote-name>  (Download remote branch information, but do not merge anything.)
                   > git merge <remote-name>/<branch-name>  (Merge a remote branch into the checked-out branch.)
                   > git branch -rv  (List remote branches.)
@@ -346,7 +352,8 @@ DISTRIBUTED WORKFLOWS
                   > git fetch origin
                   > git rebase origin/master
 
-PATCH WORKFLOWS
+PATCH WORKFLOWS  Add a remote branch named 'origin' to BOTH the my-git-repo and the marys-repo repositories.
+                 Both these remote branches named 'origin' will point to the same remote repository.
                  > cd C:\Tom\Programming\my-git-repo
                  > git remote add origin https://github.com/w9mwi/my-git-repo.git
                  > cd C:\Tom\Programming\marys-repo
@@ -542,6 +549,7 @@ MERGE A BRANCH
 
 REMOVE A REMOTE REPOSITORY:
 > git remote rm john-public  (Remove the remote repository reference, but the remote repository remains.)
+
 RENAME A REMOTE REPOSITORY:
 > git remote rename <old-name> <new-name>
 
