@@ -1,3 +1,8 @@
+TO PARSE/VALIDATE XML, USE...
+http://www.w3schools.com/dom/dom_validate.asp
+http://www.w3schools.com/dom/dom_validate.asp
+http://www.w3schools.com/dom/dom_validate.asp
+
 
 HOW TO BACKUP Windows 10 Hard Disk to DVDs
 ==========================================
