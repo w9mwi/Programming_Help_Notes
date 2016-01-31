@@ -418,8 +418,10 @@ VIEW DIFFS BETWEEN COMMITS
                   > git diff HEAD~2..HEAD~1
                   > git diff master..john/pink-page
 
-================================================================================================
+========================================================================================================================
+========================================================================================================================
 HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
+-------------------------------------------------------------------------------
 
 1) Create a new repository on GitHub named tomsJunkRepo, and leave it empty.
 2) Run the following:
@@ -446,42 +448,52 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
    > git branch -rv (Confirm there does NOT yet exist any remote branches--even though the 'origin' remote repository does exist.)
    > git push origin master  (Push the contents of your local 'master' branch to the 'origin' remote repository.)
    > git branch -rv  (Confirm that there now exists a REMOTE repository/branch named origin/master.)
-7) Look at the contents of the 'tomsJunkRepo' repository on your github.com web page, and notice it now DOES contain
+   > git remote show origin  (Prints details about the remote 'origin' repository, similar to the following 8 lines of text.)
+     * remote origin
+       Fetch URL: https://github.com/w9mwi/tomsJunkRepo.git
+       Push  URL: https://github.com/w9mwi/tomsJunkRepo.git
+       HEAD branch: master
+       Remote branch:
+         master tracked
+       Local ref configured for 'git push':
+         master pushes to master (local out of date)
+7) Look at the contents of the 'tomsJunkRepo' repository on your github.com web page, and notice it now DOES CONTAIN
    the files/directories contained in your local 'tomsJunkRepo' repository.
 8) THE END - Your local 'master' branch has successfuly been pushed to the 'master' branch of the REMOTE repository named 'origin'.
-   
-
-   > git  clone  https://github.com/w9mwi/tomsJunkRepo.git  (Creates a new C:\Tom\Programming\tomsJunkRepo directory.)
-   ...OR...
-   > cd C:\Tom\Programming\tomsJunkRepo  (A newly-created tomsJunkRepo directory, that you've 'git init' on, and committed files.)
-
-   > git remote add origin  https://github.com/w9mwi/tomsJunkRepo.git (Adds a new remote repository named 'origin'.)
-   > git push origin master  (Push the contents of the branch you're currently on to the origin/master remote repo/branch.)
 
 
-   > cd C:\Tom\Programming\tomsJunkRepo  (Confirm your new local repository has been created.)
-3) Create new files and folders (and a .gitignore file) in your new local repository.
-4) > add *  (Add all files and folders to staged area.)
-5) > commit -m "Added new files and folders."  (Commit all files + folders to the local 'master' branch by default.)
-6) > git status
-7) > git push origin master  (Push your new local 'master' branch changes to the remote 'origin' GitHub repository.)
-   > git branch      (Shows the new 'master' local branch you just created.)
-   > git branch -rv  (Shows 'origin/master', which designates the remote 'origin' repository containing a  master branch.)
-   > git remote -v   (Shows the 'origin' remote branch.)
-8) The GitHub URL (https://github.com/w9mwi/tomsJunkRepo.git) now holds the changes that
-   you pushed to it from your local C:\Tom\Programming\tomsJunkRepo repository.
-
-NOTE - For this example, see: http://alvinalexander.com/git/git-cheat-sheet-git-reference-commands
-How to push an existing Git repository to Github:
-$ cd example
-$ git remote add origin git@github.com:alvinj/example.git
-$ git push origin master
-
-================================================================================================
+HOW TO FETCH+MERGE FILES CHANGES MADE ON GITHUB TO YOUR LOCAL 'MASTER' BRANCH.)
+-------------------------------------------------------------------------------
+1) Change some text in your files on GutHub.  We'll now fetch+merge these GitHub files to the corresponding files
+   on your local 'master' branch.
+> git checkout master  (Make certain you're on the local 'master' branch.)
+> git remote show origin  (Show details about the remote 'origin' repository.)
+> git fetch origin     (Import file changes made on 'origin' remote repo. to your local 'master' branch.  NOW DO A GIT MERGE...)
+> git merge origin/master  (Only after you run this command will you notice that your files on the local 'master' branch
+                            now reflect the files located on GitHub.)
+2) THE END - File changes made on the GitHub web site have now been fetched+merged into your local 'master' branch.
 
 
 
-=======================================================================================
+HOW TO PUSH FILE CHANGES MADE ON YOUR LOCAL 'MASTER' BRANCH TO THE GITHUB WEB PAGE.)
+------------------------------------------------------------------------------------
+> checkout master  (Make certain you're on the local 'master' branch.)
+1) Change content of some files on your local 'master' branch, then run the following commands:
+   > git status  (Shows the files that you changed.)
+   > git add .  (Stage the changed files.)
+   > git commit -m "Modified the 4 text files."
+   > git status  (Verify all the repository is "clean", which means all files have been committed.)
+   > git push origin master
+2) Verify that all files changed on your local 'master' branch have been pushed to the GitHub web page.
+3) THE END
+
+========================================================================================================================
+========================================================================================================================
+
+
+
+========================================================================================================================
+========================================================================================================================
 GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS
 
 An UNTRACKED FILE is a file that's never had the "git add" command run on it.
