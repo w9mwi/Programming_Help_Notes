@@ -432,7 +432,7 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
    > cd C:\Tom\Programming\tomsJunkRepo
    > git init  (Creates your local Git repository.)
    > git status (Confirm your local repository was created.)
-   > git add .  (Don't forget to type the period character.)
+   > git add .  ...OR...   > git add *   (Adds all untracked files to staging area.)
    > git status (Confirm your files and child directories were added/staged.)
    > git branch -v (Confirm there does NOT yet exist a local branch.)
    > git commit -m "Initial commit."
@@ -440,7 +440,10 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
    > git branch -v  (Confirm you're now on this 'master' branch.)
 4) Create a new remote repository named 'origin', which will point to your GitHub repository designated by the URL below.
    > git remote -v  (Confirm that there does NOT yet exist any remote repositories.)
-   > git remote add origin  https://github.com/w9mwi/tomsJunkRepo.git (Adds a new remote repository named 'origin'.)
+   > git remote add origin  https://github.com/w9mwi/tomsJunkRepo.git  (VIA URL, adds a new remote repository named 'origin'.)
+   > ...OR...
+   > git remote add origin  git@github.com:w9mwi/tomsJunkRepo.git  (VIA SSH, adds a new remote repository named 'origin'.  Generate new
+                                                                    SSH key:  https://help.github.com/articles/generating-a-new-ssh-key)
    > git remote -v  (Confirm there now exists a remote repository named 'origin'.)
 5) Look at the contents of the 'tomsJunkRepo' repository on your github.com web page, and notice it does NOT contain
    any of the files/directories contained in your local 'tomsJunkRepo' repository.
