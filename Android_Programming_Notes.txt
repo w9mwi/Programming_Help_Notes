@@ -1,5 +1,5 @@
 
-How to implement onClick() method and View.OnClickListene`r
+How to implement onClick() method and View.OnClickListener
 ==========================================================
 http://www.survivingwithandroid.com/2012/09/how-to-handle-button-click-java-code-vs.html
 http://www.survivingwithandroid.com/2012/09/how-to-handle-button-click-java-code-vs.html
