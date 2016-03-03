@@ -140,7 +140,8 @@ TO IMPORT A JAVA CLASS VIA THE import STATEMENT
 ===============================================
 Highlight the class that needs to be imported,
 then press Alt-Enter, and select the correct
-option from the dropdown that appears.
+option from the dropdown that appears.  Or, try:
+Ctrl+Alt+O
 
 
 
