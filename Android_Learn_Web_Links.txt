@@ -1,3 +1,7 @@
+HTTPS GOOGLE SECURITY INFO...
+https://developers.google.com/web/fundamentals/security/encrypt-in-transit/
+https://developers.google.com/web/fundamentals/security/encrypt-in-transit/
+
 HTML-CSS3 ON-LINE COURSE
 https://www.udemy.com/web-design-for-beginners-real-world-coding-in-html-css/learn/#/
 https://www.udemy.com/web-design-for-beginners-real-world-coding-in-html-css/learn/#/
