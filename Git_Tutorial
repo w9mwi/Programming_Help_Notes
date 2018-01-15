@@ -578,7 +578,8 @@ GIT PUSH - The most common use case for git push is to publish your local change
 
 GIT PULL - Merging upstream changes into your local repository is a common task in Git-based collaboration workflows.
            We know how to do this with git fetch followed by git merge.  'GIT PULL' COMBINES 'GIT FETCH' + 'GIT MERGE'
-           INTO A SINGLE COMMAND.  'git pull' is analagous to and SVN UPDATE. It’s an easy way to synchronize yourlocal repository with upstream changes.
+           INTO A SINGLE COMMAND.  'git pull' is analagous to and SVN UPDATE. It’s an easy way to synchronize your local
+           repository with upstream changes.
 
 REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git reset HEAD tom.java" below.)
 > git add tom.java
