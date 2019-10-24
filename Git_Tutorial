@@ -65,7 +65,7 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                     To delete any number of files/directories from your repository,
                     commit that change to the current branch, and push it, do this...
                     First, delete the files/directories.
-                    > git commit .  (Don't forget to type the period . char!)
+                    > git commit . -m "Deleted files/directories."
                     > git push
 GIT LOG           Run the following:
                   > git log  (Displays only git commits.)
