@@ -56,8 +56,14 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                                                                              previously STAGED files.  Which means files
                                                                              that have been previously added with "git add",
                                                                              but have been changed since then.)
+                    To add any number of files/directories from your repository,
+                    commit that change to the current branch, and push it, do this...
+                    First, add the files/directories.
+                    > git add .  (Don't forget to type the period . char!)
+                    > git commit . -m "Added files/directories."
+                    > git push
                     To delete any number of files/directories from your repository,
-                    and commit that change to the current branch, do this...
+                    commit that change to the current branch, and push it, do this...
                     First, delete the files/directories.
                     > git commit .  (Don't forget to type the period . char!)
                     > git push
