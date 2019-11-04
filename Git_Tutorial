@@ -36,7 +36,7 @@ WORKING DIRECTORY - The top-level directory/folder that contains all files and s
 SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given point in time.
                     Git’s term for creating a snapshot is called staging because we can add or remove
                     multiple files before actually committing it to the project history.  Staging gives
-                    us the opportunity to group related changes into distinct snapshots—a practice that
+                    us the opportunity to group related changes into distinct snapshots--a practice that
                     makes it possible to track the meaningful progression of a software project (instead
                     of just arbitrary lines of code).  Only after executing git commit will our snapshot
                     be recorded in the repository. Committed snapshots can be seen as “safe” versions of
