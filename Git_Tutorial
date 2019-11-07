@@ -414,7 +414,7 @@ TIPS AND TRICKS
                                                                'repo-copy'.)
                  Use the bundle command above to backup an entire Git repository.
                  MAKE GIT IGNORE FILES
-                 To make Git ignore ertain files, you can do the following:
+                 To make Git ignore certain files, you can do the following:
                  > notepad junkfile.txt  (Create a new file called 'junkfile.txt' and save it in the 'my-git-repo' directory.)
                  > git status  (Notice the junkfile.txt appears as an untracked file.)
                  In the same 'my-git-repo' directory, create a new file called .gitignore and enter this text into it:
