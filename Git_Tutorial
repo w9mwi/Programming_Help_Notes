@@ -512,8 +512,8 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
 8) THE END - Your local 'master' branch has successfuly been pushed to the 'master' branch of the REMOTE repository
              named 'origin'.
 
-HOW TO FETCH+MERGE FILES CHANGES MADE ON GITHUB TO YOUR LOCAL 'MASTER' BRANCH.)
--------------------------------------------------------------------------------
+HOW TO FETCH+MERGE FILES CHANGES MADE ON GITHUB TO YOUR LOCAL 'MASTER' BRANCH
+-----------------------------------------------------------------------------
 1) Change some text in your files on GitHub.  We'll now fetch+merge these GitHub files to the corresponding files
    on your local 'master' branch.
 > git checkout master  (Make certain you're on the local 'master' branch.)
