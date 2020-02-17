@@ -514,7 +514,7 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
 
 HOW TO FETCH+MERGE FILES CHANGES MADE ON GITHUB TO YOUR LOCAL 'MASTER' BRANCH.)
 -------------------------------------------------------------------------------
-1) Change some text in your files on GutHub.  We'll now fetch+merge these GitHub files to the corresponding files
+1) Change some text in your files on GitHub.  We'll now fetch+merge these GitHub files to the corresponding files
    on your local 'master' branch.
 > git checkout master  (Make certain you're on the local 'master' branch.)
 > git remote show origin  (Show details about the remote 'origin' repository.)
