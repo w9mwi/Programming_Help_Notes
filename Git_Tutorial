@@ -549,7 +549,7 @@ GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT COMMANDS - GIT C
 
 An UNTRACKED FILE is a file that's never had the "git add" command run on it.
 A TRACKED FILE is a file that has had the "git add" command run on it at least one time.
-A STAGED FILE is a file that has NOT been altered/changed since was last committed, via the "git commit" command.
+A STAGED FILE is a file that has NOT been altered/changed since it was last committed via the "git commit" command.
 Every time you make a change to a STAGED FILE, you must again run the "git add" command on it before it can
 be committed via the "git commit" command.
 
