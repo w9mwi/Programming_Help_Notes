@@ -283,7 +283,7 @@ FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPOR
                   Note that "remotes" are for people.  "Branches" are for topics.  Do not create separate branches
                   for each of your developers—-give them separate repositories and bookmark them with git remote add.
                   Branches should always be for project development, not user management.  The 'git push' command works
-                  ONLY if you cloned from a server to which you have write access, AND IF nobody has pushed in th
+                  ONLY if you cloned from a server to which you have write access, AND IF nobody has pushed in the
                   meantime.  If you and someone else clone at the same time, and they push upstream, and then later you
                   push upstream, your push will rightly be rejected.  You’ll have to pull down their work first and
                   incorporate it into yours before you’ll be allowed to push.
