@@ -82,7 +82,7 @@ GIT CHECKOUT      To checkout an existing branch, do:
                   To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
                   > git checkout -b poop
                   To checkout a previous snapshot, do the following:
-                  > git log  (Text similar to the following will display.)
+                  > git log  (3 lines of text will display, similar to the 3 lines below.)
                     commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
                     Author: TJB <w9mwi@yahoo.com>
                     Date:   Thu Jan 14 20:22:41 2016 -0600
