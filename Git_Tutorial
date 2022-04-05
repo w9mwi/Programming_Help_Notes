@@ -103,14 +103,15 @@ GIT REVERT        Undoes a previous commit by applying a new commit.  Undoes cha
                   > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
                   > git revert b1b4e7a77fe1164952cad7699292024686c3357c  (The changes made in ID "b1b4e7a7..." will be undone.)
 GIT RESET         Reset tracked files to match the most recent commit.  Undoes changes to the working directory and the
-                  staged snapshot.  Assume you made text changes to an already-committed file named: index.html
-                  To revert your changes made to index.html, do the following:
+                  staged snapshot.  Assume you made text changes to an already-committed file named index.html AND you
+                  added a brand-new file named dummy.html.  If you decide to scrap those changes (that is, revert your
+                  changes made to index.html AND delete the dummy.html file), run the following 2 commands.
                   > git reset --hard
-                  > git clean -f
+                  > git clean -f  (Deletes the dummy.html file from the working directory.)
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
-                  > git clean -f  (Remove all untracked files.)
+                  > git clean -f  (Deletes all untracked files.)
 BRANCHES         To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
                  > git branch poop
