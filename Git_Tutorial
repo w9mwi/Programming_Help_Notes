@@ -89,7 +89,8 @@ GIT CHECKOUT      To checkout an existing branch, do:
                   > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d  (Checkout the snapshot shown above.)
                   > git status
                   > git log
-                  > git checkout master  (Returns to the master branch.)
+                  > git switch -  (This command will undo the "git checkout c9d66dd85..." command done above.)
+                  > git checkout master  (Returns to the master branch, effectively canceling the above "git checkout c9d66dd85..." command.)
 TAG A RELEASE     To tag a release, do the following:
                   > git checkout master
                   > git tag -a Version_1.0  -m "Tag Version 1.0"
