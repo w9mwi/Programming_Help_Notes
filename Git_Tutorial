@@ -106,6 +106,8 @@ GIT RESET         Reset tracked files to match the most recent commit.  Undoes c
                   staged snapshot.  Assume you made text changes to an already-committed file named index.html AND you
                   added a brand-new file named dummy.html.  If you decide to scrap those changes (that is, revert your
                   changes made to index.html AND delete the dummy.html file), run the following 2 commands.
+                  NOTE: BOTH of the following commands affect the WORKING DIRECTORY,
+                        they DON'T change the contents of any committed snapshots.
                   > git reset --hard
                   > git clean -f  (Deletes the dummy.html file from the working directory.)
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
