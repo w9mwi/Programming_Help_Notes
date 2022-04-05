@@ -98,10 +98,10 @@ TAG A RELEASE     To tag a release, do the following:
                   You can now add/commit more files to the "Version 1.0" tag.  When you want to return to the "Version_1.0" tag,
                   run the following command instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
                   > git checkout Version_1.0
-GIT REVERT        Undo a specified commit by applying a new commit.  Undoes changes contained in committed snapshots.
+GIT REVERT        Undoes a previous commit by applying a new commit.  Undoes changes contained in one of the committed snapshots.
                   > git log
                   > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
-                  > git revert b1b4e7a77fe1164952cad7699292024686c3357c
+                  > git revert b1b4e7a77fe1164952cad7699292024686c3357c  (The changes made in ID "b1b4e7a7..." will be undone.)
 GIT RESET         Reset tracked files to match the most recent commit.  Undoes changes to the working directory and the
                   staged snapshot.  Assume you made text changes to an already-committed file named: index.html
                   To revert your changes made to index.html, do the following:
