@@ -95,7 +95,8 @@ GIT CHECKOUT      To checkout an existing branch, do:
 TAG A RELEASE     To tag a release, do the following:
                   > git checkout master
                   > git tag -a Version_1.0  -m "Tag Version 1.0"
-                  > You can now add/commit more files.  When you want to return to the "Version_1.0" tag, do this:
+                  You can now add/commit more files to the "Version 1.0" tag.  When you want to return to the "Version_1.0" tag,
+                  run the following command instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
                   > git checkout Version_1.0
 GIT REVERT        Undo a specified commit by applying a new commit.  Undoes changes contained in committed snapshots.
                   > git log
