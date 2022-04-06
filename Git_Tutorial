@@ -92,7 +92,9 @@ GIT CONFIG        Run the following commands so git knows your name and e-mail a
                   later run "git log", your name and e-mail address will show up in the log output.
                   > git config  --global user.name   "Joe Schmoe"
                   > git config  --global user.email  joeschmoe@yahoo.com
-GIT CHECKOUT      To checkout an existing branch, do:
+GIT CHECKOUT      Checks out an existing branch.  So in the working directory, before you do a checkout, you must first
+                  create a new branch by running "git checkout" similar to this example:  git branch name_of_new_branch
+
                   > git checkout master  (master is name of branch.)
                   To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
                   > git checkout -b poop
