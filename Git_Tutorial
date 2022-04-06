@@ -129,7 +129,7 @@ GIT RESET         Reset tracked files to match the most recent commit.  Undoes c
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
-                  > git clean -f  (Deletes all untracked files.)
+                  > git clean -f  (Deletes all untracked files from the working directory.)
 BRANCHES         To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
                  > git branch poop
