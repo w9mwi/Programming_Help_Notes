@@ -8,6 +8,21 @@ http://www.w3schools.com/dom/dom_validate.asp
 http://www.w3schools.com/dom/dom_validate.asp
 
 =========================================================================================================================
+HOW TO SET GIT DEFAULT EDITOR:
+> sudo update-alternatives --config editor
+Prompts you with the following text to choose a default git editor...
+
+There are 3 choices for the alternative editor (providing /usr/bin/editor).
+
+  Selection    Path               Priority   Status
+------------------------------------------------------------
+* 0            /bin/nano           40        auto mode
+  1            /bin/ed            -100       manual mode
+  2            /bin/nano           40        manual mode
+  3            /usr/bin/vim.tiny   15        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 
+=========================================================================================================================
 
 
 GIT TUTORIALS:  http://rypress.com/tutorials/git/index
