@@ -119,13 +119,13 @@ GIT REVERT        Undoes a previous commit by applying a new commit.  Undoes cha
                   > git revert b1b4e7a77fe1164952cad7699292024686c3357c  (The changes made in ID "b1b4e7a7..." will be undone.)
 GIT RESET         Reset tracked files to match the most recent commit.  Undoes changes to the working directory and the
                   staged snapshot.  Assume you made text changes to an already-committed file named index.html AND you
-                  added a brand-new file named dummy.html.  If you decide to scrap those changes (that is, revert your
-                  changes made to index.html AND delete the dummy.html file), run the following 2 commands.
+                  added a brand-new file named "dummy.html".  If you decide to scrap those changes (that is, revert your
+                  changes made to index.html AND delete the "dummy.html" file), run the following 2 commands.
                   NOTE: BOTH of the following commands affect the WORKING DIRECTORY.  The "git reset" command also
                         reverts changes made to the STAGED SNAPSHOT, which is made via the "git add" command.
                         The following 2 commands DON'T change the contents of any committed snapshots.
-                  > git reset --hard
-                  > git clean -f  (Deletes the dummy.html file from the working directory.)
+                  > git reset --hard  (Resets tracked files to match the most recent commit.)
+                  > git clean -f  (Deletes the "dummy.html" file from the working directory.)
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
