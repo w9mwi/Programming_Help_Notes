@@ -251,10 +251,10 @@ CLONING REPOSITORY  To clone an existing repository located on your hard disk, d
                                                              marys-repo directory/repository.  This command also creates
                                                              the marys-repo directory.)
                        > cd marys-repo  (You are now in the newly-created repository directory named marys-repo.)
-                       > git branch -rv (Verify that the only the LOCAL BRANCH existing in marys-repo is the 'master'
+                       > git branch -rv (Verify that the only LOCAL BRANCH existing in marys-repo is the 'master'
                                          branch.)
                        > git remote -v  (Verify the marys-repo BRANCH does have a REMOTE REPOSITORY named 'origin'.  This
-                                        REMOTE REPOSITORY named 'origin' was created via the above "git clone" command.)
+                                         REMOTE REPOSITORY named 'origin' was created via the above "git clone" command.)
                        > git config user.name "Mary"
                        > git config user.email w9mwi@yahoo.com
                     When you clone a repository, Git automatically adds an 'origin' REMOTE REPOSITORY to the newly-cloned
