@@ -132,7 +132,19 @@ GIT RESET         Reset tracked files to match the most recent commit.  Undoes c
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
                   > git clean -f  (Deletes all untracked files from the working directory.)
-BRANCHES         To create a new branch named poop, and then check it out, do the following.  This new poop branch will
+
+BRANCHES         To view all local git branches on your computer (not remote branches),
+                 run the following command.
+
+                 > git branch
+
+                 The above command displays text similar to the text below, where the
+                 asterisk (*) designates the git branch that you're currently on.
+
+                   verson_1_branch
+                 * master
+
+                 To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
                  > git branch poop
                  > git checkout poop
@@ -235,6 +247,12 @@ GIT REFLOG    Git uses something called the reflog to record every change you ma
               This lets us find dangling commits that would otherwise be lost from the project history.  Run the
               following command, which will display a list of history:
               > git reflog
+
+GIT RM - This command tells git to stop tracking a file.  Assume you're on some git branch and want to
+         edit a file named crazy.html, and then rename that file to rainbow.html.  You would do this...
+         > git rm crazy.html    (Inform git to no longer track the crazy.html file)
+         > git add rainbow.html
+         > git commit -m "Added rainbow.html file and deleted the crazy.html file."
 
 REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be another Git repository located
                      on your company’s network, the internet, or even on your own hard disk.  Remote branches
