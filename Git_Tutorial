@@ -30,11 +30,15 @@ GIT TUTORIALS:  http://rypress.com/tutorials/git/index
                 https://www.atlassian.com/git/tutorials/
 
 CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
-                        1) Create a new directory that will hold your new software project.
+                        1) First, create a new directory/folfder  that will hold your new software project,
+                           then navigate to that newly-created directory.
                         2) From the comand line, run the following:
                            > git init
                            > dir .git   (You should now see a new .git folder that was created.)
                            > git status (You should now see text that reveals the git status.)
+                           > git branch css    (Names your newly-created git repository as the "css" branch)
+                           > git checkout css  (This command puts you into the newly-created "css" branch to begin your work.)
+
 DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         Go to the top-level directory/folder of your project (aka, the git repository),
                         then delete the .git folder, which may be invisible.  Doing this deletes the
