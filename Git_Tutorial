@@ -12,7 +12,9 @@ HOW TO SET GIT DEFAULT EDITOR:
 > sudo update-alternatives --config editor
 Prompts you with the following text to choose a default git editor...
 
-There are 3 choices for the alternative editor (providing /usr/bin/editor).
+The asterisk (*) designates the editor that git currently uses.
+To keep the current git editor, just press the <enter> key.
+To change the git editor, type the number shown in the 'Selection' column.
 
   Selection    Path               Priority   Status
 ------------------------------------------------------------
@@ -21,7 +23,6 @@ There are 3 choices for the alternative editor (providing /usr/bin/editor).
   2            /bin/nano           40        manual mode
   3            /usr/bin/vim.tiny   15        manual mode
 
-Press <enter> to keep the current choice[*], or type selection number: 
 =========================================================================================================================
 
 
