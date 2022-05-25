@@ -216,6 +216,7 @@ GIT MERGE       > git checkout master  (Go to the master branch.)
                 > git checkout crazy
                 > git merge master
                 > git log --oneline
+
 GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing), search for this text: Publish News Hotfix
                Under that text you'll see a diagram labeled with this text:  Fast-forwarding master to the news-hotfix
                We'll call this the BEFORE DIAGRAM.
