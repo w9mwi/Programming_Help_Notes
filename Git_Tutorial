@@ -256,6 +256,7 @@ GIT REFLOG    Git uses something called the reflog to record every change you ma
 
 GIT RM - This command tells git to stop tracking a file.  Assume you're on some git branch and want to
          edit a file named crazy.html, and then rename that file to rainbow.html.  You would do this...
+         > mv crazy.html rainbow.html
          > git rm crazy.html    (Inform git to no longer track the crazy.html file)
          > git add rainbow.html
          > git commit -m "Added rainbow.html file and deleted the crazy.html file."
