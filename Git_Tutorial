@@ -62,11 +62,13 @@ SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given p
                     be recorded in the repository. Committed snapshots can be seen as “safe” versions of
                     the project.  Git will never change them, which means you can do almost anything you
                     want to your project without losing those “safe” revisions.
+
 GIT ADD             After a new file (or set of files) is created, and these files contains the correct
                     code, you can add them to your snapshot via the "add" command, like this:
                     > git add index_1.html  index_2.html  index_3.html
                     To add all files (staged that have changes, and unstaged files) in the current directory, run:
                     > git add *
+
 GIT COMMIT          To commit all files of your snapshot (files added with the git "add" command), you can
                     commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
@@ -87,16 +89,19 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                     First, delete the files/directories.
                     > git commit . -m "Deleted files/directories."
                     > git push
+
 GIT LOG           Run the following:
                   > git log  (Displays only git commits.)
                   > git log --oneline  (Displays each commit on only one line.)
                   > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
                   > git log -n 4  (Displays log for the 4 most-recent commits.)
+
 GIT CONFIG        Run the following commands so git knows your name and e-mail address.  You need to
                   do this ONLY ONCE.  Now when you commit files to your git repository, and you
                   later run "git log", your name and e-mail address will show up in the log output.
                   > git config  --global user.name   "Joe Schmoe"
                   > git config  --global user.email  joeschmoe@yahoo.com
+
 GIT CHECKOUT      Checks out an existing branch.  So in the working directory, before you do a checkout, you must first
                   create a new branch by running "git checkout" similar to this example:  git branch name_of_new_branch
 
@@ -114,16 +119,19 @@ GIT CHECKOUT      Checks out an existing branch.  So in the working directory, b
                   > git switch -  (This command effectively cancels the above "git checkout c9d66dd85..." command.)
                   > git checkout master  (Returns to the master branch, effectively canceling the above "git checkout c9d66dd85..." command.)
                   > git checkout Version_1.0  (Checks out the "Version 1.0" tag.  For details, read the "TAG A RELEASE" section below.)
+
 TAG A RELEASE     To tag a release, do the following:
                   > git checkout master
                   > git tag -a Version_1.0  -m "Tag Version 1.0"
                   You can now add/commit more files to the "Version 1.0" tag.  When you want to return to the "Version_1.0" tag,
                   run the following command instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
                   > git checkout Version_1.0
+
 GIT REVERT        Undoes a previous commit by applying a new commit.  Undoes changes contained in one of the committed snapshots.
                   > git log
                   > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
                   > git revert b1b4e7a77fe1164952cad7699292024686c3357c  (The changes made in ID "b1b4e7a7..." will be undone.)
+
 GIT RESET         Reset tracked files to match the most recent commit.  Undoes changes to the working directory and the
                   staged snapshot.  Assume you made text changes to an already-committed file named index.html AND you
                   added a brand-new file named "dummy.html".  If you decide to scrap those changes (that is, revert your
@@ -134,9 +142,14 @@ GIT RESET         Reset tracked files to match the most recent commit.  Undoes c
                   > git reset --hard  (Resets tracked files to match the most recent commit.)
                   > git clean -f  (Deletes the "dummy.html" file from the working directory.)
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
+
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
                   > git clean -f  (Deletes all untracked files from the working directory.)
+
+GIT SWITCH       Git switch is a command introduced in Git version 2.23.  It's mainly for creating and
+                 switching branches.  It's an alternative to the Git Checkout command.  For more details
+                 SEE --> http://makeseleniumeasy.com/2022/02/19/git-tutorial-19-git-switch-create-and-switch-branches-an-alternative-of-git-checkout/#:~:text=What%20is%20Git%20Switch%20Command%3F%201%20Create%20a,...%204%20Switch%20to%20a%20remote%20branch.%20
 
 BRANCHES         To view all local git branches on your computer (not remote branches),
                  run the following command.
