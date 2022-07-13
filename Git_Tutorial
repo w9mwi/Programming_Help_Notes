@@ -221,9 +221,9 @@ DELETE BRANCH   To delete a branch named poop, run the following commands.  Git 
                 > git branch  (Confirm the poop branch is gone.)
 
 GIT MERGE       The git merge command affects ONLY the branch that is currently checked out.
-                There are simple merges, anf there are what's known as 3-Way Merges.  To
-                understand a "3-Way Merge" perform an Internet search on that term.  Here's one
-                explanation:  https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
+                There are simple merges, and there are "3-Way Merges".  To understand a
+                "3-Way Merge" perform an Internet search on that term.  Here's one explanation:
+                SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
 
                 > git checkout master  (Go to the master branch.)
                 > git merge css  (Merge the css branch into the master branch.)
