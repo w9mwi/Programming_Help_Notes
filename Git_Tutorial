@@ -116,7 +116,7 @@ GIT CHECKOUT      Checks out an existing branch.  So in the working directory, b
                   > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d  (Checkout the snapshot shown above.)
                   > git status
                   > git log
-                  > git switch -  (This command effectively cancels the above "git checkout c9d66dd85..." command.)
+                  > git switch -  (This command cancels the above "git checkout c9d66dd85..." command.)
                   > git checkout master  (Returns to the master branch, effectively canceling the above "git checkout c9d66dd85..." command.)
                   > git checkout Version_1.0  (Checks out the "Version 1.0" tag.  For details, read the "TAG A RELEASE" section below.)
 
@@ -148,7 +148,7 @@ GIT CLEAN         Assume you created a new file named dummy.html.  But you didn'
                   > git clean -f  (Deletes all untracked files from the working directory.)
 
 GIT SWITCH       Git switch is a command introduced in Git version 2.23.  It's mainly for creating and
-                 switching branches.  It's an alternative to the Git Checkout command.  For more details
+                 switching branches.  It's an alternative to the "git checkout" command.  For more details
                  SEE --> http://makeseleniumeasy.com/2022/02/19/git-tutorial-19-git-switch-create-and-switch-branches-an-alternative-of-git-checkout/#:~:text=What%20is%20Git%20Switch%20Command%3F%201%20Create%20a,...%204%20Switch%20to%20a%20remote%20branch.%20
 
                  git switch -  (This command includes the hyphen '-' character.  It cancels the last
@@ -224,9 +224,6 @@ DELETE BRANCH   To delete a branch named poop, run the following commands.  Git 
                 > git branch  (Confirm the poop branch is gone.)
 
 GIT MERGE       The git merge command affects ONLY the branch that is currently checked out.
-                There are simple merges, and there are "3-Way Merges".  To understand a
-                "3-Way Merge" perform an Internet search on that term.  Here's one explanation:
-                SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
 
                 > git checkout master  (Go to the master branch.)
                 > git merge css  (Merge the css branch into the master branch.)
@@ -237,6 +234,10 @@ GIT MERGE       The git merge command affects ONLY the branch that is currently 
                 > git checkout crazy
                 > git merge master
                 > git log --oneline
+
+                There are simple merges, and there are "3-Way Merges".  To understand a "3-Way Merge"
+                perform an Internet search on that term.  Here's one explanation:
+                SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
 
 GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing), search for this text: Publish News Hotfix
                Under that text you'll see a diagram labeled with this text:  Fast-forwarding master to the news-hotfix
