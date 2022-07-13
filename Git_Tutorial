@@ -235,8 +235,17 @@ GIT MERGE       The git merge command affects ONLY the branch that is currently 
                 > git merge master
                 > git log --oneline
 
-                There are simple merges, and there are "3-Way Merges".  To understand a "3-Way Merge"
-                perform an Internet search on that term.  Here's one explanation:
+                There are simple merges, and there are "3-Way Merges".  A simple/regular merge PERFORMS ONE PARENT COMMIT.
+                A 3-way merge occurs when you try to merge two branches that have a divergent history.  A 3-way merge
+                PERFORMS TWO PARENT COMMITS.  Assume you have two branches--one named "master" and one named "development."
+                To merge the "development" branch into the "master" branch you must be on the "master" branch.  The
+                following 2 commands accomplish that.
+                > git checkout master  (Ensure you're on the "master" branch.)
+                > git merge development  (Merge the "development" branch into the "master "branch.) 
+                Depending on the state of the "master" and "development" branch, the above "git merge"
+                command could perform a simple merge or a 3-way merge.
+
+                To better understand a "3-Way Merge" perform an Internet search on that term.  Here's one explanation:
                 SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
 
 GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing), search for this text: Publish News Hotfix
