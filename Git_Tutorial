@@ -26,8 +26,7 @@ To change the git editor, type the number shown in the 'Selection' column.
 =========================================================================================================================
 
 
-GIT TUTORIALS:  http://rypress.com/tutorials/git/index
-                https://git-scm.com/book/en/v2/
+GIT TUTORIALS:  https://git-scm.com/book/en/v2/
                 https://www.atlassian.com/git/tutorials/
 
 CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
@@ -248,19 +247,15 @@ GIT MERGE       The git merge command affects ONLY the branch that is currently 
                 To better understand a "3-Way Merge" perform an Internet search on that term.  Here's one explanation:
                 SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
 
-GIT REBASE     On the this web page (http://rypress.com/tutorials/git/rebasing), search for this text: Publish News Hotfix
-               Under that text you'll see a diagram labeled with this text:  Fast-forwarding master to the news-hotfix
-               We'll call this the BEFORE DIAGRAM.
-               Below that diagram, you'll see another diagram labeled with this text:  Rebasing the about branch onto master
-               We'll call this the AFTER DIAGRAM.
-               Using the git rebase command, we want to change the 'about' branch represented in the BEFORE DIAGRAM,
-               to the 'about' branch represented in the AFTER DIAGRAM.  To do this, run the following 2 commands:
-               > git checkout about
-               > git rebase master
-               NOTE: Git rebase requires you to be on the branch that you want to alter.  In this example,
-                     we must be on the 'about' branch.  Running the 'git rebase master' command will alter
-                     the 'about' branch so its TAIL NODE will now connenct to the HEAD NODE of the 'master' branch.
-                     Again, see the BEFORE DIAGRAM versus the AFTER DIAGRAM on the web page mentioned above.
+GIT REBASE    Rebasing allows you to move branches around by changing the commit that they are based on.
+              (Thus the name rebase.)
+
+              Git rebase requires you to be on the branch that you want to alter.  In this example,
+              we must be on the 'about' branch.  Running the 'git rebase master' command will then
+              alter the 'about' branch so its TAIL NODE will now connenct to the HEAD NODE of the
+              'master' branch.
+              > git checkout about
+              > git rebase master
 
               An INTERACTIVE REBASE prompts the user with an opened text file, which can be edited to alter how the
               rebase performs.  If the user does NOT alter this text file, the rebase that occurs will be identical
