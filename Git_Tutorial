@@ -46,11 +46,11 @@ DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         git repository.  You can then delete all other files/folders from this folder
                         to make it completely empty.
                         To delete a specific git branch (in this example, named 'test'), run the following command(s):
-                        > git branch -d test  (-d is the delete flag.)
+                        > git branch -d test  (-d deletes the branch ONLY if the branch is fully merged.)
                         ...OR...
-                        > git branch -D test  (-D is the delete flag.)
+                        > git branch -D test  (-D deletes the branch regardless if the branch is unmerged or fully merged.)
                         NOTE: You cannot delete the 'master' branch using this command.
-                              To accomplish that, just delete the .git directory as stated above.
+                              To delete the 'master' branch, just delete the repository's .git directory.
 WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
                     that comprise your software project.
 SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given point in time.
@@ -217,10 +217,10 @@ BRANCHES         To view all local git branches on your computer (not remote bra
                      crazy
                    * master
 
-DELETE BRANCH   To delete a branch named poop, run the following commands.  Git will warn you if you’re deleting an
-                unmerged branch.
-                > git branch -d poop  (-d is the delete flag.  Use -D flag if the poop branch hasn't been merged into
-                                          another branch.)
+DELETE BRANCH   To delete a branch named poop, run the following commands.
+
+                > git branch -d poop  (-d deletes the branch ONLY if the branch is fully merged.
+                                       -D deletes the branch regardless if the branch is unmerged or fully merged.)
                 > git branch  (Confirm the poop branch is gone.)
 
 GIT MERGE       The git merge command affects ONLY the branch that is currently checked out.
