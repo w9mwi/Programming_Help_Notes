@@ -62,6 +62,9 @@ SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given p
                     the project.  Git will never change them, which means you can do almost anything you
                     want to your project without losing those “safe” revisions.
 
+GIT STATUS          The following command shows which branch you're on, and related information.
+                    > git status
+
 GIT ADD             After a new file (or set of files) is created, and these files contains the correct
                     code, you can add them to your snapshot via the "add" command, like this:
                     > git add index_1.html  index_2.html  index_3.html
