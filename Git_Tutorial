@@ -48,8 +48,8 @@ DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         > git branch -d test  (-d deletes the branch ONLY if the branch is fully merged.)
                         ...OR...
                         > git branch -D test  (-D deletes the branch regardless if the branch is unmerged or fully merged.)
-                        NOTE: You cannot delete the 'master' branch using this command.
-                              To delete the 'master' branch, just delete the repository's .git directory.
+                        NOTE: You cannot delete the 'main' branch using this command.
+                              To delete the 'main' branch, just delete the repository's .git directory.
 WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
                     that comprise your software project.
 SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given point in time.
@@ -111,7 +111,7 @@ GIT CONFIG        Run the following commands so git knows your name and e-mail a
 GIT CHECKOUT      Checks out an existing branch.  So in the working directory, before you do a checkout, you must first
                   create a new branch by running "git checkout" similar to this example:  git branch name_of_new_branch
 
-                  > git checkout master  (master is name of branch.)
+                  > git checkout main  (main is name of branch.)
                   To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
                   > git checkout -b poop
                   To checkout a previous snapshot, do the following:
@@ -123,11 +123,11 @@ GIT CHECKOUT      Checks out an existing branch.  So in the working directory, b
                   > git status
                   > git log
                   > git switch -  (This command cancels the above "git checkout c9d66dd85..." command.)
-                  > git checkout master  (Returns to the master branch, effectively canceling the above "git checkout c9d66dd85..." command.)
+                  > git checkout main  (Returns to the main branch, effectively canceling the above "git checkout c9d66dd85..." command.)
                   > git checkout Version_1.0  (Checks out the "Version 1.0" tag.  For details, read the "TAG A RELEASE" section below.)
 
 TAG A RELEASE     To tag a release, do the following:
-                  > git checkout master
+                  > git checkout main
                   > git tag -a Version_1.0  -m "Tag Version 1.0"
                   You can now add/commit more files to the "Version 1.0" tag.  When you want to return to the "Version_1.0" tag,
                   run the following command instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
@@ -135,7 +135,7 @@ TAG A RELEASE     To tag a release, do the following:
 
 GIT REVERT        Undoes a previous commit by applying a new commit.  Undoes changes contained in one of the committed snapshots.
                   > git log
-                  > git checkout master  (Choose a snapshot ID from the above "git log" command, and run the following:
+                  > git checkout main  (Choose a snapshot ID from the above "git log" command, and run the following:
                   > git revert b1b4e7a77fe1164952cad7699292024686c3357c  (The changes made in ID "b1b4e7a7..." will be undone.)
 
 GIT RESET         Reset tracked files to match the most recent commit.  Undoes changes to the working directory and the
@@ -169,7 +169,7 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
                  asterisk (*) designates the git branch that you're currently on.
 
                    verson_1_branch
-                 * master
+                 * main
 
                  To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
@@ -194,19 +194,19 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
                  Git uses the tip of a branch to represent the entire branch.  In other words, a branch is actually
                  a pointer to a single commit—-not a container for a series of commits.
 
-                 The following command displays our one and only branch: * master.  The master branch is Git’s default
+                 The following command displays our one and only branch: * main.  The main branch is Git’s default
                  branch, and the asterisk next to it tells us that it’s currently checked out.  Notice that since
                  there’s only one working directory for each project, only one branch can be checked out at a time.
                  > git branch
-                 * master  (This gets displayed when "git branch" is run.)
+                 * main  (This gets displayed when "git branch" is run.)
                  Next, check out a previous snapshot (514fbe7 referes to the ID of the crazy.html commit.)
                  > git checkout 514fbe7
                  From this, let's now create a new branch called "crazy":
                  > git branch crazy
-                 And now, let's checkout this new "crazy" branch so we'll no longer be on the "master" branch.
+                 And now, let's checkout this new "crazy" branch so we'll no longer be on the "main" branch.
                  > git checkout crazy
-                 The new "crazy" branch is a completely isolated from the "master" branch, so we can
-                 mess with files in this same working directory without changing any files on the "master" branch.
+                 The new "crazy" branch is a completely isolated from the "main" branch, so we can
+                 mess with files in this same working directory without changing any files on the "main" branch.
 
                  Rename crazy.html to rainbow.html, then use the following Git commands to update the repository.
                  > git status
@@ -218,10 +218,10 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
                  The git rm command above tells Git to stop tracking crazy.html (and delete it if necessary), and the
                  git add command above starts tracking rainbow.html.  The renamed: crazy.html -> rainbow.html message
                  in the "git status" output shows us that Git is smart enough to figure out when we’re renaming a file.
-                 Now, when we run "git branch", we see both branches (crazy and master) that exist:
+                 Now, when we run "git branch", we see both branches (crazy and main) that exist:
                  > git branch
                      crazy
-                   * master
+                   * main
 
 DELETE BRANCH   To delete a branch named poop, run the following commands.
 
@@ -231,24 +231,24 @@ DELETE BRANCH   To delete a branch named poop, run the following commands.
 
 GIT MERGE       The git merge command affects ONLY the branch that is currently checked out.
 
-                > git checkout master  (Go to the master branch.)
-                > git merge css  (Merge the css branch into the master branch.)
+                > git checkout main  (Go to the main branch.)
+                > git merge css  (Merge the css branch into the main branch.)
 
-                Git can merge changes into any branch (not just the master branch).  We can pull the updates in with
+                Git can merge changes into any branch (not just the main branch).  We can pull the updates in with
                 with the familiar git merge command.  Merging only affects the checked-out branch.  Now, merge the
-                master branch into the crazy branch...
+                main branch into the crazy branch...
                 > git checkout crazy
-                > git merge master
+                > git merge main
                 > git log --oneline
 
                 There are simple merges, and there are "3-Way Merges".  A simple/regular merge PERFORMS ONE PARENT COMMIT.
                 A 3-way merge occurs when you try to merge two branches that have a divergent history.  A 3-way merge
-                PERFORMS TWO PARENT COMMITS.  Assume you have two branches--one named "master" and one named "development."
-                To merge the "development" branch into the "master" branch you must be on the "master" branch.  The
+                PERFORMS TWO PARENT COMMITS.  Assume you have two branches--one named "main" and one named "development."
+                To merge the "development" branch into the "main" branch you must be on the "main" branch.  The
                 following 2 commands accomplish that.
-                > git checkout master  (Ensure you're on the "master" branch.)
-                > git merge development  (Merge the "development" branch into the "master "branch.) 
-                Depending on the state of the "master" and "development" branch, the above "git merge"
+                > git checkout main  (Ensure you're on the "main" branch.)
+                > git merge development  (Merge the "development" branch into the "main "branch.) 
+                Depending on the state of the "main" and "development" branch, the above "git merge"
                 command could perform a simple merge or a 3-way merge.
 
                 To better understand a "3-Way Merge" perform an Internet search on that term.  Here's one explanation:
@@ -258,18 +258,18 @@ GIT REBASE    Rebasing allows you to move branches around by changing the commit
               (Thus the name rebase.)
 
               Git rebase requires you to be on the branch that you want to alter.  In this example,
-              we must be on the 'about' branch.  Running the 'git rebase master' command will then
+              we must be on the 'about' branch.  Running the 'git rebase main' command will then
               alter the 'about' branch so its TAIL NODE will now connenct to the HEAD NODE of the
-              'master' branch.
+              'main' branch.
               > git checkout about
-              > git rebase master
+              > git rebase main
 
               An INTERACTIVE REBASE prompts the user with an opened text file, which can be edited to alter how the
               rebase performs.  If the user does NOT alter this text file, the rebase that occurs will be identical
               to running the 'git rebase' command WITHOUT the -i flag shown below.  To run an interactive rebase on
               the 'about' branch, do the following:
               > git checkout about
-              > git rebase -i master  (The -i flag menas INTERACTIVE, so the user will be prompted to change behavior.)
+              > git rebase -i main  (The -i flag menas INTERACTIVE, so the user will be prompted to change behavior.)
               
               If you're in the middle of performing a rebase, and you get lost (not certain if what you're doing
               is correct), you can abort rebase in midstream by running the following command:
@@ -311,7 +311,7 @@ CLONING REPOSITORY  To clone an existing repository located on your hard disk, d
                                                              marys-repo directory/repository.  This command also creates
                                                              the marys-repo directory.)
                        > cd marys-repo  (You are now in the newly-created repository directory named marys-repo.)
-                       > git branch -rv (Verify that the only LOCAL BRANCH existing in marys-repo is the 'master'
+                       > git branch -rv (Verify that the only LOCAL BRANCH existing in marys-repo is the 'main'
                                          branch.)
                        > git remote -v  (Verify the marys-repo BRANCH does have a REMOTE REPOSITORY named 'origin'.  This
                                          REMOTE REPOSITORY named 'origin' was created via the above "git clone" command.)
@@ -342,13 +342,13 @@ MERGING FROM ONE REPOSITORY INTO ANOTHER:
                        > git branch -rv  (Displays all branches that exist in REMOTE REPOSITORIES, like the following
                                           2 lines.)
                          mary/bio-page
-                         mary/master
-                   Let's now checkout the mary/master branch (displayed immediately above) into the my-git-repo directory.
-                       > git checkout mary/master  (Checkout the master branch from the mary repository,
-                                                    so we can review code changes made by Mary.)
-                       > git checkout master       (Checkout our own master branch, which overwrites the mary/master
-                                                    branch that we just checked out in the previous command.)
-                       > git merge mary/master     (Merge the mary/master branch into our master branch.)
+                         mary/main
+                   Let's now checkout the mary/main branch (displayed immediately above) into the my-git-repo directory.
+                       > git checkout mary/main  (Checkout the main branch from the mary repository,
+                                                 so we can review code changes made by Mary.)
+                       > git checkout main       (Checkout our own main branch, which overwrites the mary/main
+                                                 branch that we just checked out in the previous command.)
+                       > git merge mary/main     (Merge the mary/main branch into our main branch.)
 FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPORTS A BRANCH from a remote repository.
                   Push CREATES A NEW LOCAL BRANCH in a remote repository.  Navigate to the "C:\Tom\Programming\my-git-repo"
                   directory, and run the following 2 commands.
@@ -356,7 +356,7 @@ FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPOR
                   > git push mary dummy  (Export the 'dummy' branch to the 'mary' repository.)
                   As a general rule, you should never push into another developer’s repository.  The reason "git push" exists
                   is that it allows you to make changes to a PUBLIC repository, that should be maintained by multiple people.
-                  Next, navigate to the "C:\Tom\Programming\my-git-repo" directory, tag the master branch in this
+                  Next, navigate to the "C:\Tom\Programming\my-git-repo" directory, tag the main branch in this
                   directory, and then push this tagged v2.0 version to the 'mary' repository.
                   > git tag -a v2.0 -m "An even stabler version of the website"
                   > git push mary v2.0
@@ -406,9 +406,9 @@ CENTRALIZED WORKFLOWS
                   > cd my-git-repo  (Navigate to the C:\Tom\Programming\my-git-repo directory).
                   > git remote add origin ../central-repo.git  ('my-git-repo' now references central-repo.git as 'origin'.)
                   > git remote rm mary  (Remove the existing 'mary' remote epository from my-git-repo.)
-                  Now, push the master branch of the my-git-repo repository to the central-repo.git repository.
+                  Now, push the main branch of the my-git-repo repository to the central-repo.git repository.
                   > cd C:\Tom\Programming\my-git-repo
-                  > git push origin master  (The central-repo.git master branch gets a copy of the my-git-repo master
+                  > git push origin main  (The central-repo.git main branch gets a copy of the my-git-repo main
                                              branch.)
                   > cd C:\Tom\Programming\central-repo.git
                   > git log  (Confirm that the output of this log is identical to the log output on the my-git-repo
@@ -426,7 +426,7 @@ DISTRIBUTED WORKFLOWS
                   > git remote rm  origin  (Delete the existing remote 'origin' branch from the my-git-repo directory.)
                   > git remote add origin https://github.com/w9mwi/my-git-repo.git  (Point the remote 'origin' repository
                                                                                      to GitHub.)
-                  > git push origin master  (Push my-git-repo's master branch to the remote 'origin' (GitHub) branch.
+                  > git push origin main  (Push my-git-repo's main branch to the remote 'origin' (GitHub) branch.
                   Create a repository for co-worker John:
                   > cd C:\Tom\Programming
                   > git clone  https://github.com/w9mwi/my-git-repo.git  johns-repo  (johns-repo will contain our
@@ -453,25 +453,25 @@ DISTRIBUTED WORKFLOWS
                   > git branch -rv  (Shows the new john/pink-page remote repository.)
                   > git checkout john/pink-page  (Checkout the 'pink-page' repository located in
                                                   C:\Tom\Programming\johns-repo)
-                  If you approve John's updates, merge them into your master branch (in the my-git-repo directory).
-                  > git checkout master
+                  If you approve John's updates, merge them into your main branch (in the my-git-repo directory).
+                  > git checkout main
                   > git merge john/pink-page
-                  Finally, push your master branch to the 'origin' GitHub 'my-git-repo' repository, which corresponds
+                  Finally, push your main branch to the 'origin' GitHub 'my-git-repo' repository, which corresponds
                   to your 'my-git-repo' working directory.
-                  > git push origin master
+                  > git push origin main
                   Do the following on the 'marys-repo' branch.
                   > cd C:\Tom\Programming\marys-repo
                   > git remote rm origin  (Delete the previous 'origin' branch, as we make a new one that points to GitHub.)
                   > git remote add origin  https://github.com/w9mwi/my-git-repo.git  (Creates new 'origin' branch pointing
                                                                                       to GitHub.)
-                  > git checkout master
+                  > git checkout main
                   > git fetch origin  (Copies contents of GitHub's 'my-git-repo' repository to the new 'origin' repository.)
-                  > git rebase origin/master
+                  > git rebase origin/main
                   Update johns-repo on your hard disk, similar to what we did with marys-repo above.
                   > cd C:\Tom\Programming\johns-repo
-                  > git checkout master
+                  > git checkout main
                   > git fetch origin
-                  > git rebase origin/master
+                  > git rebase origin/main
 
 PATCH WORKFLOWS  Add a remote branch named 'origin' to BOTH the my-git-repo and the marys-repo repositories.
                  Both these remote branches named 'origin' will point to the same remote repository.
@@ -481,21 +481,19 @@ PATCH WORKFLOWS  Add a remote branch named 'origin' to BOTH the my-git-repo and 
                  > git remote add origin https://github.com/w9mwi/my-git-repo.git
 
 TIPS AND TRICKS
-                 Archive the 'master' repository in the 'my-git-repo' directory (not including the .git directory).
+                 Archive the 'main' repository in the 'my-git-repo' directory (not including the .git directory).
                  Removing the .git directory removes all version control information, and you’re left with a single
                  snapshot of your project.
                  > cd C:\Tom\Programming\my-git-repo
-                 > git archive master --format=zip --output=../website-12-10-2012.zip  (On Windows)
-                 > git archive master --format=tar --output=../website-12-10-2012.tar  (On UNIX)
+                 > git archive main --format=zip --output=../website-12-10-2012.zip  (On Windows)
+                 > git archive main --format=tar --output=../website-12-10-2012.tar  (On UNIX)
                  You can also bundle a repository, which is similar to the above 'archive' command, except the resulting
                  file does contain the .git directory (versioning information of the entire project).  In this example,
-                 we bundle the 'master' branch of the 'my-git-repo' directory.
-                 > git bundle create ../repo.bundle master  (Saves 'master' branch of the repository to the repo.bundle
-                                                             file.)
+                 we bundle the 'main' branch of the 'my-git-repo' directory.
+                 > git bundle create ../repo.bundle main  (Saves 'main' branch of the repository to the repo.bundle file.)
                  Navigate to the directory containing the repo.bundle file created in the above command, and run the
                  following:
-                 > git clone repo.bundle repo-copy -b master  (Creates a cloned repository in a child directory named
-                                                               'repo-copy'.)
+                 > git clone repo.bundle repo-copy -b main  (Creates a cloned repository in a child directory named 'repo-copy'.)
                  Use the bundle command above to backup an entire Git repository.
                  MAKE GIT IGNORE FILES
                  To make Git ignore certain files, you can do the following:
@@ -531,7 +529,7 @@ PLUMBING
                   Run the following to see this...
                   > git checkout HEAD~1
                   > git status  (You should see a message siminar to this:  HEAD detached at 1287d48)
-                  > git checkout master
+                  > git checkout main
                   > git status  (The 'HEAD detached' message above should now be gone.)
 HOOKS             Read section titled 'Hook into Git’s Internals' on this web page:
                   http://rypress.com/tutorials/git/tips-and-tricks
@@ -544,7 +542,7 @@ VIEW DIFFS BETWEEN COMMITS
                   > git diff --cached  (The --cached flag generates a diff between the staged snapshot and most-recent
                                         commit.)
                   > git diff HEAD~2..HEAD~1
-                  > git diff master..john/pink-page
+                  > git diff main..john/pink-page
 
 ========================================================================================================================
 ========================================================================================================================
@@ -556,7 +554,7 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
    > cd C:\Tom\Programming  (The local hard disk directory that will contain your new local repository.)
    > mkdir tomsJunkRepo
 3) In the tomsJunkRepo directory, create the .gitignore file, create some other files, and create some files in a
-   child directory.  Then create a new 'master' branch in your local repository by running the following commands:
+   child directory.  Then create a new 'main' branch in your local repository by running the following commands:
    > cd C:\Tom\Programming\tomsJunkRepo
    > git init  (Creates your local Git repository.)
    > git status (Confirm your local repository was created.)
@@ -564,8 +562,8 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
    > git status (Confirm your files and child directories were added/staged.)
    > git branch -v (Confirm there does NOT yet exist a local branch.)
    > git commit -m "Initial commit."
-   > git status  (Confirm the above 'git commit' command has created a branch named 'master'.)
-   > git branch -v  (Confirm you're now on this 'master' branch.)
+   > git status  (Confirm the above 'git commit' command has created a branch named 'main'.)
+   > git branch -v  (Confirm you're now on this 'main' branch.)
 4) Create a new remote repository named 'origin', which will point to your GitHub repository designated by the URL below.
    > git remote -v  (Confirm that there does NOT yet exist any remote repositories.)
    > git remote add origin  https://github.com/w9mwi/tomsJunkRepo.git  (VIA URL, adds a new remote repository named
@@ -580,46 +578,45 @@ HOW TO PUSH YOUR LOCAL HARD DISK REPOSITORY FILES TO A REMOTE GITHUB REPOSITORY
 6) Push the contents of your local 'tomsJunkRepo' repository to the GitHub web site by running the following commands:
    > git branch -rv (Confirm there does NOT yet exist any remote branches--even though the 'origin' remote repository
                      does exist.)
-   > git push origin master  (Push the contents of your local 'master' branch to the 'origin' remote repository.)
-   > git branch -rv  (Confirm that there now exists a REMOTE repository/branch named origin/master.)
+   > git push origin main  (Push the contents of your local 'main' branch to the 'origin' remote repository.)
+   > git branch -rv  (Confirm that there now exists a REMOTE repository/branch named origin/main.)
    > git remote show origin  (Prints details about the remote 'origin' repository, similar to the following 8 lines of text.)
      * remote origin
        Fetch URL: https://github.com/w9mwi/tomsJunkRepo.git
        Push  URL: https://github.com/w9mwi/tomsJunkRepo.git
-       HEAD branch: master
+       HEAD branch: main
        Remote branch:
-         master tracked
+         main tracked
        Local ref configured for 'git push':
-         master pushes to master (local out of date)
+         main pushes to main (local out of date)
 7) Look at the contents of the 'tomsJunkRepo' repository on your github.com web page, and notice it now DOES CONTAIN
    the files/directories contained in your local 'tomsJunkRepo' repository.
-8) THE END - Your local 'master' branch has successfuly been pushed to the 'master' branch of the REMOTE repository
-             named 'origin'.
+8) THE END - Your local 'main' branch has successfuly been pushed to the 'main' branch of the REMOTE repository named 'origin'.
 
-HOW TO FETCH+MERGE FILES CHANGES MADE ON GITHUB TO YOUR LOCAL 'MASTER' BRANCH
+HOW TO FETCH+MERGE FILES CHANGES MADE ON GITHUB TO YOUR LOCAL 'MAIN' BRANCH
 -----------------------------------------------------------------------------
 1) Change some text in your files on GitHub.  We'll now fetch+merge these GitHub files to the corresponding files
-   on your local 'master' branch.
-> git checkout master  (Make certain you're on the local 'master' branch.)
+   on your local 'main' branch.
+> git checkout main  (Make certain you're on the local 'main' branch.)
 > git remote show origin  (Show details about the remote 'origin' repository.)
-> git fetch origin     (Import file changes made on 'origin' remote repo. to your local 'master' branch.
+> git fetch origin     (Import file changes made on 'origin' remote repo. to your local 'main' branch.
                         NOW DO A GIT MERGE...)
-> git merge origin/master  (Only after you run this command will you notice that your files on the local 'master' branch
+> git merge origin/main  (Only after you run this command will you notice that your files on the local 'main' branch
                             now reflect the files located on GitHub.)
 2) THE END - File changes made on the GitHub web site have now been fetched+merged into your local 'master' branch.
 
 
 
-HOW TO PUSH FILE CHANGES MADE ON YOUR LOCAL 'MASTER' BRANCH TO THE GITHUB WEB PAGE.)
+HOW TO PUSH FILE CHANGES MADE ON YOUR LOCAL 'MAIN' BRANCH TO THE GITHUB WEB PAGE.)
 ------------------------------------------------------------------------------------
-> checkout master  (Make certain you're on the local 'master' branch.)
-1) Change content of some files on your local 'master' branch, then run the following commands:
+> checkout main  (Make certain you're on the local 'main' branch.)
+1) Change content of some files on your local 'main' branch, then run the following commands:
    > git status  (Shows the files that you changed.)
    > git add .  (Stage the changed files.)
    > git commit -m "Modified the 4 text files."
    > git status  (Verify all the repository is "clean", which means all files have been committed.)
-   > git push origin master
-2) Verify that all files changed on your local 'master' branch have been pushed to the GitHub web page.
+   > git push origin main
+2) Verify that all files changed on your local 'main' branch have been pushed to the GitHub web page.
 3) THE END
 
 ========================================================================================================================
@@ -638,7 +635,7 @@ Every time you make a change to a STAGED FILE, you must again run the "git add" 
 be committed via the "git commit" command.
 
 GIT CHECKOUT BRANCHES
-> git checkout master  (The repository points to the 'master' branch.)
+> git checkout main  (The repository points to the 'main' branch.)
 > git checkout poop    (The repository points to the 'poop' branch.)
 > git log --oneline  (Prints something similar to below text.)
   6715fc5 Added whitespace to blue.html file.
@@ -666,7 +663,7 @@ GIT PUSH - The most common use case for git push is to publish your local change
            REMOTE BRANCHES.  'GIT PUSH' HAS THE POTENTIAL TO OVERWRITE CHANGES, so you need to be careful how you
            use it.  To prevent you from overwriting commits, Git won’t let you push when it results in a
            non-fast-forward merge in the destination repository.   'git push' is essentially the same as running
-           'git merge master' from inside the remote repository.   You should only push to repositories that have
+           'git merge main' from inside the remote repository.   You should only push to repositories that have
            been created with the --bare flag.  Since pushing messes with the remote branch structure, it’s important
            to never push to another developer’s repository.  But because 'bare' repos do NOT have a working
            directory, it’s impossible to interrupt anybody’s developments.
@@ -700,8 +697,8 @@ To bring back the original blue.html file that's already committed, run the foll
 DISPLAY ALL REMOTE REPOSITORIES FROM YOUR CURRENT REPOSITORY.
 > git branch -rv   (Displays information similar to the following 3 lines.)
   john-public/pink-page fe17adf Add pink page
-  origin/HEAD           -> origin/master
-  origin/master         fe17adf Add pink page
+  origin/HEAD           -> origin/main
+  origin/main         fe17adf Add pink page
 
 
 RESET TRACKED FILES TO MOST-RECENT COMMIT - Undoes changes to the working directory and the staged snapshot.
@@ -728,8 +725,8 @@ REMOVE A BRANCH:
 > git branch -d poop  (Removes the brnch named 'poop')
 
 MERGE A BRANCH
-> git checkout master  (Go to the master branch.)
-> git merge css  (Merge the css branch into the master branch.)
+> git checkout main  (Go to the main branch.)
+> git merge css  (Merge the css branch into the main branch.)
 
 REMOVE A REMOTE REPOSITORY:
 > git remote rm john-public  (Remove the remote repository reference, but the remote repository remains.)
