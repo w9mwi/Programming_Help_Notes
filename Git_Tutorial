@@ -160,7 +160,7 @@ GIT SWITCH       Git switch is a command introduced in Git version 2.23.  It's m
                  git switch -  (This command includes the hyphen '-' character.  It cancels the last
                                 "git checkout" command, and returns you to the previous branch.)
 
-BRANCHES         To view all local git branches on your computer (not remote branches),
+GIT BRANCH       To view all local git branches on your computer (not remote branches),
                  run the following command.
 
                  > git branch
