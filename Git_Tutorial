@@ -101,6 +101,10 @@ GIT CONFIG        Run the following commands so git knows your name and e-mail a
                   > git config  --global user.name   "Joe Schmoe"
                   > git config  --global user.email  joeschmoe@yahoo.com
 
+                  To display the current git config settings run the following commands:
+                  > git config --list
+                  > git config --list --show-origin
+
 GIT CHECKOUT      Checks out an existing branch.  So in the working directory, before you do a checkout, you must first
                   create a new branch by running "git checkout" similar to this example:  git branch name_of_new_branch
 
