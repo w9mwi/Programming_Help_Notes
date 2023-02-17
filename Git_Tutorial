@@ -719,7 +719,7 @@ CHANGE MESSAGE OF MOST-RECENT COMMIT:
 RENAME A COMMITTED FILE:
 > git add tom.java
 > git commit -m "Commited tom.java file."
-> git mv tom.java  rosemary.java  (Renames tom.java to rosemary.java)
+> git mv tom.java  jack.java  (Renames tom.java to jack.java)
 
 REMOVE A BRANCH:
 > git branch -d poop  (Removes the brnch named 'poop')
