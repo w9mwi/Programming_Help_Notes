@@ -73,7 +73,8 @@ GIT STATUS          The following command shows which branch you're on, and rela
 GIT ADD             After a new file (or set of files) is created, and these files contains the correct
                     code, you can add them to your snapshot via the "add" command, like this:
                     > git add index_1.html  index_2.html  index_3.html
-                    To add all files (staged that have changes, and unstaged files) in the current directory, run:
+                    To add all files in the current directory (both staged files that have changes,
+                    and unstaged files) , run this command:
                     > git add *
 
 GIT COMMIT          To commit all files of your snapshot (files added with the git "add" command), you can
