@@ -24,18 +24,10 @@ To change the git editor, type the number shown in the 'Selection' column.
   2            /bin/nano           40        manual mode
   3            /usr/bin/vim.tiny   15        manual mode
 
-OR, TRY THIS...
-
-To change git default editor to "gedit", do this:
-
-1) To view the current editor setting, run:
-   > git config --global core.editor
-
-2) Add this text to ~/.bashrc file:
-   export GIT_EDITOR=gedit
-
-3) From the command line, run:
-   > git config --global core.editor "gedit"
+If the editor you want isn't in the above list (for example, the "gedit"
+editor), you can change git default editor to "gedit" by adding the below
+text to the ~/.bashrc file.  (This has been confirmed to work.)
+export GIT_EDITOR=gedit
 
 ===================================================================================================
 
