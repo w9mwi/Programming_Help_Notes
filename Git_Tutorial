@@ -718,8 +718,10 @@ CHANGE MESSAGE OF MOST-RECENT COMMIT:
 
 RENAME A COMMITTED FILE:
 > git add tom.java
-> git commit -m "Commited tom.java file."
+> git commit -m "Added tom.java file."
 > git mv tom.java  jack.java  (Renames tom.java to jack.java)
+> git add jack.java
+> git commit -m "Added jack.java file."
 
 REMOVE A BRANCH:
 > git branch -d poop  (Removes the brnch named 'poop')
