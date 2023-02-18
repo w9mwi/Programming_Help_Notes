@@ -685,10 +685,10 @@ GIT PUSH - The most common use case for git push is to publish your local change
            to never push to another developer’s repository.  But because 'bare' repos do NOT have a working
            directory, it’s impossible to interrupt anybody’s developments.
 
-GIT PULL - Merging upstream changes into your local repository is a common task in Git-based collaboration workflows.
-           We know how to do this with git fetch followed by git merge.  'GIT PULL' COMBINES 'GIT FETCH' + 'GIT MERGE'
-           INTO A SINGLE COMMAND.  'git pull' is analagous to and SVN UPDATE. It’s an easy way to synchronize your local
-           repository with upstream changes.
+GIT PULL - It is NOT recommended that you use "git pull" because it can make changes that you don't want.
+           Instead, you should use the "git fetch" command followed by the "git merge" command to ensure the
+           changes you're making are correct.  As using "git pull" alone may perform a merge that you don't
+           want.  To learn more, search the web for:  "git difference between pull and merge"
 
 REMOVE FILE FROM STAGED AREA:  (Seems to do the same thing as "git reset HEAD tom.java" below.)
 > git add tom.java
