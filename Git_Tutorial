@@ -170,12 +170,12 @@ GIT CLEAN         Assume you created a new file named dummy.html.  But you didn'
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
                   > git clean -f  (Deletes all untracked files from the working directory.)
 
-GIT SWITCH       Git switch is a command introduced in Git version 2.23.  It's mainly for creating and
-                 switching branches.  It's an alternative to the "git checkout" command.  For more details
-                 SEE --> http://makeseleniumeasy.com/2022/02/19/git-tutorial-19-git-switch-create-and-switch-branches-an-alternative-of-git-checkout/#:~:text=What%20is%20Git%20Switch%20Command%3F%201%20Create%20a,...%204%20Switch%20to%20a%20remote%20branch.%20
+GIT SWITCH       The "git switch" command introduced was introduced in Git Version 2.23.  It's used mainly for
+                 creating and switching branches.  It's an alternative to the "git checkout" command.
 
-                 git switch -  (This command includes the hyphen '-' character.  It cancels the last
-                                "git checkout" command, and returns you to the previous branch.)
+                 The below command includes the hyphen '-' character.  It cancels the last
+                 "git checkout" command, and returns you to the previous branch.
+                 > git switch -
 
 GIT BRANCH       To view all local git branches on your computer (not remote branches),
                  run the following command.
