@@ -122,6 +122,11 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                     do nothing except launch the git editor, allowing you to change your git commit
                     message.
 
+GIT FETCH         Use the "git "fetch" command, followed by the "git merge" command, in place of the
+                  "git pull" command.
+                  > git fetch
+                  > git merge
+
 GIT LOG           Run the following:
                   > git log  (Displays only git commits.)
                   > git log --oneline  (Displays each commit on only one line.)
