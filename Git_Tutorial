@@ -165,9 +165,7 @@ GIT REVERT        Undoes a previous commit by applying a new commit.  Undoes cha
                   > git checkout main  (Choose a snapshot ID from the above "git log" command, and run the following:
                   > git revert b1b4e7a77fe1164952cad7699292024686c3357c  (The changes made in ID "b1b4e7a7..." will be undone.)
 
-GIT RESET         NOTE: "git restore" can be a dangerous command because it can permanently delete files.
-                         Be careful it's used.  Also, "git restore" is an alternative command to
-                         "git reset", introduced in git Version 2.23.0.  See "git restore" command below for details.
+GIT RESET         NOTE: "git restore" is an alternative command to "git reset".  See "git restore" command below for details.
 
                   "git reset" undoes changes to the working directory and the staged snapshot.  Assume you
                   made text changes to an already-committed file named index.html AND you added a brand-new
@@ -185,7 +183,6 @@ GIT RESTORE       NOTE: "git restore" can be a dangerous command because it can 
 
                   The "git restore" command was introduced in git Version 2.23.0, and is an alternative
                   to the "git reset" command.
-
 
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
