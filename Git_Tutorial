@@ -86,8 +86,9 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                                                                              previously STAGED files.  Which means files
                                                                              that have been previously added with "git add",
                                                                              but have been changed since then.)
-                    To add any number of files/directories from your repository,
-                    commit that change to the current branch, and push it, do this...
+                    The following commands will add any number of files/directories from
+                    your repository, then commit them to the current branch.  After you
+                    add and commit, run "git push" to put them in the remote repository.
                     First, add the files/directories.
                     > git add .  (Don't forget to type the period . char!)
                     > git commit . -m "Added files/directories."
@@ -97,6 +98,26 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                     First, delete the files/directories.
                     > git commit . -m "Deleted files/directories."
                     > git push
+
+                    If you made a mistake with your most-recent commit (the last commit you made),
+                    you can undo your previous commit by first making the fix, and then running the
+                    "git commit --amend" command.  Running "git commit --amend" will do the
+                    following, in this order.
+                       1) undo the previous commit, in which you made a mistake.
+                       2) pick up the change(s) you made since the previous commit.
+                       3) performs the commit that includes your most recent change(s).
+                       EXAMPLE: Assume you performed a "git commit", but you forgot to first run
+                                "git add" on 1 of 3 files you wanted to be part of that commit.
+                                You would fix that by doing the following.
+                    > git add file_1
+                    > git add file_2   (You forgot to run "git add file_3")
+                    > git commit -m "committed file_1 and file_2."
+                    > git add file_3
+                    > git commit --amend  (Now, all 3 of your files have been added and committed.
+
+                    If your most-recent commit is all OK, and you run "git commit --amend", it will
+                    do nothing except launch the git editor, allowing you to change your git commit
+                    message.
 
 GIT LOG           Run the following:
                   > git log  (Displays only git commits.)
