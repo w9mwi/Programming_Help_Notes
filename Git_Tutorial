@@ -25,15 +25,23 @@ To change the git editor, type the number shown in the 'Selection' column.
   3            /usr/bin/vim.tiny   15        manual mode
 
 If the editor you want isn't in the above list (for example, the "gedit"
-editor), you can change the git default editor to "gedit" by adding the
-below text to the ~/.bashrc file.  (This has been confirmed to work.)
+editor), you can change the git default editor to "gedit" by running the
+following command from the command line:
 
+> git config --global core.editor "gedit --wait --new-window"
+
+Visit this web page to see how set different editors for Git:
+--> https://www.git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config#ch_core_editor
+
+You can add the following text to your ~/.bashrc file to set a git editor:
 export GIT_EDITOR=gedit
+Doing this did launch the gedit editor when doing a "git commit", but it bypassed
+doing the commit.  Not sure why it doesn't work properly.  So just run the above
+"git config" command to set the git editor.
+
 
 Then, run this command from the command line:
-> git config --global core.editor "gedit -w"
-... OR...
-> git config --global core.editor "gedit -s"
+
 
 ===================================================================================================
 
