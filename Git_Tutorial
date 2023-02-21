@@ -25,9 +25,15 @@ To change the git editor, type the number shown in the 'Selection' column.
   3            /usr/bin/vim.tiny   15        manual mode
 
 If the editor you want isn't in the above list (for example, the "gedit"
-editor), you can change git default editor to "gedit" by adding the below
-text to the ~/.bashrc file.  (This has been confirmed to work.)
+editor), you can change the git default editor to "gedit" by adding the
+below text to the ~/.bashrc file.  (This has been confirmed to work.)
+
 export GIT_EDITOR=gedit
+
+Then, run this command from the command line:
+> git config --global core.editor "gedit -w"
+... OR...
+> git config --global core.editor "gedit -s"
 
 ===================================================================================================
 
