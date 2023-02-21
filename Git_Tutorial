@@ -157,23 +157,29 @@ GIT CONFIG        Run the following commands so git knows your name and e-mail a
                   > git config --list
                   > git config --list --show-origin
 
-GIT CHECKOUT      Checks out an existing branch.  So in the working directory, before you do a checkout, you must first
-                  create a new branch by running "git checkout" similar to this example:  git branch name_of_new_branch
+GIT CHECKOUT      The "git checkout" command can do the following:
 
-                  > git checkout main  (main is name of branch.)
-                  To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
-                  > git checkout -b poop
-                  To checkout a previous snapshot, do the following:
-                  > git log  (3 lines of text will display, similar to the 3 lines below.)
-                    commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
-                    Author: TJB <w9mwi@yahoo.com>
-                    Date:   Thu Jan 14 20:22:41 2016 -0600
-                  > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d  (Checkout the snapshot shown above.)
-                  > git status
-                  > git log
-                  > git switch -  (This command cancels the above "git checkout c9d66dd85..." command.)
-                  > git checkout main  (Returns to the main branch, effectively canceling the above "git checkout c9d66dd85..." command.)
-                  > git checkout Version_1.0  (Checks out the "Version 1.0" tag.  For details, read the "TAG A RELEASE" section below.)
+                  1) Checkout (switch to) an existing branch, like this:
+                     > git checkout Version_1  (Version_1 is the name of an existing branch.)
+                     > git checkout main       (main is name of an existing branch.)
+
+                  2) Create a new branch named poop, AND switch to the new poop branch, like this:
+                     > git checkout -b poop
+
+                  3) Checkout a previous snapshot.  First obtain the snapshot number by
+                     running the "git log" command, like this:
+                     > git log  (3 lines of text will display, similar to the 3 lines below.)
+                       commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
+                       Author: TJB <w9mwi@yahoo.com>
+                       Date:   Thu Jan 14 20:22:41 2016 -0600
+
+                     Next, run the "git checkout" command containing the snapshot number, like this:
+                     > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
+
+                     You can cancel the previous "git checkout c9d66..." command by doing this:
+                     > git switch -
+                     ...or by doing this:
+                     > git checkout main   (Returns to the main branch, canceling the above "git checkout c9d66...")
 
 TAG A RELEASE     To tag a release, do the following:
                   > git checkout main
