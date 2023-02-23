@@ -191,11 +191,15 @@ GIT TAG          To view the list of existing tags, execute this command:
                  The -a flag above tells Git to create an annotated tag, which lets us
                  record our name, the date, and a descriptive message via the git editor
                  OR via the -m "comments" flag, which isn't used here.
-                  
 
-                  You can now add/commit more files to the "Version 1.0" tag.  When you want to return to the "Version_1.0" tag,
-                  run the following command instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
-                  > git checkout Version_1.0
+                 To view the message entered via a "git tag", run the following command:
+                 > git show v1.0   (Shows the message entered when the v1.0 tag was created.)
+
+                 You can now add/commit more files to the "Version 1.0" tag.  When you want to return to the "Version_1.0" tag,
+                 run the following command instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
+                 > git checkout Version_1.0
+
+
 
 GIT REVERT        Undoes a previous commit by applying a new commit.  Undoes changes contained in one of the committed snapshots.
                   > git log
