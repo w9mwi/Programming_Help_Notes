@@ -42,6 +42,9 @@ However, that is mentioned as an option in discussions on-line...
 
 export GIT_EDITOR=gedit
 
+To view the last 3 commit messages, run this command:
+> git log -3   (Change 3 to the number you want.)
+
 ===================================================================================================
 
 GIT TUTORIALS:  https://git-scm.com/book/en/v2/
