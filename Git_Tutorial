@@ -30,7 +30,9 @@ following command from the command line:
 
 > git config --global core.editor "gedit --wait --new-window"
 
-Visit this web page to see how set different editors for Git:
+To set the git editor you desire, visit the following web page.
+It lists numerous editors (used by numerous operating systems),
+and the instructions for setting the git editor of your choice.
 --> https://www.git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config#ch_core_editor
 
 You can add the following text to your ~/.bashrc file to set a git editor:
