@@ -220,8 +220,8 @@ GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset
                   NOTE: Both of the following commands affect the WORKING DIRECTORY.  The "git reset" command also
                         reverts changes made to the STAGED SNAPSHOT, which is made via the "git add" command.
                         The following 2 commands DON'T change the contents of any committed snapshots.
-                  > git reset --hard  (Resets tracked files to match the most recent commit.)
-                  > git clean -f  (Deletes the "dummy.html" file from the working directory.)
+                  > git reset --hard  (Resets TRACKED files, not STAGED files, to match the most recent commit.)
+                  > git clean -f  (Deletes all UNTRACKED files from the working directory.)
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
 
 GIT RESTORE       NOTE: The "git restore" command was introduced in git Version 2.23.0, and is an alternative
