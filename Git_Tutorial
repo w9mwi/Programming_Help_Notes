@@ -165,16 +165,19 @@ GIT CONFIG        Run the following commands so git knows your name and e-mail a
                   > git config --list
                   > git config --list --show-origin
 
-GIT CHECKOUT      The "git checkout" command can do the following:
+GIT CHECKOUT      IMPORTANT: When you checkout a previous snapshot of the current branch via a command like
+                             "git checkout 625cdef", you are no longer on any branch!  You can confirm that
+                             by running the "git branch" command.  However, you can create a new branch
+                             containing this snapshot by next running a command like this:
+                             "git checkout -b newBranchName"
+
+                  The "git checkout" command can do the following:
 
                   1) Checkout (switch to) an existing branch, like this:
                      > git checkout Version_1  (Version_1 is the name of an existing branch.)
                      > git checkout main       (main is name of an existing branch.)
 
-                  2) Create a new branch named poop, AND switch to the new poop branch, like this:
-                     > git checkout -b poop
-
-                  3) Checkout a previous snapshot.  First obtain the snapshot number by
+                  2) Checkout a previous snapshot.  First obtain the snapshot number by
                      running the "git log" command, like this:
                      > git log  (3 lines of text will display, similar to the 3 lines below.)
                        commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
@@ -185,9 +188,12 @@ GIT CHECKOUT      The "git checkout" command can do the following:
                      > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
 
                      You can cancel the previous "git checkout c9d66..." command by running one of the following two commands:
-                     1) > git switch -
+                     > git switch -
                      ...OR...
-                     2) > git checkout main   (Returns to the main branch, canceling the above "git checkout c9d66...")
+                     > git checkout branchName   (Returns to the "branchName" branch, canceling the above "git checkout c9d66...")
+
+                  3) Create a new branch named poop, AND switch to the new poop branch, like this:
+                     > git checkout -b poop
 
 GIT TAG          To view the list of existing tags, execute this command:
                  > git tag
