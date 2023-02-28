@@ -180,10 +180,10 @@ GIT CHECKOUT      The "git checkout" command can do the following:
                      Next, run the "git checkout" command containing the snapshot number, like this:
                      > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
 
-                     You can cancel the previous "git checkout c9d66..." command by doing this:
-                     > git switch -
-                     ...or by doing this:
-                     > git checkout main   (Returns to the main branch, canceling the above "git checkout c9d66...")
+                     You can cancel the previous "git checkout c9d66..." command by running one of the following two commands:
+                     1) > git switch -
+                     ...OR...
+                     2) > git checkout main   (Returns to the main branch, canceling the above "git checkout c9d66...")
 
 GIT TAG          To view the list of existing tags, execute this command:
                  > git tag
