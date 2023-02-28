@@ -168,8 +168,9 @@ GIT CONFIG        Run the following commands so git knows your name and e-mail a
 GIT CHECKOUT      IMPORTANT: When you checkout a previous snapshot of the current branch via a command like
                              "git checkout 625cdef", you are no longer on any branch!  You can confirm that
                              by running the "git branch" command.  However, you can create a new branch
-                             containing this snapshot by next running a command like this:
-                             "git checkout -b newBranchName"
+                             containing this snapshot by next running a command like one of these two commands:
+                             "git checkout newBranchName"     (Uses the current snapshot to creates a new branch.)
+                             "git checkout -b newBranchName"  (Same as above, except the -b flag also switches to newBranchName.)
 
                   The "git checkout" command can do the following:
 
