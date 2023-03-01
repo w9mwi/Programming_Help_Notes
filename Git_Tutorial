@@ -322,7 +322,9 @@ DELETE BRANCH   To delete a branch named poop, run the following commands.
                                        -D deletes the branch regardless if the branch is unmerged or fully merged.)
                 > git branch  (Confirm the poop branch is gone.)
 
-GIT MERGE       The git merge command affects ONLY the branch that is currently checked out.
+GIT MERGE       When you perform a merge, you are always merging some other branch into the
+                branch that is currently checked out.  Therefore, the "git merge" command
+                affects ONLY the branch that is currently checked out.
 
                 > git checkout main  (Go to the main branch.)
                 > git merge css      (Merge the css branch into the main branch.)
