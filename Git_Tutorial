@@ -259,16 +259,22 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
                  > git branch
 
                  The above command displays text similar to the text below, where the
-                 asterisk (*) designates the git branch that you're currently on.
+                 asterisk (*) designates the git branch that is currently checked out.
 
                    verson_1_branch
                  * main
 
+                 To delete an existing branch, you can't be on the branch you're deleting--you
+                 must have some other branch checked out.  The following example shows how to
+                 delete a branch named "css".  For this to work, we must have checked out some
+                 branch other than the "css" branch.
+                 > git branch -d css   (The -d flag performs a delete.)
+
                  To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
-                 > git branch poop
-                 > git checkout poop
-                 To create a new branch named poop, AND checkout this new poop branch simultaneously, run this command:
+                 > git branch poop    (Creates the "poop" branch, which will be identical to the branch currently checked out.)
+                 > git checkout poop  (Switch from the current branch to the new poop branch.)
+                 The following "git checkout" command performs both of the above commands in a single command.
                  > git checkout -b poop
 
                  In Git, a branch is an independent line of development.  Branches present an error-proof method for
