@@ -268,7 +268,8 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
                  must have some other branch checked out.  The following example shows how to
                  delete a branch named "css".  For this to work, we must have checked out some
                  branch other than the "css" branch.
-                 > git branch -d css   (The -d flag performs a delete.)
+                 > git branch -d css  (-d deletes the css branch ONLY if it has been fully merged into the main branch.)
+                 > git branch -D css  (-D deletes the css branch regardless if it's been merged.)
 
                  To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
