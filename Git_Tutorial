@@ -453,8 +453,9 @@ MERGING FROM ONE REPOSITORY INTO ANOTHER:
                                                  branch that we just checked out in the previous command.)
                        > git merge mary/main     (Merge the mary/main branch into our main branch.)
 
-FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPORTS A BRANCH from a remote repository.
-                  Push CREATES A NEW LOCAL BRANCH in a remote repository.  Navigate to the "C:\Tom\Programming\my-git-repo"
+FETCH AND PUSH    The "git fetch" and "git push" push commands are almost opposites.  Fetch IMPORTS A BRANCH from
+                  a remote repository.  The "git push" command exports a branch to another repository, as it also
+                  CREATES A NEW LOCAL BRANCH in that remote repository.  Navigate to the "C:\Tom\Programming\my-git-repo"
                   directory, and run the following 2 commands.
                   > git branch dummy     (Creates a new 'dummy' branch in the my-git-repo directory.)
                   > git push mary dummy  (Export the 'dummy' branch to the 'mary' repository.)
