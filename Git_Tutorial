@@ -144,8 +144,9 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                     do nothing except launch the git editor, allowing you to change your git commit
                     message.
 
-GIT FETCH         Use the "git "fetch" command, followed by the "git merge" command, in place of the
-                  "git pull" command.
+GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote repository into the repository
+                  you're currently pointed to.  Use the "git "fetch" command, followed by the "git merge"
+                  command, in place of the "git pull" command.
                   > git fetch
                   > git merge
 
@@ -475,10 +476,12 @@ FETCH AND PUSH    The fetch and push commands are almost opposites.  Fetch IMPOR
                   push upstream, your push will rightly be rejected.  You’ll have to pull down their work first and
                   incorporate it into yours before you’ll be allowed to push.
 
-GIT FETCH         Since fetched content is represented as a remote branch, it has absolutely no effect on your local
-                  development work. This makes fetching a safe way to review commits before integrating them with your
-                  local repository. It’s similar to svn update in that it lets you see how the central history has
-                  progressed, but it doesn’t force you to actually merge the changes into your repository.
+GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote repository into the repository
+                  you're currently pointed to.  Since fetched content is represented as a remote branch,
+                  it has absolutely no effect on your local development work. This makes fetching a safe
+                  way to review commits before integrating them with your local repository.  It’s similar
+                  to an "svn update" in that it lets you see how the central history has progressed, but
+                  it doesn’t force you to actually merge the changes into your repository.
 
                   SUMMARY...
                   > git clone <remote-path>  (Create a copy of a remote Git repository.)
