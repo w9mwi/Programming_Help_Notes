@@ -54,10 +54,10 @@ CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                            to contain the entire software project.)  Next, change the directory
                            (via cd command) so your command line points to this new directory.
                         2) From the command line, run the following:
-                           > git init
-                           > ls .git   (You should now see a new .git folder that was created.)
+                           > git init  (This command creates a new git repository by creating a folder named ".git".)
+                           > ls .git   (Verify that a new .git folder was created.)
                            > git status (You should now see text that reveals the git status.)
-                           > git branch css    (Creates a new branch for this repository named "css".)
+                           > git branch css    (Creates a new branch for this git repository named "css".)
                            > git checkout css  (This command points you to the newly-created "css" branch.)
 
 DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
@@ -65,10 +65,10 @@ DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         git repository and therefore the ".git" directory.  Then delete the ".git" directory,
                         which deletes the git repository.  The files and directories that were associated with
                         the now-deleted git repository will remain; you must delete them on your own.
-                        To delete a specific git branch (in this example, named 'test'), run the following command(s):
-                        > git branch -d test  (-d deletes the branch ONLY if the branch is fully merged.)
+                        To delete a specific git branch (NOT the git repository), run the following command(s):
+                        > git branch -d test  (-d deletes the branch named "test" ONLY if the branch is fully merged.)
                         ...OR...
-                        > git branch -D test  (-D deletes the branch regardless if the branch is unmerged or fully merged.)
+                        > git branch -D test  (-D deletes the branch named "test" regardless if the branch is merged or unmerged.)
                         NOTE: You cannot delete the 'main' branch using this command.
                               To delete the 'main' branch, just delete the repository's .git directory.
 
