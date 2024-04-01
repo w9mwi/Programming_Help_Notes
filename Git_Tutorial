@@ -62,17 +62,19 @@ CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
 
 DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
                         Navigate to the top-level directory of your software project, which contains the
-                        git repository.  Then delete the ".git" folder, which deletes the entire git
-                        repository.  However, the files that were associated with the now-deleted git repository
-                        remain, so you can delete them to make the directory completely empty.
+                        git repository and therefore the ".git" directory.  Then delete the ".git" directory,
+                        which deletes the git repository.  The files and directories that were associated with
+                        the now-deleted git repository will remain; you must delete them on your own.
                         To delete a specific git branch (in this example, named 'test'), run the following command(s):
                         > git branch -d test  (-d deletes the branch ONLY if the branch is fully merged.)
                         ...OR...
                         > git branch -D test  (-D deletes the branch regardless if the branch is unmerged or fully merged.)
                         NOTE: You cannot delete the 'main' branch using this command.
                               To delete the 'main' branch, just delete the repository's .git directory.
+
 WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
                     that comprise your software project.
+
 SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given point in time.
                     Git’s term for creating a snapshot is called staging because we can add or remove
                     multiple files before actually committing it to the project history.  Staging gives
