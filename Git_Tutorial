@@ -50,20 +50,21 @@ GIT TUTORIALS:  https://git-scm.com/book/en/v2/
                 https://www.atlassian.com/git/tutorials/
 
 CREATE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
-                        1) First, create a new directory/folfder  that will hold your new software project,
-                           then navigate to that newly-created directory.
-                        2) From the comand line, run the following:
+                        1) First, create a new directory.  (This will be the parent directory used
+                           to contain the entire software project.)  Next, change the directory
+                           (via cd command) so your command line points to this new directory.
+                        2) From the command line, run the following:
                            > git init
-                           > dir .git   (You should now see a new .git folder that was created.)
+                           > ls .git   (You should now see a new .git folder that was created.)
                            > git status (You should now see text that reveals the git status.)
-                           > git branch css    (Names your newly-created git repository as the "css" branch)
-                           > git checkout css  (This command puts you into the newly-created "css" branch to begin your work.)
+                           > git branch css    (Creates a new branch for this repository named "css".)
+                           > git checkout css  (This command points you to the newly-created "css" branch.)
 
 DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
-                        Go to the top-level directory/folder of your project (aka, the git repository),
-                        then delete the .git folder, which may be invisible.  Doing this deletes the
-                        git repository.  You can then delete all other files/folders from this folder
-                        to make it completely empty.
+                        Navigate to the top-level directory of your software project, which contains the
+                        git repository.  Then delete the ".git" folder, which deletes the entire git
+                        repository.  However, the files that were associated with the now-deleted git repository
+                        remain, so you can delete them to make the directory completely empty.
                         To delete a specific git branch (in this example, named 'test'), run the following command(s):
                         > git branch -d test  (-d deletes the branch ONLY if the branch is fully merged.)
                         ...OR...
