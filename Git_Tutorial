@@ -213,10 +213,10 @@ GIT TAG          To view the list of existing tags, execute this command:
                  instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
                  > git checkout Version_1.0
 
-GIT REVERT        Undo a previous commit by applying a new commit.  Undoes changes contained in one of the committed snapshots.
+GIT REVERT        Undoes changes contained in one of the committed snapshots.
                   > git log
                   > git checkout main  (Choose a snapshot ID from the above "git log" command, and run the following:
-                  > git revert b1b4e7a77fe1164952cad7699292024686c3357c  (The changes made in ID "b1b4e7a7..." will be undone.)
+                  > git revert b1b4e7a7  (The changes made in ID "b1b4e7a7..." will be undone.)
 
 GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset", and should be used
                         instead of "git reset".  See "git restore" command below for details.
