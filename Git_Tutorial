@@ -199,12 +199,12 @@ GIT CHECKOUT      IMPORTANT: When you checkout a previous snapshot of the curren
 
 GIT TAG          To view the list of existing tags, execute this command:
                  > git tag
-                 To tag a release, do the following:
-                  > git checkout main  (First, go to the branch you want to tag.)
-                  > git tag -a Version_1.0  -m "Tag Version 1.0"
-                 The -a flag above tells Git to create an annotated tag, which lets us
-                 record our name, the date, and a descriptive message via the git editor
-                 OR via the -m "comments" flag, which isn't used here.
+                 To tag a release on a branch called "main", do the following:
+                 > git checkout main  (First, checkout the branch you want to tag.)
+                 > git tag -a Version_1.0  -m "Tag Version 1.0"
+                 The -a flag tells Git to create an annotated tag, which allows
+                 us to record our name, the date, and a descriptive message
+                 (specified via the -m flag).
 
                  To view the message entered via a "git tag", run the following command:
                  > git show v1.0   (Shows the message entered when the v1.0 tag was created.)
