@@ -229,9 +229,10 @@ GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset
                   made text changes to an already-committed file named index.html AND you added a brand-new
                   file named "dummy.html".  If you decide to scrap those changes (that is, revert changes
                   made to index.html AND delete the "dummy.html" file), run the following 2 commands.
-                  NOTE: Both of the following commands affect the WORKING DIRECTORY.  The "git reset" command also
-                        reverts changes made to the STAGED SNAPSHOT, which is made via the "git add" command.
-                        The following 2 commands DON'T change the contents of any committed snapshots.
+                  NOTE: Both of the following commands ("reset" and "clean") affect the ONLY THE WORKING DIRECTORY.
+                        The "git reset" command also reverts changes made to the STAGED SNAPSHOT, which is made
+                        via the "git add" command.  The following 2 commands DON'T change the contents of any
+                        committed snapshots.
                   > git reset --hard  (Resets TRACKED files, not STAGED files, to match the most recent commit.)
                   > git clean -f  (Deletes all UNTRACKED files from the working directory.)
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
