@@ -265,18 +265,20 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
                    verson_1_branch
                  * main
 
-                 To delete an existing branch, you can't be on the branch you're deleting--you
-                 must have some other branch checked out.  The following example shows how to
-                 delete a branch named "css".  For this to work, you must currently be pointed
+                 TO DELETE AN EXISTING BRANCH - The following example shows how to delete
+                 a branch named "css".  For this to work, you must currently be pointed
                  to some branch other than the "css" branch.
 
                  > git branch -d css  (-d deletes the css branch ONLY if it has been fully merged into the main branch.)
                  > git branch -D css  (-D deletes the css branch regardless if it has, or hasn't, been merged.)
 
-                 To create a new branch named poop, and then check it out, do the following.  This new poop branch will
-                 initially be identical to the branch you currently have checked out.
+                 TO CREATE A NEW BRANCH - The example below shows how to create a new branch named poop,
+                 and how to then checkout this new branch.  This new poop branch will initially be
+                 identical to the branch you're currently pointed to when you run the checkout command.
+
                  > git branch poop    (Creates the "poop" branch, which will be identical to the branch currently checked out.)
                  > git checkout poop  (Switch from the current branch to the new poop branch.)
+
                  The following "git checkout" command performs both of the above commands in a single command.
                  > git checkout -b poop
 
