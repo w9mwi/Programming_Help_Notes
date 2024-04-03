@@ -235,6 +235,11 @@ GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset
                   > git reset --hard  (Resets TRACKED files, not STAGED files, to match the most recent commit.)
                   > git clean -f  (Deletes all UNTRACKED files from the working directory.)
                   The above 2 (TWO) commands together permanently undoes uncommitted changes.
+                  The "git reset --hard" command removes the uncommited change made to index.html.
+                  The "git clean -f" command deletes the dummy.html file that you added (but didn't
+                  "add" or "commit").  "git clean -f" is equivalent to manually deleting all files
+                  that haven't been added or commited.
+
 
 GIT RESTORE       NOTE: The "git restore" command was introduced in git Version 2.23.0, and is an alternative
                   to the "git reset" command.  "git restore" can be a dangerous command because it can
