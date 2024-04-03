@@ -107,8 +107,9 @@ GIT COMMIT          To commit all files of your snapshot (files added with the g
                                                                              previously STAGED files.  Which means files
                                                                              that have been previously added with "git add",
                                                                              but have been changed since then.)
-                    If you want to undo a commit, obtain its SHA-1 log number,
-                    then run the following command to undo that commit:
+                    If you want to undo (remove) a previous commit, obtain
+                    its SHA-1 log number, then run the following command to
+                    undo that commit:
                     > git revert 514fbe7   (514fbe7 is the SHA-1 log number)
 
                     The following commands will add any number of files/directories from
@@ -213,10 +214,11 @@ GIT TAG          To view the list of existing tags, execute this command:
                  instead of "git checkout c9d66dd8...", which involves the long, cumbersome ID number.
                  > git checkout Version_1.0
 
-GIT REVERT        Undoes changes contained in one of the committed snapshots.
-                  > git log
-                  > git checkout main  (Choose a snapshot ID from the above "git log" command, and run the following:
-                  > git revert b1b4e7a7  (The changes made in ID "b1b4e7a7..." will be undone.)
+GIT REVERT        Undoes (removes) the changes made in one of the previous commits.
+                  > git log            (Obtain the snapshot ID of a previous commit that you want undone,
+                                        which will be used in the "git revert" command below.)
+                  > git checkout main  (Checkout the branch you want to revert.  In this example it's "main".)
+                  > git revert b1b4e7a7  (This removes the changes made in ID "b1b4e7a7...".)
 
 GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset", and should be used
                         instead of "git reset".  See "git restore" command below for details.
