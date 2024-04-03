@@ -267,10 +267,11 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
 
                  To delete an existing branch, you can't be on the branch you're deleting--you
                  must have some other branch checked out.  The following example shows how to
-                 delete a branch named "css".  For this to work, we must have checked out some
-                 branch other than the "css" branch.
+                 delete a branch named "css".  For this to work, you must currently be pointed
+                 to some branch other than the "css" branch.
+
                  > git branch -d css  (-d deletes the css branch ONLY if it has been fully merged into the main branch.)
-                 > git branch -D css  (-D deletes the css branch regardless if it's been merged.)
+                 > git branch -D css  (-D deletes the css branch regardless if it has, or hasn't, been merged.)
 
                  To create a new branch named poop, and then check it out, do the following.  This new poop branch will
                  initially be identical to the branch you currently have checked out.
@@ -323,12 +324,6 @@ GIT BRANCH       To view all local git branches on your computer (not remote bra
                  > git branch
                      crazy
                    * main
-
-DELETE BRANCH   To delete a branch named poop, run the following commands.
-
-                > git branch -d poop  (-d deletes the branch ONLY if the branch is fully merged.
-                                       -D deletes the branch regardless if the branch is unmerged or fully merged.)
-                > git branch  (Confirm the poop branch is gone.)
 
 GIT MERGE       When you perform a merge, you are always merging some other branch into the
                 branch that is currently checked out.  Therefore, the "git merge" command
@@ -830,8 +825,8 @@ RENAME A COMMITTED FILE:
 > git add jack.java
 > git commit -m "Added jack.java file."
 
-REMOVE A BRANCH:
-> git branch -d poop  (Removes the brnch named 'poop')
+REMOVE A BRANCH or DELETE A BRANCH:
+> git branch -d poop  (Removes the barnch named 'poop')
 
 MERGE A BRANCH
 > git checkout main  (Go to the main branch.)
