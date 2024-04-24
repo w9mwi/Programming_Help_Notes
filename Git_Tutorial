@@ -216,10 +216,10 @@ GIT TAG          To view the list of existing tags, execute this command:
 
 GIT REVERT        Undoes (removes) the changes made in one of the previous commits.  When using the
                   "git revert" command, make certain you use the ID of the commit you want undone,
-                  and NOT the ID of the commit you want to return to!
+                  and NOT the ID of the commit you want to return to.
+                  > git checkout main  (Checkout the name of the branch you want to revert.  In this example it's "main".)
                   > git log            (Obtain the snapshot ID of a previous commit that you want undone,
                                         which will be used in the "git revert" command below.)
-                  > git checkout main  (Checkout the branch you want to revert.  In this example it's "main".)
                   > git revert b1b4e7a7  (This removes the changes made in ID "b1b4e7a7...".)
 
 GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset", and should be used
