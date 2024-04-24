@@ -264,7 +264,44 @@ GIT SWITCH       The "git switch" command introduced was introduced in Git Versi
                  "git checkout" command, and returns you to the previous branch.
                  > git switch -
 
-GIT BRANCH       To view all local git branches on your computer (not remote branches),
+GIT BRANCH       =======================================================
+                 Understand this branching example.  It shows how to make a change to an existing branch
+                 (the "master" branch), and then commit that change to a new branch named "crazy"
+                 WITHOUT CHANGING THE EXISTING BRANCH.  (In this example, not changing the "master" branch.)
+
+                 1) Assume we're on branch "master" and it's up to date.  So if you run "git branch",
+                    the output text says:
+                    * master
+
+                 2) Checkout a previous commit, like this:
+                    > git checkout 16ec1dd  (Several lines of text will be output similar to the following.)
+
+                    Note: switching to '16ec1dd'.
+
+                    You are in 'detached HEAD' state...
+                    ... More text here ...
+                    HEAD is now at 16ec1dd Add a crazy.html
+       
+                 3) Check the current status.
+                    > git status  (Text similar to the following will be output.)
+                    HEAD detached at 16ec1dd
+                    nothing to commit, working tree clean
+
+                 4) Next, run the following 2 git commands:
+                    > git branch crazy  (Creates a new branch named "crazy".  Outputs no text.)
+                    > git branch        (Outputs the following 3 lines of text, showing were NOT ON ANY BRANCH!)
+                    * (HEAD detached at 16ec1dd)
+                    crazy
+                    master
+
+                 5) The following command makes the current working directory (containing the "HEAD detached"
+                    state) become the "crazy" branch.
+                    > git checkout crazy  (Outputs the following line of text.  Designating the previous "git checkout" has now been committed to the "crazy" branch.)
+                    * crazy
+                    master
+                 =======================================================
+
+                 To view all local git branches on your computer (not remote branches),
                  run the following command.
 
                  > git branch
