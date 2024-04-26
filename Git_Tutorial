@@ -378,28 +378,52 @@ GIT MERGE       When you perform a merge, you are always merging some other bran
                 branch that is currently checked out.  Therefore, the "git merge" command
                 affects ONLY the branch that is currently checked out.
 
-                > git checkout main  (Go to the main branch.)
-                > git merge css      (Merge the css branch into the main branch.)
+                > git checkout main  (Go to the master branch.)
+                > git merge css      (Merges the css branch into the master branch.)
 
-                Git can merge changes into any branch (not just the main branch).  We can pull the updates in with
-                the familiar git merge command.  Merging only affects the checked-out branch.  Here, we merge the
-                main branch into the crazy branch...
-                > git checkout crazy
-                > git merge main
-                > git log --oneline
+                There are simple merges (also known as a Fast-Forward merge), and there are 3-Way Merges.  A Fast-Forward
+                merge performs a ONE-PARENT COMMIT.  A 3-Way Merge occurs when you try to merge two branches that have a
+                divergent history.  A 3-Way Merge performs a TWO-PARENT COMMIT.  To put it another way...
 
-                There are simple merges, and there are "3-Way Merges".  A simple/regular merge PERFORMS ONE PARENT COMMIT.
-                A 3-way merge occurs when you try to merge two branches that have a divergent history.  A 3-way merge
-                PERFORMS TWO PARENT COMMITS.  Assume you have two branches--one named "main" and one named "development."
-                To merge the "development" branch into the "main" branch you must be on the "main" branch.  The
-                following 2 commands accomplish that.
-                > git checkout main  (Ensure you're on the "main" branch.)
-                > git merge development  (Merge the "development" branch into the "main "branch.) 
-                Depending on the state of the "main" and "development" branch, the above "git merge"
-                command could perform a simple merge or a 3-way merge.
+                When the "git merge" command is used, the merge performed is one of the following two (2) types:
 
-                To better understand a "3-Way Merge" perform an Internet search on that term.  Here's one explanation:
-                SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
+                1) Fast-Forward Merge - Assume you're on the "master" branch and you want to merge a branch
+                                        named "css" into the "master" branch.  If the "css" branch contains
+                                        all the code contained in the "master" branch, plus additional code,
+                                        the "git merge css" command will perform a Fast-Forward Merge.  The
+                                        result will be that the HEAD of the "master" branch will point to
+                                        the same location as the HEAD of the "css" branch.  To see an example
+                                        of this, go to this web URL:
+                                        https://hamwaves.com/collaboration/doc/rypress.com/branches-1.html
+                        
+                                        Next, compare the image contained directly below this text:
+                                        This results in a repository history that looks like:
+
+                                        ...with the image contained directly below this text:
+                                        now matches the snapshot pointed to by the master branch.
+
+                                        Viewing those two images, notice that the HEAD of the "master" branch is
+                                        "fast forwaded" to the HEAD of the "css" branch.  So when the "git merge css"
+                                        command is run, NO new commit is performed.
+
+                2) 3-Way Merge        - Assume you're on a branch named "crazy" and you want to merge the branch
+                                        named "master" into the "crazy" branch.  Only some (not all) of the code
+                                        contained in the "master" branch is contained in the "crazy" branch.
+                                        When that condition occurs, a Fast-Forward Merge is impossible; so
+                                        running "git merge master" will instead perform a 3-Way Merge.  To see
+                                        an example of this, go to this web URL:
+                                        https://hamwaves.com/collaboration/doc/rypress.com/branches-2.html
+
+                                        Next, view the "Before" and "After" images contained directly above this text:
+                                        Merging master into the crazy branch.
+
+                                        Notice the HEAD of the "master" branch remains unchanged, and the "crazy"
+                                        branch points to a newly-created HEAD, which points to BOTH the PREVIOUS HEAD
+                                        of the "crazy" branch AND to the "master" branch.  Since a new HEAD was
+                                        created via the "git merge master" command, a new commit was also generated.
+
+                                        For another explanation of a git 3-Way Merge, view the following web URL.
+                                        SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
 
 GIT REBASE    Rebasing allows you to move branches around by changing the commit that they are based on.
               (Thus the name rebase.)
