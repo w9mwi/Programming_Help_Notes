@@ -115,18 +115,25 @@ GIT ADD             When a new file is created that is part of your project, you
                     and unstaged files), run this command:
                     > git add *
 
-GIT COMMIT          To commit all files of your snapshot (files added with the git "add" command), you can
-                    commit them to the repository via the git "commit" command:
+GIT COMMIT          To commit all files from your snapshot (that have been added via the "git add"
+                    command), you can commit them to the repository via the git "commit" command:
                     > git commit -m "Added index.html file."
                     > git status
-                    To commit all STAGED files without having to first do a "git add", you can run the following command:
-                    > git commit -a -m "Add CSS stylesheet to rainbow.html" (The -a performs the "git add" command on all
-                                                                             previously STAGED files.  Which means files
-                                                                             that have been previously added with "git add",
-                                                                             but have been changed since then.)
-                    If you want to undo (remove) a previous commit, obtain
-                    its SHA-1 log number, then run the following command to
-                    undo that commit:
+
+                    To commit all STAGED files without having to first do a "git add", you can run
+                    the following command:
+
+                    > git commit -a -m "Add CSS stylesheet to rainbow.html"
+
+                      The "-a" option performs the "git add" command on all staged files; which
+                      means files that have already been added the git repository via the "git add"
+                      command, and have also changed since the the previous "git commit".)
+
+                      The "-m" option adds the text "message" (comment) specified between the
+                      double quotes ("").
+
+                   If you want to undo (remove) a previous commit, obtain its SHA-1 log number,
+                   then run the following command to undo that commit:
                     > git revert 514fbe7   (514fbe7 is the SHA-1 log number)
 
                     The following commands will add any number of files/directories from
