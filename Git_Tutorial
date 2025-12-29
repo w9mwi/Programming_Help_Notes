@@ -211,6 +211,44 @@ GIT CHECKOUT      IMPORTANT: When you checkout a previous snapshot of the curren
                   3) Create a new branch named poop, AND switch to the new poop branch, like this:
                      > git checkout -b poop
 
+GIT INIT         After you create a new folder for a new software project, you need to run
+                 the following command inside that folder
+
+                 git init
+
+                 Running that command creates the following 4 folders:
+
+                 hooks - This directory contains scripts that Git executes automatically at key points
+                         in the development lifecycle, such as before a commit (pre-commit), after a
+                         commit (post-commit), or before a push to a remote repository (pre-push).
+                         These hooks allow developers to customize Git's behavior, automate tasks
+                         (like running tests or linting code), and enforce project standards.
+                         The directory initially contains sample scripts that need to be renamed
+                         (by removing the .sample extension) and made executable to be activated.
+
+                 info - This folder contains miscellaneous repository information that doesn't fit
+                        elsewhere.  The most notable item inside is the exclude file, which acts
+                        like a local, per-repository .gitignore file.  Patterns listed in info/exclude
+                        specify files that Git should ignore, but unlike .gitignore, these ignored
+                        patterns are not committed to the repository or shared with others.
+
+                objects - This is the core of Git's storage system, functioning as the object database
+                          where all the project's content is stored.  Every version of every file, along
+                          with commits and directory structures, is stored here as a compressed object
+                         (specifically blob, tree, commit, and tag objects). Each object is stored as
+                         a file named by its unique SHA-1 hash, ensuring data integrity.  Git stores
+                         objects in subdirectories using the first two characters of their hash to manage
+                         the number of files in a single directory.
+                refs -   This directory stores pointers to commit objects, providing human-readable names
+                         for specific points in the project's history. It is typically organized into
+                         subdirectories:
+               refs/heads - Contains files representing your local branches, where each file holds the
+                            SHA-1 hash of the most recent commit on that branch.
+               refs/tags  - Stores information about annotated and lightweight tags, which are used to
+                            mark specific milestones or releases.
+               refs/remotes - This folder exists only in cloned repositories.  Stores the references
+                              for remote branches, tracking the state of branches on remote repositories.
+
 GIT TAG          To view the list of existing tags, execute this command:
                  > git tag
                  To tag a release on a branch called "main", do the following:
