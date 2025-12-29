@@ -57,7 +57,7 @@ WARNING: Beginning in Git 3.0 (to be released 2026 or 2027) the default name of
 
          git branch -m New_Name
 
-
+===================================================================================================
 
 GIT TUTORIALS:  https://git-scm.com/book/en/v2/
                 https://www.atlassian.com/git/tutorials/
@@ -277,14 +277,14 @@ GIT SWITCH       The "git switch" command introduced was introduced in Git Versi
                  "git checkout" command, and returns you to the previous branch.
                  > git switch -
 
-GIT BRANCH       =======================================================
-                 Understand this branching example.  It shows how to make a change to an existing branch
-                 (the "master" branch), and then commit that change to a new branch named "crazy"
-                 WITHOUT CHANGING THE EXISTING BRANCH.  (In this example, not changing the "master" branch.)
+GIT BRANCH       Understand the following branching example.  It shows how to make a change to an
+                 existing branch (the "main" branch), and then commit that change to a new branch
+                 named "crazy" WITHOUT CHANGING THE EXISTING BRANCH.  (In this example, not changing
+                 the "main" branch.)
 
-                 1) Assume we're on branch "master" and it's up to date.  So if you run "git branch",
+                 1) Assume we're on branch "main" and it's up to date.  So if you run "git branch",
                     the output text says:
-                    * master
+                    * main
 
                  2) Checkout a previous commit, like this:
                     > git checkout 16ec1dd  (Several lines of text will be output similar to the following.)
@@ -305,13 +305,13 @@ GIT BRANCH       =======================================================
                     > git branch        (Outputs the following 3 lines of text, showing were NOT ON ANY BRANCH!)
                     * (HEAD detached at 16ec1dd)
                     crazy
-                    master
+                    main
 
                  5) The following command makes the current working directory (containing the "HEAD detached"
                     state) become the "crazy" branch.
                     > git checkout crazy  (Outputs the following line of text.  Designating the previous "git checkout" has now been committed to the "crazy" branch.)
                     * crazy
-                    master
+                    main
                  =======================================================
 
                  To view all local git branches on your computer (not remote branches),
@@ -391,8 +391,8 @@ GIT MERGE       When you perform a merge, you are always merging some other bran
                 branch that is currently checked out.  Therefore, the "git merge" command
                 affects ONLY the branch that is currently checked out.
 
-                > git checkout main  (Go to the master branch.)
-                > git merge css      (Merges the css branch into the master branch.)
+                > git checkout main  (Go to the main branch.)
+                > git merge css      (Merges the css branch into the main branch.)
 
                 There are simple merges (also known as a Fast-Forward merge), and there are 3-Way Merges.  A Fast-Forward
                 merge performs a ONE-PARENT COMMIT.  A 3-Way Merge occurs when you try to merge two branches that have a
@@ -400,11 +400,11 @@ GIT MERGE       When you perform a merge, you are always merging some other bran
 
                 When the "git merge" command is used, the merge performed is one of the following two (2) types:
 
-                1) Fast-Forward Merge - Assume you're on the "master" branch and you want to merge a branch
-                                        named "css" into the "master" branch.  If the "css" branch contains
-                                        all the code contained in the "master" branch, plus additional code,
+                1) Fast-Forward Merge - Assume you're on the "main" branch and you want to merge a branch
+                                        named "css" into the "main" branch.  If the "css" branch contains
+                                        all the code contained in the "main" branch, plus additional code,
                                         the "git merge css" command will perform a Fast-Forward Merge.  The
-                                        result will be that the HEAD of the "master" branch will point to
+                                        result will be that the HEAD of the "main" branch will point to
                                         the same location as the HEAD of the "css" branch.  To see an example
                                         of this, go to this web URL:
                                         https://hamwaves.com/collaboration/doc/rypress.com/branches-1.html
@@ -413,27 +413,27 @@ GIT MERGE       When you perform a merge, you are always merging some other bran
                                         This results in a repository history that looks like:
 
                                         ...with the image contained directly below this text:
-                                        now matches the snapshot pointed to by the master branch.
+                                        now matches the snapshot pointed to by the main branch.
 
-                                        Viewing those two images, notice that the HEAD of the "master" branch is
+                                        Viewing those two images, notice that the HEAD of the "main" branch is
                                         "fast forwaded" to the HEAD of the "css" branch.  So when the "git merge css"
                                         command is run, NO new commit is performed.
 
                 2) 3-Way Merge        - Assume you're on a branch named "crazy" and you want to merge the branch
-                                        named "master" into the "crazy" branch.  Only some (not all) of the code
-                                        contained in the "master" branch is contained in the "crazy" branch.
+                                        named "main" into the "crazy" branch.  Only some (not all) of the code
+                                        contained in the "main" branch is contained in the "crazy" branch.
                                         When that condition occurs, a Fast-Forward Merge is impossible; so
-                                        running "git merge master" will instead perform a 3-Way Merge.  To see
+                                        running "git merge main" will instead perform a 3-Way Merge.  To see
                                         an example of this, go to this web URL:
                                         https://hamwaves.com/collaboration/doc/rypress.com/branches-2.html
 
                                         Next, view the "Before" and "After" images contained directly above this text:
-                                        Merging master into the crazy branch.
+                                        Merging main into the crazy branch.
 
-                                        Notice the HEAD of the "master" branch remains unchanged, and the "crazy"
+                                        Notice the HEAD of the "main" branch remains unchanged, and the "crazy"
                                         branch points to a newly-created HEAD, which points to BOTH the PREVIOUS HEAD
-                                        of the "crazy" branch AND to the "master" branch.  Since a new HEAD was
-                                        created via the "git merge master" command, a new commit was also generated.
+                                        of the "crazy" branch AND to the "main" branch.  Since a new HEAD was
+                                        created via the "git merge main" command, a new commit was also generated.
 
                                         For another explanation of a git 3-Way Merge, view the following web URL.
                                         SEE --> https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
@@ -791,7 +791,7 @@ HOW TO FETCH+MERGE FILES CHANGES MADE ON GITHUB TO YOUR LOCAL 'MAIN' BRANCH
                         NOW DO A GIT MERGE...)
 > git merge origin/main  (Only after you run this command will you notice that your files on the local 'main' branch
                             now reflect the files located on GitHub.)
-2) THE END - File changes made on the GitHub web site have now been fetched+merged into your local 'master' branch.
+2) THE END - File changes made on the GitHub web site have now been fetched+merged into your local 'main' branch.
 
 
 
