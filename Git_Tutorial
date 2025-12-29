@@ -46,6 +46,19 @@ To view the last 3 commit messages, run this command:
 
 ===================================================================================================
 
+WARNING: Beginning in Git 3.0 (to be released 2026 or 2027) the default name of
+         the main development branch will change from "master" to "main".  You
+         can change this name in Git to any name you wish by using the following
+         commands:
+
+         git config --global init.defaultBranch New_Name
+
+         A just-created git branch name can be renamed via this command:
+
+         git branch -m New_Name
+
+
+
 GIT TUTORIALS:  https://git-scm.com/book/en/v2/
                 https://www.atlassian.com/git/tutorials/
 
