@@ -95,10 +95,11 @@ GIT ADD             Before you can commit file(s) to the git repository via the 
                     command, you must first run the "git add" command on the file(s).
 
                     You need to run the "git add" command on a file only one time.  Then,
-                    whenever you change that file you change (or delete) that file in
-                    the future, you only need to run the "git commit" command on that
-                    file put it into the git repository.  If you delete a file, and then
-                    run "git commit" on it, the file is deleted from the git repository.
+                    whenever you change (or delete) that file in the future, you only
+                    need to run the "git commit" command on that file to commit it to the
+                    git repository.  If you delete a file that has been added (via the
+                    "git add" command), and then your run "git commit" on it, the file
+                    is permanently deleted from the git repository.
 
                     UNSTAGED FILES - Files that have not been added to the git repository
                                      (via the "git add" command) are called unstaged files.
