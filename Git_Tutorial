@@ -87,8 +87,8 @@ SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given p
 
 GIT STATUS          Displays the current status of your local git repository.  EVERY TIME YOU MAKE A
                     CHANGE WITH ANY GIT COMMAND, it's a good idea to run "git status".  This will confirm
-                    that the change you made actually  occurred.  Better yet, if you made a mistake with
-                    your most-recent git command, "git status" will likely tell you how to undo that change!
+                    the change you made was successful.  Or, if you made a mistake with with a git command,
+                    running "git status" will tell you more about the error, and possibly how to fix it.
                     > git status
 
 GIT ADD             Before you can commit file(s) to the git repository via the "git commit"
