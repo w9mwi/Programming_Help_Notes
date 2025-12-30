@@ -5,7 +5,10 @@ http://www.w3schools.com/dom/dom_validate.asp
 http://www.w3schools.com/dom/dom_validate.asp
 
 ===================================================================================================
-HOW TO SET GIT DEFAULT EDITOR:
+
+
+HOW TO SET GIT DEFAULT EDITOR
+=============================
 
 > sudo update-alternatives --config editor
 Prompts you with the following text to choose a default git editor...
@@ -115,16 +118,40 @@ GIT ADD             Before you can commit file(s) to the git repository via the 
                     Add multiple files.
                     > git add index_1.html  index_2.html  index_3.html
 
-                    To add all files in the current directory (both staged files that
-                    have changes, and unstaged files), run this command:
+                    To execute "git add" on all files in the current directory,
+                    run this command:
                     > git add *
 
-                    After a file is added to the repository via the "git add" command,
-                    you must commit the file by running the "git commit" command.  Here
-                    are some examples.
+                    After a file is staged by running the "git add" command, you must
+                    commit the file to the git repository via the "git commit" command.
 
-                    > git add index_1.html  index_2.html
-                    > git commit index_1.html  index_2.html
+                    IMPORTANT: Any staged files that you have deleted will be removed
+                    from the git repository when "git commit" is run on the file(s)
+                    you deleted.
+
+                    Here are some examples of how to use "git add" with "git commit".
+
+                    1) Explicitly add, and then commit files to the git repository:
+
+                       > git add index_1.html  index_2.html
+                       > git commit index_1.html  index_2.html
+
+                    2) If one or more staged files in the directory have been modified
+                       since your last "git commit", you can commit all the staged files
+                       together by running this command:
+
+                       > git commit -a
+
+                       To add a comment to your "git commit", include the "-m" (message)
+                       flag, like this:
+
+                       > git commit -a -m
+
+                       When the "-m" flag is included, "git commit" pops up an editor so
+                       you can add a comment.  When you close the editor, the "git commit"
+                       command finishes the commit.
+
+                       Read the above section titled "HOW TO SET GIT DEFAULT EDITOR".
 
 
 GIT COMMIT          To commit all files from your snapshot (that have been added via the "git add"
