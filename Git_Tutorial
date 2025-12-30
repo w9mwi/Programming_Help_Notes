@@ -21,28 +21,15 @@ To change the git editor, type the number shown in the 'Selection' column.
   2            /bin/nano           40        manual mode
   3            /usr/bin/vim.tiny   15        manual mode
 
-If the editor you want isn't in the above list (for example, the "gedit"
-editor), you can change the git default editor to "gedit" by running the
-following command from the command line:
+If the editor you want isn't in the above list (for example,
+the "xed" editor), you can change the git default editor to
+use the "xed" editor via one of these 2 methods:
 
-> git config --global core.editor "gedit --wait --new-window"
+1) Run this command from the command line:
+   git config --global core.editor "xed --wait --new-window"
 
-To set the git editor you desire, visit the following web page.
-It lists numerous editors (used by numerous operating systems),
-and the instructions for setting the git editor of your choice.
---> https://www.git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config#ch_core_editor
-
-To set your git editor, it appears the only thing you need to do is run the
-"git config" command shown above.  I'm not sure why you'd need/want to place
-the "export GIT_EDITOR=..." command in your ~/.bashrc file, as shown below.
-However, that is mentioned as an option in discussions on-line...
-
-export GIT_EDITOR=gedit
-
-To view the last 3 commit messages, run this command:
-> git log -3   (Change 3 to the number you want.)
-...OR...
-> git show -3  (Change 3 to the number you want.)
+2) Add the following text to the ~/.bashrc file.
+   export GIT_EDITOR="xed --wait --new-window"
 
 ===================================================================================================
 
