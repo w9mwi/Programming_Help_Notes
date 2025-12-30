@@ -96,15 +96,20 @@ GIT ADD             Before you can commit file(s) to the repository via the "git
                     If you change a file after the "git commit" is run, you must again
                     run the "git add" command on the file before running "git commit".
                     
-                    You can add files like this:
+                    Add multiple files like this:
                     > git add index_1.html  index_2.html  index_3.html
 
-                    To add all files in the current directory (both staged files that have
-                    changes, and unstaged files), run this command:
+                    To add all files in the current directory (both staged files that
+                    have changes, and unstaged files), run this command:
                     > git add *
 
-                    After a file is added to the repository via the "git add" command, you
-                    need to commit the file by running the "git commit" command.
+                    After a file is added to the repository via the "git add" command,
+                    you must commit the file by running the "git commit" command.  Here
+                    are some examples.
+
+                    > git add index_1.html  index_2.html
+                    > git commit index_1.html  index_2.html
+
 
 GIT COMMIT          To commit all files from your snapshot (that have been added via the "git add"
                     command), you can commit them to the repository via the git "commit" command:
