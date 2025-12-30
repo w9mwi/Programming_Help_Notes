@@ -27,7 +27,7 @@ use the "xed" editor via one of these 2 methods:
 
 1) Run this command from the command line:
    git config --global core.editor "xed --wait --new-window"
-
+...OR...
 2) Add the following text to the ~/.bashrc file.
    export GIT_EDITOR="xed --wait --new-window"
 
@@ -93,10 +93,14 @@ GIT STATUS          Displays the current status of your local git repository.  E
 
 GIT ADD             Before you can commit file(s) to the repository via the "git commit"
                     command, you must first run the "git add" command on the file(s).
-                    If you change a file after the "git commit" is run, you must again
-                    run the "git add" command on the file before running "git commit".
+                    You need to run the "git add" command on a file only one time.
+                    So if you change (or delete) that file in the future, you only
+                    need to run the "git commit" command on that file to place the
+                    changed file in the git repository.  If you delete a file, and then
+                    run "git commit" on it, the file be deleted from the git repository.
+                    Below are some examples of how to use "git add" and "git commit".
                     
-                    Add multiple files like this:
+                    Add multiple files.
                     > git add index_1.html  index_2.html  index_3.html
 
                     To add all files in the current directory (both staged files that
