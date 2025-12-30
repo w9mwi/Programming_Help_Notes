@@ -91,16 +91,20 @@ GIT STATUS          Displays the current status of your local git repository.  E
                     your most-recent git command, "git status" will likely tell you how to undo that change!
                     > git status
 
-GIT ADD             When a new file is created that is part of your project, you first need to add
-                    the file to run the "git add" command on the file.  You only need run "git add"
-                    on a file one time.  After that, you can make as many changes as you want to the
-                    file before committing it to the git repository via the "git commit" command.
-                    Here, we add 3 files to the git repository:
+GIT ADD             Before you can commit file(s) to the repository via the "git commit"
+                    command, you must first run the "git add" command on the file(s).
+                    If you change a file after the "git commit" is run, you must again
+                    run the "git add" command on the file before running "git commit".
+                    
+                    You can add files like this:
                     > git add index_1.html  index_2.html  index_3.html
 
-                    To add all files in the current directory (both staged files that have changes,
-                    and unstaged files), run this command:
+                    To add all files in the current directory (both staged files that have
+                    changes, and unstaged files), run this command:
                     > git add *
+
+                    After a file is added to the repository via the "git add" command, you
+                    need to commit the file by running the "git commit" command.
 
 GIT COMMIT          To commit all files from your snapshot (that have been added via the "git add"
                     command), you can commit them to the repository via the git "commit" command:
