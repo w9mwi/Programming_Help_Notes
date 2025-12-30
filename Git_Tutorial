@@ -91,14 +91,25 @@ GIT STATUS          Displays the current status of your local git repository.  E
                     your most-recent git command, "git status" will likely tell you how to undo that change!
                     > git status
 
-GIT ADD             Before you can commit file(s) to the repository via the "git commit"
+GIT ADD             Before you can commit file(s) to the git repository via the "git commit"
                     command, you must first run the "git add" command on the file(s).
-                    You need to run the "git add" command on a file only one time.
-                    So if you change (or delete) that file in the future, you only
-                    need to run the "git commit" command on that file to place the
-                    changed file in the git repository.  If you delete a file, and then
-                    run "git commit" on it, the file be deleted from the git repository.
-                    Below are some examples of how to use "git add" and "git commit".
+
+                    You need to run the "git add" command on a file only one time.  Then,
+                    whenever you change that file you change (or delete) that file in
+                    the future, you only need to run the "git commit" command on that
+                    file put it into the git repository.  If you delete a file, and then
+                    run "git commit" on it, the file is deleted from the git repository.
+
+                    UNSTAGED FILES - Files that have not been added to the git repository
+                                     (via the "git add" command) are called unstaged files.
+                                     Unstaged files are not part of the git repository.
+
+                    STAGED FILES - Files that have been added to the git repository (via
+                                   the "git add" command) are called staged files.
+                                   Staged files are part of the git repository.
+
+                    Below are some examples of how to use the "git add" and "git commit"
+                    commands.
                     
                     Add multiple files.
                     > git add index_1.html  index_2.html  index_3.html
