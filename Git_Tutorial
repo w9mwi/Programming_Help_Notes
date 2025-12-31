@@ -148,23 +148,22 @@ GIT ADD             Before you can commit file(s) to the git repository via the 
 
                        > git commit -a
 
-GIT COMMIT          To commit all files from your snapshot (that have been added via the "git add"
-                    command), you can commit them to the repository via the git "commit" command,
-                    as follows.  NOTE: The "-m" flag designates the text between the closed
-                    quotes ("") will be the commit message.
-                    > git commit -m "Added index.html file."
+GIT COMMIT          To commit all files from your snapshot (files that have been added via
+                    the "git add" command) to the git repository, run the following command.
+                    The "-a" flag designates all files that have been added to the git
+                    repository via the "git add" command.
 
-                    To commit all staged files without having to first do a "git add", you can run
-                    the following command:
+                    > git commit -a
 
-                    > git commit -a -m "Add CSS stylesheet to rainbow.html"
+                   Adding the "-m" (message) flag to "git commit" requires the
+                   commit to include a text message between double quotes ("").
+                   This is a comment that describes the changes you made.
 
-                      The "-a" option performs the "git add" command on all staged files; which
-                      means files that have already been added the git repository via the "git add"
-                      command, and have also changed since the the previous "git commit".)
+                   > git commit -a -m "Changed background color of all web pages."
 
-                      The "-m" option adds the text "message" (comment) specified between the
-                      double quotes ("").
+                   NOTE: When a "git commit" includes the "-m" (message) flag,
+                         the default git editor won't pop up because the commit
+                         message has just been added via the command line.
 
                    If you want to undo (remove) a previous commit, obtain its SHA-1 log number,
                    then run the following command to undo that commit:
