@@ -32,11 +32,10 @@ the git editor, type the number shown in the 'Selection' column.
 
 If the editor you want isn't shown in the above list (for example,
 the "xed" editor), you can change the git default editor to use
-the "xed" editor via one of these 2 methods:
+the "xed" editor one of these two ways:
 
-1) Run this command:
-   git config --global core.editor "xed --wait --new-window"
-...OR...
+1) Run this command:   git config --global core.editor "xed --wait --new-window"
+   ...OR...
 2) Add the following text to the ~/.bashrc file.
    export GIT_EDITOR="xed --wait --new-window"
 
