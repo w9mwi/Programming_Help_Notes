@@ -129,11 +129,11 @@ GIT ADD             Before you can commit file(s) to the git repository via the 
                     After a file is staged by running the "git add" command, you must
                     commit the file to the git repository via the "git commit" command.
 
-                    IMPORTANT: Any staged files that you have deleted will be removed
-                    from the git repository when "git commit" is run on the file(s)
-                    you deleted.
+                    IMPORTANT: To delete a file from the git repository, you must
+                               first delete that file in your git repo directory,
+                               then run "git commit -a" from your git repo directory.
 
-                    Here are some examples of how to use "git add" with "git commit".
+                    Here are some examples of how to use "git add" along with "git commit".
 
                     1) Explicitly add, and then commit files to the git repository:
 
@@ -148,7 +148,7 @@ GIT ADD             Before you can commit file(s) to the git repository via the 
 
                        > git commit -a
 
-GIT COMMIT          To commit all files from your snapshot (files that have been added via
+GIT COMMIT          To commit all files of your snapshot (files that have been added via
                     the "git add" command) to the git repository, run the following command.
                     The "-a" flag designates all files that have been added to the git
                     repository via the "git add" command.
