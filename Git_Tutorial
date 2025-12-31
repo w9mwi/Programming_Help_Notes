@@ -10,12 +10,11 @@ http://www.w3schools.com/dom/dom_validate.asp
 HOW TO SET GIT DEFAULT EDITOR
 =============================
 
-> sudo update-alternatives --config editor
-Prompts you with the following text to choose a default git editor...
+Run this command:
 
-The asterisk (*) designates the editor that git currently uses.
-To keep the current git editor, just press the <enter> key.
-To change the git editor, type the number shown in the 'Selection' column.
+> sudo update-alternatives --config editor
+
+It prompts you with text similar to this:
 
   Selection    Path               Priority   Status
 ------------------------------------------------------------
@@ -24,9 +23,13 @@ To change the git editor, type the number shown in the 'Selection' column.
   2            /bin/nano           40        manual mode
   3            /usr/bin/vim.tiny   15        manual mode
 
-If the editor you want isn't in the above list (for example,
-the "xed" editor), you can change the git default editor to
-use the "xed" editor via one of these 2 methods:
+The asterisk (*) designates the editor that git currently uses.
+To keep the current git editor, just press the <enter> key.
+To change the git editor, type the number shown in the 'Selection' column.
+
+If the editor you want isn't shown in the above list (for example,
+the "xed" editor), you can change the git default editor to use the
+"xed" editor via one of these 2 methods:
 
 1) Run this command from the command line:
    git config --global core.editor "xed --wait --new-window"
