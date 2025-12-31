@@ -137,33 +137,24 @@ GIT ADD             Before you can commit file(s) to the git repository via the 
 
                     1) Explicitly add, and then commit files to the git repository:
 
-                       > git add index_1.html  index_2.html
+                       > git add    index_1.html  index_2.html
                        > git commit index_1.html  index_2.html
 
-                    2) If one or more staged files in the directory have been modified
-                       since your last "git commit", you can commit all the staged files
-                       together by running this command:
+                    2) The following git command does the same as the "git commit" shown
+                       immediately above.  If one or more staged files in the directory
+                       have been modified since your last "git commit", you can commit
+                       all staged files in the directory at once by adding the "-a" flag
+                       to the "git commit" command, like this:
 
                        > git commit -a
 
-                       To add a comment to your "git commit", include the "-m" (message)
-                       flag, like this:
-
-                       > git commit -a -m
-
-                       When the "-m" flag is included, "git commit" pops up an editor so
-                       you can add a comment.  When you close the editor, the "git commit"
-                       command finishes the commit.
-
-                       Read the above section titled "HOW TO SET GIT DEFAULT EDITOR".
-
-
 GIT COMMIT          To commit all files from your snapshot (that have been added via the "git add"
-                    command), you can commit them to the repository via the git "commit" command:
+                    command), you can commit them to the repository via the git "commit" command,
+                    as follows.  NOTE: The "-m" flag designates the text between the closed
+                    quotes ("") will be the commit message.
                     > git commit -m "Added index.html file."
-                    > git status
 
-                    To commit all STAGED files without having to first do a "git add", you can run
+                    To commit all staged files without having to first do a "git add", you can run
                     the following command:
 
                     > git commit -a -m "Add CSS stylesheet to rainbow.html"
@@ -192,20 +183,22 @@ GIT COMMIT          To commit all files from your snapshot (that have been added
                     > git commit . -m "Deleted files/directories."
                     > git push
 
-                    If you made a mistake with your most-recent commit (the last commit you made),
-                    you can undo your previous commit by first making the fix, and then running the
-                    "git commit --amend" command.  Running "git commit --amend" will do the
-                    following, in this order.
+                    If you made a mistake with your most-recent commit, you can undo that
+                    commit by running the command "git commit --amend", which does the
+                    following, in this order:
                        1) undo the previous commit, in which you made a mistake.
                        2) pick up the change(s) you made since the previous commit.
-                       3) performs the commit that includes your most recent change(s).
-                       EXAMPLE: Assume you performed a "git commit", but you forgot to first run
-                                "git add" on 1 of the 3 files you wanted to be part of that commit.
-                                You would fix that by doing the following.
+                       3) perform the commit that includes your most recent change(s).
+
+                    EXAMPLE: Assume you performed a "git commit", but you forgot to first run
+                             "git add" on 1 of the 3 files you want to be part of that commit.
+                              You would fix that by doing the following.
                     > git add file_1
                     > git add file_2   (Assume that you forgot to run "git add file_3")
-                    > git commit -m "committed file_1 and file_2."
+                    Here we FORGOT to run "git add" on file_3 before running "git commit".
+                    > git commit -m "Commit file_1, file_2, file_3."
                     > git add file_3
+                    Now that we ran "git add" on file_3, we will amend the commit.
                     > git commit --amend  (Now, all 3 of your files have been added and committed.)
 
                     If your most-recent commit is all OK, and you run "git commit --amend", it will
