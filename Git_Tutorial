@@ -107,7 +107,7 @@ GIT ADD             Before you can commit file(s) to the git repository via the 
                     "git add" command), and then your run "git commit" on it, the file
                     is permanently deleted from the git repository.
 
-                    UNSTAGED FILES - Files that have not been added to the git repository
+                    UNSTAGED FILES - Files that haven't been added to the git repository
                                      (via the "git add" command) are called unstaged files.
                                      Unstaged files are not part of the git repository.
 
