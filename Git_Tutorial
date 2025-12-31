@@ -14,8 +14,7 @@ you to launch an editor so you can add comments to your
 git commit.  The following explains how to select the
 default git editor.
 
-Run this command:
-> sudo update-alternatives --config editor
+Run this command:  sudo update-alternatives --config editor
 
 It prompts you with text similar to this:
 
