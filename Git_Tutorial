@@ -56,17 +56,20 @@ WARNING: Beginning in Git 3.0 (to be released 2026 or 2027) the default name of
 GIT TUTORIALS:  https://git-scm.com/book/en/v2/
                 https://www.atlassian.com/git/tutorials/
 
-CREATE GIT REPOSITORY - 1) Create a new directory with an approriate name.  This directory will
-                           be the new git repository that will contain the entire software project.
-                        2) From the command line, change the directory via the "cd" command to
-                           this new directory.  Next, run the following commands:
+CREATE GIT REPOSITORY - To create a new git repository that will contain all
+                        versions/revisions of your software project, do this:
+
+                        1) Create an approriately-named directory for your software project.
+
+                        2) From the command line, "cd" to that new directory,
+                           and then run the following commands:
 
                            > git init  (Creates a new git repository by creating a folder named ".git".)
                            > ls .git   (Verify that a new .git folder was created.)
                            > git status (Confirm the status of the new git repository.)
 
-                           To create a new git branch, and then checkout that branch, run the following
-                           commands.  (In this example the new branch is named "css".)
+                           To create a new git branch, and then checkout that branch, run the
+                           following commands.  (In this example the new branch is named "css".)
 
                            > git branch css    (Creates a new branch for the git repository named "css".)
                            > git checkout css  (This command points you to the newly-created "css" branch.)
