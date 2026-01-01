@@ -115,11 +115,6 @@ GIT CONFIG      - Run the following commands from inside the parent directory of
                   > git config  --global user.name   "Sally Rally"
                   > git config  --global user.email  sally_rally@yahoo.com
 
-WORKING DIRECTORY - The working directory is the parent directory that contains the ".git" folder.
-                    The files and folders contained in this directory (excluding the ".git"
-                    folder) are the files and directories from the git branch that's currently
-                    checked out.
-
 SNAPSHOT/STAGING - The git terminology known as a "snapshot" is related to the git terminology
                    known as "staging" and "working directory".
 
