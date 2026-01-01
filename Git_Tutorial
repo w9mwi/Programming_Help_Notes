@@ -45,11 +45,11 @@ WARNING: Beginning in Git 3.0 (to be released 2026 or 2027) the default name of
          can change this name in Git to any name you wish by using the following
          commands:
 
-         git config --global init.defaultBranch New_Name
+         git config --global init.defaultBranch <New_Name>
 
          A just-created git branch name can be renamed via this command:
 
-         git branch -m New_Name
+         git branch -m <New_Name>
 
 ===================================================================================================
 
@@ -115,18 +115,21 @@ GIT CONFIG        Run the following commands from inside the parent directory of
                   > git config  --global user.name   "Sally Rally"
                   > git config  --global user.email  sally_rally@yahoo.com
 
-WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
-                    that comprise your software project.
+WORKING DIRECTORY - The working directory is the parent directory that contains the ".git" folder.
+                    The files and folders contained in this directory (excluding the ".git"
+                    folder) are the files and directories from the git branch that's currently
+                    checked out.
 
-SNAPSHOT/STAGING  - A snapshot represents the state of your project at a given point in time.
-                    Git’s term for creating a snapshot is called staging because we can add or remove
-                    multiple files before actually committing it to the project history.  Staging gives
-                    us the opportunity to group related changes into distinct snapshots--a practice that
-                    makes it possible to track the meaningful progression of a software project (instead
-                    of just arbitrary lines of code).  Only after executing git commit will our snapshot
-                    be recorded in the repository. Committed snapshots can be seen as “safe” versions of
-                    the project.  Git will never change them, which means you can do almost anything you
-                    want to your project without losing those “safe” revisions.
+SNAPSHOT          - A snapshot represents the state of your project at a given point in time.
+                    Git’s term for creating a snapshot is called staging, because you can add,
+                    delete, or change multiple files before committing those files to the git
+                    repository.
+
+STAGING           - Staging gives you the opportunity to group related changes into a single distinct
+                    snapshot.  Only after executing the "git commit" command will the snapshot be
+                    committed to the git repository.  Committed snapshots can be seen as "safe"
+                    versions of the project.  Git will never change them, which means you can
+                    do almost anything you want to your project without losing these revisions.
 
 GIT STATUS          Displays the current status of your local git repository.  EVERY TIME YOU MAKE A
                     CHANGE WITH ANY GIT COMMAND, it's a good idea to run "git status".  This will confirm
