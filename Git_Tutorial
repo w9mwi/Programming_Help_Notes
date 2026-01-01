@@ -102,7 +102,7 @@ DELETE GIT REPOSITORY - From the command line, navigate to the parent directory 
                         (i.e. GitLab, GitHub) referred to by the alias "origin". 
                         > git push origin --delete main
 
-GIT CONFIG        Run the following commands from inside the parent directory of the new git repository
+GIT CONFIG      - Run the following commands from inside the parent directory of the new git repository
                   to confirm git has correct settings for user.name, user.email, core.editor, etc.
 
                   > git config --list
@@ -131,13 +131,13 @@ STAGING           - Staging gives you the opportunity to group related changes i
                     versions of the project.  Git will never change them, which means you can
                     do almost anything you want to your project without losing these revisions.
 
-GIT STATUS          Displays the current status of your local git repository.  EVERY TIME YOU MAKE A
+GIT STATUS        - Displays the current status of your local git repository.  EVERY TIME YOU MAKE A
                     CHANGE WITH ANY GIT COMMAND, it's a good idea to run "git status".  This will confirm
                     the change you made was successful.  Or, if you made a mistake with with a git command,
                     running "git status" will tell you more about the error, and possibly how to fix it.
                     > git status
 
-GIT ADD             Before you can commit file(s) to the git repository via the "git commit"
+GIT ADD           - Before you can commit file(s) to the git repository via the "git commit"
                     command, you must first run the "git add" command on the file(s).
 
                     You need to run the "git add" command on a file only one time.  Then,
