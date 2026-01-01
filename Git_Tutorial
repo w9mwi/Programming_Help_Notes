@@ -96,8 +96,10 @@ DELETE GIT REPOSITORY - From the command line, navigate to the parent directory 
                            > git branch -D test
 
                         Deleting your local main git branch (located on your computer) won't delete
-                        the main git branch on a remote server (like GitHub or GitLab).  To delete
-                        a remote branch, use this git command:
+                        the main git branch located on a remote server (like GitHub or GitLab).
+                        The following command doesn't delete your local git branch named "main";
+                        instead, it deletes the branch named main from the remote repository
+                        (i.e. GitLab, GitHub) referred to by the alias "origin". 
                         > git push origin --delete main
 
 GIT CONFIG        Run the following commands from inside the parent directory of the new git repository
