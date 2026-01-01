@@ -70,14 +70,20 @@ CREATE GIT REPOSITORY - 1) Create a new directory with an approriate name.  This
 
 DELETE GIT REPOSITORY - From the command line, navigate to the parent directory of your git repository,
                         which contains the ".git" directory.  Then, delete the ".git" directory.  This
-                        deletes the entire git repository.  The files and directories that were associated
-                        with the now-deleted git repository will remain; you must delete them on your own.
-                        To delete a specific git branch (NOT the git repository), run the following command(s):
+                        deletes the entire git repository.  Files and directories of your software
+                        project remain in the parent directory, even though the git repository (".git"
+                        directory) is deleted.  You can save or delete those remaining files/directories
+                        if you wish.
+
+                        To delete a specific git branch (NOT the entire git repository), run the
+                        following command(s):
+
                         > git branch -d test  (-d deletes the branch named "test" ONLY if the branch is fully merged.)
                         ...OR...
                         > git branch -D test  (-D deletes the branch named "test" regardless if the branch is merged or unmerged.)
+
                         NOTE: You cannot delete the 'main' branch using this command.
-                              To delete the 'main' branch, just delete the repository's .git directory.
+                              The 'main' branch is deleted when ".git" directory is deleted.
 
 GIT CONFIG        Run the following commands from inside the parent directory of the new git repository
                   to confirm git has correct settings for user.name, user.email, core.editor, etc.
