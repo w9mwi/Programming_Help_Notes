@@ -68,17 +68,29 @@ CREATE GIT REPOSITORY - 1) Create a new directory with an approriate name.  This
                            > git branch css    (Creates a new branch for this git repository named "css".)
                            > git checkout css  (This command points you to the newly-created "css" branch.)
 
-DELETE GIT REPOSITORY - FROM YOUR COMPUTER VIA THE COMMAND LINE:
-                        Navigate to the top-level directory of your software project, which contains the
-                        git repository and therefore the ".git" directory.  Then delete the ".git" directory,
-                        which deletes the git repository.  The files and directories that were associated with
-                        the now-deleted git repository will remain; you must delete them on your own.
+DELETE GIT REPOSITORY - From the command line, navigate to the parent directory of your git repository,
+                        which contains the ".git" directory.  Then, delete the ".git" directory.  This
+                        deletes the entire git repository.  The files and directories that were associated
+                        with the now-deleted git repository will remain; you must delete them on your own.
                         To delete a specific git branch (NOT the git repository), run the following command(s):
                         > git branch -d test  (-d deletes the branch named "test" ONLY if the branch is fully merged.)
                         ...OR...
                         > git branch -D test  (-D deletes the branch named "test" regardless if the branch is merged or unmerged.)
                         NOTE: You cannot delete the 'main' branch using this command.
                               To delete the 'main' branch, just delete the repository's .git directory.
+
+GIT CONFIG        Run the following commands from inside the parent directory of the new git repository
+                  to confirm git has correct settings for user.name, user.email, core.editor, etc.
+
+                  > git config --list
+                  > git config --list --show-origin
+
+                  If you need to set user.name and user.email, run the following commands.
+                  Now, when you commit files to your git repository, and you run "git log",
+                  it will use those user.name and user.email settings.
+
+                  > git config  --global user.name   "Sally Rally"
+                  > git config  --global user.email  sally_rally@yahoo.com
 
 WORKING DIRECTORY - The top-level directory/folder that contains all files and subdirectories
                     that comprise your software project.
@@ -216,16 +228,6 @@ GIT LOG           Run the following:
                   > git log --oneline  (Displays each commit on only one line.)
                   > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
                   > git log -n 4  (Displays log for the 4 most-recent commits.)
-
-GIT CONFIG        Run the following commands so git knows your name and e-mail address.  You need to
-                  do this ONLY ONCE.  Now when you commit files to your git repository, and you
-                  later run "git log", your name and e-mail address will show up in the log output.
-                  > git config  --global user.name   "Joe Schmoe"
-                  > git config  --global user.email  joeschmoe@yahoo.com
-
-                  To display the current git config settings run the following commands:
-                  > git config --list
-                  > git config --list --show-origin
 
 GIT CHECKOUT      IMPORTANT: When you checkout a previous snapshot of the current branch via a command like
                              "git checkout 625cdef", you are no longer on any branch!  You can confirm that
