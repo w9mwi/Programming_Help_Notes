@@ -73,20 +73,32 @@ CREATE GIT REPOSITORY - 1) Create a new directory with an approriate name.  This
 
 DELETE GIT REPOSITORY - From the command line, navigate to the parent directory of your git repository,
                         which contains the ".git" directory.  Then, delete the ".git" directory.  This
-                        deletes the entire git repository.  Files and directories of your software
-                        project remain in the parent directory, even though the git repository (".git"
-                        directory) is deleted.  You can save or delete those remaining files/directories
-                        if you wish.
+                        deletes the entire git repository.  The files and directories remaining in
+                        the parent directory (which contains the ".git" directory) are from the git
+                        branch that was last checked out.  You need to delete those files and directories
+                        on your own.
 
-                        To delete a specific git branch (NOT the entire git repository), run the
-                        following command(s):
+                        IMPORTANT:  You can't delete a git branch that is currently checked out.
+                                    You can delete the "main" git branch just like any other git
+                                    branch; but that's very dangerous, so it's not recommended.
 
-                        > git branch -d test  (-d deletes the branch named "test" ONLY if the branch is fully merged.)
-                        ...OR...
-                        > git branch -D test  (-D deletes the branch named "test" regardless if the branch is merged or unmerged.)
+                        To delete any git branch that is not currently checked out, run one of
+                        the two commands shown below:
 
-                        NOTE: You cannot delete the 'main' branch using this command.
-                              The 'main' branch is deleted when ".git" directory is deleted.
+                        1) The "-d" flag deletes the branch named "test" only if that branch is fully merged.
+                           If the branch has unmerged changes, the "-d" flag  will issue a warning and stop
+                           the operation
+                           > git branch -d test
+
+                        2) The "-D" flag deletes the branch named "test" regardless if the git branch
+                           is merged or unmerged.  Using the -D" flag can be very dangerous; so use
+                           extreme caution.
+                           > git branch -D test
+
+                        Deleting your local main git branch (located on your computer) won't delete
+                        the main git branch on a remote server (like GitHub or GitLab).  To delete
+                        a remote branch, you use this git command:
+                        > git push origin --delete main
 
 GIT CONFIG        Run the following commands from inside the parent directory of the new git repository
                   to confirm git has correct settings for user.name, user.email, core.editor, etc.
