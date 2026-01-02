@@ -29,14 +29,14 @@ The asterisk (*) designates the default git editor.  To keep
 the current git editor, just press the <enter> key.  To change
 the git editor, type the number shown in the 'Selection' column.
 
-If the editor you want isn't shown in the above list (for example,
-the "xed" editor), you can change the git default editor to use
-the "xed" editor one of these two ways:
+If the editor you want isn't shown in the ist (for example, the
+"/bin/xed" editor), you can change the git default editor to use
+the "/bin/xed" editor one of these two ways:
 
-1) Run this command:   git config --global core.editor "xed --wait --new-window"
+1) Run this command:   git config --global core.editor "/bin/xed --wait --new-window"
    ...OR...
 2) Add the following text to the ~/.bashrc file.
-   export GIT_EDITOR="xed --wait --new-window"
+   export GIT_EDITOR="/bin/xed --wait --new-window"
 
 ===================================================================================================
 
