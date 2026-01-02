@@ -206,13 +206,13 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
 
                     The following command works ONLY for files that have previously been added
                     via the "git add" command.  Once you explicitly run "git add" on a file,
-                    "git commit -a" will work on that file without ever having to run "git add"
-                    on it again.
+                    the "git commit -a" will work on that file without ever having to run
+                    "git add" on it again.
 
                     > git commit -a
 
-                    The "-a" flag stands for "all".  All files meeting these 2 conditions
-                    will be committed to the git repository:
+                    The "-a" flag stands for "all" files.  All files meeting these
+                    2 conditions will be committed to the git repository:
 
                     1) The "git add" command has been run on the file.
                     2) The file has been modified since its last "git commit".
@@ -226,6 +226,7 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
 
                    NOTE: When a "git commit" includes the "-m" (message) flag,
                          the default git editor won't pop up.
+
 
                    If you want to undo (remove) a previous commit, obtain its SHA-1 log number,
                    then run the following command to undo that commit:
