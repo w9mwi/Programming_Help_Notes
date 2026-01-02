@@ -209,7 +209,8 @@ GIT COMMIT        - To commit all files of your snapshot to the git repository, 
 
                    Adding the "-m" (message) flag to "git commit" requires the commit to
                    include a text message on the command line between double quotes ("").
-                   That comment describes the changes you made.
+                   That comment describes the changes you made.  The comment can be
+                   viewed after the "git commit" by running the "git log" command.
 
                    > git commit -a -m "Changed background color of all web pages."
 
