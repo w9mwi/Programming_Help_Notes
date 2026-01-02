@@ -127,14 +127,14 @@ SNAPSHOT/STAGING - The git terminology known as a "snapshot" is related to the g
                    contains the ".git" directory.  Your local working directory is also known as the
                    "staging area".
 
-                   When you've complete all file changes/fixes for the next git commit, and you
-                   run "git commit", that commit represents a "snapshot" in time containing all
-                   your changes.  In other words, every "git commit" represents a "snapshot".
+                   Every time "git commit" is successfully run, one or more files are committed
+                   to the git repository.  Every time a file is committed to the git repository,
+                   that commit represents a "snapshot" of the file, at the time it's committed.
                    To sum up...
 
+                   Snapshot                = The state of a file at the time it's committed to the git repository.
                    Local Working Directory = Staging Area            = Parent directory of the ".git' directory.
                    Staging Area            = Local Working Directory = Parent directory of the ".git' directory.
-                   Snapshot                = The state of all files in a single commit, after they're committed.
 
 GIT STATUS      -  Displays the current status of your local git repository.  When you execute
                    a git command that fails, "git status" will tell you the problem (and possibly
