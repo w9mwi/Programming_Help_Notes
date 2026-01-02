@@ -201,11 +201,12 @@ GIT COMMIT        - To commit all files of your snapshot to the git repository, 
                     added to the git repository via the "git add" command will be committed
                     to the git repository.
 
-                    IMPORTANT: Using the "-a" flag WON'T commit files that haven't been added
-                               via the "git add" command.  You must first run "git add" on
-                               a file before "git commit -a" will commit it to the repository.
-
                     > git commit -a
+
+                    IMPORTANT: Using the "-a" flag WON'T commit files that haven't previously
+                               been added to the repository via the "git add" command.  You
+                               must first run "git add" on a file before "git commit -a" will
+                               commit it to the repository.
 
                    Adding the "-m" (message) flag to "git commit" requires the commit to
                    include a text message on the command line between double quotes ("").
