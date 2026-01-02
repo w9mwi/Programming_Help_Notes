@@ -132,14 +132,14 @@ SNAPSHOT/STAGING - The git terminology known as a "snapshot" is related to the g
                    your changes.  In other words, every "git commit" represents a "snapshot".
                    To sum up...
 
-                   Local Working Directory = Staging Area
-                   Snapshot                = The state of all files contained in a commit when they're committed.
-                   Staging Area            = Local Working Directory
+                   Local Working Directory = Staging Area            = Parent directory of the ".git' directory.
+                   Staging Area            = Local Working Directory = Parent directory of the ".git' directory.
+                   Snapshot                = The state of all files in a single commit, after they're committed.
 
-GIT STATUS        - Displays the current status of your local git repository.  EVERY TIME YOU MAKE A
-                    CHANGE WITH ANY GIT COMMAND, it's a good idea to run "git status".  This will confirm
-                    the change you made was successful.  Or, if you made a mistake with with a git command,
-                    running "git status" will tell you more about the error, and possibly how to fix it.
+GIT STATUS        - Displays the current status of your local git repository.  When you execute
+                    a git command that fails, "git status" will tell you the problem (and possibly
+                    how to fix it) by printing a message to the console.  Otherwise, "git status"
+                    just displays the current status of the git repository.
                     > git status
 
 GIT ADD           - Before you can commit file(s) to the git repository via the "git commit"
