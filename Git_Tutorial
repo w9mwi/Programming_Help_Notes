@@ -118,13 +118,12 @@ GIT CONFIG      - Run the following commands from inside the parent directory of
                   > git config  --global user.name   "Sally Rally"
                   > git config  --global user.email  sally_rally@yahoo.com
 
-SNAPSHOT/STAGING - The git terminology known as a "snapshot" is related to the git terminology
-                   known as "staging" and "working directory".
+SNAPSHOT/STAGING - The git terms "snapshot", "staging", and "working directory" are all related.
 
                    When you perform a "git checkout" to make code changes to a specific git branch, all
-                   files and directories from that branch are copied to your local working directory.
-                   Your working directory is NOT the ".git" directory, but the parent directory that
-                   contains the ".git" directory.  Your local working directory is also known as the
+                   files and directories from that branch are copied to your local "working directory".
+                   Your "working directory" is NOT the ".git" directory, but the parent directory that
+                   contains the ".git" directory.  Your local "working directory" is also known as the
                    "staging area".
 
                    Every time "git commit" is successfully run, one or more files are committed
