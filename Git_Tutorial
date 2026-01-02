@@ -118,6 +118,10 @@ GIT CONFIG      - Run the following commands from inside the parent directory of
                   > git config  --global user.name   "Sally Rally"
                   > git config  --global user.email  sally_rally@yahoo.com
 
+                  The "--global" flag tells git to use this configuration as a default for
+                  all of your repositories.  Not running the above commands lets you specify
+                  different user information for individual repositories.
+
 SNAPSHOT/STAGING - The git terms "snapshot", "staging", and "working directory" are all related.
 
                    When you perform a "git checkout" to make code changes to a specific git branch, all
