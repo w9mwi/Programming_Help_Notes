@@ -196,22 +196,22 @@ GIT ADD           - Before you can commit file(s) to the git repository via the 
 
                        > git commit -a
 
-GIT COMMIT          To commit all files of your snapshot (files that have been added via
-                    the "git add" command) to the git repository, run the following command.
-                    The "-a" flag designates all files that have been added to the git
-                    repository via the "git add" command.
+GIT COMMIT          To commit all files of your snapshot to the git repository, run the
+                    following command.  The "-a" flag designates all files previously
+                    added to the git repository via the "git add" command will be committed
+                    to the git repository.  NOTE: Using the "-a" flag won't commit files
+                    that haven't been added via the "git add" command.
 
                     > git commit -a
 
-                   Adding the "-m" (message) flag to "git commit" requires the
-                   commit to include a text message between double quotes ("").
-                   This is a comment that describes the changes you made.
+                   Adding the "-m" (message) flag to "git commit" requires the commit to
+                   include a text message between double quotes ("").  This is a comment
+                   describing the changes you made.
 
                    > git commit -a -m "Changed background color of all web pages."
 
                    NOTE: When a "git commit" includes the "-m" (message) flag,
-                         the default git editor won't pop up because the commit
-                         message has just been added via the command line.
+                         the default git editor won't pop up because the commit.
 
                    If you want to undo (remove) a previous commit, obtain its SHA-1 log number,
                    then run the following command to undo that commit:
