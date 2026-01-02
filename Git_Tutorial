@@ -196,22 +196,31 @@ GIT ADD           - Before you can commit file(s) to the git repository via the 
 
                        > git commit -a
 
-GIT COMMIT        - To commit all files of your snapshot to the git repository, run the
-                    following command.  The "-a" flag designates that all files previously
-                    added to the git repository via the "git add" command will be committed
-                    to the git repository.
+GIT COMMIT        - Only after a file has been added to the git repository via the "git add"
+                    command can you run "git commit" on it.  For example, assume we created
+                    3 new files named junk_1.txt, junk_2.txt, junk_3.txt.  To commit those
+                    files to the git repository, you need to do this:
+
+                    > git add    junk_1.txt junk_2.txt junk_3.txt
+                    > git commit junk_1.txt junk_2.txt junk_3.txt
+
+                    The following command works ONLY for files that have previously been added
+                    via the "git add" command.  Once you explicitly run "git add" on a file,
+                    "git commit -a" will work on that file without ever having to run "git add"
+                    on it again.
 
                     > git commit -a
 
-                    IMPORTANT: Using the "-a" flag WON'T commit files that haven't previously
-                               been added to the repository via the "git add" command.  You
-                               must first run "git add" on a file before "git commit -a" will
-                               commit it to the repository.
+                    The "-a" flag stands for "all".  All files meeting these 2 conditions
+                    will be committed to the git repository:
+
+                    1) The "git add" command has been run on the file.
+                    2) The file has been modified since its last "git commit".
 
                    Adding the "-m" (message) flag to "git commit" requires the commit to
                    include a text message on the command line between double quotes ("").
-                   That comment describes the changes you made.  The comment can be
-                   viewed after the "git commit" by running the "git log" command.
+                   That text describes the changes you made and can be viewed by
+                   running "git log" on the file after it's been committed.
 
                    > git commit -a -m "Changed background color of all web pages."
 
