@@ -273,8 +273,16 @@ GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote reposit
                   > git fetch
                   > git merge
 
-GIT LOG           Run the following:
-                  > git log  (Displays only git commits.)
+GIT LOG          - Running the "git log" command displays the COMMIT HISTORY of a git repository.
+                   It displays a timeline of every "git commit" that occurred on the project,
+                   which incldes:
+
+                   * The commit hash number.  (A unique ID number used to identify every git commit.)
+                   * Who committed the changes.  (Obtained from git's user.name and user.email settings.)
+                   * The date and time the files were committed.
+                   * The comment that was added with the commit, if one was added.
+
+                                    > git log  (Displays only git commits.)
                   > git log --oneline  (Displays each commit on only one line.)
                   > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
                   > git log -n 4  (Displays log for the 4 most-recent commits.)
