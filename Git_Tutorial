@@ -112,13 +112,13 @@ GIT CONFIG      - Run the following commands from inside the parent directory of
                   > git config --list --show-origin
 
                   If you need to set user.name and user.email, run the following commands.
-                  Now, when you commit files to your git repository, and you run "git log",
-                  it will use those user.name and user.email settings.
+                  Then, when you commit files to your git repository, and you run "git log",
+                  git will use those user.name and user.email settings.
 
                   > git config  --global user.name   "Sally Rally"
                   > git config  --global user.email  sally_rally@yahoo.com
 
-                  The "--global" flag tells git to use this configuration as a default for
+                  The "--global" flag tells git to use this configuration as the default for
                   all of your repositories.  Not running the above commands lets you specify
                   different user information for individual repositories.
 
