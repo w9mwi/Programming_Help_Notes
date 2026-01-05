@@ -64,14 +64,14 @@ CREATE GIT REPOSITORY - To create a new git repository that will contain all
                         2) From the command line, "cd" to that new directory,
                            and then run the following commands:
 
-                           > git init  (Creates a new git repository by creating a folder named ".git".)
-                           > ls .git   (Verify that a new .git folder was created.)
+                           > git init   (Creates a new git repository by creating a folder named ".git".)
+                           > ls .git    (Verify that a new .git folder was created.)
                            > git status (Confirm the status of the new git repository.)
 
                            To create a new git branch, and then checkout that branch, run the
                            following commands.  (In this example the new branch is named "css".)
 
-                           > git branch css    (Creates a new branch for the git repository named "css".)
+                           > git branch   css  (Creates a new branch for the git repository named "css".)
                            > git checkout css  (This command points you to the newly-created "css" branch.)
 
 DELETE GIT REPOSITORY - From the command line, navigate to the parent directory of your git repository,
@@ -299,12 +299,28 @@ GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git re
                    > git log --grep="orange"  (Prints all commits containing "orange" in the comment field.)
                    > git log --author="Jane"  (Prints all git commits form the author "Jane".)
 
-GIT CHECKOUT     - When a "git checkout" is executed a previous snapshot of the current branch via a command like
-                             "git checkout 625cdef", you are no longer on any branch!  You can confirm that
-                             by running the "git branch" command.  However, you can create a new branch
-                             containing this snapshot by next running a command like one of these two commands:
-                             "git checkout newBranchName"     (Uses the current snapshot to creates a new branch.)
-                             "git checkout -b newBranchName"  (Same as above, except the -b flag also switches to newBranchName.)
+GIT CHECKOUT     - The "git checkout" command points your current working directory to a previous commit.
+                   The number after the "git checkout" command is from the first 7 digits of the commit's
+                   hash ID, which is obtained via the "git log" command.
+                   > git checkout 625cdef
+
+                   After doing a "git checkout", always run the following "git status" and
+                  "git branch" from the working directory to confirm you have HEAD checked
+                   out, and that you're no longer pointing to any git branch.  (HEAD is the
+                   name given to a past git commit.)
+
+                   > git status   (Prints the following line, confirming HEAD is detached from any branch.)
+                   > HEAD detached at 26f90df
+
+                  > git branch   (Prints the following 2 lines; confirming HEAD points to no branch.)
+                    * (HEAD detached at 26f90df)
+                    main
+
+                  After doing a "git checkout" you can create a new branch representing that snapshot in time.
+                  by running one of the folowing two git commands.
+
+                  > git checkout newBranchName      (Uses the current snapshot to creates a new branch.)
+                  > git checkout -b newBranchName"  (Same as above, except the -b flag also switches to newBranchName.)
 
                   The "git checkout" command can do the following:
 
@@ -330,10 +346,11 @@ GIT CHECKOUT     - When a "git checkout" is executed a previous snapshot of the 
                   3) Create a new branch named poop, AND switch to the new poop branch, like this:
                      > git checkout -b poop
 
-GIT INIT         After you create a new folder for a new software project, you need to run
-                 the following command inside that folder
 
-                 git init
+GIT INIT         - After you create a new folder for a new software project, you need to run
+                   the following command inside that folder
+
+                   git init
 
                  Running that command creates the following 4 folders:
 
