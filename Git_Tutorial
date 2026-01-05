@@ -273,32 +273,30 @@ GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote reposit
                   > git fetch
                   > git merge
 
-GIT LOG          - Running the "git log" command displays the COMMIT HISTORY of a git repository.
-                   It displays a timeline of every "git commit" that occurred on the project.
-                   Below are some examples of how to use git commit.
+GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git repository.
+                   It represents a timeline of every "git commit" that occurred on the project.
+                   Below are some examples of how to use "git commit".
 
-                   > git commit  (Prints the following info.)
-
-                     Prints this info:
+                   > git commit
+                        PRINTS:
                         * The commit hash number.  (A unique ID number to identify every git commit.)
                         * Who committed the changes.  (Obtained from git's user.name and user.email settings.)
                         * The date and time the files were committed.
                         * The comment that was added with the commit, if one was added.
 
-                  > git log --oneline
+                   > git log --oneline
+                     Prints one abbreviated line of text for every git commit.
+                     Includes the last 7 digits of the hash ID, and the git comment.
+                     PRINTS:
+                     de5386b Added files A, B and C.
+                     2a2e4f7 Deleted files A, B and C.
+                     2904275 Changed the web page's font.
+                     c3e6748 Changed black text to green text.
 
-                    Prints one abbreviated line of text for every git commit that includes the last 7 digits
-                    of the hash ID, and the git comment.  Looks like this:
+                   MORE EXAMPLES:
+                   > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
+                   > git log -n 4  (Displays log for the 4 most-recent commits.)
 
-                    de5386b Added files A, B and C.
-                    2a2e4f7 Deleted files A, B and C.
-                    2904275 Changed the web page's font.
-                    c3e6748 Changed black text to green text.
-
-
-                    
-                > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
-                > git log -n 4  (Displays log for the 4 most-recent commits.)
 
 GIT CHECKOUT      IMPORTANT: When you checkout a previous snapshot of the current branch via a command like
                              "git checkout 625cdef", you are no longer on any branch!  You can confirm that
