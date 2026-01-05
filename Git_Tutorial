@@ -212,31 +212,31 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
                     > git commit -a
 
                     The "-a" flag stands for "all" files.  All files meeting these
-                    2 conditions will be committed to the git repository:
+                    two conditions will be committed to the git repository:
 
-                    1) The "git add" command has been run on the file.
-                    2) The file has been modified since its last "git commit".
+                       1) The "git add" command has been run on the file.
+                       2) The file has been modified since its last "git commit".
 
-                   Adding the "-m" (message) flag to "git commit" requires the commit to
-                   include a text message on the command line between double quotes ("").
-                   That text describes the changes you made and can be viewed by
-                   running "git log" on the file after it's been committed.
+                    Adding the "-m" (message) flag to "git commit" requires the commit to
+                    include a text message on the command line between double quotes ("").
+                    That text describes the changes you made and can be viewed by
+                    running "git log" on the file after it's been committed.
 
-                   > git commit -a -m "Changed background color of all web pages."
+                    > git commit -a -m "Changed background color of all web pages."
 
-                   NOTE: When a "git commit" includes the "-m" (message) flag,
+                    NOTE: When a "git commit" includes the "-m" (message) flag,
                          the default git editor won't pop up.
-
 
                    If you want to undo (remove) a previous commit, obtain its SHA-1 log number,
                    then run the following command to undo that commit:
-                    > git revert 514fbe7   (514fbe7 is the SHA-1 log number)
+                   > git revert 514fbe7   (514fbe7 is the SHA-1 log number)
 
-                    The following commands will add any number of files/directories from
-                    your repository, then commit them to the current branch.  After you
-                    add and commit, run "git push" to put them in the remote repository.
-                    First, add the files/directories.
-                    > git add .  (Don't forget to type the period . char!)
+                   The following commands will add any number of files/directories from
+                   your repository, then commit them to the current branch.  After you
+                   add and commit, run "git push" to put them in the remote repository.
+                   First, add the files/directories.
+
+                  > git add .  (Don't forget to type the period . char!)
                     > git commit . -m "Added files/directories."
                     > git push
                     To delete any number of files/directories from your repository,
