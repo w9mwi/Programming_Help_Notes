@@ -139,6 +139,20 @@ SNAPSHOT/STAGING - The git terms "snapshot", "staging", and "working directory" 
                    Local Working Directory = Staging Area            = Parent directory of the ".git' directory.
                    Staging Area            = Local Working Directory = Parent directory of the ".git' directory.
 
+HEAD             - When you execute some git commands (i.e., "git status") the text printed to the console
+                   may include the word HEAD.  HEAD refers to a pointer used by git that points to whichever
+                   past commit you have checked out.  For example, the message returned below by running
+                   "git status" says the current working directory (known as HEAD) points to commit #26f90df.
+                   It also reveals that HEAD is "detached", which means your working directory doesn't
+                   point to any branch.
+
+                   > git status
+                   HEAD detached at 26f90df
+
+                   When you're on a git branch, and you run "git commit", git's HEAD pointer moves
+                   "forward" so HEAD points to the most-recent commit on your branch; which also
+                   means HEAD points to the "tip" of the branch you're on.
+
 GIT STATUS      -  Displays the current status of your local git repository.  When you execute
                    a git command that fails, "git status" will tell you the problem (and possibly
                    how to fix it) by printing a message to the console.  Otherwise, "git status"
