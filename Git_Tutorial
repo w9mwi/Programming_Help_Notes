@@ -295,8 +295,9 @@ GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git re
 
                    MORE EXAMPLES:
                    > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
-                   > git log -n 4  (Displays log for the 4 most-recent commits.)
-
+                   > git log -4  ("-4" prints the last 4 git commits.)
+                   > git log --grep="orange"  (Prints all commits containing "orange" in the comment field.)
+                   > git log --author="Jane"  (Prints all git commits form the author "Jane".)
 
 GIT CHECKOUT      IMPORTANT: When you checkout a previous snapshot of the current branch via a command like
                              "git checkout 625cdef", you are no longer on any branch!  You can confirm that
