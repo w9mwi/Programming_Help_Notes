@@ -423,6 +423,12 @@ GIT REVERT        Undoes (removes) the changes made in one of the previous commi
                                         which will be used in the "git revert" command below.)
                   > git revert b1b4e7a7  (This removes the changes made in ID "b1b4e7a7...".)
 
+                  Assume you're on branch main, and you checkout a previous commit using its
+                  7-digit hash ID, like this:   git checkout 1234567
+                  Now, you want to abort that checkout and return to the most recent commit
+                  on branch main, run this command:
+                  > git revert --abort
+
 GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset", and should be used
                         instead of "git reset".  See "git restore" command below for details.
 
