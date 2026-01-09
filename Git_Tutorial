@@ -402,17 +402,18 @@ GIT INIT         - After you create a new folder for a new software project, you
 GIT TAG          To view the list of existing tags, execute this command:
                  > git tag
 
-                 To tag a release on a branch called "main", do the following:
+                 To tag a release for the "main" branch, do the following:
                  > git checkout main  (First, checkout the branch you want to tag.)
-
                  > git tag -a v1.0  -m "Tag Version 1.0"
-                 The -a flag tells Git to create an annotated tag, which allows you to
-                 record the name, date, and a descriptive message via the -m flag.
+
+                 The -a flag tells Git to create an "annotated" tag, which records
+                 the name, date, and a descriptive message (via the -m flag)
+                 for the tag.
 
                  To view the message entered on a previous "git tag", run the following command:
                  > git show v1.0   (Shows the message entered when the v1.0 tag was created.)
 
-                 To return to the "v1.0" tag, run the following command.
+                 When you want to switch to the "v1.0" tag, run the following command.
                  > git checkout v1.0
 
 GIT REVERT        Undoes (removes) the changes made in one of the previous commits.  When using the
