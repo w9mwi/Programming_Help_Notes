@@ -366,11 +366,11 @@ GIT INIT         - After you create a new folder for a new software project, you
 
                    git init
 
-                 Running that command creates the following 4 folders:
+                   Running that command creates the following 4 folders:
 
-                 hooks - This directory contains scripts that Git executes automatically at key points
-                         in the development lifecycle, such as before a commit (pre-commit), after a
-                         commit (post-commit), or before a push to a remote repository (pre-push).
+                   hooks - This directory contains scripts that Git executes automatically at key points
+                           in the development lifecycle, such as before a commit (pre-commit), after a
+                           commit (post-commit), or before a push to a remote repository (pre-push).
                          These hooks allow developers to customize Git's behavior, automate tasks
                          (like running tests or linting code), and enforce project standards.
                          The directory initially contains sample scripts that need to be renamed
@@ -430,36 +430,36 @@ GIT REVERT        Undoes (removes) the changes made in one of the previous commi
                   on branch main, run this command:
                   > git revert --abort
 
-GIT RESET         NOTE: "git restore" is a NEW alternative command to "git reset", and should be used
-                        instead of "git reset".  See "git restore" command below for details.
+GIT RESET - WARNING: "git restore" is a NEW alternative command to "git reset", and should be used
+                     instead of "git reset".  See "git restore" command below for details.
 
-                  "git reset" undoes changes to the working directory and the staged snapshot.  Assume you
-                  made text changes to an already-committed file named index.html AND you added a brand-new
-                  file named "dummy.html".  If you decide to scrap those changes (that is, revert changes
-                  made to index.html AND delete the "dummy.html" file), run the following 2 commands.
-                  NOTE: Both of the following commands ("reset" and "clean") affect the ONLY THE WORKING DIRECTORY.
-                        The "git reset" command also reverts changes made to the STAGED SNAPSHOT, which is made
-                        via the "git add" command.  The following 2 commands DON'T change the contents of any
-                        committed snapshots.
-                  > git reset --hard  (Resets TRACKED files, not STAGED files, to match the most recent commit.)
-                  > git clean -f  (Deletes all UNTRACKED files from the working directory.)
-                  The above 2 (TWO) commands together permanently undoes uncommitted changes.
-                  The "git reset --hard" command removes the uncommited change made to index.html.
-                  The "git clean -f" command deletes the dummy.html file that you added (but didn't
-                  "add" or "commit").  "git clean -f" is equivalent to manually deleting all files
-                  that haven't been added or commited.
+            "git reset" undoes changes to the working directory and the staged snapshot.  Assume you
+            made text changes to an already-committed file named index.html AND you added a brand-new
+            file named "dummy.html".  If you decide to scrap those changes (that is, revert changes
+            made to index.html AND delete the "dummy.html" file), run the following 2 commands.
+            NOTE: Both of the following commands ("reset" and "clean") affect the ONLY THE WORKING DIRECTORY.
+                  The "git reset" command also reverts changes made to the STAGED SNAPSHOT, which is made
+                  via the "git add" command.  The following 2 commands DON'T change the contents of any
+                  committed snapshots.
 
+            > git reset --hard  (Resets TRACKED files (not STAGED files) so it matches the previous commit.)
+            > git clean -f  (Deletes all UNTRACKED files from the working directory.)
+              The above two commands together permanently undoes uncommitted changes.
+              The "git reset --hard" command removes the uncommited change made to index.html.
+              The "git clean -f" command deletes the dummy.html file that you added (but didn't
+              "add" or "commit").  "git clean -f" is equivalent to manually deleting all files
+              that haven't been added or commited.
 
-GIT RESTORE       NOTE: The "git restore" command was introduced in git Version 2.23.0, and is an alternative
-                  to the "git reset" command.  "git restore" can be a dangerous command because it can
-                  permanently delete files.  Be careful how it's used.
+GIT RESTORE - WARNING: The "git restore" command was introduced in git Version 2.23.0, and is an alternative
+              to the "git reset" command.  The "git restore" command can be dangerous because it can
+              permanently delete files.  Be careful how it's used.
 
-                  Assume you’ve changed files named file_1 and file_2, and want to commit them as two separate changes.
-                  However, you mistakenly ran "git add *" and staged both those files.  The following shows how
-                  to unstage file_2.
+              Assume you’ve changed two files named file_1 and file_2, and want to commit them as
+              two separate changes.  However, you mistakenly ran "git add *", and staged both
+              those files.  The following shows how to unstage file_2.
 
-                  > git add *  (You mistakenly staged the file named file_2.)
-                  > git restore --staged file_2
+              > git add *  (You mistakenly staged the file named file_2.)
+              > git restore --staged file_2
 
 GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
                   means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
