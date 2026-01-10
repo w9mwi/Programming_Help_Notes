@@ -122,22 +122,19 @@ GIT CONFIG      - Run the following commands from inside the parent directory of
                   all of your repositories.  Not running the above commands lets you specify
                   different user information for individual repositories.
 
-SNAPSHOT/STAGING - The git terms "snapshot", "staging", and "working directory" are all related.
+SNAPSHOT - Every time a file is committed to, or deleted from, the git repository, that change
+           represents a "snapshot" of the file at the time it's committed.  This change occurs
+           in git's "staging area" (within the ".git" directory).
 
-                   When you perform a "git checkout" to make code changes to a specific git branch, all
-                   files and directories from that branch are copied to your local "working directory".
-                   Your "working directory" is NOT the ".git" directory, but the parent directory that
-                   contains the ".git" directory.  Your local "working directory" is also known as the
-                   "staging area".
+STAGING AREA - The git "Staging Area" is located within the ".git" directory.  Many (but not all)
+               git commands will change the contents of the git staging area (for example,
+               "git add", "git commit", etc).  You should NEVER make changes to files located
+               in the git staging area.
 
-                   Every time "git commit" is successfully run, one or more files are committed
-                   to the git repository.  Every time a file is committed to the git repository,
-                   that commit represents a "snapshot" of the file, at the time it's committed.
-                   To sum up...
-
-                   Snapshot                = The state of a file at the time it's committed to the git repository.
-                   Local Working Directory = Staging Area            = Parent directory of the ".git' directory.
-                   Staging Area            = Local Working Directory = Parent directory of the ".git' directory.
+WORKING DIRECTORY - The git "Working Directory" is the parent directory of the ".git" directory.
+                    The working directory contains all files that you're working on from
+                    a previous "git commit", or for a future "git commit".  When you view, add,
+                    change, or delete files, you MUST do so from the working directory.
 
 HEAD             - When you execute some git commands (i.e., "git status") the text printed to the console
                    may include the word HEAD.  HEAD refers to a pointer used by git that points to whichever
