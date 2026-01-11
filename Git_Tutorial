@@ -471,9 +471,16 @@ GIT RESTORE - WARNING: The "git restore" command was introduced in git Version 2
               > git add *  (You mistakenly staged the file named file_2.)
               > git restore --staged file_2
 
-GIT CLEAN         Assume you created a new file named dummy.html.  But you didn't add or commit it to git, which
-                  means dummy.html is NOT tracked.  To remove this dummy.html file AND ALL UNTRACKED FILES, run:
-                  > git clean -f  (Deletes all untracked files from the working directory.)
+GIT CLEAN         Assume you created some new file/directories in your working directory, but you
+                  didn't do a "git add" on any of those files, so they're untracked.   You now
+                  decide you no longer want those files/directories.  To remove all untracked
+                  files/directories from your working directory, run:
+
+                  > git clean -f   (The "-f" flag deletes all untracked files from the working directory.)
+                  > git clean -d   (The "-d" flag deletes all untracked directories from the working directory.)
+                  > git clean -fdn (The "-n" flag means this is a DRY RUN, so it makes NO CHANGES.
+                                    Use the "-n" flag to first confirm that only the files/directories
+                                    you want deleted will get deleted.)
 
 GIT SWITCH       The "git switch" command introduced was introduced in Git Version 2.23.  It's used mainly for
                  creating and switching branches.  It's an alternative to the "git checkout" command.
