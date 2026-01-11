@@ -435,6 +435,10 @@ GIT RESET - The key difference between the "git reset" and "git restore" command
 
             git restore - Used for discarding local changes in the working directory (i.e., staging area).
 
+            Neither "git reset --hard HEAD" nor the equivalent "git restore -s@ -SW -- ."
+            command removes untracked files (new files that have never been added to Git).
+            To completely match the behavior of a fresh clone (which removes all untracked
+            files), you must also run:  "git clean -fd"
 
             "git reset" undoes changes to the working directory and the staged snapshot.  Assume you
             made text changes to an already-committed file named index.html AND you added a brand-new
