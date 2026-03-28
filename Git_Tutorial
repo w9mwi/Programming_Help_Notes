@@ -134,7 +134,8 @@ STAGING AREA - The git "Staging Area" is located within the ".git" directory.  M
 WORKING DIRECTORY - The git "Working Directory" is the parent directory of the ".git" directory.
                     The working directory contains all files that you're working on from
                     a previous "git commit", or for a future "git commit".  When you view, add,
-                    change, or delete files, you MUST do so from the working directory.
+                    change, or delete files, you MUST do so from the working directory (the parent
+                    directory of the ".git" directory).
 
 HEAD             - When you execute some git commands (i.e., "git status") the text printed to the console
                    may include the word HEAD.  HEAD refers to a pointer used by git that points to whichever
