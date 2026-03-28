@@ -369,10 +369,10 @@ GIT INIT         - After you create a new folder for a new software project, you
                    hooks - This directory contains scripts that Git executes automatically at key points
                            in the development lifecycle, such as before a commit (pre-commit), after a
                            commit (post-commit), or before a push to a remote repository (pre-push).
-                         These hooks allow developers to customize Git's behavior, automate tasks
-                         (like running tests or linting code), and enforce project standards.
-                         The directory initially contains sample scripts that need to be renamed
-                         (by removing the .sample extension) and made executable to be activated.
+                           These hooks allow developers to customize Git's behavior, automate tasks
+                           (like running tests or linting code), and enforce project standards.
+                           The directory initially contains sample scripts that need to be renamed
+                           (by removing the .sample extension) and made executable to be activated.
 
                  info - This folder contains miscellaneous repository information that doesn't fit
                         elsewhere.  The most notable item inside is the exclude file, which acts
