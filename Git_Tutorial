@@ -164,9 +164,14 @@ GIT ADD           - Before you can commit file(s) to the git repository via the 
                     You should run "git add" on a file only when it is ready to be committed
                     to the git repository, and you won't make further changes to it.  If you
                     run "git add" on a file, then make more changes to the file, and run
-                    "git commit", the changes made after "git add" was won't get committed!
+                    "git commit" on that file, the changes made after "git add" was run won't
+                    get committed.
 
-                    If you delete a file that has been added (via the "git add" command), and
+                    If you don't want to run "git add" manually every time for tracked files,
+                    you can run "git commit -a", which automatically stages all modified files
+                    that were previously added via the "git add" command.
+
+                    If you delete a file that has been added with the "git add" command, and
                     you then run "git commit", the file gets permanently deleted from the git
                     repository.
 
