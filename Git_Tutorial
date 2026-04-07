@@ -161,12 +161,14 @@ GIT STATUS      -  Displays the current status of your local git repository.  Wh
 GIT ADD           - Before you can commit file(s) to the git repository via the "git commit"
                     command, you must first run the "git add" command on the file(s).
 
-                    You need to run the "git add" command on a file only one time.  Then,
-                    whenever you change (or delete) that file in the future, you only
-                    need to run the "git commit" command on that file to commit it to the
-                    git repository.  If you delete a file that has been added (via the
-                    "git add" command), and then your run "git commit" on it, the file
-                    is permanently deleted from the git repository.
+                    You should run "git add" on a file only when it is ready to be committed
+                    to the git repository, and you won't make further changes to it.  If you
+                    run "git add" on a file, then make more changes to the file, and run
+                    "git commit", the changes made after "git add" was won't get committed!
+
+                    If you delete a file that has been added (via the "git add" command), and
+                    you then run "git commit", the file gets permanently deleted from the git
+                    repository.
 
                     UNSTAGED FILES - Files that haven't been added to the git repository
                                      (via the "git add" command) are called unstaged files.
