@@ -326,9 +326,9 @@ GIT CHECKOUT     - The "git checkout" command points your current working direct
                    hash ID, which is obtained via the "git log" command.
                    > git checkout 625cdef
 
-                   After doing a "git checkout", always run the following "git status" and
-                  "git branch" from the working directory to confirm you have HEAD checked
-                   out, and that you're no longer pointing to any git branch.  (HEAD is the
+                   After doing a "git checkout", always run the "git status" and "git branch"
+                   commands from the working directory to confirm you have HEAD checked
+                   out, and that you're no longer pointing to a git branch.  (HEAD is the
                    name given to a past git commit.)
 
                    > git status   (Prints the following line, confirming HEAD is detached from any branch.)
@@ -338,11 +338,11 @@ GIT CHECKOUT     - The "git checkout" command points your current working direct
                     * (HEAD detached at 26f90df)
                     main
 
-                  After doing a "git checkout" you can create a new branch representing that snapshot in time.
-                  by running one of the folowing two git commands.
+                  After running the "git checkout" command you can create a new branch representing
+                  that snapshot in time by running one of the following two git commands.
 
                   > git checkout newBranchName      (Uses the current snapshot to creates a new branch.)
-                  > git checkout -b newBranchName"  (Same as above, except the -b flag also switches to newBranchName.)
+                  > git checkout -b newBranchName"  (Same as above, and the -b flag switches to newBranchName.)
 
                   The "git checkout" command can do the following:
 
@@ -352,6 +352,7 @@ GIT CHECKOUT     - The "git checkout" command points your current working direct
 
                   2) Checkout a previous snapshot.  First obtain the snapshot number by
                      running the "git log" command, like this:
+
                      > git log  (3 lines of text will display, similar to the 3 lines below.)
                        commit c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
                        Author: TJB <w9mwi@yahoo.com>
@@ -360,10 +361,12 @@ GIT CHECKOUT     - The "git checkout" command points your current working direct
                      Next, run the "git checkout" command containing the snapshot number, like this:
                      > git checkout c9d66dd85f0b6891e5d3f29fc12750e6ca74ad9d
 
-                     You can cancel the previous "git checkout c9d66..." command by running one of the following two commands:
+                     You can cancel the previous "git checkout c9d66..." command by running one of
+                     the following two commands:
                      > git switch -
                      ...OR...
-                     > git checkout branchName   (Returns to the "branchName" branch, canceling the above "git checkout c9d66...")
+                     > git checkout branchName   (Returns to the "branchName" branch, canceling the
+                                                  above "git checkout c9d66...")
 
                   3) Create a new branch named poop, AND switch to the new poop branch, like this:
                      > git checkout -b poop
