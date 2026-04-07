@@ -237,7 +237,7 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
                     > git commit -a -m "Changed background color of all web pages."
 
                     NOTE: When a "git commit" includes the "-m" (message) flag,
-                         the default git editor won't pop up.
+                          the default git editor won't pop up.
 
                    If you want to undo (remove) a previous commit, obtain its SHA-1 log number,
                    then run the following command to undo that commit:
@@ -248,36 +248,39 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
                    add and commit, run "git push" to put them in the remote repository.
                    First, add the files/directories.
 
-                  > git add .  (Don't forget to type the period . char!)
-                    > git commit . -m "Added files/directories."
-                    > git push
-                    To delete any number of files/directories from your repository,
-                    commit that change to the current branch, and push it, do this...
-                    First, delete the files/directories.
-                    > git commit . -m "Deleted files/directories."
-                    > git push
+                   > git add .  (Don't forget to type the period . char!)
+                   > git commit . -m "Added files/directories."
+                   > git push
 
-                    If you made a mistake with your most-recent commit, you can undo that
-                    commit by running the command "git commit --amend", which does the
-                    following, in this order:
-                       1) undo the previous commit, in which you made a mistake.
-                       2) pick up the change(s) you made since the previous commit.
-                       3) perform the commit that includes your most recent change(s).
+                   To delete any number of files/directories from your repository,
+                   commit that change to the current branch, and push it, do this...
+                   First, delete the files/directories.
+                   > git commit . -m "Deleted files/directories."
+                   > git push
 
-                    EXAMPLE: Assume you performed a "git commit", but you forgot to first run
-                             "git add" on 1 of the 3 files you want to be part of that commit.
-                              You would fix that by doing the following.
-                    > git add file_1
-                    > git add file_2   (Assume that you forgot to run "git add file_3")
-                    Here we FORGOT to run "git add" on file_3 before running "git commit".
-                    > git commit -m "Commit file_1, file_2, file_3."
-                    > git add file_3
-                    Now that we ran "git add" on file_3, we will amend the commit.
-                    > git commit --amend  (Now, all 3 of your files have been added and committed.)
+                   If you made a mistake with your most-recent commit, you can undo that
+                   commit by running the command "git commit --amend", which does the
+                   following, in this order:
+                      1) undo the previous commit, in which you made a mistake.
+                      2) pick up the change(s) you made since the previous commit.
+                      3) perform the commit that includes your most recent change(s).
 
-                    If your most-recent commit is all OK, and you run "git commit --amend", it will
-                    do nothing except launch the git editor, allowing you to change your git commit
-                    message.
+                   EXAMPLE: Assume you performed a "git commit", but you forgot to first run
+                            "git add" on 1 of the 3 files you want to be part of that commit.
+                            You would fix that by doing the following.
+                            > git add file_1
+                            > git add file_2   (Assume that you forgot to run "git add file_3")
+
+                            Here we FORGOT to run "git add" on file_3 before running "git commit".
+                            > git commit -m "Commit file_1, file_2, file_3."
+                            > git add file_3
+
+                            Now that we ran "git add" on file_3, we will amend the commit.
+                            > git commit --amend  (Now, all 3 of your files have been added and committed.)
+
+                            If your most-recent commit is all OK, and you run "git commit --amend", it will
+                            do nothing except launch the git editor, allowing you to change your git commit
+                            message.
 
 GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote repository into the repository
                   you're currently pointed to.  Use the "git "fetch" command, followed by the "git merge"
