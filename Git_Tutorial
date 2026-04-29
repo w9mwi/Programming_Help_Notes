@@ -718,12 +718,12 @@ REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be 
 
 CLONING REPOSITORY  To clone an existing repository located on your hard disk, do the following...
                     On the command line, navigate to the PARENT DIRECTORY containing the repository
-                    you want to clone.  In this example, the "C:\Tom\Programming" parent directory
-                    contains the child directory "C:\Tom\Programming\my-git-repo".  So navigate to
-                    the "C:\Tom\Programming" directory, then run the following commands:
-                       > git clone my-git-repo  marys-repo  (The my-git-repo directory/repository gets cloned into the
-                                                             marys-repo directory/repository.  This command also creates
-                                                             the marys-repo directory.)
+                    you want to clone.  In this example, the "/home/tjb/git_repo" directory contains
+                    the git repository of a software project.  So navigate to its PARENT DIRECTORY
+                    "/home/tjb/" directory, then run the following commands:
+                     > git clone my-git-repo  marys-repo  (The my-git-repo directory/repository gets cloned into the
+                                                           marys-repo directory/repository.  This command also creates
+                                                           the marys-repo directory.)
                        > cd marys-repo  (You are now in the newly-created repository directory named marys-repo.)
                        > git branch -rv (Verify that the only LOCAL BRANCH existing in marys-repo is the 'main'
                                          branch.)
@@ -734,17 +734,16 @@ CLONING REPOSITORY  To clone an existing repository located on your hard disk, d
                     When you clone a repository, Git automatically adds an 'origin' REMOTE REPOSITORY to the newly-cloned
                     repository.
 
-                    Next, navigate back to the "C:\Tom\Programming\my-git-repo" directory, and run the following commands:
+                    Next, navigate back to the "/home/tjb/git_repo" directory, and run the following commands:
                        > git remote -v (Notice that there exists no remote repository.)
                        > git remote add mary ../marys-repo   (Create a remote repository named 'mary', pointing to the
-                                                              repository located in "C:\Tom\Programming\marys-repo")
+                                                              repository located in "/home/tjb/marys-repo")
                        > git remote -v  (The following 2 lines are output.)
                        mary    ../marys-repo (fetch)
                        mary    ../marys-repo (push)
-                    IMPORTANT: From the "C:\Tom\Programming\marys-repo" directory, we can now reference the 'origin'
+                    IMPORTANT: From the "/home/tjb/marys-repo" directory, we can now reference the 'origin'
                                repository.
-                    IMPORTANT: From the "C:\Tom\Programming\my-git-repo" directory, we can now reference the 'mary'
-                               repository.
+                    IMPORTANT: From the "/home/tjb/" directory, we can now reference the 'mary' repository.
 
 MERGING FROM ONE REPOSITORY INTO ANOTHER:
                     After you've completed all steps in the above CLONING REPOSITORY section, do the following
