@@ -529,11 +529,15 @@ GIT SWITCH       The "git switch" command introduced was introduced in Git Versi
                           HEAD detached at 0709b29
 
                         You are now pointed to a "detached HEAD".  To abort this current checkout
-                        (to the detached HEAD), and return to the main branch, run...
+                        (to the detached HEAD), and return to the branch you were on, run...
 
                         > git switch -
                           Previous HEAD position was 0709b29 Create blue and orange pages
                           Switched to branch 'main'
+
+                        Or you can run the following command to return to any branch
+                        by explicitly specifying the branch's name, like this
+                        > git checkout main
 
 GIT BRANCH       Understand the following branching example.  It shows how to make a change to an
                  existing branch (the "main" branch), and then commit that change to a new branch
