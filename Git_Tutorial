@@ -507,6 +507,34 @@ GIT SWITCH       The "git switch" command introduced was introduced in Git Versi
                  "git checkout" command, and returns you to the previous branch.
                  > git switch -
 
+                 EXAMPLE: Assume the branch you're on is up to date so there is nothing to commit.
+                          So when you run "git status" you get the following text:
+
+                          > git status 
+                          On branch main
+
+                          Next, run the "git log" command like this:
+
+                          > git log --oneline
+                            e2d4fc9 (HEAD -> main) Add navigation links
+                            0709b29 Create blue and orange pages
+                            0d2b1a9 Create index page
+
+                        Next, checkout a previous commit, like this:
+                        > git checkout 0709b29
+                          Note: switching to '0709b29'.
+
+                        Check the status.
+                        > git status 
+                          HEAD detached at 0709b29
+
+                        You are now pointed to a "detached HEAD".  To abort this current checkout
+                        (to the detached HEAD), and return to the main branch, run...
+
+                        > git switch -
+                          Previous HEAD position was 0709b29 Create blue and orange pages
+                          Switched to branch 'main'
+
 GIT BRANCH       Understand the following branching example.  It shows how to make a change to an
                  existing branch (the "main" branch), and then commit that change to a new branch
                  named "crazy" WITHOUT CHANGING THE EXISTING BRANCH.  (In this example, not changing
