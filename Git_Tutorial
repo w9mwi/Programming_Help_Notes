@@ -437,7 +437,7 @@ GIT REVERT        The "git revert" command Undoes (removes) the changes made in 
 
                   When using "git revert", remember to specify the commit that you want to undo;
                   not the stable commit that you want to return to.  Think of "git revert" as
-                  a wat to “undo this commit” rather than “restore this version.”
+                  a "want to undo this commit” rather than “restore this version.”
 
                   Assume you're on branch main, and you checkout a previous commit using its
                   7-digit hash ID, like this:   git checkout 1234567
