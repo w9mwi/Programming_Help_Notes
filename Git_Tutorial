@@ -697,10 +697,11 @@ GIT REBASE    Rebasing allows you to move branches around by changing the commit
               to running the 'git rebase' command WITHOUT the -i flag shown below.  To run an interactive rebase on
               the 'about' branch, do the following:
               > git checkout about
-              > git rebase -i main  (The -i flag menas INTERACTIVE, so the user will be prompted to change behavior.)
-              
-              If you're in the middle of performing a rebase, and you get lost (not certain if what you're doing
-              is correct), you can abort rebase in midstream by running the following command:
+              > git rebase -i main  (The -i flag means INTERACTIVE, so the user will be prompted to change how
+                                     the commits will appear on this 'about' branch.)
+
+              If you're in the middle of performing a rebase, and you get lost (you're not certain if what
+              you're doing is correct), you can abort the rebase in midstream by running the following command:
               > git rebase ‑‑abort
 
               Rebasing enables fast-forward merges by moving a branch to the tip of another branch.  It effectively
@@ -1080,9 +1081,10 @@ GIT CHECKOUT BRANCHES
 GIT CHECKOUT A FILE
 > git checkout fe17adf hello.py
 
-GIT PUSH - The most common use case for git push is to publish your local changes to a central repository.  After you’ve
-           accumulated several local commits and are ready to share them with the rest of the team, you (optionally)
-           clean them up with an interactive rebase, then push them to the central repository.
+GIT PUSH - The most common use case for git push is to publish your local changes to a central repository.  After
+           you’ve accumulated several local commits and are ready to share them with the rest of the team, you can
+           clean them by performing an "interactive rebase", then push them to the central repository.
+
            'git push' is how you transfer commits from your local repository to a remote repo.  It's the counterpart
            to git fetch.  But whereas 'GIT FETCH' IMPORTS COMMITS TO LOCAL BRANCHES, 'GIT PUSH' EXPORTS COMMITS TO
            REMOTE BRANCHES.  'GIT PUSH' HAS THE POTENTIAL TO OVERWRITE CHANGES, so you need to be careful how you
