@@ -744,7 +744,7 @@ REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be 
                      After the above command is run, the remote git repository will have the name "origin".
                      However, that remote git repository name can be changed (via the above git command)
                      to any name you want.  When a remote repository is named "origin", it generally refers
-                     to the branch named "main" on the romote repository.
+                     to the branch named "main" on the remote repository.
 
 CLONING REPOSITORY  To clone an existing repository located on your hard disk, do the following...
                     On the command line, navigate to the PARENT DIRECTORY containing the repository
