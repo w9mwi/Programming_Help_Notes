@@ -741,8 +741,8 @@ REMOTE REPOSITORIES  Every programmer on a development team should have a single
                      https://github.com/w9mwi/central_repo
 
                      If you want to the ability to transfer files between the git repository on you local computer,
-                     and the github.com repository designated above, you must first run the following command from
-                     the git repository on your local computer:
+                     and the github.com repository designated above, you must first run the following command
+                     from the git repository on your local computer:
 
                      git remote add origin git@github.com:w9mwi/central_repo.git
 
