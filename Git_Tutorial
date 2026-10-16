@@ -731,7 +731,7 @@ REMOTE REPOSITORIES  Every programmer on a development team should have a single
                      (on their computer), and then commits those changes to a remote git repository
                      that's shared by all programmers on the team, which is known as a centralized
                      repository.  However, any git repository other than the one you're currently using,
-                     and which you can access from your computer, is considered a remote repository.
+                     that you can access from your computer, is considered a remote repository.
                      A "remote repository" can be located on a local network, on a centralized server
                      (like github.com), or even on your local computer in a directory different than
                      the repository you're currently using.
@@ -746,10 +746,19 @@ REMOTE REPOSITORIES  Every programmer on a development team should have a single
 
                      git remote add origin git@github.com:w9mwi/central_repo.git
 
-                     After the above command is run, the remote git repository will have the name "origin".
-                     However, that remote git repository name can be changed (via the above git command) to
-                     any name you want.  By git convention, a remote repository having the name "origin"
-                     references the "main/master" branch on the remote repository.
+                     After the above command is run, you can reference that repository via the name "origin".
+                     However, that remote git repository name can be changed by replacing the text "origin"
+                     (in the above git command) with any name you want.
+
+                     To view all remote repositories that you can access from you working git directory,
+                     run the following git command:
+                     $ git remote
+
+                     To view all remote repositories, and the branches they contain, run the following git command:
+                     $ git branch -r
+
+                     NOTE:  When you clone a git repository via the "git clone" command, the name
+                            the cloned repository will be given the name "origin" by default.
 
 CLONING REPOSITORY  To clone an existing repository located on your hard disk, do the following...
                     On the command line, navigate to the PARENT DIRECTORY containing the repository
