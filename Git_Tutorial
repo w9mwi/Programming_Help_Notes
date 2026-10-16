@@ -725,26 +725,31 @@ GIT RM - This command tells git to stop tracking a file.  Assume you're on some 
          > git add rainbow.html
          > git commit -m "Added rainbow.html file and deleted the crazy.html file."
 
-REMOTE REPOSITORIES  A remote repository is one that's not your own.  It can be another Git repository located
-                     on your company’s network, the internet, or even on your own hard disk.  Remote branches
-                     act just like local branches, except they represent a branch located in someone else’s repository.
-                     Think of REMOTE BRANCHES AS READ-ONLY BRANCHES.   If you approve the changes a remote branch contains,
-                     you can merge it into a local branch with a normal git merge.
+REMOTE REPOSITORIES  Every programmer on a development team should have a single repository dedicated
+                     to only that programmer.  That repository is usually located on the programmer's
+                     local computer.  The programmer makes code changes in their local repository
+                     (on their computer), and then commits those changes to a remote git repository
+                     that's shared by all programmers on the team, which is known as a centralized
+                     repository.  However, any git repository other than the one you're currently using,
+                     and which you can access from your computer, is considered a remote repository.
+                     A "remote repository" can be located on a local network, on a centralized server
+                     (like github.com), or even on your local computer in a directory different than
+                     the repository you're currently using.
 
-                     Assume you have a github repository on the github.com web site that has this URL address:
+                     Assume you have a git repository located on the github.com web site that has this URL address:
 
                      https://github.com/w9mwi/central_repo
 
-                     If you want to transfer files between a git repository on you local computer, and the
-                     above-mentioned remote git repository, you must first run the following command from
-                     that git repository on your local computer:
+                     If you want to the ability to transfer files between the git repository on you local computer,
+                     and the github.com repository designated above, you must first run the following command from
+                     the git repository on your local computer:
 
                      git remote add origin git@github.com:w9mwi/central_repo.git
 
                      After the above command is run, the remote git repository will have the name "origin".
-                     However, that remote git repository name can be changed (via the above git command)
-                     to any name you want.  When a remote repository is named "origin", it generally refers
-                     to the branch named "main" on the remote repository.
+                     However, that remote git repository name can be changed (via the above git command) to
+                     any name you want.  By git convention, a remote repository having the name "origin"
+                     references the "main/master" branch on the remote repository.
 
 CLONING REPOSITORY  To clone an existing repository located on your hard disk, do the following...
                     On the command line, navigate to the PARENT DIRECTORY containing the repository
