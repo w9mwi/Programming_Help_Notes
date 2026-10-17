@@ -761,7 +761,7 @@ REMOTE REPOSITORIES  Every programmer on a development team should have a single
                             the cloned repository will be given the name "origin" by default.
 
 CLONING REPOSITORY - TO CLONE A REMOTE REPOSITORY FROM bitbucket.org OR github.com
-                     TO A LOCAL REPOSITORY ON YOUR DESKTOP COMPUTER, EXECUTE ONE
+                     TO A NEW LOCAL REPOSITORY ON YOUR DESKTOP COMPUTER, EXECUTE ONE
                      OF THE FOLLLOWING 2 COMMANDS FROM THE LINUX CONSOLE:
 
                      1) Using bitbucket.org, clone the iwm9w user's git repository...
@@ -775,6 +775,9 @@ CLONING REPOSITORY - TO CLONE A REMOTE REPOSITORY FROM bitbucket.org OR github.c
                         TO A NEW REPOSITORY NAMED:  johns-repo
 
                      $ git clone git@github.com:w9mwi/my-git-repo.git  johns-repo
+
+                     NOTE: A new folder named "johns-repo" will get created on
+                           your computer containing the new local repository.
 
                      ------------------------------------------------------------
 
