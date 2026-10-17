@@ -725,7 +725,20 @@ GIT RM - This command tells git to stop tracking a file.  Assume you're on some 
          > git add rainbow.html
          > git commit -m "Added rainbow.html file and deleted the crazy.html file."
 
-REMOTE REPOSITORIES  Every programmer on a development team should have a single repository dedicated
+REMOTE REPOSITORIES - First, from bitbucket.org/iwm9w, add a new repository named "johns-repo".
+                      Next, from the local "johns-repo" folder/repository on your desktop computer,
+                      generate access to the new remote "johns-repo" repository (that you just
+                      created at bitbucket.org/iwm9w) by executing this command:
+
+                      $ git remote add john-public git@bitbucket.org:iwm9w/johns-repo.git
+
+                      NOTE: After the above command is executed, running the "git remote"
+                            command from your local "johns-repo" folder/repository will
+                            show the name of this new remote repository is "john-public",
+                            as is specified in the above command.
+                     ---------------------------------------------------------------------
+
+                     Every programmer on a development team should have a single repository dedicated
                      to only that programmer.  That repository is usually located on the programmer's
                      local computer.  The programmer makes code changes in their local repository
                      (on their computer), and then commits those changes to a remote git repository
