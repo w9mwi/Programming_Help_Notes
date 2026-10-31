@@ -301,6 +301,10 @@ GIT DIFF          The "git diff" command displays lines of text that were added,
                   Both of the above commands are equivalent.  They show changes made to files that have been staged
                   (using "git add") but not yet committed.  This reveals the files that will go into your next commit.
 
+                  Instead of displaying every line of text changed in rvry file changed, the following command shows
+                  only the files changed and the number of lines changed.
+                  > git diff --stat
+
                   If you have edited multiple files but want to see changes of only specified files, specify
                   those filenames individually like this:
                   > git diff file_1  ../file_2,  /home/tjb/file_3
