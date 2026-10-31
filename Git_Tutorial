@@ -318,7 +318,18 @@ GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git re
 
                    > git log <commit1>..<commit2>
                    > git log ^<commit1> <commit2>
-                     Both of the above commands are equivalent.  They display the log of all commits
+                     NOTE: <commit1> and <commit2> are references a unique, 40-character SHA-1 identifier
+                           assigned to every git commit.  So <commit1> and <commit2> could refer to any
+                           of the following:
+                           * A hexadecimal number representing the commit's 40-character SHA-1 identifier
+                           * A git branch name
+                           * A git tag name
+                           * Special git references such as:
+                             HEAD       - Your current active checked-out commit or branch
+                             FETCH_HEAD - The tip of whatever you most recently fetched from a remote repository
+                             ORIG_HEAD  - Points to where you were just before a command like "git reset" or "git merge" was executed.
+
+                     Both of the above "git log" commands are equivalent.  They display the log of all commits
                      "reachable" from <commit2>, while excluding the log of all commits "reachable"
                      from <commit1>.  Here is an example...
 
@@ -333,23 +344,15 @@ GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git re
 
                      The following two commands will display the log of all commits "reachable"
                      by the new_feature branch that are not "reachable" by the main branch.
-
                      > git log main..new_feature
-                     > git log ^<commit1> <commit2>
+                     > git log ^main..new_feature
+                     The above two commands display ONLY the log of commits Y and X.
 
-                     So the above 2 commands display the log of commits Y and X.
-
-                     NOTE: <commit1> and <commit2> are references a unique, 40-character SHA-1 identifier
-                           assigned to every git commit.  So <commit1> and <commit2> could refer to any
-                           of the following:
-
-                           * A hexadecimal number representing the commit's 40-character SHA-1 identifier
-                           * A git branch name
-                           * A git tag name
-                           * Special git references such as:
-                             HEAD       - Your current active checked-out commit or branch
-                             FETCH_HEAD - The tip of whatever you most recently fetched from a remote repository
-                             ORIG_HEAD  - Points to where you were just before a command like "git reset" or "git merge" was executed.
+                     The following two commands will display the log of all commits "reachable"
+                     by the main branch that are not "reachable" by the new_feature branch.
+                     > git log new_feature..main
+                     > git log ^new_feature..main
+                     The above two commands display ONLY the log of commits C and D.
 
                    MORE EXAMPLES:
                    > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
