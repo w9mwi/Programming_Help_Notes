@@ -290,22 +290,31 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
                             message.
 
 
-GIT DIFF          The "git diff" command displays the lines of code were added, modified, or deleted for
-                  each file before those files are committed.
+GIT DIFF          The "git diff" command displays lines of text that were added, modified, or deleted
+                  for each file, before the files are committed.
 
                   > git diff
                   Shows changes made to files that have not been staged (not added via "git add" command).
 
                   > git diff --cached
                   > git diff --staged
-                  Both of the above commands are equivalent.  They show changes made to file that have been staged
+                  Both of the above commands are equivalent.  They show changes made to files that have been staged
                   (using "git add") but not yet committed.  This reveals the files that will go into your next commit.
 
+                  If you have edited multiple files but want to see changes of only specified files, specify
+                  those filenames individually like this:
+                  > git diff file_1  ../file_2,  /home/tjb/file_3
 
-                  > git diff HEAD~2..HEAD~1
-                  > git diff main..john/pink-page
 
+                  Both of the following "git diff" commands are equivalent.  They display the file changes made
+                  to all commits "reachable" from <commit2>, while excluding the file changes made to all commits
+                  "reachable" from <commit1>.  Here is an example...
+                  > git diff <commit1>..<commit2>
+                  > git diff ^<commit1> <commit2>
 
+                  To understand how the above two commands work, search for the text "git log <commit1>..<commit2>",
+                  and read the accompanying explanation because "git diff <commit1>..<commit2>" works exactly like
+                  "git log <commit1>..<commit2>", except it returns file information instead of log information.
 
 GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote repository into the repository
                   you're currently pointed to.  Use the "git "fetch" command, followed by the "git merge"
