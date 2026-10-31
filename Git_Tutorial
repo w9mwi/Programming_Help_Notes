@@ -316,6 +316,41 @@ GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git re
                      2904275 Changed the web page's font.
                      c3e6748 Changed black text to green text.
 
+                   > git log <commit1>..<commit2>
+                   > git log ^<commit1> <commit2>
+                     Both of the above commands are equivalent.  They display the log of all commits
+                     "reachable" from <commit2>, while excluding the log of all commits "reachable"
+                     from <commit1>.  Here is an example...
+
+                     A <-- B <-- C <-- D (Branch Name: main)
+                            \
+                             X <-- Y     (Branch Name: new_feature)
+
+                     The commits are: A, B, C, D, X, Y
+
+                     All commits "reachable" from branch main are:        D, C, B, A
+                     All commits "reachable" from branch new_feature are: Y, X, B, A
+
+                     The following two commands will display the log of all commits "reachable"
+                     by the new_feature branch that are not "reachable" by the main branch.
+
+                     > git log main..new_feature
+                     > git log ^<commit1> <commit2>
+
+                     So the above 2 commands display the log of commits Y and X.
+
+                     NOTE: <commit1> and <commit2> are references a unique, 40-character SHA-1 identifier
+                           assigned to every git commit.  So <commit1> and <commit2> could refer to any
+                           of the following:
+
+                           * A hexadecimal number representing the commit's 40-character SHA-1 identifier
+                           * A git branch name
+                           * A git tag name
+                           * Special git references such as:
+                             HEAD       - Your current active checked-out commit or branch
+                             FETCH_HEAD - The tip of whatever you most recently fetched from a remote repository
+                             ORIG_HEAD  - Points to where you were just before a command like "git reset" or "git merge" was executed.
+
                    MORE EXAMPLES:
                    > git log --oneline blue.html  (Displays each commit made on the "blue.html" file.)
                    > git log -4  ("-4" prints the last 4 git commits.)
