@@ -289,6 +289,19 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
                             do nothing except launch the git editor, allowing you to change your git commit
                             message.
 
+
+GIT DIFF
+
+VIEW DIFFS BETWEEN COMMITS
+                  The git diff command is incredibly useful for pinpointing contributions from other developers.  EXAMPLES:
+                  > git diff  (Generates a detailed view of all uncommitted changes.)
+                  > git diff --cached  (The --cached flag generates a diff between the staged snapshot and most-recent
+                                        commit.)
+                  > git diff HEAD~2..HEAD~1
+                  > git diff main..john/pink-page
+
+
+
 GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote repository into the repository
                   you're currently pointed to.  Use the "git "fetch" command, followed by the "git merge"
                   command, in place of the "git pull" command.
