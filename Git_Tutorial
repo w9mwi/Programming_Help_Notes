@@ -291,19 +291,20 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
 
 
 GIT DIFF          > git diff
-                  This command displays lines of text that were added, modified, or deleted
-                  for each file, before the files are committed.
+                  This command compares files in your working directory with files located in the staging area.
+                  It displays the text differences made in those two sets of files.  If you run the "git add"
+                  command on a file, the "git diff" will not display that file.
 
                   Both of the following commands are equivalent.  They display changes made to files that have been staged
                   (using "git add"), but not yet committed.  This command reveals all files that will go into your next commit.
                   > git diff --cached
                   > git diff --staged
 
-                  Instead of displaying every line of text changed in rvry file changed, the following command shows
-                  only the files changed and the number of lines changed.
+                  Instead of displaying every line of text changed in every file changed, the following command shows
+                  only the file names changed, and the number of lines changed.
                   > git diff --stat
 
-                  If you have edited multiple files but want to see changes of only specified files, specify
+                  If you have edited multiple files but want to see only changes made to specific files, specify
                   those filenames individually like this:
                   > git diff file_1  ../file_2,  /home/tjb/file_3
 
