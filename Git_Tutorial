@@ -221,10 +221,10 @@ GIT ARCHIVE      The "git archive" command allows you to archive only a single b
                  gives you the option to preserve all branches and tags.
 
                   Executing one of the following two commands from your local repo
-                  will archive all files from only the main branch into a single file,
-                  which can be extracted later.  The "git archive" command contains only
-                  the branch name, or tag name, specified in the command and excludes
-                  the entire .git directory.
+                  will archive files from only the main branch into a single file,
+                  which can be extracted later.  The "git archive" command can preserve
+                  only a single branch name, or tag name, which is specified in the
+                  command.
 
                   $ git archive main --format=zip --output=../website-12-10-2012.zip
                   $ git archive main --format=tar --output=../website-12-10-2012.tar
@@ -233,17 +233,13 @@ GIT ARCHIVE      The "git archive" command allows you to archive only a single b
                   or the tar command for .tar files.
 
                   "git archive" is used to share your source code without sharing your
-                  development history.  Anyone who extracts the resulting archive will
-                  see the code exactly as it was, but they won't be able to run git log
+                  development history and the .git directory.  Anyone who extracts the
+                  archive will see only the code, but they won't be able to run git log
                   or see who wrote what.
 
-GIT BUNDLE        Unlike the "git archive" command, "git bundle" will preserve
-                  the .git directory.  "git bundle" can be used to bundle a
-                  single branch, tag, or all branches and tags.
-
-                  Unlike the "git archive" command", "git bundle" always preserves the
-                  .git directory, and it allows you to preserve a single branch/tag,
-                  or preserve all branches/tags by specifying the --all flag.
+GIT BUNDLE        Unlike the "git archive" command, "git bundle" always preserves the
+                  .git directory.  "git bundle" can be used to bundle a single branch or
+                  tag, or all branches and tags by specifying the --all flag.
 
                   "git bundle" is used when you want to move your work to another
                   computer but don't have a network connection to push/pull from
@@ -257,7 +253,6 @@ GIT BUNDLE        Unlike the "git archive" command, "git bundle" will preserve
                   get created in the directory from which you execute the command.
 
                   $ git clone home/File_Path/repo.bundle  new-project-name
-
 
 GIT COMMIT        - Only after a file has been added to the git repository via the "git add"
                     command can you run "git commit" on it.  For example, assume we created
