@@ -290,16 +290,14 @@ GIT COMMIT        - Only after a file has been added to the git repository via t
                             message.
 
 
-GIT DIFF          The "git diff" command displays lines of text that were added, modified, or deleted
+GIT DIFF          > git diff
+                  This command displays lines of text that were added, modified, or deleted
                   for each file, before the files are committed.
 
-                  > git diff
-                  Shows changes made to files that have not been staged (not added via "git add" command).
-
+                  Both of the following commands are equivalent.  They display changes made to files that have been staged
+                  (using "git add"), but not yet committed.  This command reveals all files that will go into your next commit.
                   > git diff --cached
                   > git diff --staged
-                  Both of the above commands are equivalent.  They show changes made to files that have been staged
-                  (using "git add") but not yet committed.  This reveals the files that will go into your next commit.
 
                   Instead of displaying every line of text changed in rvry file changed, the following command shows
                   only the files changed and the number of lines changed.
