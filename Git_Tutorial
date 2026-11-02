@@ -254,6 +254,11 @@ GIT BUNDLE        Unlike the "git archive" command, "git bundle" always preserve
 
                   $ git clone home/File_Path/repo.bundle  new-project-name
 
+                  The following command creates a new local repository inside
+                  a directory named repo-copy by unpacking the contents of the
+                  repo.bundle file and checking out the main branch.
+                  $ git clone repo.bundle repo-copy -b master.
+
 GIT COMMIT        - Only after a file has been added to the git repository via the "git add"
                     command can you run "git commit" on it.  For example, assume we created
                     3 new files named junk_1.txt, junk_2.txt, junk_3.txt.  To commit those
