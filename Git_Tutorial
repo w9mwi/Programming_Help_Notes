@@ -213,7 +213,51 @@ GIT ADD           - Before you can commit file(s) to the git repository via the 
                        all staged files in the directory at once by adding the "-a" flag
                        to the "git commit" command, like this:
 
-                       > git commit -a
+                       $ git commit -a
+
+GIT ARCHIVE      The "git archive" command allows you to archive only a single branch
+                 or single tag.  And it never archives the .git directory.  The
+                 "git bundle" command always preserves the .git directory, and
+                 gives you the option to preserve all branches and tags.
+
+                  Executing one of the following two commands from your local repo
+                  will archive all files from only the main branch into a single file,
+                  which can be extracted later.  The "git archive" command contains only
+                  the branch name, or tag name, specified in the command and excludes
+                  the entire .git directory.
+
+                  $ git archive main --format=zip --output=../website-12-10-2012.zip
+                  $ git archive main --format=tar --output=../website-12-10-2012.tar
+
+                  To extract an archive file, use the unzip command for .zip files,
+                  or the tar command for .tar files.
+
+                  "git archive" is used to share your source code without sharing your
+                  development history.  Anyone who extracts the resulting archive will
+                  see the code exactly as it was, but they won't be able to run git log
+                  or see who wrote what.
+
+GIT BUNDLE        Unlike the "git archive" command, "git bundle" will preserve
+                  the .git directory.  "git bundle" can be used to bundle a
+                  single branch, tag, or all branches and tags.
+
+                  Unlike the "git archive" command", "git bundle" always preserves the
+                  .git directory, and it allows you to preserve a single branch/tag,
+                  or preserve all branches/tags by specifying the --all flag.
+
+                  "git bundle" is used when you want to move your work to another
+                  computer but don't have a network connection to push/pull from
+                  a server like GitHub or Bitbucket.
+
+                  $ git bundle create ../repo.bundle  main  (Bundle only the main branch.)
+                  $ git bundle create ../repo.bundle  --all  (Bundle all branches and tags.)
+
+                  To extract a bundle file, run the following command.  Where
+                  "new-project-name" is the name of a new directory that will
+                  get created in the directory from which you execute the command.
+
+                  $ git clone home/File_Path/repo.bundle  new-project-name
+
 
 GIT COMMIT        - Only after a file has been added to the git repository via the "git add"
                     command can you run "git commit" on it.  For example, assume we created
