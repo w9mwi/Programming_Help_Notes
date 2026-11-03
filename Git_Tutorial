@@ -127,6 +127,9 @@ GIT CONFIG      - Run the following commands from inside the parent directory of
                   $ git config --global alias.ct commit    ("git ct" can be used instead of "git commit")
                   $ git config --global alias.br branch    ("git br" can be used instead of "git branch")
 
+                  The git config --global flag used in the above commands designates that your
+                  settings get stored in your ~/.gitconfig file.
+
 
 
 SNAPSHOT - Every time a file is committed to, or deleted from, the git repository, that change
