@@ -122,6 +122,13 @@ GIT CONFIG      - Run the following commands from inside the parent directory of
                   all of your repositories.  Not running the above commands lets you specify
                   different user information for individual repositories.
 
+                  You can create alias names for regular git commands.  For example...
+                  $ git config --global alias.co checkout  ("git co" can be used instead of "git checkout")
+                  $ git config --global alias.ct commit    ("git ct" can be used instead of "git commit")
+                  $ git config --global alias.br branch    ("git br" can be used instead of "git branch")
+
+
+
 SNAPSHOT - Every time a file is committed to, or deleted from, the git repository, that change
            represents a "snapshot" of the file at the time it's committed.  This change occurs
            in git's "staging area" (within the ".git" directory).
