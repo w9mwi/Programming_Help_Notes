@@ -1366,8 +1366,34 @@ git remote add origin git@ssh.bitbucket.org:iwm9w/my-git-repo.git
 git remote add origin git@ssh.bitbucket.org:iwm9w/my-git-repo.git
 
 
-GIT FETCH - Downloads only data from a remote git repository.
+GIT FETCH - Downloads only data from a remote git repository.  The "git fetch" will never affect
+            your local repository files, whether you have changed them or not.  The "get fetch"
+            command completely bypasses your working directory.  "git fetch" only makes changes
+            inside the ".git" folder on your local repository.
+
+            The reasons to use "git fetch" are as follows:
+
+            1) Run "git diff main origin/main" to see a line-by-line comparison of how local files
+              on your "main" branch differ from the "main" branch on the remote repository.
+
+            2) Run "git log main..origin/main" to see a list of the commit messages your teammates
+               pushed to the server that you don't have yet.
+
+            3) Run "git show origin/main:path/to/file.txt" to view the remote version of a file
+               without changing your workspace.
+
+            4) If a new branch is created on a remote repository, you can't run "git checkout branchName"
+               to view that branch.  Running "git fetch" downloads all new branches from the remote
+               repository.  Then, you can change to that new branch in your local repository via the
+               "git fetch origin/branchName" command.
+
+            5) If any branches are removed from remote repository, run the "git fetch --prune" command
+               to remove those branches from your local repository.
+
+
 GIT PULL - Downloads data from a remote git repository and merges it into the branch that your local repository currently points to.
+
+
 
 1) Navigate to a folder that already contains a git repository.  Then run these git commands.
 
@@ -1384,6 +1410,11 @@ git fetch origin  (Downloads only data to local git history.  Can NEVER harm you
 ...OR...
 git pull origin   (Downloads changes and merges them into your local branch.  Use with CAUTION.)
 git checkout main
+
+
+
+
+
 
 ========================================================================
 ========================================================================
