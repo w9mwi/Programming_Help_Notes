@@ -1354,3 +1354,38 @@ LOG FILE COMMANDS:
 
 YouTube Git Tutorials --> https://www.youtube.com/watch?v=r63f51ce84A
                       --> https://www.youtube.com/watch?v=HVsySz-h9r4
+
+========================================================================
+========================================================================
+========================================================================
+
+git remote add origin git@github.com:w9mwi/central_repo.git
+git remote add origin git@github.com:w9mwi/central_repo.git
+
+git remote add origin git@ssh.bitbucket.org:iwm9w/my-git-repo.git
+git remote add origin git@ssh.bitbucket.org:iwm9w/my-git-repo.git
+
+
+GIT FETCH - Downloads only data from a remote git repository.
+GIT PULL - Downloads data from a remote git repository and merges it into the branch that your local repository currently points to.
+
+1) Navigate to a folder that already contains a git repository.  Then run these git commands.
+
+git init
+git remote add origin git@ssh.bitbucket.org:iwm9w/my-git-repo.git
+
+git remote -v  (Confirm the following 2 lines of text appear.)
+origin	git@ssh.bitbucket.org:iwm9w/my-git-repo.git (fetch)
+origin	git@ssh.bitbucket.org:iwm9w/my-git-repo.git (push)
+
+If the folder from which you ran the above 3 commands was a new/empty folder, run the following 2 git commands:
+
+git fetch origin  (Downloads only data to local git history.  Can NEVER harm your local repository.)
+...OR...
+git pull origin   (Downloads changes and merges them into your local branch.  Use with CAUTION.)
+git checkout main
+
+========================================================================
+========================================================================
+========================================================================
+
