@@ -375,20 +375,19 @@ GIT DIFF          > git diff
 
 GIT FETCH - The "git fetch" command allows you to view any git branch contained in a remote git repository from
             the working directory of your local git repository.  Running the "git fetch" command is considered
-            "SAFE" because it never makes any changes to the files in the working directory of your local
-            repository.  The "get fetch" command makes changes only inside the ".git" folder of your working
-            directory.
-            
-
-GIT FETCH - Downloads data from a remote git repository only into the working directory's ".git"
-            folder.  So the "git fetch" command will never affect files in the working directory
-            of your local repository, whether you have changed any of those files or not.  The
-            "get fetch" command makes changes only inside the ".git" folder of your working directory.
+            "SAFE" because it never makes any changes to files in the working directory of your local repository.
+            The "get fetch" command makes changes only files in the ".git" folder of your working directory.
 
             The reasons to use "git fetch" are as follows:
 
-            1) Run "git diff main origin/main" to see a line-by-line comparison of how local files
-               on your "main" branch differ from the "main" branch on the remote repository.
+            1) To view the text differences of files on a branch in your local repository and a branch
+               on a remote repository, run the following commands, where "origin" deignates the name of
+               the remote repository.
+
+               View line-by-line differences of files on your main branch, with files on the main branch
+               of the remote repository.
+               $ git diff main origin/main   
+               
 
             2) Run "git log main..origin/main" to see a list of the commit messages your teammates
                pushed to the remote server that you don't have on your local computer.
