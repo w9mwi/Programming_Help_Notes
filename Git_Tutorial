@@ -373,11 +373,50 @@ GIT DIFF          > git diff
                   and read the accompanying explanation because "git diff <commit1>..<commit2>" works exactly like
                   "git log <commit1>..<commit2>", except it returns file information instead of log information.
 
-GIT FETCH         The "git fetch" command IMPORTS A BRANCH from a remote repository into the repository
-                  you're currently pointed to.  Use the "git "fetch" command, followed by the "git merge"
-                  command, in place of the "git pull" command.
-                  > git fetch
-                  > git merge
+GIT FETCH - The "git fetch" command allows you to view any git branch contained in a remote git repository from
+            the working directory of your local git repository.  Running the "git fetch" command is considered
+            "SAFE" because it never makes any changes to the files in the working directory of your local
+            repository.  The "get fetch" command makes changes only inside the ".git" folder of your working
+            directory.
+            
+
+GIT FETCH - Downloads data from a remote git repository only into the working directory's ".git"
+            folder.  So the "git fetch" command will never affect files in the working directory
+            of your local repository, whether you have changed any of those files or not.  The
+            "get fetch" command makes changes only inside the ".git" folder of your working directory.
+
+            The reasons to use "git fetch" are as follows:
+
+            1) Run "git diff main origin/main" to see a line-by-line comparison of how local files
+               on your "main" branch differ from the "main" branch on the remote repository.
+
+            2) Run "git log main..origin/main" to see a list of the commit messages your teammates
+               pushed to the remote server that you don't have on your local computer.
+
+            3) Run "git show origin/main:path/to/file.txt" to view the remote version of a file
+               without changing your workspace.
+
+            4) If a new branch is created on a remote repository, you can't run "git checkout branchName"
+               to view that branch.  Running "git fetch" downloads all new branches from the remote
+               repository.  Then, you can change to that new branch in your local repository via the
+               "git fetch origin/branchName" command.
+
+            5) If any branches are removed from remote repository, run the "git fetch --prune" command
+               to remove those branches from your local repository.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git repository.
                    It represents a timeline of every "git commit" that occurred on the project.
