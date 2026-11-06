@@ -373,17 +373,21 @@ GIT DIFF          > git diff
                   and read the accompanying explanation because "git diff <commit1>..<commit2>" works exactly like
                   "git log <commit1>..<commit2>", except it returns file information instead of log information.
 
-GIT FETCH - The "git fetch" command allows you to view any git branch contained in a remote git repository from
-            the working directory of your local git repository.  Running the "git fetch" command is considered
-            "SAFE" because it never makes any changes to files in the working directory of your local repository.
-            The "get fetch" command makes changes only files inside the ".git" folder of your working directory.
+GIT FETCH - Allows you to compare files in your local working directory with files in a remote
+            repository before you merge the remote repository files into your local repository
+            via the "git merge" command.  Running the "git fetch" command is considered "SAFE"
+            because it never makes any changes to files in the working directory of your local
+            repository.  The "get fetch" command makes changes only to files inside the ".git"
+            folder of your working directory.
 
             NOTE: Before you can access/view a remote git repository from your local git repository,
                   you must first run the "git remote" command as shown in the following 2 examples:
 
-                  1) To access the remote git repository located at https://github.com/w9mwi/central_repo
-                     and give it the name "central_repo", run the following git command.
-                     $ git remote add origin git@github.com:w9mwi/central_repo.git
+                  1) Add a remote repository located at: github.com
+                     To access the remote git repository located at https://github.com/w9mwi/central_repo
+                     and give it the name "central_repo", run the following git commands.
+                     $ git init  (Run this ONLY if your local repository folder is new and contains no ".git" folder.)
+                     $ git remote add central_repo git@github.com:w9mwi/central_repo.git
 
                      The "git branch -r" command displays ONLY remote branches that have
                      been fetched into your local repository via the "git fetch" command.
@@ -395,16 +399,21 @@ GIT FETCH - The "git fetch" command allows you to view any git branch contained 
                      been added to your local repository via the "git remote add" command.
                      $ git remote  (Displays the following line.)
                      central_repo
+                     $ git remote -v (Displays the following 2 lines.)
+                     central_repo git@github.com:w9mwi/central_repo.git (fetch)
+                     central_repo git@github.com:w9mwi/central_repo.git (push)
 
-                  2) To access the remote git repository located at https://bitbucket.org/iwm9w/my-git-repo/src/main
-                     and give it the name "my-git-repo", run the following two git commands.
+                  2) Add a remote repository located at: bitbucket.org
+                     To access the remote git repository located at https://bitbucket.org/iwm9w/my-git-repo/src/main
+                     and give it the name "my-git-repo", run the following git commands.
+                     $ git init  (Run this ONLY if your local repository folder is new and contains no ".git" folder.)
                      $ git remote add my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git
 
                      The "git branch -r" command displays ONLY remote branches that have
                      been fetched into your local repository via the "git fetch" command.
                      $ git fetch my-git-repo
                      $ git branch -r  (Display all remote branches that have been fetched.)
-                     central_repo/main   (Fetched in step 1) above.)
+                     central_repo/main  (Fetched in step 1) above.)
                      my-git-repo/main
 
                      The "git remote" command displays ALL remote branches that have
@@ -412,30 +421,31 @@ GIT FETCH - The "git fetch" command allows you to view any git branch contained 
                      $ git remote  (Displays the following 2 lines.)
                      central_repo
                      my-git-repo
+                     $ git remote -v (Displays the following 4 lines.)
+                     central_repo git@github.com:w9mwi/central_repo.git (fetch)
+                     central_repo git@github.com:w9mwi/central_repo.git (push)
+                     my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git (fetch)
+                     my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git (push)
 
-            Here are 5 reasons to use the "git fetch" command are as follows:
+            Four reasons to use the "git fetch" command are as follows:
 
-            1) To view the text differences of files on a branch in your local repository and a branch
-               on a remote repository, run the following commands, where "origin" deignates the name of
-               the remote repository.
+            1) View the text differences of files on a branch in your local repository
+               and a branch on a remote repository.  For example...
+               $ git diff main origin/main    ("origin" is remote repository name, "main" is branch name)
 
-               View line-by-line differences of files on your main branch, with files on the main branch
-               of the remote repository.
-               $ git diff main origin/main   
+            2) View a list of commit messages of a branch located on the remote server
+               that don't exist in the corresponding branch on your local repository.
+               $ git log main..origin/main
 
-            2) Run "git log main..origin/main" to see a list of the commit messages your teammates
-               pushed to the remote server that you don't have on your local computer.
+            3) View a file located in the remote repository without making
+               any changes to that corresponding file in your workspace.
+               $ git show origin/main:path/to/file.txt
 
-            3) Run "git show origin/main:path/to/file.txt" to view the remote version of a file
-               without changing your workspace.
-
-            4) If a new branch is created on a remote repository, you can't run "git checkout branchName"
-               to view that branch.  Running "git fetch" downloads all new branches from the remote
-               repository.  Then, you can change to that new branch in your local repository via the
-               "git fetch origin/branchName" command.
-
-            5) If any branches are removed from remote repository, run the "git fetch --prune" command
-               to remove those branches from your local repository.
+            4) If any branches are removed from remote repository, run the following
+               command to remove those branches from your local repository.  This
+               ensures that your local repository will contain only branches that
+               exist in the remote repository.
+               $ git fetch --prune
 
 GIT LOG          - The "git log" command displays the COMMIT HISTORY of a git repository.
                    It represents a timeline of every "git commit" that occurred on the project.
