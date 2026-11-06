@@ -1366,18 +1366,18 @@ git remote add origin git@ssh.bitbucket.org:iwm9w/my-git-repo.git
 git remote add origin git@ssh.bitbucket.org:iwm9w/my-git-repo.git
 
 
-GIT FETCH - Only downloads data from a remote git repository.  The "git fetch" will never affect
-            your files in the working directory of your local repository, whether you have changed
-            any of those files or not.  The "get fetch" command only makes changes inside the
-            ".git" folder of your working directory.
+GIT FETCH - Downloads data from a remote git repository only into the working directory's ".git"
+            folder.  So the "git fetch" command will never affect files in the working directory
+            of your local repository, whether you have changed any of those files or not.  The
+            "get fetch" command makes changes only inside the ".git" folder of your working directory.
 
             The reasons to use "git fetch" are as follows:
 
             1) Run "git diff main origin/main" to see a line-by-line comparison of how local files
-              on your "main" branch differ from the "main" branch on the remote repository.
+               on your "main" branch differ from the "main" branch on the remote repository.
 
             2) Run "git log main..origin/main" to see a list of the commit messages your teammates
-               pushed to the server that you don't have yet.
+               pushed to the remote server that you don't have on your local computer.
 
             3) Run "git show origin/main:path/to/file.txt" to view the remote version of a file
                without changing your workspace.
