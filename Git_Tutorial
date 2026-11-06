@@ -1391,7 +1391,17 @@ GIT FETCH - Downloads only data from a remote git repository.  The "git fetch" w
                to remove those branches from your local repository.
 
 
-GIT PULL - Downloads data from a remote git repository and merges it into the branch that your local repository currently points to.
+GIT PULL - Downloads data from a remote git repository and merges it into the branch that your local
+           repository currently points to.  The "git pull" command is equivalent to executing the
+           "git fetch" command followed by the "git merge" command.  Running the "git pull" command
+           will change files in your working directory ("git fetch" won't).  So if you accidently run
+           the "git pull" it can be dangerous.
+
+           To be safe, many developers avoid using the "git pull" command.  Instead, they run "git fetch"
+           followed by "git diff" to first compare files of a branch on your local repository with the
+           same branch on the remote repository.  Once you're satisfied those are the file changes you
+           want imported into your local repository, run the "git merge" command.
+
 
 
 
