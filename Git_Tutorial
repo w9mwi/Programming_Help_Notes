@@ -383,51 +383,51 @@ GIT FETCH - Allows you to compare files in your local working directory with fil
             NOTE: Before you can access/view a remote git repository from your local git repository,
                   you must first run the "git remote" command as shown in the following 2 examples:
 
-                  1) Add a remote repository located at: github.com
-                     To access the remote git repository located at https://github.com/w9mwi/central_repo
-                     and give it the name "central_repo", run the following git commands.
-                     $ git init  (Run this ONLY if your local repository folder is new and contains no ".git" folder.)
-                     $ git remote add central_repo git@github.com:w9mwi/central_repo.git
+                  EXAMPLE 1) Add a remote repository located at: github.com
+                  To access the remote git repository located at https://github.com/w9mwi/central_repo
+                  and give it the name "central_repo", run the following git commands.
+                  $ git init  (Run this ONLY if your local repository folder is new and contains no ".git" folder.)
+                  $ git remote add central_repo git@github.com:w9mwi/central_repo.git
 
-                     The "git branch -r" command displays ONLY remote branches that have
-                     been fetched into your local repository via the "git fetch" command.
-                     $ git fetch central_repo
-                     $ git branch -r  (Displays the following line.)
-                     central_repo/main
+                  The "git branch -r" command displays ONLY remote branches that have
+                  been fetched into your local repository via the "git fetch" command.
+                  $ git fetch central_repo
+                  $ git branch -r  (Displays the following line.)
+                  central_repo/main
 
-                     The "git remote" command displays ALL remote branches that have
-                     been added to your local repository via the "git remote add" command.
-                     $ git remote  (Displays the following line.)
-                     central_repo
-                     $ git remote -v (Displays the following 2 lines.)
-                     central_repo git@github.com:w9mwi/central_repo.git (fetch)
-                     central_repo git@github.com:w9mwi/central_repo.git (push)
+                  The "git remote" command displays ALL remote branches that have
+                  been added to your local repository via the "git remote add" command.
+                  $ git remote  (Displays the following line.)
+                  central_repo
+                  $ git remote -v (Displays the following 2 lines.)
+                  central_repo git@github.com:w9mwi/central_repo.git (fetch)
+                  central_repo git@github.com:w9mwi/central_repo.git (push)
 
-                  2) Add a remote repository located at: bitbucket.org
-                     To access the remote git repository located at https://bitbucket.org/iwm9w/my-git-repo/src/main
-                     and give it the name "my-git-repo", run the following git commands.
-                     $ git init  (Run this ONLY if your local repository folder is new and contains no ".git" folder.)
-                     $ git remote add my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git
+                  EXAMPLE 2) Add a remote repository located at: bitbucket.org
+                  To access the remote git repository located at https://bitbucket.org/iwm9w/my-git-repo/src/main
+                  and give it the name "my-git-repo", run the following git commands.
+                  $ git init  (Run this ONLY if your local repository folder is new and contains no ".git" folder.)
+                  $ git remote add my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git
 
-                     The "git branch -r" command displays ONLY remote branches that have
-                     been fetched into your local repository via the "git fetch" command.
-                     $ git fetch my-git-repo
-                     $ git branch -r  (Display all remote branches that have been fetched.)
-                     central_repo/main  (Fetched in step 1) above.)
-                     my-git-repo/main
+                  The "git branch -r" command displays ONLY remote branches that have
+                  been fetched into your local repository via the "git fetch" command.
+                  $ git fetch my-git-repo
+                  $ git branch -r  (Display all remote branches that have been fetched.)
+                  central_repo/main  (Fetched in step 1) above.)
+                  my-git-repo/main
 
-                     The "git remote" command displays ALL remote branches that have
-                     been added to your local repository via the "git remote add" command.
-                     $ git remote  (Displays the following 2 lines.)
-                     central_repo
-                     my-git-repo
-                     $ git remote -v (Displays the following 4 lines.)
-                     central_repo git@github.com:w9mwi/central_repo.git (fetch)
-                     central_repo git@github.com:w9mwi/central_repo.git (push)
-                     my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git (fetch)
-                     my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git (push)
+                  The "git remote" command displays ALL remote branches that have
+                  been added to your local repository via the "git remote add" command.
+                  $ git remote  (Displays the following 2 lines.)
+                  central_repo
+                  my-git-repo
+                  $ git remote -v (Displays the following 4 lines.)
+                  central_repo git@github.com:w9mwi/central_repo.git (fetch)
+                  central_repo git@github.com:w9mwi/central_repo.git (push)
+                  my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git (fetch)
+                  my-git-repo git@ssh.bitbucket.org:iwm9w/my-git-repo.git (push)
 
-            Four reasons to use the "git fetch" command are as follows:
+            Four reasons to use the "git fetch" command:
 
             1) View the text differences of files on a branch in your local repository
                and a branch on a remote repository.  For example...
