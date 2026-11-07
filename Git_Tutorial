@@ -696,6 +696,10 @@ GIT CLEAN         Assume you created some new file/directories in your working d
                                     Use the "-n" flag to first confirm that only the files/directories
                                     you want deleted will get deleted.)
 
+GIT STASH - The "git stash" command is used when you're in the middle of making changes
+            to a branch, but a more urgent code change is required on some other branch,
+            or on a clean version your current branch.
+
 GIT SWITCH       The "git switch" command introduced was introduced in Git Version 2.23.  It's used mainly for
                  creating and switching branches.  It's an alternative to the "git checkout" command.
 
