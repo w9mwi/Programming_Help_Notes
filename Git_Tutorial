@@ -860,9 +860,8 @@ GIT MERGE - The following 7 steps demonstrate the process of code development.  
               "git commit" commands on files when needed.
 
               After running your final "git add" and "git commit", you will be finished
-              making all changes to your tasks, features, files.  At that time, you
-              should test all your code changes.  Once your code has passed testing,
-              you can proceed to step 3).
+              making all your code changes.  So you should now test all your code changes.
+              Once your code has passed testing, proceed to step 3).
 
            3) Run "git status"
               Confirm "git status" returns the following text:
