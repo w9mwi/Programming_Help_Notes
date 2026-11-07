@@ -845,9 +845,18 @@ GIT BRANCH       Understand the following branching example.  It shows how to ma
                      crazy
                    * main
 
-GIT MERGE       When you perform a merge, you are always merging some other branch into the
-                branch that is currently checked out.  Therefore, the "git merge" command
-                affects ONLY the branch that is currently checked out.
+GIT MERGE - A "git merge" updates files in the working directory of your local repository with files
+            from a branch in a remote repository.  For example, 
+assume your local working directory
+            contains files that you have changed that originally came from the remote repository.
+
+A "git merge" updates files in the working directory of your local repository with files from
+            the remote repository.
+
+
+                For example, assume your local repository's working directory 
+if A represents a set of files
+                in your affects only the branch currently checked out.
 
                 > git checkout main  (Go to the main branch.)
                 > git merge css      (Merges the css branch into the main branch.)
