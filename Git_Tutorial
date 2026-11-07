@@ -373,15 +373,15 @@ GIT DIFF          > git diff
                   and read the accompanying explanation because "git diff <commit1>..<commit2>" works exactly like
                   "git log <commit1>..<commit2>", except it returns file information instead of log information.
 
-GIT FETCH - Allows you to compare files in your local working directory with files in a remote
-            repository before you merge the remote repository files into your local repository
-            via the "git merge" command.  Running the "git fetch" command is considered "SAFE"
-            because it never makes any changes to files in the working directory of your local
-            repository.  The "get fetch" command makes changes only to files inside the ".git"
-            folder of your working directory.
+GIT FETCH - Allows you to view files in a remote repository, or compare files in your local working directory
+            with files in a remote repository before you merge the remote repository files into your local
+            repository via the "git merge" command.  Running the "git fetch" command is considered "SAFE"
+            because it never makes any changes to files in the working directory of your local repository.
+            The "get fetch" command makes changes only to files inside the ".git" folder of your working
+            directory.
 
-            The "git fetch" command is usually branch specific, meaning that when you run the
-            command, you specify the name of the branch you want fetched.  However, you can run
+            The "git fetch" command is usually branch specific, meaning that when you run the command,
+            you specify the branch you want fetched from the remote repository.  However, you can run
             the "git fetch --all" command to fetch all branches from the remote repository.
 
             NOTE: Before you can access/view a remote git repository from your local git repository,
