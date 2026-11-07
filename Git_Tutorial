@@ -845,21 +845,58 @@ GIT BRANCH       Understand the following branching example.  It shows how to ma
                      crazy
                    * main
 
-GIT MERGE - Updates all files in the working directory of your local repository with files from
-            a remote repository.  The result will be that your files will match the files
-            in the remote repository.
+GIT MERGE - The following 7 steps demonstrate the process of code development.  Once
+            you understand this process you will understand what the "git merge"
+            command does, and exactly when you need to run it.
 
-            Before you run the "git merge" command from the working directory of your local
-            repository, you should first run "git status" and confirm it returns this text:
-            "nothing to commit, working tree clean."
-with files
-            from a branch in a remote repository.  For example, 
-assume your local working directory
-            contains files that you have changed that originally came from the remote repository.
+           1) Assume you already have a working directory in your local repository
+              that's a copy of a branch that was checked out, or cloned, from a remote
+              repository.  And now you want to add a feature, fix a bug, or make some
+              other code changes on that branch.  Assume the remote repository is named
+              "origin" and the branch is named "main".  Follow the next 6 steps.
 
-A "git merge" updates files in the working directory of your local repository with files from
-            the remote repository.
+           2) Run "git add" and "git commit" as needed.
+              As you make code changes, you must execute both the "git add" and
+              "git commit" commands on files when needed.
 
+              After running your final "git add" and "git commit", you will be finished
+              making all changes to your tasks, features, files.  At that time, you
+              should test all your code changes.  Once your code has passed testing,
+              you can proceed to step 3).
+
+           3) Run "git status"
+              Confirm "git status" returns the following text:
+              "nothing to commit, working tree clean."
+
+           4) Run "git fetch" 
+              It probably took several hours or days to finish making and testing your code
+              changes.  After you're finished testing, you must again run "git fetch" on that
+              same remote repository branch.  Doing so will obtain any code changes made
+              by other developers since the main branch was originally cloned or checked
+              out in step 1) above.
+
+           5) Run "git merge origin/main" immediately after running "git fetch" in step 4) above.
+              If you and another developer edited the same line of text in the same file, Git will
+              prompt you to resolve any merge conflicts.  If there are merge conflicts, you
+              must resolve them and once again run "git add" and "git commit" on every file that
+              you changed.
+
+              NOTE: You can run the "git pull origin/main" command in place of "git fetch"
+                    in step 4) and "git merge" in step 5) because "git pull" combines
+                    both those git commands.  However, it's safer to run "git fetch"
+                    followed by "git merge" because "git fetch" allows you to review
+                    files before you merge them.  Using "git pull" can also force you
+                    to resolve complex merge conflicts in the middle of your workflow.
+                    Etc.
+
+           6) If you had to resolve merge conflicts in step 5) above, run "git status"
+              again to confirm it returns the following text:
+              "nothing to commit, working tree clean."  
+
+           7) Run "git push" so all your code changes get sent to the remote repository,
+              which is used to build the production release.
+
+================================
 
                 For example, assume your local repository's working directory 
 if A represents a set of files
