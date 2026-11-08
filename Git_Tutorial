@@ -696,9 +696,41 @@ GIT CLEAN         Assume you created some new file/directories in your working d
                                     Use the "-n" flag to first confirm that only the files/directories
                                     you want deleted will get deleted.)
 
-GIT STASH - The "git stash" command is used when you're in the middle of making changes
-            to a branch, but a more urgent code change is required on some other branch,
-            or on a clean version your current branch.
+GIT STASH - The "git stash" command is used when you're in the middle of making changes to a branch, but a more
+            urgent code change is required that's unrelated to your current project.
+
+            The "git stash -u" command saves all changes you've made since your current branch was last "clean"
+            (including any newly created, untracked files).  If you also need to stash files that are explicitly
+            hidden by your .gitignore file (such as .env configuration files or temporary build folders), use
+            the "git stash --all" command instead.
+
+            A "clean" branch means that running "git status" returns this text:
+            nothing to commit, working tree clean
+
+            After you run the "git stash -u" command, running "git status" return this text:
+            nothing to commit, working tree clean
+
+            Now that your branch is "clean," you can work on the urgent project without
+            interfering with the changes you've already made.  If the urgent project is
+            on a different branch, you can now safely change branches without worrying
+            about local file conflicts blocking your transition.
+
+            After you finish the urgent project, return to the branch of your original project
+            and run "git stash pop".  This will attempt to reapply your saved changes and remove
+            them from your stash list.
+
+            A merge conflict can be caused when running "git stash pop" for one of these reasons:
+
+            * Someone updated the remote repository while you were working.
+
+            * You made changes on another branch that were merged back into
+              your current branch while your work was stashed.
+
+            If a merge conflict occurs, Git will prompt you to manually perform the merge.
+
+            Be careful when using the "git stash --all" command because stashing large or
+            numerous files can slow down your Git operations.  So avoid using this command
+            unless you must.
 
 GIT SWITCH       The "git switch" command introduced was introduced in Git Version 2.23.  It's used mainly for
                  creating and switching branches.  It's an alternative to the "git checkout" command.
