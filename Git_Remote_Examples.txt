@@ -1,10 +1,24 @@
 CREATE A NEW REMOTE GIT REPOSITORY
 ==================================
 
-You can create a new remote git repository on github.com, or on bitbucket.org.
-via a web browser, or from the command line on your local computer.
+You can create a new remote git repository on github.com or bitbucket.org
+via a web browser.  You can also create a new remote git repository on
+github.com or bitbucket.org from the command line on your local computer
+by using the linux "curl" command.
+
+This tutorial only covers creating a new remote git repository via
+a web browser.
 
 
+1)
+Navigate to your user account on github.com or bitbucket.org via
+a web browser and create a new reposirory named My_Git_Repo.
+
+2)
+On your local computer, create a new folder named "My_Git_Repo" then navigate
+into that folder using the "cd" command.
+
+$ git init -b main
 
 
 
