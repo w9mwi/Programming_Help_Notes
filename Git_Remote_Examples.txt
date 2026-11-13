@@ -17,12 +17,15 @@ a web browser and create a new reposirory named My_Git_Repo.
 2)
 On your local computer, open a command-line console window and create
 a new folder named "My_Git_Repo".  Next, navigate into that folder
-using the "cd" command and run the following command, which creates
-a brand-new, empty folder named ".git" in your current folder, and
-sets the name of its first branch to main.
+using the "cd" command and run the following command.
 
 $ git init -b main
 
+Confirm the above command created a ".git" folder within the My_Git_Repo folder.
 
+3)
+Create the files that will reside in this new repository.  Once you're ready
+to add these new files into the repository, run the following two commands.
 
-Create a new remote git repository on github.com at this location: w9mwi/PBSH
+$ git add .
+$ git commit -m "A comment describing the new files committed."
