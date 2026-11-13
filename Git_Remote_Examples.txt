@@ -45,8 +45,8 @@ a web browser.
    on the remote github.com server.
 
    The -u flag permanently links the connection between your local main branch and the
-   remote origin/main branch so you don't have to specify "origin" or main" the next
-   time you run the "git push" command.
+   remote origin/main branch so you the next time you need to run the "git push" command,
+   you can just run "git push" (not specifying any flags or arguments).
 
    "origin" designates the nickname of the remote server registered in the "git remote
    add origin" command above.
