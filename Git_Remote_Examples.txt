@@ -1,6 +1,5 @@
 CREATE A NEW REMOTE GIT REPOSITORY
 ==================================
-
 You can create a new remote git repository on github.com or bitbucket.org
 via a web browser.  You can also create a new remote git repository on
 github.com or bitbucket.org from the command line on your local computer
@@ -16,14 +15,12 @@ a web browser.
 2) On your local computer, open a command-line console window and create
    a new folder named "My_Git_Repo".  Next, navigate into that folder
    using the "cd" command and run the following command.
-
    $ git init -b main
 
    Confirm the above command created a ".git" folder within the My_Git_Repo folder.
 
 3) Create the files that will reside in this new repository.  Once you're ready
    to add these new files into the repository, run the following two commands.
-
    $ git add .
    $ git commit -m "A comment describing the new files committed."
 
@@ -34,10 +31,17 @@ a web browser.
    Run the "git branch" command to confirm there now exists a new branch named "main".
 
 4) Run the following command.
-
    $ git remote add origin git@github.com:w9mwi/My_Git_Repo.git
 
    The above command updates the hidden file .git/config  inside the My_Git_Repo folder.
    It does not connect to the internet or transfer any data.
 
+5) Run the following command:
+   $ git push -u origin main  ("main" designates the branch pushed to the remote github server.)
+                              ("origin" designates the nickname of the remote server registered
+                               in the "git remote add origin" command above.)
+
+   This command uploads your local commits from the main branch to the remote repository
+   nicknamed origin, and permanently links the two branches together.  Once this command
+   finishes, your files and commit history will appear on the remote github.com server.
 
