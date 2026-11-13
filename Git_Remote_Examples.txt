@@ -15,7 +15,7 @@ a web browser.
 2) On your local computer, open a command-line console window and create
    a new folder named "My_Git_Repo".  Next, navigate into that folder
    using the "cd" command and run the following command.
-   $ git init -b main
+   $ git init -b main   ("-b main" creates a git branch named "main")
 
    Confirm the above command created a ".git" folder within the My_Git_Repo folder.
 
