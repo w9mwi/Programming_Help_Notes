@@ -37,11 +37,18 @@ a web browser.
    It does not connect to the internet or transfer any data.
 
 5) Run the following command:
-   $ git push -u origin main  ("main" designates the branch pushed to the remote github server.)
-                              ("origin" designates the nickname of the remote server registered
-                               in the "git remote add origin" command above.)
+   $ git push -u origin main
 
    This command uploads your local commits from the main branch to the remote repository
    nicknamed origin, and permanently links the two branches together.  Once this command
-   finishes, your files and commit history will appear on the remote github.com server.
+   finishes, your files and commit history will appear in the My_Git_Repo repository
+   on the remote github.com server.
 
+   The -u flag permanently links the connection between your local main branch and the
+   remote origin/main branch so you don't have to specify "origin" or main" the next
+   time you run the "git push" command.
+
+   "origin" designates the nickname of the remote server registered in the "git remote
+   add origin" command above.
+
+   "main" designates the branch pushed to the remote github server.
