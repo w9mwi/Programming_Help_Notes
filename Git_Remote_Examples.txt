@@ -34,7 +34,7 @@ contain the repository cloned from: github.com/w9mwi/My_Git_Repo
 
 $ git clone git@github.com:w9mwi/My_Git_Repo.git
 
-NOTE: If the git repository is located on bitbucket.org, use ths command instead.
+NOTE: If the git repository is located on bitbucket.org, use this command instead.
       $ git clone git@ssh.bitbucket.org:iwm9w/my-git-repo.git
 
 If you want the cloned repository to exist in a folder with a different
@@ -106,6 +106,9 @@ a web browser.
 
 4) Run the following command.
    $ git remote add origin git@github.com:w9mwi/My_Git_Repo.git
+
+   NOTE: If the git repository is located on bitbucket.org, use this command instead.
+         $ git remote add origin git@ssh.bitbucket.org:iwm9w/My_Git_Repo.git
 
    The above command updates the hidden file .git/config  inside the My_Git_Repo folder.
    It does not connect to the internet or transfer any data.
