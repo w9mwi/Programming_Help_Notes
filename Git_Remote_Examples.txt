@@ -9,6 +9,15 @@ NOTE - A remote repository is usually located on a remote server,
        from your Repo_1 folder/repository,even though they're both
        contained on your local comouter.
 
+The git clone command creates a complete local copy of an existing Git repository
+on your computer.  Beyond simply downloading the project files, "git clone" does
+the following:
+
+* Sets up a hidden folder named ".git" that contains the entire commit history.
+* Checks out the default branch.
+* Automatically creates a remote bookmark named "origin" pointing back to the
+  remote (source) repository.
+
 Assume the following...
 
 * You have a respoitory on github.com named: My_Git_Repo
