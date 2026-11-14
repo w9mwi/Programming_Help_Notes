@@ -7,7 +7,10 @@ NOTE - A remote repository is usually located on a remote server,
        If you're currently working in the Repo_1 folder/repository,
        the Repo_2 folder/repository is considered a remote repository
        from your Repo_1 folder/repository,even though they're both
-       contained on your local comouter.
+       contained on your local computer.  Therefore, the "git clone"
+       command doesn't require an internet connection.  You can clone
+       another repository stored elsewhere on your local computer or
+       packaged inside a git .bundle archive file.
 
 The git clone command creates a complete local copy of an existing Git repository
 on your computer.  Beyond simply downloading the project files, "git clone" does
@@ -55,6 +58,16 @@ Running this command will also designate "origin" as the branch name you
 cloned, so when you run the the "git fetch", "git pull", or "git push"
 commands later, they will work without you having to specify a branch name
 in those commands.
+
+If you need only the latest version of the code, instead of a history of every
+commit made, you can save time and disk space by running a "shallow clone".
+To do that specify the --depth flag as in the following command.
+
+git clone --depth 1 git@github.com:w9mwi/My_Git_Repo.git
+
+The "--depth 1" flag downloads only the single most recent
+commit instead of the entire project history.
+
 
 
 CREATE A NEW REMOTE GIT REPOSITORY
