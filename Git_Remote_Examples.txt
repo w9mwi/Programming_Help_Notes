@@ -29,6 +29,11 @@ To be safe, make certain the folder n your local directory that will hold
 the cloned repository (i.e., /home/tjb/My_Git_Repo) either doesn't exist,
 or it is empty.
 
+By default, the above two clone commands will designate "origin" as the name
+of the remote github.com repository.  So when you run the the "git fetch",
+"git pull", or "git push" commands later, they will work without you having
+to specify the remote name "origin" in those commands.
+
 
 CREATE A NEW REMOTE GIT REPOSITORY
 ==================================
