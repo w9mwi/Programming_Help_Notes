@@ -132,18 +132,29 @@ a web browser.
 
 GIT PULL COMMAND
 ================
+NOTE - Each developer on a team has a local git repository on their
+       local computer, and a "forked" repository that resides on the
+       same remote git repository as the production repository.  Each
+       developers' local repository and "forked" repository were both
+       originally a clone of the production repository.  After a
+       developer pushes her code changes to her remote "forked"
+       repository for review, the team leader reviews that code.
+       If the team leader approves those code changes, she pushes it
+       (using "git push") to the remote production repository.
+
 The "git pull" command is typically run in a developer's local repository
 only after she has completed all of the following.
 
 * Finished the task she's working on.  Such as fixing bugs, adding new
   features, or making other change(s) to her local repository.
 * Has completed testing all changes made in her local repository.
-* Has run "git add" and "git commit" on all changes made.
+* Has run "git add" and "git commit" on all files changed.
 * Has successfully pushed those local repository changes to her
-  own remote repository via the "git push" command.
+  remote "forked" repository via the "git push" command.
 * The "Code Maintainer", "Team Lead", or "Release Manager" has
-  approved those code changes by pulling them into the remote
-  production server using the "git pull" command.
+  approved those code changes by pulling them from the developers
+  remote "forked" repository into the remote production repository
+  using the "git pull" command.
 
 After all of the above is finished, the developer runs the "git pull"
 command from her local repository so it gets updated with all changes
