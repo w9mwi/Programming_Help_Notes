@@ -1,3 +1,13 @@
+CLONE A REMOTE GIT REPOSITORY TO YOUR LOCAL GIT REPOSITORY
+==========================================================
+
+NOTE - A remote repository is usually located on a remote server,
+       and not on your local computer.  However, assume you have two git
+       repositories on your local computer named Repo_1 and Repo_2.  If
+       you're currently working in the Repo_1 folder/repository, the
+       Repo_2 folder/repository is considered a remote repository.
+
+
 CREATE A NEW REMOTE GIT REPOSITORY
 ==================================
 You can create a new remote git repository on github.com or bitbucket.org
