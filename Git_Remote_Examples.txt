@@ -1,11 +1,33 @@
 CLONE A REMOTE GIT REPOSITORY TO YOUR LOCAL GIT REPOSITORY
 ==========================================================
 
-NOTE - A remote repository is usually located on a remote server,
-       and not on your local computer.  However, assume you have two git
+NOTE - A remote repository is usually located on a remote server, not
+       not on your local computer.  However, assume you have two git
        repositories on your local computer named Repo_1 and Repo_2.  If
        you're currently working in the Repo_1 folder/repository, the
        Repo_2 folder/repository is considered a remote repository.
+
+Assume the following...
+
+* You have a respoitory on github.com named: My_Git_Repo
+* Your github.com username is: w9mwi
+* On your local computer, there exists no folder named: /home/tjb/My_Git_Repo
+* Your console window is pointed to folder name: /home/tjb
+
+From your local /home/tjb folder, if you run the following command, a
+new folder named "/home/tjb/My_Git_Repo" will get created, which will
+contain the repository cloned from: github.com/w9mwi/My_Git_Repo
+
+$ git clone git@github.com:username/My_Git_Repo.git
+
+If you want the cloned repository to exist in a folder with a different
+name (i.e., /home/tjb/My_Cloned_Repo), run the following command instead.
+
+$ git clone git@github.com:username/My_Git_Repo.git  My_Cloned_Repo
+
+To be safe, make certain the folder n your local directory that will hold
+the cloned repository (i.e., /home/tjb/My_Git_Repo) either doesn't exist,
+or it is empty.
 
 
 CREATE A NEW REMOTE GIT REPOSITORY
