@@ -10,25 +10,24 @@ a web browser.
 
 
 1) Navigate to your user account on github.com or bitbucket.org via
-   a web browser and create a new reposirory named My_Git_Repo.
+   a web browser and create a new reposirory named My_Git_Repo and
+   leave it empty.
 
 2) On your local computer, open a command-line console window and create
-   a new folder named "My_Git_Repo".  Next, navigate into that folder
-   using the "cd" command and run the following command.
+   a new folder named "My_Git_Repo".  Next, navigate into the My_Git_Repo
+   folder and run the following command.
    $ git init -b main   ("-b main" creates a git branch named "main")
 
    Confirm the above command created a ".git" folder within the My_Git_Repo folder.
 
-3) Create the files that will reside in this new repository.  Once you're ready
-   to add these new files into the repository, run the following two commands.
+3) Create some files that will reside in your My_Git_Repo folder.  Then,
+   add and commit those files into your local repository by running the
+   following commands.
    $ git add .
    $ git commit -m "A comment describing the new files committed."
-
-   Run the "git status" command to confirm it returns the following text:
+   $ git status  (Confirm it returns the following 2 lines of text.)
    On branch main
    nothing to commit, working tree clean
-
-   Run the "git branch" command to confirm there now exists a new branch named "main".
 
 4) Run the following command.
    $ git remote add origin git@github.com:w9mwi/My_Git_Repo.git
@@ -40,15 +39,16 @@ a web browser.
    $ git push -u origin main
 
    This command uploads your local commits from the main branch to the remote repository
-   nicknamed origin, and permanently links the two branches together.  Once this command
-   finishes, your files and commit history will appear in the My_Git_Repo repository
-   on the remote github.com server.
+   nicknamed "origin", and permanently links the two branches together.  Once this command
+   finishes, your files and commit history will appear in the remote My_Git_Repo repository
+   located on the github.com server.
 
-   The -u flag permanently links the connection between your local main branch and the
-   remote origin/main branch so you the next time you need to run the "git push" command,
-   you can just run "git push" (not specifying any flags or arguments).
+   In the above "git push" command...
+   * "origin" designates the nickname you of the remote server.
+   * "main" designates the branch pushed to the remote github server.
+   * The -u flag permanently links the connection between your local
+     main branch and the remote "origin/main" branch so the next
+     time you need to run the "git push" command, you can just run
+     "git push" without specifying any flags or arguments.
 
-   "origin" designates the nickname of the remote server registered in the "git remote
-   add origin" command above.
 
-   "main" designates the branch pushed to the remote github server.
