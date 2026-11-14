@@ -1,3 +1,19 @@
+
+A remote Git repository is usually located on a remote server.  However,
+any repository that's not the one you're workin from is considered
+"remote", even if that other repository is located on your computer.
+
+There are only 4 Git commands that communicate between a local Git repository
+(located on your computer) and a remote Git repository.
+
+1) git clone
+2) git fetch
+3) git pull
+4) git push
+
+All other Git commands work only on the repository you're working from.
+
+
 CLONE A REMOTE GIT REPOSITORY TO YOUR LOCAL GIT REPOSITORY
 ==========================================================
 
