@@ -130,3 +130,38 @@ a web browser.
      "git push" without specifying any flags or arguments.
 
 
+GIT PULL COMMAND
+================
+The "git pull" command is typically run in a developer's local repository
+only after she has completed all of the following.
+
+* Finished the task she's working on.  Such as fixing bugs, adding new
+  features, or making other change(s) to her local repository.
+* Has completed testing all changes made in her local repository.
+* Has run "git add" and "git commit" on all changes made.
+* Has successfully pushed those local repository changes to her
+  own remote repository via the "git push" command.
+* The "Code Maintainer", "Team Lead", or "Release Manager" has
+  approved those code changes by pulling them into the remote
+  production server using the "git pull" command.
+
+After all of the above is finished, the developer runs the "git pull"
+command from her local repository so it gets updated with all changes
+made to the remote production repository (by other developers) since
+the last time she ran "git pull" from her local repository.
+
+WARNING:  Running the "git pull" command from you local repository
+          can be dangerous because it changes the contents of your
+          local repository.  So if you made a mistake running that
+          command, it can be difficult to fix.  Instead, it's safer
+          to run "git fetch' from the remote production repository
+          to first inspect the files it has changed.  (The "git fetch"
+          command doesn't change any files in your repository, it
+          only allows you to see pending changes.)  After confirming
+          that "git fetch" has changed the appropriate files, run
+          the "git merge" command to force those changes into your
+          local repository.  The "git pull" command is equivalent
+          to running "git fetch" followed by "git merge".
+
+         
+
