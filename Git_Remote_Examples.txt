@@ -43,7 +43,18 @@ or it is empty.
 By default, the above two clone commands will designate "origin" as the name
 of the remote github.com repository.  So when you run the the "git fetch",
 "git pull", or "git push" commands later, they will work without you having
-to specify the remote name "origin" in those commands.
+to specify a branch name in those commands.
+
+By default, Git checks out the repository's default branch, which is usually
+named "main" or "master".  To clone a different branch from a remote repository
+specify the -b flag, followed by the branch name, as in the following command.
+
+$ git clone -b branchName git@github.com:w9mwi/My_Git_Repo.git
+
+Running this command will also designate "origin" as the branch name you
+cloned, so when you run the the "git fetch", "git pull", or "git push"
+commands later, they will work without you having to specify a branch name
+in those commands.
 
 
 CREATE A NEW REMOTE GIT REPOSITORY
