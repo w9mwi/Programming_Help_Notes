@@ -1,3 +1,120 @@
+GIT CODE COMMIT WORKLOW
+=======================
+
+The following 7 steps describes the typical Git workflow followed
+by a developer in a typical software production environment.
+
+Assume the production git repository is name Git_Prod and is located
+on a remote server at this location:
+
+https://github.com/w9mwi/Git_Prod
+
+Assume your local git repository is named User_1 and is contained on
+your local computer at this location:
+
+/home/tjb/User_1 folder
+
+The following 7 steps demonstrate the work flow of how a developer makes
+code changes to the remote Git_Prod repository.
+
+1) Fork the Git_Prod Repository on the Remote Server
+
+   NOTE: On GitHub, a personal account cannot fork a repository that the same
+         personal account already owns (forking requires copying from a different
+         user or organization account). This step is included because forking from
+         a shared repository into a personal fork is standard in a real-world
+         software production environment.
+
+   Using your web browser, navigate to and login to this web page:
+
+   https://github.com/w9mwi/Git_Prod
+
+   Fork this Git_Prod repository to a new repository named: w9mwi/User_1
+
+2) Clone Your Fork to Your Local Computer
+
+   From the /home/tjb folder on your local computer, run the following
+   two commands, which will create a new folder named User_1.
+
+   $ git clone git@github.com:w9mwi/User_1.git
+   $ cd User_1
+
+   Your fork (located on the remote server) now has the name "origin",
+   and your local clone resides in your /home/tjb/User_1 folder
+
+3) Link Your Local Repository to Git_Prod (upstream)
+
+   From your /home/tjb/User_1 folder, run this command.
+
+   $ git remote add upstream git@github.com:w9mwi/Git_Prod.git
+
+   NOTE: This command names the remote Git_Prod server "upstream".
+         So now your local User_1 repository can communicate with
+         the remote Git_Prod repository via the name "upstream",
+         and with the remote User_1 repository via the name "origin".
+
+4) Create the Name of the Release Branch and Make Code Changes
+
+   The following command creates a new branch named Release_4 that's
+   a copy of the "main" branch, and then switches your active branch
+   to Release_4.
+
+   $ git switch -c Release_4 main
+
+   Make all your code changes on the Release_4 branch, and
+   run the following commands.
+
+   $ git add .
+   $ git commit -m "Describe your code changes here"
+
+
+5) Push Your Local Branch to Your Remote Fork Repository for Code Review
+
+   From your /home/tjb/User_1 folder, run the following.
+   
+   $ git push -u origin Release_4
+
+   From a web browser, navigate to your remote fork at:
+   https://github.com/w9mwi/User_1
+
+   Then click "New Pull Request" to request that the Git_Prod Maintainer
+   review and merge your Release_4 branch into Git_Prod's main branch.
+   (You don't run any commands directly on the Git_Prod remote repository.)
+
+6) Sync Your Local Repository After Code Approval
+
+   After the Maintainer approves and merges your Pull Request into the
+   remote Git_Prod repository, update your local User_1 repository
+   by running these 3 commands.
+
+   $ git switch main
+   $ git pull upstream main  (Update your local main branch from the remote Git_Prod repository.)
+   $ git push origin main    (Upload your updated main branch to your remote fork User_1 repository.)
+
+7) After your Release_4 changes are safely merged into the main branch, delete the old
+   Release_4 branch locally and on your remote fork so your repository stays clean for
+   future releases:
+
+   $ git branch -d Release_4             # Delete the Release_4 branch from your local computer.
+   $ git push origin --delete Release_4  # Delete the Release_4 branch from your remote fork (origin).
+
+   Run the following commands to verify all is OK.
+
+   $ git status
+   $ git branch -a
+
+
+
+
+
+
+
+
+
+
+============================================================================================
+
+
 
 A remote Git repository is usually located on a remote server.  However,
 any repository that's not the one you're working from is considered
