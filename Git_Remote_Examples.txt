@@ -1,6 +1,6 @@
 
 A remote Git repository is usually located on a remote server.  However,
-any repository that's not the one you're workin from is considered
+any repository that's not the one you're working from is considered
 "remote", even if that other repository is located on your computer.
 
 There are only 4 Git commands that communicate between a local Git repository
@@ -13,7 +13,6 @@ There are only 4 Git commands that communicate between a local Git repository
 
 All other Git commands work only on the repository you're working from.
 
-
 CLONE A REMOTE GIT REPOSITORY TO YOUR LOCAL GIT REPOSITORY
 ==========================================================
 
@@ -22,11 +21,10 @@ NOTE - A remote repository is usually located on a remote server,
        repositories on your local computer named Repo_1 and Repo_2.
        If you're currently working in the Repo_1 folder/repository,
        the Repo_2 folder/repository is considered a remote repository
-       from your Repo_1 folder/repository,even though they're both
-       contained on your local computer.  Therefore, the "git clone"
-       command doesn't require an internet connection.  You can clone
-       another repository stored elsewhere on your local computer or
-       packaged inside a git .bundle archive file.
+       from your Repo_1 folder/repository, and vice-versa, even though
+       they're both contained on your local computer.  Therefore, you
+       can clone a git repository from another git repository on your
+       local computer or packaged inside a git .bundle archive file.
 
 The git clone command creates a complete local copy of an existing Git repository
 on your computer.  Beyond simply downloading the project files, "git clone" does
