@@ -153,6 +153,18 @@ a web browser.
      to run the "git push", "git fetch" of "git pull" command, you can just
      run "git push" without specifying any flags or arguments.
 
+   The following command prints the names od all remote repositories,
+   returning text similar to what appears below.
+   $ git remote -v
+     central_repo git@github.com:w9mwi/central_repo.git (fetch)
+     central_repo git@github.com:w9mwi/central_repo.git (push)
+     my-git-repo  git@ssh.bitbucket.org:iwm9w/my-git-repo.git (fetch)
+     my-git-repo  git@ssh.bitbucket.org:iwm9w/my-git-repo.git (push)
+     origin       git@bitbucket.org:iwm9w/my-git-repo.git (fetch)
+     origin       git@bitbucket.org:iwm9w/my-git-repo.git (push)
+     origin_2     git@github.com:w9mwi/central_repo.git (fetch)
+     origin_2     git@github.com:w9mwi/central_repo.git (push)
+
 
 GIT PULL COMMAND
 ================
