@@ -1,10 +1,10 @@
 GIT CODE COMMIT WORKLOW
 =======================
 
-The following 7 steps describes the typical Git workflow followed
+The following 7 steps describe the typical Git workflow followed
 by a developer in a typical software production environment.
 
-Assume the production git repository is name Git_Prod and is located
+Assume the production git repository is named Git_Prod and is located
 on a remote server at this location:
 
 https://github.com/w9mwi/Git_Prod
@@ -14,7 +14,7 @@ your local computer at this location:
 
 /home/tjb/User_1 folder
 
-The following 7 steps demonstrate the work flow of how a developer makes
+The following 7 steps demonstrate the workflow of how a developer makes
 code changes to the remote Git_Prod repository.
 
 1) Fork the Git_Prod Repository on the Remote Server
@@ -40,7 +40,7 @@ code changes to the remote Git_Prod repository.
    $ cd User_1
 
    Your fork (located on the remote server) now has the name "origin",
-   and your local clone resides in your /home/tjb/User_1 folder
+   and your local clone resides in your /home/tjb/User_1 folder.
 
 3) Link Your Local Repository to Git_Prod (upstream)
 
