@@ -49,7 +49,7 @@ contain the repository cloned from: github.com/w9mwi/My_Git_Repo
 $ git clone git@github.com:w9mwi/My_Git_Repo.git
 
 NOTE: If the git repository is located on bitbucket.org, use this command instead.
-      $ git clone git@ssh.bitbucket.org:iwm9w/my-git-repo.git
+      $ git clone git@ssh.bitbucket.org:iwm9w/My_Git_Repo.git
 
 If you want the cloned repository to exist in a folder with a different
 name (i.e., /home/tjb/My_Cloned_Repo), run the following command instead.
