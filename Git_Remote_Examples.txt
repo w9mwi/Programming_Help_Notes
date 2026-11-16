@@ -65,16 +65,26 @@ of the remote github.com repository.  So when you run the the "git fetch",
 "git pull", or "git push" commands later, they will work without you having
 to specify a branch name in those commands.
 
-By default, Git checks out the repository's default branch, which is usually
-named "main" or "master".  To clone a different branch from a remote repository
-specify the -b flag, followed by the branch name, as in the following command.
+By default, Git clones only the repository's default branch, which is usually
+named "main" or "master"--it doesn't clone any other branches.  To clone a
+different branch from a remote repository specify the -b flag, followed by
+the branch name, as in the following command.
 
 $ git clone -b branchName git@github.com:w9mwi/My_Git_Repo.git
 
 Running this command will also designate "origin" as the branch name you
 cloned, so when you run the the "git fetch", "git pull", or "git push"
 commands later, they will work without you having to specify a branch name
-in those commands.
+in those commands.  However, if you create a new branch on your local
+computer named "newFeature_1", you will need to run the following command
+for it to appear on the remote repository.
+
+$ git push -u origin new-feature
+
+The -u flag permanently links the connection between your local main
+branch and the remote "origin/main" branch so the next time you need
+to run the "git push", "git fetch" of "git pull" command, you can just
+run "git push" without specifying any flags or arguments.
 
 If you need only the latest version of the code, instead of a history of every
 commit made, you can save time and disk space by running a "shallow clone".
@@ -138,10 +148,10 @@ a web browser.
    In the above "git push" command...
    * "origin" designates the nickname you of the remote server.
    * "main" designates the branch pushed to the remote github server.
-   * The -u flag permanently links the connection between your local
-     main branch and the remote "origin/main" branch so the next
-     time you need to run the "git push" command, you can just run
-     "git push" without specifying any flags or arguments.
+   * The -u flag permanently links the connection between your local main
+     branch and the remote "origin/main" branch so the next time you need
+     to run the "git push", "git fetch" of "git pull" command, you can just
+     run "git push" without specifying any flags or arguments.
 
 
 GIT PULL COMMAND
