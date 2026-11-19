@@ -282,50 +282,98 @@ a web browser.
      origin_2     git@github.com:w9mwi/central_repo.git (fetch)
      origin_2     git@github.com:w9mwi/central_repo.git (push)
 
+=============================================================================
 
-GIT PULL COMMAND
-================
-NOTE - Each developer on a team has a local git repository on their
-       local computer, and a "forked" repository that resides on the
-       same remote git repository as the production repository.  Each
-       developers' local repository and "forked" repository were both
-       originally a clone of the production repository.  After a
-       developer pushes her code changes to her remote "forked"
-       repository for review, the team leader reviews that code.
-       If the team leader approves those code changes, she pushes it
-       (using "git push") to the remote production repository.
+GIT PULL - NOTE: Each developer on a team has a local git repository on their
+                 local computer, and a "forked" repository that resides on the
+                 same remote git repository as the production repository.  Each
+                 developers' local repository and "forked" repository were both
+                 originally a clone of the production repository.  After a
+                 developer pushes her code changes to her remote "forked"
+                 repository for review, the team leader reviews that code.
+                 If the team leader approves those code changes, she pushes it
+                 (using "git push") to the remote production repository.
 
-The "git pull" command is typically run in a developer's local repository
-only after she has completed all of the following.
+           The "git pull" command is typically run in a developer's local repository
+           only after she has completed all of the following.
 
-* Finished the task she's working on.  Such as fixing bugs, adding new
-  features, or making other change(s) to her local repository.
-* Has completed testing all changes made in her local repository.
-* Has run "git add" and "git commit" on all files changed.
-* Has successfully pushed those local repository changes to her
-  remote "forked" repository via the "git push" command.
-* The "Code Maintainer", "Team Lead", or "Release Manager" has
-  approved those code changes by pulling them from the developers
-  remote "forked" repository into the remote production repository
-  using the "git pull" command.
+           * Finished the task she's working on.  Such as fixing bugs, adding new
+             features, or making other change(s) to her local repository.
+           * Has completed testing all changes made in her local repository.
+           * Has run "git add" and "git commit" on all files changed.
+           * Has successfully pushed those local repository changes to her
+             remote "forked" repository via the "git push" command.
+           * The "Code Maintainer", "Team Lead", or "Release Manager" has
+             approved those code changes by pulling them from the developers
+             remote "forked" repository into the remote production repository
+             using the "git pull" command.
 
-After all of the above is finished, the developer runs the "git pull"
-command from her local repository so it gets updated with all changes
-made to the remote production repository (by other developers) since
-the last time she ran "git pull" from her local repository.
+           After all of the above is finished, the developer runs the "git pull"
+           command from her local repository so it gets updated with all changes
+           made to the remote production repository (by other developers) since
+           the last time she ran "git pull" from her local repository.
 
-WARNING:  Running the "git pull" command from you local repository
-          can be dangerous because it changes the contents of your
-          local repository.  So if you made a mistake running that
-          command, it can be difficult to fix.  Instead, it's safer
-          to run "git fetch' from the remote production repository
-          to first inspect the files it has changed.  (The "git fetch"
-          command doesn't change any files in your repository, it
-          only allows you to see pending changes.)  After confirming
-          that "git fetch" has changed the appropriate files, run
-          the "git merge" command to force those changes into your
-          local repository.  The "git pull" command is equivalent
-          to running "git fetch" followed by "git merge".
+           WARNING:  Running the "git pull" command from you local repository
+                     can be dangerous because it changes the contents of your
+                     local repository.  So if you made a mistake running that
+                     command, it can be difficult to fix.  Instead, it's safer
+                     to run "git fetch' from the remote production repository
+                     to first inspect the files it has changed.  (The "git fetch"
+                     command doesn't change any files in your repository, it
+                     only allows you to see pending changes.)  After confirming
+                     that "git fetch" has changed the appropriate files, run
+                     the "git merge" command to force those changes into your
+                     local repository.  The "git pull" command is equivalent
+                     to running "git fetch" followed by "git merge".
 
-         
+=============================================================================
 
+GIT MERGE - The following 7 steps demonstrate the process of code development.  Once
+            you understand this process you will understand what the "git merge"
+            command does, and exactly when you need to run it.
+
+           1) Assume you already have a working directory in your local repository
+              that's a copy of a branch that was checked out, or cloned, from a remote
+              repository.  And now you want to add a feature, fix a bug, or make some
+              other code changes on that branch.  Assume the remote repository is named
+              "origin" and the branch is named "main".  Follow the next 6 steps.
+
+           2) Run "git add" and "git commit" as needed.
+              As you make code changes, you must execute both the "git add" and
+              "git commit" commands on files when needed.
+
+              After running your final "git add" and "git commit", you will be finished
+              making all your code changes.  So you should now test all your code changes.
+              Once your code has passed testing, proceed to step 3).
+
+           3) Run "git status"
+              Confirm "git status" returns the following text:
+              "nothing to commit, working tree clean."
+
+           4) Run "git fetch" 
+              It probably took several hours or days to finish making and testing your code
+              changes.  After you're finished testing, you must again run "git fetch" on that
+              same remote repository branch.  Doing so will obtain any code changes made
+              by other developers since the main branch was originally cloned or checked
+              out in step 1) above.
+
+           5) Run "git merge origin/main" immediately after running "git fetch" in step 4) above.
+              If you and another developer edited the same line of text in the same file, Git will
+              prompt you to resolve any merge conflicts.  If there are merge conflicts, you
+              must resolve them and once again run "git add" and "git commit" on every file that
+              you changed.
+
+              NOTE: You can run the "git pull origin/main" command in place of "git fetch"
+                    in step 4) and "git merge" in step 5) because "git pull" combines
+                    both those git commands.  However, it's safer to run "git fetch"
+                    followed by "git merge" because "git fetch" allows you to review
+                    files before you merge them.  Using "git pull" can also force you
+                    to resolve complex merge conflicts in the middle of your workflow.
+                    Etc.
+
+           6) If you had to resolve merge conflicts in step 5) above, run "git status"
+              again to confirm it returns the following text:
+              "nothing to commit, working tree clean."  
+
+           7) Run "git push" so all your code changes get sent to the remote repository,
+              which is used to build the production release.
