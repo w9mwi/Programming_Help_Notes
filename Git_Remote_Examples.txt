@@ -11,6 +11,7 @@ There are only 4 Git commands that communicate between a local Git repository
 4) git push
 
 All other Git commands work only on the repository you're working from.
+This page covers these 4 Git commands.
 
 ========================================================================
 
