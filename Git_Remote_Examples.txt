@@ -15,8 +15,8 @@ This page covers these 4 Git commands.
 
 ========================================================================
 
-GIT CODE COMMIT WORKLOW
-=======================
+GIT CODE COMMIT WORKLOW WHEN USING A REMOTE REPOSITORY
+======================================================
 
 The following 7 steps describe the typical Git workflow followed
 by a developer in a software production environment.
