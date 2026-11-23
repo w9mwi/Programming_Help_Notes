@@ -567,12 +567,21 @@ GIT CHECKOUT     - The "git checkout" command points your current working direct
                      > git checkout -b poop
 
 
-GIT INIT         - After you create a new folder for a new software project, you need to run
-                   the following command inside that folder:
+GIT INIT         - Run this command when you want to create a new Git repository.  Before running
+                   "git init", create a new folder to match the name of your new Git repository.
+                   Next, "cd" into that new folder and run...
 
                    $ git init
 
-                   This command creates the following 4 folders:
+                   The "git init" command creates a .git child folder which contains a file named "config".
+                   You can edit this "config" file to change the default behavior of Git commands to
+                   your own preferences.  Keep in mind any changes made to the "config" file applies
+                   only to your current Git repository, and not to all Git repositories.
+
+                   If you want to change the default behavior of some Git command(s) in all of your
+                   Git repositories, you can do so either 
+
+following 4 child folders
 
                    hooks - This directory contains scripts that Git executes automatically at key points
                            in the development lifecycle, such as before a commit (pre-commit), after a
