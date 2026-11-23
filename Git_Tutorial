@@ -567,19 +567,56 @@ GIT CHECKOUT     - The "git checkout" command points your current working direct
                      > git checkout -b poop
 
 
-GIT INIT         - Run this command when you want to create a new Git repository.  Before running
-                   "git init", create a new folder to match the name of your new Git repository.
-                   Next, "cd" into that new folder and run...
+GIT INIT - Run this command when you want to create a new Git repository.  Before running
+           "git init", create a new folder to match the name of your new Git repository.
+           Next, "cd" into that new folder and run...
 
-                   $ git init
+           $ git init
 
-                   The "git init" command creates a .git child folder which contains a file named "config".
-                   You can edit this "config" file to change the default behavior of Git commands to
-                   your own preferences.  Keep in mind any changes made to the "config" file applies
-                   only to your current Git repository, and not to all Git repositories.
+          The "git init" command creates a .git child folder which contains a file named "config".
+          You can edit this "config" file to change the default behavior of Git commands to
+          your own preferences.  Keep in mind any changes made to the "config" file applies
+          only to your current Git repository, and not to all Git repositories.
 
-                   If you want to change the default behavior of some Git command(s) in all of your
-                   Git repositories, you can do so either 
+          If you want to change the default behavior of some Git command(s) in all existing
+          and newly created Git repositories, there are two ways of doing so...
+
+          1) From the command line, run the "git config --global" command for each change
+             you want to make.  Some examples...
+
+             Set "git pull" so it updates your branch only if it can move forward cleanly
+             without a merge or rebase. Otherwise, it aborts and lets you decide.
+             $ git config --global pull.ff only
+
+             Set "git pull" so instead of performing the "git fetch" command followed by the
+             "git merge" command, the "git fetch" command is followed by the "git rebase"
+             command.
+             $ git config --global pull.rebase true
+
+             NOTE: If you want to perform these settings on only your current repository
+                   (not all repositories) you can do so by running the same command without
+                   the --global flag.  For example...
+                   $ git config pull.rebase true
+                   ...OR...
+                   $ git config pull.rebase false
+
+             To determine a current Git config setting (in this example, the pull.rebase
+             setting), run this command.
+             $ git config --get pull.rebase
+
+          2) Create a new file named ".git-template" in your home folder by running this command...
+             $ mkdir -p  ~/.git-template
+
+             Point Git's init.templateDir setting to that folder by running this command...
+             $ git config --global init.templateDir ~/.git-template
+
+             Run the following command to confirm it prints the setting you made in the above command.
+             $ git config --list
+
+             Edit that file to make the changes you desire.
+
+
+
 
 following 4 child folders
 
