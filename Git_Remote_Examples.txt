@@ -126,42 +126,32 @@ CLONE A REMOTE GIT REPOSITORY TO YOUR LOCAL GIT REPOSITORY
 ==========================================================
 
 NOTE - A remote repository is usually located on a remote server,
-       not on your local computer.  However, assume you have two git
-       repositories on your local computer named Repo_1 and Repo_2.
-       If you're currently working in the Repo_1 folder/repository,
-       the Repo_2 folder/repository is considered a remote repository
-       from your Repo_1 folder/repository, and vice-versa, even though
-       they're both contained on your local computer.  Therefore, you
-       can clone a git repository from another git repository on your
-       local computer, or from a repository packaged within a Git
-       ".bundle" archive file.
+       not on your local computer.  However, assume you have two Git
+       repositories on your local computer located in folders named
+       Repo_1 and Repo_2.  If you're currently working in the Repo_1
+       folder/repository, the Repo_2 folder/repository is considered
+       a remote repository from your Repo_1 folder/repository (and
+       vice-versa) even though they're both contained on your local
+       computer.  Therefore, you can clone a git repository from another
+       git repository on your local computer, or from a repository packaged
+       within a Git ".bundle" archive file.
 
-The git clone command creates a complete local copy of an existing Git repository
-on your computer.  Beyond simply downloading the project files, "git clone" does
-the following:
-
-* Sets up a hidden folder named ".git" that contains the entire commit history.
-* Checks out the default branch.
-* Automatically creates a remote bookmark named "origin" pointing back to the
-  remote (source) repository.
-
-Assume the following...
-
-* You have a respoitory on github.com named: My_Git_Repo
-* Your github.com username is: w9mwi
-* On your local computer, there does NOT exist a folder named: /home/tjb/My_Git_Repo
-* Your console window is pointed to folder name: /home/tjb
-
-From your local /home/tjb folder, if you run the following command, a
-new folder named "/home/tjb/My_Git_Repo" gets created, which will
-contain the repository cloned from: github.com/w9mwi/My_Git_Repo
-
+Git translates a "git clone" command into 5 separate commands.  For example,
+Git translates the following command into the 5 commands below it.
 $ git clone git@github.com:w9mwi/My_Git_Repo.git
 
-NOTE: If the git repository is located on bitbucket.org, use this command instead.
-      $ git clone git@ssh.bitbucket.org:iwm9w/My_Git_Repo.git
+$ mkdir My_Git_Repo
+$ cd My_Git_Repo
+$ git init
+$ git remote add origin git@github.com:w9mwi/My_Git_Repo.git
+$ git pull origin main
 
-If you want the cloned repository to exist in a folder with a different
+If the remote repo is named iwm9w/My_Git_Repo and is located on bitbucket.org,
+replace the two similar commands above with these two commands:
+$ git clone git@ssh.bitbucket.org:iwm9w/My_Git_Repo.git
+$ git remote add origin git@github.org:iwm9w/My_Git_Repo.git
+
+If you want the cloned repository to exist in a folder having a different
 name (i.e., /home/tjb/My_Cloned_Repo), run the following command instead.
 
 $ git clone git@github.com:w9mwi/My_Git_Repo.git  My_Cloned_Repo
@@ -170,24 +160,18 @@ To be safe, make certain the folder in your local directory that will hold
 the cloned repository (i.e., /home/tjb/My_Git_Repo) either doesn't exist,
 or it is empty.
 
-By default, the above two clone commands will designate "origin" as the name
-of the remote github.com repository.  So when you run the the "git fetch",
-"git pull", or "git push" commands later, they will work without you having
-to specify a branch name in those commands.
-
 By default, Git clones only the repository's default branch, which is usually
 named "main" or "master"--it doesn't clone any other branches.  To clone a
 different branch from a remote repository specify the -b flag, followed by
-the branch name, as in the following command.
+the branch name as in the following command.
 
 $ git clone -b branchName git@github.com:w9mwi/My_Git_Repo.git
 
-Running this command will also designate "origin" as the branch name you
-cloned, so when you run the the "git fetch", "git pull", or "git push"
-commands later, they will work without you having to specify a branch name
-in those commands.  However, if you create a new branch on your local
-computer named "newFeature_1", you will need to run the following command
-for it to appear on the remote repository.
+Running this command will also designate "origin" as the branch name you cloned.
+Therefore, when you run the the "git fetch", "git pull", or "git push" commands
+later, they will work without having to specify a branch name in those commands.
+However, if you create a new branch on your local computer named "newFeature_1",
+you will need to run the following command for it to appear on the remote repository.
 
 $ git push -u origin new-feature
 
@@ -204,7 +188,6 @@ git clone --depth 1 git@github.com:w9mwi/My_Git_Repo.git
 
 The "--depth 1" flag downloads only the single most recent
 commit instead of the entire project history.
-
 
 
 CREATE A NEW REMOTE GIT REPOSITORY
