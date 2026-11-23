@@ -6,13 +6,11 @@ by a developer in a software production environment.
 
 Assume the production git repository is named Git_Prod and is located
 on a remote server at this location:
-
 https://github.com/w9mwi/Git_Prod
 
 Assume your local git repository is named User_1 and is contained on
-your local computer at this location:
-
-/home/tjb/User_1 folder
+your local computer in this folder:
+/home/tjb/User_1
 
 The following 7 steps demonstrate the workflow of how a developer makes
 code changes to the remote Git_Prod repository.
@@ -102,3 +100,6 @@ code changes to the remote Git_Prod repository.
 
    $ git status
    $ git branch -a
+
+============================================================================================
+
