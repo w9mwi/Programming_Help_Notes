@@ -133,7 +133,8 @@ NOTE - A remote repository is usually located on a remote server,
        from your Repo_1 folder/repository, and vice-versa, even though
        they're both contained on your local computer.  Therefore, you
        can clone a git repository from another git repository on your
-       local computer or packaged inside a git .bundle archive file.
+       local computer, or from a repository packaged within a Git
+       ".bundle" archive file.
 
 The git clone command creates a complete local copy of an existing Git repository
 on your computer.  Beyond simply downloading the project files, "git clone" does
