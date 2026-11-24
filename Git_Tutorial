@@ -576,16 +576,23 @@ GIT INIT - Run this command when you want to create a new Git repository.  Befor
           The "git init" command creates a .git child folder which contains a file named "config".
           You can edit this "config" file to change the default behavior of Git commands to
           your own preferences.  Keep in mind any changes made to the "config" file applies
-          only to your current Git repository, and not to all Git repositories.
+          only to your current Git repository, and not to all Git repositories.  Keep reading
+          to see how you can change git command settings globally, so all present and future
+          Git repositories will have those settings.
+
+          To view all settings for a single Git repository, navigate to the folder
+          holding that repository, and run the following command.
+
+          $ git config --list
 
           If you want to change the default behavior of some Git command(s) in all existing
           and newly created Git repositories, there are two ways of doing so...
 
           1) From the command line, run the "git config --global" command for each change
-             you want to make.  Some examples...
+             you want to make.  Here are some examples...
 
              Set "git pull" so it updates your branch only if it can move forward cleanly
-             without a merge or rebase. Otherwise, it aborts and lets you decide.
+             without a merge or rebase.  (Otherwise, it aborts and lets you decide.)
              $ git config --global pull.ff only
 
              Set "git pull" so instead of performing the "git fetch" command followed by the
@@ -607,7 +614,8 @@ GIT INIT - Run this command when you want to create a new Git repository.  Befor
           2) Create a new file named ".git-template" in your home folder by running this command...
              $ mkdir -p  ~/.git-template
 
-             Point Git's init.templateDir setting to that folder by running this command...
+             Point Git's init.templateDir setting to that folder (so Git knows where these "global"
+             setting reside) by running this command...
              $ git config --global init.templateDir ~/.git-template
 
              Run the following command to confirm it prints the setting you made in the above command.
@@ -615,9 +623,7 @@ GIT INIT - Run this command when you want to create a new Git repository.  Befor
 
              Edit that file to make the changes you desire.
 
-
-
-
+*****************************
 following 4 child folders
 
                    hooks - This directory contains scripts that Git executes automatically at key points
