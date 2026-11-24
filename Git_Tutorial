@@ -105,8 +105,14 @@ DELETE GIT REPOSITORY - From the command line, navigate to the parent directory 
                         (i.e. GitLab, GitHub) referred to by the alias "origin". 
                         > git push origin --delete main
 
-GIT CONFIG      - Run the following commands from inside the parent directory of the new git repository
-                  to confirm git has correct settings for user.name, user.email, core.editor, etc.
+GIT CONFIG      - Every Git cokmmand has a default setting.  But you can change the behavior of
+                  Git comands by supplying the "git config" with specific arguments.  To view
+                  all possible "git config" settings run this command.
+
+                  $ git help --config
+
+                  Run the following commands from inside the parent directory of the a git
+                  repository view the config settings specific to that repository.
 
                   > git config --list
                   > git config --list --show-origin
