@@ -14,6 +14,17 @@ All other Git commands work only on the repository you're working from.
 This page covers these 4 Git commands.
 
 ============================================================================================
+FORKED REPOSITORY - Each developer on a team has a local git repository on their
+                    local computer, and a "forked" repository that resides on the
+                    same remote git repository as the production repository.  Each
+                 developers' local repository and "forked" repository were both
+                 originally a clone of the production repository.  After a
+                 developer pushes her code changes to her remote "forked"
+                 repository for review, the team leader reviews that code.
+                 If the team leader approves those code changes, she pushes it
+                 (using "git push") to the remote production repository.
+
+============================================================================================
 
 GIT CLONE - Clones a remote Git repository to your local git repository/folder.
 
